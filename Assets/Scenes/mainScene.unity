@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 238510856}
   - component: {fileID: 238510855}
   - component: {fileID: 238510854}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.01, y: -0.08, z: -1080}
+  m_LocalPosition: {x: -0.8348267, y: 0.029555589, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 602625825}
+  m_Follow: {fileID: 238510858}
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
@@ -547,7 +547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602625823}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.01, y: -0.08, z: -1080}
+  m_LocalPosition: {x: -0.8348267, y: 0.029555589, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 813233995}
   - component: {fileID: 813233997}
   - component: {fileID: 813233996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -678,7 +678,7 @@ GameObject:
   - component: {fileID: 1086194044}
   - component: {fileID: 1086194046}
   - component: {fileID: 1086194047}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyMinigame
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -810,7 +810,7 @@ GameObject:
   - component: {fileID: 1145227842}
   - component: {fileID: 1145227844}
   - component: {fileID: 1145227843}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -922,7 +922,7 @@ GameObject:
   - component: {fileID: 1212279256}
   - component: {fileID: 1212279255}
   - component: {fileID: 1212279254}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1019,7 +1019,7 @@ GameObject:
   - component: {fileID: 1340473400}
   - component: {fileID: 1340473402}
   - component: {fileID: 1340473401}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1166,7 +1166,7 @@ GameObject:
   - component: {fileID: 1599554410}
   - component: {fileID: 1599554412}
   - component: {fileID: 1599554411}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
