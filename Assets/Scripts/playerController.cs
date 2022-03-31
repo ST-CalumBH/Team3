@@ -19,7 +19,7 @@ public class playerController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if (inArea && (Input.GetKeyDown(KeyCode.Z)))
+        if (inArea && (Input.GetKeyDown("joystick button 0")))
         {
             Interact();
         }
