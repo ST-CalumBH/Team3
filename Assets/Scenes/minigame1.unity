@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 149158027}
   - component: {fileID: 149158028}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217c0e77a2835b041ab92442e30993c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!4 &705266486
 Transform:
   m_ObjectHideFlags: 0
@@ -562,6 +561,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenemanager: {fileID: 705266485}
+  player: {fileID: 0}
+  playercontroller: {fileID: 0}
 --- !u!4 &1361840075
 Transform:
   m_ObjectHideFlags: 0
