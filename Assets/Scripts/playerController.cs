@@ -8,21 +8,34 @@ public class playerController : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 movement;
     private bool inArea;
+    private bool playerFreeze;
+    [SerializeField] private sceneManager scenemanager;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        inArea = false;
+        playerFreeze = false;
     }
 
     private void Update() //inputs
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        if (inArea && (Input.GetKeyDown("joystick button 0")))
+        if (playerFreeze == false)
         {
-            Interact();
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+
+            if (inArea && (Input.GetKeyDown(KeyCode.Z)))
+            {
+                Interact();
+            }
         }
+
+        if (Input.GetKeyDown(KeyCode.A)) //this ain't right, trying to call this function when minigame closes in player script
+        {
+            unfreezePlayer();
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -46,14 +59,21 @@ public class playerController : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
-    public Vector3 GetPosition()
+    public void freezePlayer()
     {
-        return transform.position;
+        playerFreeze = true;
+    }
+
+    public void unfreezePlayer()
+    {
+        playerFreeze = false;
     }
 
     private void Interact()
     {
-        Debug.Log("Interact Success");
+        freezePlayer();
+        scenemanager.LoadMinigame();
+        
+        Debug.Log("Interact Successful");
     }
-
 }

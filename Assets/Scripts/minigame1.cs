@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class minigame1 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private sceneManager scenemanager;
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))
@@ -27,12 +22,14 @@ public class minigame1 : MonoBehaviour
     void Win()
     {
         Debug.Log("You win!");
+        scenemanager.CloseMinigame();
         //SceneLoader closes this scene, mainScene becomes unfrozen and play continues
     }
 
     void Lose()
     {
         Debug.Log("You lose a life!");
+        scenemanager.CloseMinigame();
         //SceneLoader lose a life kept in a variable in persistent manager
         //all lives lost = game over scene?
     }
