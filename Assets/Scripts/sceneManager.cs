@@ -7,11 +7,12 @@ public class sceneManager : MonoBehaviour
 {
     public void LoadMinigame()
     {
-        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive); //loadSceneAsync?
+        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive); //loadScene or loadSceneAsync?
     }
 
     public void CloseMinigame()
     {
+        //playerController.unfreezePlayer();
         SceneManager.UnloadSceneAsync(1);
     }
 }

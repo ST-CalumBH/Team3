@@ -31,7 +31,7 @@ public class playerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.A)) //this ain't right, trying to call this function when minigame closes in player script
+        if (Input.GetKeyDown(KeyCode.A)) //this ain't right, should be when minigame script calls scenemanager.close minigame -> unfreezePlayer();
         {
             unfreezePlayer();
         }

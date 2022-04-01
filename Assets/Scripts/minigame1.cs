@@ -29,7 +29,7 @@ public class minigame1 : MonoBehaviour
     void Lose()
     {
         Debug.Log("You lose a life!");
-        scenemanager.CloseMinigame();
+        scenemanager.CloseMinigame(); //a different function could be called here eg. sceneManager.LoseMinigame, that calls a function in player script to loseALife();
         //SceneLoader lose a life kept in a variable in persistent manager
         //all lives lost = game over scene?
     }
