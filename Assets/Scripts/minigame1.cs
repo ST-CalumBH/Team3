@@ -32,6 +32,7 @@ public class minigame1 : MonoBehaviour
     {
         Debug.Log("You win! Press C to unfreeze!");
         scenemanager.CloseMinigame();
+        playercontroller.unfreezePlayer();
         //SceneLoader closes this scene, mainScene becomes unfrozen and play continues
     }
 
