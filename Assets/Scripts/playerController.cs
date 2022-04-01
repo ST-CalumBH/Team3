@@ -31,7 +31,7 @@ public class playerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.A)) //this ain't right, should be when minigame script calls scenemanager.close minigame -> unfreezePlayer();
+        if (Input.GetKeyDown(KeyCode.C)) //this ain't right, should be when minigame script calls scenemanager.close minigame -> unfreezePlayer();
         {
             unfreezePlayer();
         }
@@ -59,7 +59,7 @@ public class playerController : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
-    public void freezePlayer()
+    public void freezePlayer() //setActive(false) might be better, less functions required
     {
         playerFreeze = true;
     }
