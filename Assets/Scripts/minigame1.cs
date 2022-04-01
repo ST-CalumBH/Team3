@@ -21,14 +21,14 @@ public class minigame1 : MonoBehaviour
 
     void Win()
     {
-        Debug.Log("You win!");
+        Debug.Log("You win! Press A to unfreeze!");
         scenemanager.CloseMinigame();
         //SceneLoader closes this scene, mainScene becomes unfrozen and play continues
     }
 
     void Lose()
     {
-        Debug.Log("You lose a life!");
+        Debug.Log("You lose a life! Press A to unfreeze!");
         scenemanager.CloseMinigame(); //a different function could be called here eg. sceneManager.LoseMinigame, that calls a function in player script to loseALife();
         //SceneLoader lose a life kept in a variable in persistent manager
         //all lives lost = game over scene?
