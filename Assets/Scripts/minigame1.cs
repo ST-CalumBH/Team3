@@ -30,7 +30,7 @@ public class minigame1 : MonoBehaviour
 
     void Win()
     {
-        Debug.Log("You win! Press C to unfreeze!");
+        Debug.Log("You win!");
         scenemanager.CloseMinigame();
         playercontroller.unfreezePlayer();
         //SceneLoader closes this scene, player becomes unfrozen and play continues
@@ -38,7 +38,7 @@ public class minigame1 : MonoBehaviour
 
     void Lose()
     {
-        Debug.Log("You lose a life! Press C to unfreeze!");
+        Debug.Log("You lose a life!");
         scenemanager.CloseMinigame();
         playercontroller.unfreezePlayer();
         //a different function could be called here eg. sceneManager.LoseMinigame, that calls a function in player script to loseALife();

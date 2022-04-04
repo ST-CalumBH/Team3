@@ -5,14 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class sceneManager : MonoBehaviour
 {
+    [SerializeField] private string minigameScene;
+
     public void LoadMinigame()
     {
-        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive); //loadScene or loadSceneAsync?
+        SceneManager.LoadSceneAsync(minigameScene, LoadSceneMode.Additive); //loadScene or loadSceneAsync?
     }
 
     public void CloseMinigame()
     {
         //playerController.unfreezePlayer();
-        SceneManager.UnloadSceneAsync(1);
+        SceneManager.UnloadSceneAsync(minigameScene);
     }
 }
