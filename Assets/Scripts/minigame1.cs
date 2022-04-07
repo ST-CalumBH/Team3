@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class minigame1 : MonoBehaviour
 {
-    [SerializeField] private sceneManager scenemanager;
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject player; //SerializedField is for viewing variables while testing, shouldn't be edited at all.
     [SerializeField] private playerController playercontroller;
 
     private void Start()
     {
         player = GameObject.Find("Player");
         playercontroller = player.GetComponent<playerController>();
-
     }
 
     void Update()
@@ -31,18 +29,22 @@ public class minigame1 : MonoBehaviour
     void Win()
     {
         Debug.Log("You win!");
-        scenemanager.CloseMinigame();
         playercontroller.unfreezePlayer();
-        //SceneLoader closes this scene, player becomes unfrozen and play continues
+        DestroyMinigame();
     }
 
     void Lose()
     {
         Debug.Log("You lose a life!");
-        scenemanager.CloseMinigame();
         playercontroller.unfreezePlayer();
+        DestroyMinigame();
         //a different function could be called here eg. sceneManager.LoseMinigame, that calls a function in player script to loseALife();
-        //SceneLoader lose a life kept in a variable in persistent manager
+        //Life kept in a variable in persistent manager
         //all lives lost = game over scene
+    }
+
+    public void DestroyMinigame()
+    {
+        Destroy(transform.parent.gameObject);
     }
 }

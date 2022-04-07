@@ -7,9 +7,14 @@ public class playerController : MonoBehaviour
     public float moveSpeed = 15f;
     public Rigidbody2D rb;
     private Vector2 movement;
+
     private bool inArea;
     private bool playerFreeze;
+
     [SerializeField] private sceneManager scenemanager;
+
+    [SerializeField] private GameObject enemyMinigame;
+    [SerializeField] private enemyMinigameLoader minigameLoader;
 
     private void Awake()
     {
@@ -27,15 +32,9 @@ public class playerController : MonoBehaviour
 
             if (inArea && (Input.GetKeyDown(KeyCode.Z)))
             {
-                Interact();
+                Interact(minigameLoader);
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.C)) //this ain't right, should be when minigame script calls scenemanager.close minigame -> unfreezePlayer();
-        {
-            unfreezePlayer();
-        }
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -43,15 +42,14 @@ public class playerController : MonoBehaviour
         if (other.tag == "Interact")
         {
             inArea = true;
+            enemyMinigame = other.gameObject;
+            minigameLoader = enemyMinigame.GetComponent<enemyMinigameLoader>();
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Interact")
-        {
-            inArea = false;
-        }
+        inArea = false;
     }
 
     void FixedUpdate() //movement, physics
@@ -59,7 +57,7 @@ public class playerController : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
-    public void freezePlayer() //setActive(false) might be better, less functions required
+    public void freezePlayer()
     {
         playerFreeze = true;
     }
@@ -69,10 +67,10 @@ public class playerController : MonoBehaviour
         playerFreeze = false;
     }
 
-    private void Interact()
+    private void Interact(enemyMinigameLoader minigame)
     {
         freezePlayer();
-        scenemanager.LoadMinigame();
+        minigame.InstantiateMinigame();
         
         Debug.Log("Interact Successful");
     }

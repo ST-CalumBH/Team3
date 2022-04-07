@@ -158,6 +158,8 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 238510855}
   scenemanager: {fileID: 1897634775}
+  enemyMinigame: {fileID: 0}
+  minigameLoader: {fileID: 0}
 --- !u!50 &238510855
 Rigidbody2D:
   serializedVersion: 4
@@ -679,6 +681,7 @@ GameObject:
   - component: {fileID: 1086194044}
   - component: {fileID: 1086194046}
   - component: {fileID: 1086194047}
+  - component: {fileID: 1086194048}
   m_Layer: 8
   m_Name: EnemyMinigame
   m_TagString: Interact
@@ -800,6 +803,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &1086194048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086194043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae047af8e0f55443abbed55d01337c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minigameName: {fileID: 9137753762869496136, guid: 772356a58f5eaf7459598de2c44f50e8, type: 3}
 --- !u!1 &1145227841
 GameObject:
   m_ObjectHideFlags: 0
