@@ -21,10 +21,7 @@ public class m2PlayerController : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        if (sceneManager.unscathed == false)
-        {
-            //loss state
-        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

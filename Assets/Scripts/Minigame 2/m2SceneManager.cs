@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class m2SceneManager : MonoBehaviour
 {
 
     public bool unscathed = true;
-    public Canvas UI;
-    private TextMeshPro timer;
-    public float gameLength = 15f;
+    [SerializeField] private float gameLength = 15f;
+    [SerializeField] private Text timer;
+    [SerializeField] private GameObject win;
+    [SerializeField] private GameObject loss;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        timer = UI.GetComponent<TextMeshPro>();
         timer.text = gameLength.ToString();
         StartCoroutine(Countdown());
         StartCoroutine(Timer());
@@ -22,7 +25,11 @@ public class m2SceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (unscathed == false)
+        {
+            loss.SetActive(true);
+            StartCoroutine(EndMinigame());
+        }
     }
 
     IEnumerator Countdown()
@@ -30,7 +37,7 @@ public class m2SceneManager : MonoBehaviour
         yield return new WaitForSeconds(gameLength);
         if (unscathed == true)
         {
-            //Win state
+            win.SetActive(true);
         }
     }
 
@@ -43,5 +50,11 @@ public class m2SceneManager : MonoBehaviour
         {
             StartCoroutine(Timer());
         }
+    }
+
+    IEnumerator EndMinigame()
+    {
+        yield return new WaitForSeconds(3f);
+
     }
 }
