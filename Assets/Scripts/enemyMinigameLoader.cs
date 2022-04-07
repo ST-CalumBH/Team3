@@ -6,6 +6,13 @@ public class enemyMinigameLoader : MonoBehaviour
 {
     [SerializeField] private GameObject minigameName;
 
+    Camera cam;
+
+    public void Start()
+    {
+        cam = Camera.main;
+    }
+
     public void InstantiateMinigame()
     {
         Camera cam = Camera.main;
