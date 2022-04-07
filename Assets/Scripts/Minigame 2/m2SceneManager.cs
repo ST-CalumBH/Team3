@@ -12,12 +12,16 @@ public class m2SceneManager : MonoBehaviour
     [SerializeField] private Text timer;
     [SerializeField] private GameObject win;
     [SerializeField] private GameObject loss;
+    [SerializeField] private playerController playercontroller;
+    private GameObject player;
 
 
     // Start is called before the first frame update
     void Start()
     {
         timer.text = gameLength.ToString();
+        player = GameObject.Find("Player");
+        playercontroller = player.GetComponent<playerController>();
         StartCoroutine(Countdown());
         StartCoroutine(Timer());
     }
@@ -38,6 +42,7 @@ public class m2SceneManager : MonoBehaviour
         if (unscathed == true)
         {
             win.SetActive(true);
+            StartCoroutine(EndMinigame());
         }
     }
 
@@ -55,6 +60,7 @@ public class m2SceneManager : MonoBehaviour
     IEnumerator EndMinigame()
     {
         yield return new WaitForSeconds(3f);
-
+        playercontroller.unfreezePlayer();
+        Destroy(transform.parent.gameObject);
     }
 }

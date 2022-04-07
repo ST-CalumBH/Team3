@@ -33,6 +33,7 @@ public class playerController : MonoBehaviour
             if (inArea && (Input.GetKeyDown(KeyCode.Z)))
             {
                 Interact(minigameLoader);
+                
             }
         }
     }
@@ -71,7 +72,6 @@ public class playerController : MonoBehaviour
     {
         freezePlayer();
         minigame.InstantiateMinigame();
-        
         Debug.Log("Interact Successful");
     }
 }
