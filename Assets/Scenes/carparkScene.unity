@@ -954,63 +954,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1435854349
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 9137753762869496136, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
-      propertyPath: m_Name
-      value: BulletHell
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.2927775
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.835392
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
 --- !u!1 &1502980968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,6 +1146,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigameScene: 
+--- !u!1001 &1972492655
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9137753762869496136, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
+      propertyPath: m_Name
+      value: BulletHell (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137753762869496139, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
 --- !u!1 &2076859891
 GameObject:
   m_ObjectHideFlags: 3
@@ -1352,3 +1352,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7cc26a0d00c2cf419ccdb93f26f0615, type: 3}
+--- !u!1 &6420986071855419810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6420986072089178788, guid: e7cc26a0d00c2cf419ccdb93f26f0615, type: 3}
+  m_PrefabInstance: {fileID: 6420986071855419809}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6420986071855419811
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6420986071855419810}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 705fb9513216c604fb2cf447a446f39c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -680,7 +680,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7783712, y: 1}
+    m_SensorSize: {x: 2.1213872, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -962,7 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae047af8e0f55443abbed55d01337c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minigameName: {fileID: 9137753762869496136, guid: 772356a58f5eaf7459598de2c44f50e8, type: 3}
+  minigameName: {fileID: 9137753762869496136, guid: cce8ec49205d64247aa0ad17dd2dff6f, type: 3}
 --- !u!1 &1145227841
 GameObject:
   m_ObjectHideFlags: 0
