@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/carparkScene.unity
     guid: f59d4f409642acf4a843076b9acce149
   - enabled: 1
+    path: Assets/Scenes/officeCutscene.unity
+    guid: 6e85dd065b5304f48b15370f311b3141
+  - enabled: 1
     path: Assets/Scenes/officeScene.unity
     guid: d884ca35797d79f43bf35e7b4454e739
-  - enabled: 1
-    path: Assets/Scenes/minigame1.unity
-    guid: 83c41c5be8f45064b93ec51f41fe73a5
   m_configObjects: {}
