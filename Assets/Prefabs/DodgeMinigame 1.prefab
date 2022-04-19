@@ -1322,6 +1322,14 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3380703257958032284, guid: bcdeab11e706d5f4f995b676f6b17044, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380703257958032284, guid: bcdeab11e706d5f4f995b676f6b17044, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3380703257958032285, guid: bcdeab11e706d5f4f995b676f6b17044, type: 3}
       propertyPath: m_RootOrder
       value: 1
