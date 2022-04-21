@@ -208,8 +208,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -446,8 +446,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -15.187805, y: -90.61038}
-  m_SizeDelta: {x: -227.3383, y: -506.897}
+  m_AnchoredPosition: {x: -8.2022705, y: -125.341095}
+  m_SizeDelta: {x: -210.9337, y: -452.2148}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1391262509
 MonoBehaviour:
@@ -465,7 +465,8 @@ MonoBehaviour:
   lines:
   - Hi i think I did it
   - this worked yay
-  textSpeed: 0.01
+  - Now I just have to figure out how to get     this to work with an NPC
+  textSpeed: 0.03
 --- !u!114 &1391262510
 MonoBehaviour:
   m_ObjectHideFlags: 0
