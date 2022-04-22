@@ -449,10 +449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217c0e77a2835b041ab92442e30993c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  minigameScene: minigame1
-=======
->>>>>>> Minigame1
 --- !u!4 &705266486
 Transform:
   m_ObjectHideFlags: 0
