@@ -40,12 +40,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: Background
+    uniqueID: 824256543
+    locked: 0
+  - name: Walls
+    uniqueID: 2357992937
+    locked: 0
+  - name: Interactable
+    uniqueID: 2338364323
     locked: 0
   - name: Player
     uniqueID: 2923762721
     locked: 0
-  - name: Interactable
-    uniqueID: 2338364323
+  - name: Minigame
+    uniqueID: 3294731581
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
