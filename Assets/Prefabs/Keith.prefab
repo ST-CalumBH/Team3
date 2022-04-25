@@ -134,3 +134,5 @@ MonoBehaviour:
   damage: 15
   maxHP: 30
   currentHP: 30
+  minigames:
+  - {fileID: 9137753762869496136, guid: 772356a58f5eaf7459598de2c44f50e8, type: 3}

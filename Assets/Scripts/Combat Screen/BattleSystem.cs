@@ -24,9 +24,14 @@ public class BattleSystem : MonoBehaviour
 
 	public BattleState state;
 
-    // Start is called before the first frame update
-    void Start()
+	public int minigameCount = 0;
+
+	Camera cam;
+
+	// Start is called before the first frame update
+	void Start()
     {
+		cam = Camera.main;
 		state = BattleState.START;
 		StartCoroutine(SetupBattle());
     }
@@ -41,6 +46,8 @@ public class BattleSystem : MonoBehaviour
 
 		dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
 
+
+
 		playerHUD.SetHUD(playerUnit);
 		enemyHUD.SetHUD(enemyUnit);
 
@@ -52,6 +59,13 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator PlayerAttack()
 	{
+		//bool minigame = false;
+
+		bool gameResult = false;
+		gameResult = playerUnit.PlayMinigame(minigameCount);
+		if (minigameCount < playerUnit.minigames.Length - 1)
+		{ minigameCount++; }
+
 		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
 
 		enemyHUD.SetHP(enemyUnit.currentHP);
@@ -110,18 +124,18 @@ public class BattleSystem : MonoBehaviour
 		dialogueText.text = "Choose an action:";
 	}
 
-	IEnumerator PlayerHeal()
-	{
-		playerUnit.Heal(5);
+	//IEnumerator PlayerHeal()
+	//{
+	//	playerUnit.Heal(5);
 
-		playerHUD.SetHP(playerUnit.currentHP);
-		dialogueText.text = "You feel renewed strength!";
+	//	playerHUD.SetHP(playerUnit.currentHP);
+	//	dialogueText.text = "You feel renewed strength!";
 
-		yield return new WaitForSeconds(2f);
+	//	yield return new WaitForSeconds(2f);
 
-		state = BattleState.ENEMYTURN;
-		StartCoroutine(EnemyTurn());
-	}
+	//	state = BattleState.ENEMYTURN;
+	//	StartCoroutine(EnemyTurn());
+	//}
 
 	public void OnAttackButton()
 	{
@@ -131,12 +145,12 @@ public class BattleSystem : MonoBehaviour
 		StartCoroutine(PlayerAttack());
 	}
 
-	public void OnHealButton()
-	{
-		if (state != BattleState.PLAYERTURN)
-			return;
+	//public void OnHealButton()
+	//{
+	//	if (state != BattleState.PLAYERTURN)
+	//		return;
 
-		StartCoroutine(PlayerHeal());
-	}
+	//	StartCoroutine(PlayerHeal());
+	//}
 
 }
