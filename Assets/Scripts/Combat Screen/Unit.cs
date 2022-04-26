@@ -43,7 +43,7 @@ public class Unit : MonoBehaviour
 	public bool PlayMinigame(int index)
     {
 		GameObject minigame = Instantiate(minigames[index], new Vector3(cam.transform.position.x, cam.transform.position.y, 0), Quaternion.identity);
-		minigame.transform.localScale = new Vector3(0.13f, 0.13f, 0.13f);
+		//minigame.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
 		return true;
 	}
 
