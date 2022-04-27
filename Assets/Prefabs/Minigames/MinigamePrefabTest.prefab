@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c561cbbf0d4de8343beb82b95a48ad49, type: 3}
   m_Color: {r: 0.19446424, g: 0.4339623, b: 0.40702966, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -162,8 +162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c66f0373421aeb4c832061a37273e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD:Assets/Prefabs/MinigamePrefabTest.prefab
   player: {fileID: 0}
   playercontroller: {fileID: 0}
+=======
+>>>>>>> Combat:Assets/Prefabs/Minigames/MinigamePrefabTest.prefab
 --- !u!1 &9137753763571290598
 GameObject:
   m_ObjectHideFlags: 0

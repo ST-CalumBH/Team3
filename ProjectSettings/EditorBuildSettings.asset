@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/officeScene.unity
     guid: d884ca35797d79f43bf35e7b4454e739
+<<<<<<< HEAD
+=======
+  - enabled: 1
+    path: Assets/Scenes/Testing/minigame1.unity
+    guid: 83c41c5be8f45064b93ec51f41fe73a5
+>>>>>>> Combat
   m_configObjects: {}

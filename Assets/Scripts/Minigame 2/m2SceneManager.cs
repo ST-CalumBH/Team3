@@ -4,24 +4,20 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class m2SceneManager : MonoBehaviour
+public class m2SceneManager : Minigame
 {
 
-    public bool unscathed = true;
     [SerializeField] private float gameLength = 15f;
     [SerializeField] private Text timer;
     [SerializeField] private GameObject win;
     [SerializeField] private GameObject loss;
-    [SerializeField] private playerController playercontroller;
-    private GameObject player;
 
 
     // Start is called before the first frame update
     void Start()
     {
         timer.text = gameLength.ToString();
-        player = GameObject.Find("Player");
-        playercontroller = player.GetComponent<playerController>();
+        failed = false;
         StartCoroutine(Countdown());
         StartCoroutine(Timer());
     }
@@ -29,9 +25,10 @@ public class m2SceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (unscathed == false)
+        if (failed == true)
         {
             loss.SetActive(true);
+            failed = true;
             StartCoroutine(EndMinigame());
         }
     }
@@ -39,7 +36,7 @@ public class m2SceneManager : MonoBehaviour
     IEnumerator Countdown()
     {
         yield return new WaitForSeconds(gameLength);
-        if (unscathed == true)
+        if (failed == false)
         {
             win.SetActive(true);
             StartCoroutine(EndMinigame());
@@ -57,10 +54,9 @@ public class m2SceneManager : MonoBehaviour
         }
     }
 
-    IEnumerator EndMinigame()
-    {
-        yield return new WaitForSeconds(3f);
-        playercontroller.unfreezePlayer();
-        Destroy(transform.parent.gameObject);
-    }
+    //IEnumerator EndMinigame()
+    //{
+    //    yield return new WaitForSeconds(3f);
+    //    Destroy(transform.parent.gameObject);
+    //}
 }
