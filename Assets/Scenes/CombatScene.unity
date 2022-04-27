@@ -1896,8 +1896,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -139.10004, y: 8.400002}
-  m_SizeDelta: {x: -388.2, y: -32.9}
+  m_AnchoredPosition: {x: -139.10004, y: -0.47000122}
+  m_SizeDelta: {x: -388.2, y: -15.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1584004651
 MonoBehaviour:
@@ -1921,7 +1921,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6ee455897a1df114db6047a1bd5f6c10, type: 3}
-    m_FontSize: 40
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -2217,7 +2217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.50980395}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2323,7 +2323,6 @@ MonoBehaviour:
   playerHUD: {fileID: 1727677075}
   enemyHUD: {fileID: 1290496122}
   state: 0
-  minigameCount: 0
 --- !u!4 &1714929644
 Transform:
   m_ObjectHideFlags: 0
