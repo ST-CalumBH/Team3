@@ -14,6 +14,8 @@ public class Unit : MonoBehaviour
 	public int currentHP;
 
 	public GameObject[] minigames;
+	public Minigame playedMinigame;
+	public int minigameCount = 0;
 
 	Camera cam;
 
@@ -40,11 +42,11 @@ public class Unit : MonoBehaviour
 			currentHP = maxHP;
 	}
 
-	public bool PlayMinigame(int index)
-    {
-		GameObject minigame = Instantiate(minigames[index], new Vector3(cam.transform.position.x, cam.transform.position.y, 0), Quaternion.identity);
-		//minigame.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-		return true;
+	public void PlayMinigame(int index)
+	{
+		GameObject playedMinigameGO = Instantiate(minigames[index], new Vector3(cam.transform.position.x, cam.transform.position.y, 0), Quaternion.identity);
+		playedMinigame = playedMinigameGO.GetComponentInChildren<Minigame>();
 	}
-
 }
+
+

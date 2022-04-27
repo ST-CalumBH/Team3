@@ -26,10 +26,10 @@ public class m2PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "obstacle")
+        if (collision.collider.CompareTag("obstacle"))
         {
             Debug.Log("Collision");
-            sceneManager.unscathed = false;
+            sceneManager.failed = true;
         }
     }
 

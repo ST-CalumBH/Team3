@@ -24,9 +24,8 @@ public class BattleSystem : MonoBehaviour
 
 	public BattleState state;
 
-	public int minigameCount = 0;
-
 	Camera cam;
+    private bool gameEnd = false;
 
 	// Start is called before the first frame update
 	void Start()
@@ -57,12 +56,10 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator PlayerAttack()
 	{
-		//bool minigame = false;
-
-		bool gameResult = false;
-		gameResult = playerUnit.PlayMinigame(minigameCount);
-		if (minigameCount < playerUnit.minigames.Length - 1)
-		{ minigameCount++; }
+		playerUnit.PlayMinigame(playerUnit.minigameCount);
+		yield return new WaitUntil(() => !(playerUnit.playedMinigame.isInProgress));
+		if (playerUnit.minigameCount < playerUnit.minigames.Length - 1)
+		{ playerUnit.minigameCount++; }
 
 		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
 
@@ -84,9 +81,15 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator EnemyTurn()
 	{
+		Debug.Log("Enemy Turn");
 		dialogueText.text = enemyUnit.unitName + " attacks!";
 
 		yield return new WaitForSeconds(1f);
+
+		enemyUnit.PlayMinigame(enemyUnit.minigameCount);
+		yield return new WaitUntil(() => !(enemyUnit.playedMinigame.isInProgress));
+		if (enemyUnit.minigameCount < enemyUnit.minigames.Length - 1)
+		{ enemyUnit.minigameCount++; }
 
 		bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
 
