@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LaneDodgeMinigame : Minigame
 {
@@ -15,6 +16,8 @@ public class LaneDodgeMinigame : Minigame
     public List<Warning> warnings;
 
     public GameObject projectile;
+
+    public Text text;
 
     SpriteRenderer lWarningGO;
     SpriteRenderer mWarningGO;
@@ -35,14 +38,14 @@ public class LaneDodgeMinigame : Minigame
         lWarningGO.enabled = false;
         mWarningGO.enabled = false;
         rWarningGO.enabled = false;
-        laneNum = Random.Range(1,4);
+        laneNum = Random.Range(0,3);
         StartCoroutine(ShowWarning());
     }
 
     //Update is called once per frame
     void Update()
     {
-
+        text.text = dodgeCount.ToString();
     }
 
     IEnumerator ShowWarning()
@@ -57,14 +60,22 @@ public class LaneDodgeMinigame : Minigame
 
     private void ShootProjectile()
     {
-        Debug.Log(laneNum.ToString());
-        Transform eggSpawn = laneNum switch
+        if (dodgeCount < 3)
         {
-            0 => lEggSpawn,
-            1 => mEggSpawn,
-            2 => rEggSpawn,
-            _ => mEggSpawn,
-        };
-        Instantiate(projectile, eggSpawn);
+            Transform eggSpawn = laneNum switch
+            {
+                0 => lEggSpawn,
+                1 => mEggSpawn,
+                2 => rEggSpawn,
+                _ => mEggSpawn,
+            };
+            Instantiate(projectile, eggSpawn);
+            laneNum = Random.Range(0, 3);
+            StartCoroutine(ShowWarning());
+        }
+        else
+        {
+            StartCoroutine(EndMinigame());
+        }
     }
 }

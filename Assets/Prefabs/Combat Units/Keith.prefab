@@ -135,6 +135,7 @@ MonoBehaviour:
   maxHP: 30
   currentHP: 30
   minigames:
-  - {fileID: 2344524725474509137, guid: 8a7aa9df00c229742b438c0856e8648e, type: 3}
-  - {fileID: 2344524725474509137, guid: 8a7aa9df00c229742b438c0856e8648e, type: 3}
+  - {fileID: 3660321854510298841, guid: 36980c7b006378b449cc3f5c6e46cdac, type: 3}
+  - {fileID: 3660321854510298841, guid: 36980c7b006378b449cc3f5c6e46cdac, type: 3}
   playedMinigame: {fileID: 0}
+  minigameCount: 0

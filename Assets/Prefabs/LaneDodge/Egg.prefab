@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10ed2e80d73afcd40b72968338c71253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minigame: {fileID: 0}
 --- !u!50 &1457961152
 Rigidbody2D:
   serializedVersion: 4

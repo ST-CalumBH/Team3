@@ -7,7 +7,6 @@ public class PLayerLaneMovement : MonoBehaviour
     public float moveSpeed = 15f;
     public Rigidbody2D rb;
     private Vector2 movement;
-    public LaneDodgeMinigame manager;
     public ParticleSystem hurt;
 
     private void Awake()
@@ -24,9 +23,16 @@ public class PLayerLaneMovement : MonoBehaviour
     {
         if (collision.collider.CompareTag("Obstacle"))
         {
-            manager.dodgeCount = 0;
-            hurt.Play();
+            StartCoroutine(Hurt());
         }
+    }
+
+    IEnumerator Hurt()
+    {
+        ParticleSystem ps = Instantiate(hurt, this.transform);
+        ps.Play();
+        yield return new WaitForSeconds(2f);
+        Destroy(ps);
     }
 
     void FixedUpdate() //movement, physics
