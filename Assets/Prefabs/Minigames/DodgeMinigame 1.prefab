@@ -1170,15 +1170,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3380703257958032284, guid: bcdeab11e706d5f4f995b676f6b17044, type: 3}
-<<<<<<< HEAD:Assets/Prefabs/DodgeMinigame 1.prefab
-      propertyPath: m_SortingLayer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3380703257958032284, guid: bcdeab11e706d5f4f995b676f6b17044, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-=======
       propertyPath: m_Size.x
       value: 1
       objectReference: {fileID: 0}
@@ -1202,7 +1193,6 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
->>>>>>> Combat:Assets/Prefabs/Minigames/DodgeMinigame 1.prefab
     - target: {fileID: 3380703257958032285, guid: bcdeab11e706d5f4f995b676f6b17044, type: 3}
       propertyPath: m_RootOrder
       value: 0

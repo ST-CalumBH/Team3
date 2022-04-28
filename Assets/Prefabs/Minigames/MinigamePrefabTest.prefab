@@ -162,11 +162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c66f0373421aeb4c832061a37273e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD:Assets/Prefabs/MinigamePrefabTest.prefab
-  player: {fileID: 0}
-  playercontroller: {fileID: 0}
-=======
->>>>>>> Combat:Assets/Prefabs/Minigames/MinigamePrefabTest.prefab
 --- !u!1 &9137753763571290598
 GameObject:
   m_ObjectHideFlags: 0

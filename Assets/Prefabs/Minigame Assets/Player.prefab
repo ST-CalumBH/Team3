@@ -77,13 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-<<<<<<< HEAD:Assets/Prefabs/Player.prefab
-  m_Sprite: {fileID: -448850936, guid: 65b19a5defeccba44aa82f6a303a1ceb, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-=======
   m_Sprite: {fileID: 21300000, guid: c561cbbf0d4de8343beb82b95a48ad49, type: 3}
   m_Color: {r: 0.27058825, g: 0.4117647, b: 1, a: 1}
->>>>>>> Combat:Assets/Prefabs/Minigame Assets/Player.prefab
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -157,7 +152,6 @@ MonoBehaviour:
   scenemanager: {fileID: 0}
   enemyMinigame: {fileID: 0}
   minigameLoader: {fileID: 0}
-<<<<<<< HEAD:Assets/Prefabs/Player.prefab
   animator: {fileID: 5048257039169071361}
 --- !u!95 &5048257039169071361
 Animator:
@@ -179,5 +173,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
-=======
->>>>>>> Combat:Assets/Prefabs/Minigame Assets/Player.prefab
