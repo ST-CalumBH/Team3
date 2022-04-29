@@ -9,7 +9,7 @@ public class chargedSpatula : MonoBehaviour
 
     private string minigameStatus; //{ inProgress, win, lose }
 
-    [SerializeField] private float eulerZ;
+    private float eulerZ;
     [SerializeField] private float winSpeed = 3000f;
 
     // Start is called before the first frame update
