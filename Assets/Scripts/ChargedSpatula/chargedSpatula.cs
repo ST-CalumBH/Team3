@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class chargedSpatula : MonoBehaviour
+public class chargedSpatula : Minigame
 {
     public float speedSpatula = 10f;
     public float speedPlayer = 600f;
@@ -66,18 +66,12 @@ public class chargedSpatula : MonoBehaviour
         }
         else
         {
-            StartCoroutine(DestroyMinigame(5)); //might base it on WarioWare style timer?
+            StartCoroutine(EndMinigame());
         }
     }
 
     void lose()
     {
 
-    }
-
-    IEnumerator DestroyMinigame(float time)
-    {
-        yield return new WaitForSeconds(time);
-        Destroy(transform.parent.gameObject);
     }
 }
