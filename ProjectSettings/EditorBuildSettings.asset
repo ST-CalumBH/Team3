@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/homeMainScene.unity
     guid: 948a57c4a37d5454ba171c0632f53a57
   - enabled: 1
+    path: Assets/Scenes/homeMainCutscene.unity
+    guid: 4fbef69bf87456a4cb0be1dbcf0693e8
+  - enabled: 1
     path: Assets/Scenes/CombatScene.unity
     guid: 0f0551b9255eb11488252d963d125e4d
   m_configObjects: {}

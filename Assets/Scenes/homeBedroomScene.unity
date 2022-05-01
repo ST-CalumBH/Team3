@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dece4ff650e0570499fcfc76d8a1441f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: homeMainScene
+  nextScene: homeMainCutscene
 --- !u!212 &24649977
 SpriteRenderer:
   m_ObjectHideFlags: 0
