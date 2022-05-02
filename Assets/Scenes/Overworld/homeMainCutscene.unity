@@ -630,9 +630,9 @@ PlayableDirector:
   - key: {fileID: 0}
     value: {fileID: 0}
   - key: {fileID: 3983105214416512017, guid: 2498e3fde3f50cb4faa50be89e9ddff9, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 803399878}
   - key: {fileID: 8599016523694295295, guid: 2498e3fde3f50cb4faa50be89e9ddff9, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 803399878}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &396316315
@@ -1502,6 +1502,11 @@ SpriteRenderer:
 --- !u!4 &803399877 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7706034308894484301, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+  m_PrefabInstance: {fileID: 7706034308334620552}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &803399878 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7706034308894484296, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
   m_PrefabInstance: {fileID: 7706034308334620552}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &813233994
