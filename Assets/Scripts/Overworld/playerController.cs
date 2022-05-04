@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerController : MonoBehaviour
+public class playerController : MonoBehaviour 
 {
     public float moveSpeed = 15f;
     public Rigidbody2D rb;
@@ -15,6 +15,11 @@ public class playerController : MonoBehaviour
 
     [SerializeField] private GameObject enemyMinigame;
     [SerializeField] private enemyMinigameLoader minigameLoader;
+    [SerializeField] private DialogueUI dialogueUI;
+
+    public DialogueUI DialogueUI => DialogueUI;
+
+    public IInteractable Interactable { get; set; }
 
     public Animator animator;
 
@@ -36,10 +41,15 @@ public class playerController : MonoBehaviour
             animator.SetFloat("Vertical", movement.y);
             animator.SetFloat("Speed", movement.sqrMagnitude);
 
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Interactable?.Interact(this);
+            }
+
             if (inArea && (Input.GetKeyDown(KeyCode.Z)))
             {
                 Interact(minigameLoader);
-                
+              
             }
         }
     }
@@ -79,5 +89,6 @@ public class playerController : MonoBehaviour
         freezePlayer();
         minigame.InstantiateMinigame();
         Debug.Log("Interact Successful");
+
     }
 }
