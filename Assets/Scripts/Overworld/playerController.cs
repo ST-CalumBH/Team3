@@ -17,7 +17,7 @@ public class playerController : MonoBehaviour
     [SerializeField] private enemyMinigameLoader minigameLoader;
     [SerializeField] private DialogueUI dialogueUI;
 
-    public DialogueUI DialogueUI => DialogueUI;
+    public DialogueUI DialogueUI => dialogueUI;
 
     public IInteractable Interactable { get; set; }
 

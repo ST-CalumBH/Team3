@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 554126158}
   - component: {fileID: 554126159}
   - component: {fileID: 554126160}
+  - component: {fileID: 554126161}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -325,7 +326,7 @@ MonoBehaviour:
   enemyMinigame: {fileID: 0}
   minigameLoader: {fileID: 0}
   dialogueUI: {fileID: 1558076568}
-  animator: {fileID: 0}
+  animator: {fileID: 554126161}
 --- !u!58 &554126160
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -342,6 +343,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!95 &554126161
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554126155}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1f1adcde0fe92eb49a503487b6eceb60, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1092462431
 GameObject:
   m_ObjectHideFlags: 0
