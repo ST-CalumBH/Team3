@@ -24,10 +24,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6744052424454005305}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07, y: 1.66, z: 0}
-  m_LocalScale: {x: 0.14, y: 0.14, z: 0.14}
-  m_ConstrainProportionsScale: 1
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 288774692461403}
   m_RootOrder: 0
@@ -136,6 +136,6 @@ MonoBehaviour:
   currentHP: 30
   minigames:
   - {fileID: 9137753762869496136, guid: aa05cf306bb8d5448854e4e8edfa462c, type: 3}
-  - {fileID: 3660321854510298841, guid: 36980c7b006378b449cc3f5c6e46cdac, type: 3}
+  - {fileID: 9137753762869496136, guid: aa05cf306bb8d5448854e4e8edfa462c, type: 3}
   playedMinigame: {fileID: 0}
   minigameCount: 0
