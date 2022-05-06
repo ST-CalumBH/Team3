@@ -9,7 +9,7 @@ public class csEnemy : MonoBehaviour
 
     void Start()
     {
-        direction = new Vector3(Random.Range(0.5f, 2f), Random.Range(0.5f, 1.5f), 0);
+        direction = new Vector3(Random.Range(0.5f, 1f), Random.Range(0.5f, 1.5f), 0);
     }
 
     void Update()
@@ -22,7 +22,7 @@ public class csEnemy : MonoBehaviour
 
     public void Spin()
     {
-        //transform.position += direction;
+        transform.position += direction;
         transform.Rotate(Vector3.back * 1000f * Time.deltaTime);
     }
 
