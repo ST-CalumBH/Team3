@@ -12,10 +12,15 @@ public class chargedSpatula : Minigame
     private float eulerZ;
     [SerializeField] private float winSpeed = 3000f;
 
+    [SerializeField] private GameObject enemy;
+    [SerializeField] private csEnemy controller;
+
     // Start is called before the first frame update
     void Awake()
     {
         minigameStatus = "inProgress";
+        enemy = GameObject.Find("enemy");
+        controller = enemy.GetComponent<csEnemy>();
     }
 
     // Update is called once per frame
@@ -59,6 +64,8 @@ public class chargedSpatula : Minigame
 
     void win()
     {
+        controller.defeatedStateChange();
+
         if (winSpeed > 0)
         {
             transform.Rotate(Vector3.back * winSpeed * Time.deltaTime);
