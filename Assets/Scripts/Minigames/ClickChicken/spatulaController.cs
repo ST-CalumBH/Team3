@@ -58,8 +58,8 @@ public class spatulaController : Minigame
         if (inArea)
         {
             Debug.Log("Chicken has been HIT!");
-            StartCoroutine(EndMinigame());
             //chickenMovement.Hit();
+            StartCoroutine(EndMinigame());
         }
     }
 
@@ -92,7 +92,6 @@ public class spatulaController : Minigame
                 }
             }
         }
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
