@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - CleanUp
   - obstacle
+  - Enemy
   layers:
   - Default
   - TransparentFX
