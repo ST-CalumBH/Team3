@@ -58,7 +58,7 @@ public class spatulaController : Minigame
         if (inArea)
         {
             Debug.Log("Chicken has been HIT!");
-            //chickenMovement.Hit();
+            controller.Hit();
             StartCoroutine(EndMinigame());
         }
     }

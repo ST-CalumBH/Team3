@@ -12,8 +12,8 @@ public class chickenMovement : MonoBehaviour
     private int waitTimer = 0;
     private int waitCount = 60;
 
-    private float[] xCord = { 0f, -0.005f, -0.003f, 0.003f, 0.005f };
-    private float[] yCord = { 0f, -0.005f, -0.003f, 0.003f, 0.005f };
+    private float[] xCord = { 0f, -0.006f, -0.003f, 0.003f, 0.006f };
+    private float[] yCord = { 0f, -0.006f, -0.003f, 0.003f, 0.006f };
 
     void Start()
     {
@@ -54,6 +54,6 @@ public class chickenMovement : MonoBehaviour
 
     public void Hit()
     {
-
+        win = true;
     }
 }
