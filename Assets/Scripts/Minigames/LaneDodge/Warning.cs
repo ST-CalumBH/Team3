@@ -19,16 +19,16 @@ public class Warning : MonoBehaviour
 
     public IEnumerator Flash()
     {
-        Debug.Log("Enum Start");
+        //Debug.Log("Enum Start");
         int i = 0;
         SpriteRenderer tWarning = GetComponent<SpriteRenderer>();
         while (i < flashCount)
         {
             tWarning.enabled = true;
-            Debug.Log("FLASH ON");
+            //Debug.Log("FLASH ON");
             yield return new WaitForSeconds(flashTime);
             tWarning.enabled = false;
-            Debug.Log("FLASH OFF");
+            //Debug.Log("FLASH OFF");
             yield return new WaitForSeconds(flashTime);
             i++;
         }

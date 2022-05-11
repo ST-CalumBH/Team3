@@ -37,7 +37,7 @@ public class SwordDodgeMinigame : Minigame
         lWarningGO.enabled = false;
         mWarningGO.enabled = false;
         rWarningGO.enabled = false;
-        laneNum = 0;//Random.Range(0, 3);
+        laneNum = Random.Range(0, 3);
         StartCoroutine(ShowWarning());
     }
 
@@ -57,20 +57,24 @@ public class SwordDodgeMinigame : Minigame
 
     IEnumerator LeftAttack()
     {
-        Debug.Log("Start Left");
         animator.Play("Base Layer.Left Lane");
-        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0));
-        Debug.Log("Finished Left");
+        yield return new WaitForSeconds(1.07f); //Currently just manually inputting the animation length, but should make a dynamic system.
+        animator.Play("Base Layer.Neutral");
+        StartCoroutine(ShowWarning());
     }
     IEnumerator MiddleAttack()
     {
         animator.Play("Base Layer.Mid Lane");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.07f);
+        animator.Play("Base Layer.Neutral");
+        StartCoroutine(ShowWarning());
     }
     IEnumerator RightAttack()
     {
         animator.Play("Base Layer.Right Lane");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.07f);
+        animator.Play("Base Layer.Neutral");
+        StartCoroutine(ShowWarning());
     }
 
     private void Slash()
