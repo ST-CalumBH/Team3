@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - "Wow this is a cool and epic dresser, however I'm 100%\ngoing to break that alarm
-    clock one day, I hate waking up this \nearly every day."
+    clock one day, I hate \nwaking up this early early every day."

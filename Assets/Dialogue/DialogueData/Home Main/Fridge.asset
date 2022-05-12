@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: Fridge
   m_EditorClassIdentifier: 
   dialogue:
-  - whats up
-  - im am fridge woo
+  - 'Becky from work just loooooves to tell me how much
+
+    she loves her ice maker
+    in her fridge. Like I get it Becky
+
+    not all of us have the funds to afford
+    such luxuries'
+  - I reall wish I had a ice maker :(
