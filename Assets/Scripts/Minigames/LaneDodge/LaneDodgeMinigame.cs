@@ -60,22 +60,24 @@ public class LaneDodgeMinigame : Minigame
 
     private void ShootProjectile()
     {
-        if (dodgeCount < 3)
-        {
-            Transform eggSpawn = laneNum switch
+        Transform eggSpawn = laneNum switch
             {
                 0 => lEggSpawn,
                 1 => mEggSpawn,
                 2 => rEggSpawn,
                 _ => mEggSpawn,
             };
-            Instantiate(projectile, eggSpawn);
-            laneNum = Random.Range(0, 3);
-            StartCoroutine(ShowWarning());
-        }
-        else
-        {
-            StartCoroutine(EndMinigame());
-        }
+        Instantiate(projectile, eggSpawn);
+        laneNum = Random.Range(0, 3);
+    }
+
+    public void CallShowWarning()
+    {
+        StartCoroutine(ShowWarning());
+    }
+
+    public void CallEndMinigame()
+    {
+        StartCoroutine(EndMinigame());
     }
 }

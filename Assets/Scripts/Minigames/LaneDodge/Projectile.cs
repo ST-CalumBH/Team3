@@ -16,14 +16,25 @@ public class Projectile : MonoBehaviour
         if (collision.collider.CompareTag("CleanUp"))
         {
             Debug.Log("Clean Up");
-            Destroy(this.gameObject);
+            
             minigame.dodgeCount++;
+            if (minigame.dodgeCount < 3)
+            {
+                minigame.CallShowWarning();
+            }
+            else
+            {
+                minigame.CallEndMinigame();
+            }
+            Destroy(this.gameObject);
+
         }
         if (collision.collider.CompareTag("Player"))
         {
             Debug.Log("Player");
             Destroy(this.gameObject);
             minigame.dodgeCount = 0;
+            minigame.CallShowWarning();
         }
     }
 }

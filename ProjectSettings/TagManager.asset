@@ -9,6 +9,9 @@ TagManager:
   - CleanUp
   - obstacle
   - Enemy
+  - LeftHitBox
+  - MiddleHitBox
+  - RightHitBox
   layers:
   - Default
   - TransparentFX
