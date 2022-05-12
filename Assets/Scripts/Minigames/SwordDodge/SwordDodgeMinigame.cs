@@ -8,17 +8,21 @@ public class SwordDodgeMinigame : Minigame
     public GameObject animatorGO;
     Animator animator;
 
-    public Warning lWarning;
-    public Warning mWarning;
-    public Warning rWarning;
+    public Warning lWarningGO;
+    public Warning mWarningGO;
+    public Warning rWarningGO;
+
+    public SwordDodgePlayer Player;
 
     public List<Warning> warnings;
 
     public Text text;
 
-    SpriteRenderer lWarningGO;
-    SpriteRenderer mWarningGO;
-    SpriteRenderer rWarningGO;
+    SpriteRenderer lWarning;
+    SpriteRenderer mWarning;
+    SpriteRenderer rWarning;
+
+
 
     int laneNum;
     public int dodgeCount = 0;
@@ -28,15 +32,15 @@ public class SwordDodgeMinigame : Minigame
     {
         animator = animatorGO.GetComponent<Animator>();
         animator.StopPlayback();
-        warnings.Add(lWarning);
-        warnings.Add(mWarning);
-        warnings.Add(rWarning);
-        lWarningGO = lWarning.GetComponent<SpriteRenderer>();
-        mWarningGO = mWarning.GetComponent<SpriteRenderer>();
-        rWarningGO = rWarning.GetComponent<SpriteRenderer>();
-        lWarningGO.enabled = false;
-        mWarningGO.enabled = false;
-        rWarningGO.enabled = false;
+        warnings.Add(lWarningGO);
+        warnings.Add(mWarningGO);
+        warnings.Add(rWarningGO);
+        lWarning = lWarningGO.GetComponent<SpriteRenderer>();
+        mWarning = mWarningGO.GetComponent<SpriteRenderer>();
+        rWarning = rWarningGO.GetComponent<SpriteRenderer>();
+        lWarning.enabled = false;
+        mWarning.enabled = false;
+        rWarning.enabled = false;
         laneNum = Random.Range(0, 3);
         StartCoroutine(ShowWarning());
     }

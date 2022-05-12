@@ -520,8 +520,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765082603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.3, z: 0}
-  m_LocalScale: {x: 3.3765314, y: 0.9709, z: 1}
+  m_LocalPosition: {x: 0, y: -4.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1136285805}
   - component: {fileID: 1136285804}
-  - component: {fileID: 1136285803}
+  - component: {fileID: 1136285806}
   m_Layer: 0
   m_Name: KeithSwordDodge
   m_TagString: Untagged
@@ -545,26 +545,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1136285803
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136285802}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 39e41cd47c126c341b14626fb87baaff, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &1136285804
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -624,14 +604,33 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136285802}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.11, z: 17.13044}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -4.11, z: 0}
   m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1136285806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136285802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 324d713a771453b44a27327113384e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lHitBox: {fileID: 1148468197}
+  mHitBox: {fileID: 765082603}
+  rHitBox: {fileID: 1256448125}
+  HBtransforms:
+  - {fileID: 1148468199}
+  - {fileID: 765082605}
+  - {fileID: 1256448127}
 --- !u!1 &1148468197
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,8 +708,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148468197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.45, y: -4.3, z: 0}
-  m_LocalScale: {x: 3.3765314, y: 0.9709, z: 1}
+  m_LocalPosition: {x: -4, y: -4.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -793,8 +792,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256448125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.45, y: -4.3, z: 0}
-  m_LocalScale: {x: 3.3765314, y: 0.9709, z: 1}
+  m_LocalPosition: {x: 4, y: -4.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1028,9 +1027,9 @@ MonoBehaviour:
   failed: 0
   isInProgress: 1
   animatorGO: {fileID: 1455762136}
-  lWarning: {fileID: 1427103102}
-  mWarning: {fileID: 56405943}
-  rWarning: {fileID: 1832825530}
+  lWarningGO: {fileID: 1427103102}
+  mWarningGO: {fileID: 56405943}
+  rWarningGO: {fileID: 1832825530}
   warnings: []
   text: {fileID: 1493909307}
   dodgeCount: 0
