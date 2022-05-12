@@ -11,6 +11,7 @@ TagManager:
   - LeftHitBox
   - MiddleHitBox
   - RightHitBox
+  - Enemy
   layers:
   - Default
   - TransparentFX

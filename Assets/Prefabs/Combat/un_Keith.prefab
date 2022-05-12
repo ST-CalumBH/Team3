@@ -136,6 +136,6 @@ MonoBehaviour:
   currentHP: 30
   minigames:
   - {fileID: 9137753762869496136, guid: aa05cf306bb8d5448854e4e8edfa462c, type: 3}
-  - {fileID: 9137753762869496136, guid: aa05cf306bb8d5448854e4e8edfa462c, type: 3}
+  - {fileID: 9137753762869496136, guid: 932cccf8034b05e44b28f7d5075d206b, type: 3}
   playedMinigame: {fileID: 0}
   minigameCount: 0
