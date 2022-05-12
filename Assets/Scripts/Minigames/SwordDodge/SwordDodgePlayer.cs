@@ -6,13 +6,6 @@ public enum PositionEnum { LEFT, MIDDLE, RIGHT };
 
 public class SwordDodgePlayer : MonoBehaviour
 {
-    public GameObject lHitBox;
-    public GameObject mHitBox;
-    public GameObject rHitBox;
-
-    Transform lHitBoxTransform;
-    Transform mHitBoxTransform;
-    Transform rHitBoxTransform;
 
     public Transform[] HBtransforms;
     public int curPosition = 1;
@@ -22,9 +15,6 @@ public class SwordDodgePlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lHitBoxTransform = lHitBox.transform;
-        mHitBoxTransform = mHitBox.transform;
-        mHitBoxTransform = rHitBox.transform;
     }
 
     // Update is called once per frame
@@ -65,17 +55,17 @@ public class SwordDodgePlayer : MonoBehaviour
         }   
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.collider.CompareTag("LeftHitBox"))
+        if (other.tag == "LeftHitBox")
         {
             isTouching = PositionEnum.LEFT;
         }
-        if (collision.collider.CompareTag("MiddleHitBox"))
+        if (other.tag == "MiddleHitBox")
         {
             isTouching = PositionEnum.MIDDLE;
         }
-        if (collision.collider.CompareTag("RightHitBox"))
+        if (other.tag == "RightHitBox")
         {
             isTouching = PositionEnum.RIGHT;
         }

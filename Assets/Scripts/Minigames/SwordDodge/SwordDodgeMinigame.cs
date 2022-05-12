@@ -18,14 +18,16 @@ public class SwordDodgeMinigame : Minigame
 
     public Text text;
 
+    public ParticleSystem hurt;
+
     SpriteRenderer lWarning;
     SpriteRenderer mWarning;
     SpriteRenderer rWarning;
 
-
-
     int laneNum;
     public int dodgeCount = 0;
+    public bool isAttacking;
+    bool cooldown = false;
 
     // Start is called before the first frame update
     void Start()
@@ -49,39 +51,45 @@ public class SwordDodgeMinigame : Minigame
     void Update()
     {
         text.text = dodgeCount.ToString();
+        if (!cooldown)
+        {
+            if (isAttacking == true)
+            {
+                switch (laneNum)
+                {
+                    case 0:
+                        if (Player.isTouching == PositionEnum.LEFT)
+                        {
+                            Debug.Log("Left Hit");
+                            dodgeCount = 0;
+                            StartCoroutine(Hurt());
+                            StartCoroutine(CooldownTimer());
+                        }
+                        break;
+                    case 1:
+                        if (Player.isTouching == PositionEnum.MIDDLE)
+                        {
+                            Debug.Log("Middle Hit");
+                            dodgeCount = 0;
+                            StartCoroutine(Hurt());
+                            StartCoroutine(CooldownTimer());
+                        }
+                        break;
+                    case 2:
+                        if (Player.isTouching == PositionEnum.RIGHT)
+                        {
+                            Debug.Log("Right Hit");
+                            dodgeCount = 0;
+                            StartCoroutine(Hurt());
+                            StartCoroutine(CooldownTimer());
+                        }
+                        break;
+                }
+            }
+        }
     }
 
-    IEnumerator ShowWarning()
-    {
-        yield return new WaitForSeconds(1f);
-        warnings[laneNum].StartFlash();
-        yield return new WaitForSeconds(warnings[laneNum].GetTotalFlashTime() + 1f);
-        Slash();
-    }
-
-    IEnumerator LeftAttack()
-    {
-        animator.Play("Base Layer.Left Lane");
-        yield return new WaitForSeconds(1.07f); //Currently just manually inputting the animation length, but should make a dynamic system.
-        animator.Play("Base Layer.Neutral");
-        StartCoroutine(ShowWarning());
-    }
-    IEnumerator MiddleAttack()
-    {
-        animator.Play("Base Layer.Mid Lane");
-        yield return new WaitForSeconds(1.07f);
-        animator.Play("Base Layer.Neutral");
-        StartCoroutine(ShowWarning());
-    }
-    IEnumerator RightAttack()
-    {
-        animator.Play("Base Layer.Right Lane");
-        yield return new WaitForSeconds(1.07f);
-        animator.Play("Base Layer.Neutral");
-        StartCoroutine(ShowWarning());
-    }
-
-    private void Slash()
+    public void Slash()
     {
         switch (laneNum)
         {
@@ -98,7 +106,7 @@ public class SwordDodgeMinigame : Minigame
                 StartCoroutine(MiddleAttack());
             break;
         };
-        laneNum = Random.Range(0, 3);
+        
     }
 
     public void CallShowWarning()
@@ -111,4 +119,78 @@ public class SwordDodgeMinigame : Minigame
         StartCoroutine(EndMinigame());
     }
 
+    public void CheckForTnight()//I love Fortnite
+    {
+        if (dodgeCount == 3)
+        {
+            StartCoroutine(EndMinigame());
+        }
+        else
+        {
+            StartCoroutine(ShowWarning());
+        }
+    }
+
+    IEnumerator ShowWarning()
+    {
+        yield return new WaitForSeconds(1f);
+        warnings[laneNum].StartFlash();
+        yield return new WaitForSeconds(warnings[laneNum].GetTotalFlashTime() + 1f);
+        Slash();
+    }
+
+    IEnumerator LeftAttack()
+    {
+        animator.Play("Base Layer.Left Lane");
+        yield return new WaitForSeconds(0.30f); //Currently just manually inputting the animation length, but should make a dynamic system.
+        isAttacking = true;
+        yield return new WaitForSeconds(0.74f);
+        isAttacking = false;
+        yield return new WaitForSeconds(0.05f);
+        animator.Play("Base Layer.Neutral");
+        laneNum = Random.Range(0, 3);
+        dodgeCount++;
+        CheckForTnight();
+    }
+    IEnumerator MiddleAttack()
+    {
+        animator.Play("Base Layer.Mid Lane");
+        yield return new WaitForSeconds(0.30f);
+        isAttacking = true;
+        yield return new WaitForSeconds(0.74f);
+        isAttacking = false;
+        yield return new WaitForSeconds(0.05f);
+        animator.Play("Base Layer.Neutral");
+        laneNum = Random.Range(0, 3);
+        dodgeCount++;
+        CheckForTnight();
+    }
+    IEnumerator RightAttack()
+    {
+        animator.Play("Base Layer.Right Lane");
+        yield return new WaitForSeconds(0.30f);
+        isAttacking = true;
+        yield return new WaitForSeconds(0.74f);
+        isAttacking = false;
+        yield return new WaitForSeconds(0.05f);
+        animator.Play("Base Layer.Neutral");
+        laneNum = Random.Range(0, 3);
+        dodgeCount++;
+        CheckForTnight();
+    }
+
+    IEnumerator Hurt()
+    {
+        ParticleSystem ps = Instantiate(hurt, Player.transform);
+        ps.Play();
+        yield return new WaitForSeconds(2f);
+        Destroy(ps);
+    }
+
+    IEnumerator CooldownTimer()
+    {
+        cooldown = true;
+        yield return new WaitForSeconds(1.5f);
+        cooldown = false;
+    }
 }
