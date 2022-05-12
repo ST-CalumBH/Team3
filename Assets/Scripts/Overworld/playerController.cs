@@ -86,7 +86,7 @@ public class playerController : MonoBehaviour
     private void Interact(eventTimeline timeline)
     {
         freezePlayer();
-        
+        timeline.beginCutsceneTimeline();
         Debug.Log("Interact Successful");
 
     }

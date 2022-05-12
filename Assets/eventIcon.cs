@@ -58,4 +58,10 @@ public class eventIcon : MonoBehaviour
             }
         }
     }
+
+    public void changeToActiveState()
+    {
+        state = "eventActive";
+        gameObject.SetActive(false);
+    }
 }

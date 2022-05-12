@@ -1,18 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class eventTimeline : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private eventIcon icon;
+    [SerializeField] private PlayableDirector cutscene;
+
+    [SerializeField] private string nextScene;
+
+    public 
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
+    }
+
+    public void beginCutsceneTimeline()
+    {
+        icon.changeToActiveState();
+        cutscene.Play();
     }
 }
