@@ -11,10 +11,9 @@ public class playerController : MonoBehaviour
     private bool inArea;
     private bool playerFreeze;
 
-    [SerializeField] private sceneManager scenemanager;
+    [SerializeField] private GameObject eventTrigger;
+    [SerializeField] private eventTimeline container;
 
-    [SerializeField] private GameObject enemyMinigame;
-    [SerializeField] private enemyMinigameLoader minigameLoader;
     [SerializeField] private DialogueUI dialogueUI;
 
     public DialogueUI DialogueUI => dialogueUI;
@@ -46,9 +45,9 @@ public class playerController : MonoBehaviour
                 Interactable?.Interact(this);
             }
 
-            if (inArea && (Input.GetKeyDown(KeyCode.Z)))
+            if (inArea && (Input.GetKeyDown(KeyCode.E)))
             {
-                Interact(minigameLoader);
+                Interact(container);
               
             }
         }
@@ -59,8 +58,8 @@ public class playerController : MonoBehaviour
         if (other.tag == "Interact")
         {
             inArea = true;
-            enemyMinigame = other.gameObject;
-            minigameLoader = enemyMinigame.GetComponent<enemyMinigameLoader>();
+            eventTrigger = other.gameObject;
+            container = eventTrigger.GetComponent<eventTimeline>();
         }
     }
 
@@ -84,10 +83,10 @@ public class playerController : MonoBehaviour
         playerFreeze = false;
     }
 
-    private void Interact(enemyMinigameLoader minigame)
+    private void Interact(eventTimeline timeline)
     {
         freezePlayer();
-        minigame.InstantiateMinigame();
+        timeline.beginCutsceneTimeline();
         Debug.Log("Interact Successful");
 
     }

@@ -14,4 +14,9 @@ public class SceneTransitionCollider : MonoBehaviour
             SceneManager.LoadScene(nextScene);
         }
     }
+
+    public void changeScene()
+    {
+        SceneManager.LoadScene(nextScene);
+    }
 }
