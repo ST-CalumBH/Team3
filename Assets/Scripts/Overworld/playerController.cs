@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerController : MonoBehaviour 
 {
@@ -50,6 +51,11 @@ public class playerController : MonoBehaviour
                 Interact(container);
               
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("homeBedroomScene");
         }
     }
 

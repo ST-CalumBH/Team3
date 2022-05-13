@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
@@ -35,7 +36,15 @@ public class BattleSystem : MonoBehaviour
 		StartCoroutine(SetupBattle());
     }
 
-	IEnumerator SetupBattle()
+    private void Update()
+    {
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			SceneManager.LoadScene("homeBedroomScene");
+		}
+	}
+
+    IEnumerator SetupBattle()
 	{
 		GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
 		playerUnit = playerGO.GetComponent<Unit>();
