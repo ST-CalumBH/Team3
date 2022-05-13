@@ -20,7 +20,7 @@ public class SwordDodgePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        if (Input.GetKeyUp(KeyCode.A))
         {
             switch(curPosition)
             {
@@ -36,7 +36,7 @@ public class SwordDodgePlayer : MonoBehaviour
                     curPosition = 1;
                     break;
             }
-        }else if (Input.GetKeyUp(KeyCode.RightArrow))
+        }else if (Input.GetKeyUp(KeyCode.D))
         {
             switch (curPosition)
             {

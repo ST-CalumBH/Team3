@@ -49,7 +49,7 @@ public class chargedSpatula : Minigame
         }
             
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             transform.Rotate(Vector3.forward * speedPlayer * Time.deltaTime);
         }
