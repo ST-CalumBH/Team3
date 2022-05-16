@@ -11,8 +11,6 @@ public class eventTimeline : MonoBehaviour
 
     [SerializeField] private string nextScene;
 
-    public 
-
     void Start()
     {
         

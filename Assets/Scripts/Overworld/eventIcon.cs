@@ -10,8 +10,8 @@ public class eventIcon : MonoBehaviour
     private bool floatUp;
     private int floatCounter;
 
-    private Vector3 vectorUp = (Vector3.up / 700);
-    private Vector3 vectorDown = (Vector3.down / 700);
+    private Vector3 vectorUp = (Vector3.up / 100);
+    private Vector3 vectorDown = (Vector3.down / 100);
 
     void Start()
     {
@@ -21,7 +21,7 @@ public class eventIcon : MonoBehaviour
     }
 
     
-    void Update()
+    void FixedUpdate()
     {
         switch (state)
         {
@@ -40,7 +40,7 @@ public class eventIcon : MonoBehaviour
             transform.position += vectorUp;
             floatCounter++;
 
-            if (floatCounter == 300)
+            if (floatCounter == 100)
             {
                 floatUp = false;
                 floatCounter = 0;
@@ -51,7 +51,7 @@ public class eventIcon : MonoBehaviour
             transform.position += vectorDown;
             floatCounter++;
 
-            if (floatCounter == 300)
+            if (floatCounter == 100)
             {
                 floatUp = true;
                 floatCounter = 0;

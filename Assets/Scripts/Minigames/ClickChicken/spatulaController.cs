@@ -16,7 +16,7 @@ public class spatulaController : Minigame
     private bool inArea = false;
     private bool isGrowing = true;
     private int scaleTimer = 0;
-    private Vector3 scaleChange = new Vector3(0.005f, 0.005f, 0.005f);
+    private Vector3 scaleChange = new Vector3(0.02f, 0.02f, 0f);
 
     void Start()
     {
@@ -34,13 +34,13 @@ public class spatulaController : Minigame
         {
             Swat();
         }
-
-        ChangeSize();
     }
 
     void FixedUpdate() //movement, physics
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+        ChangeSize();
     }
 
     public void Swat()
@@ -72,7 +72,7 @@ public class spatulaController : Minigame
                 transform.localScale -= scaleChange;
                 scaleTimer++;
 
-                if (scaleTimer == 20)
+                if (scaleTimer == 5)
                 {
                     isGrowing = false;
                     scaleTimer = 0;
@@ -84,7 +84,7 @@ public class spatulaController : Minigame
                 transform.localScale += scaleChange;
                 scaleTimer++;
 
-                if (scaleTimer == 20)
+                if (scaleTimer == 5)
                 {
                     isGrowing = true;
                     scaleTimer = 0;

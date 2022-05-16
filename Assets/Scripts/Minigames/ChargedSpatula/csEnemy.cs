@@ -9,10 +9,10 @@ public class csEnemy : MonoBehaviour
 
     void Start()
     {
-        direction = new Vector3(Random.Range(0.01f, 0.02f), Random.Range(0.01f, 0.02f), 0);
+        direction = new Vector3(Random.Range(0.06f, 0.1f), Random.Range(0.06f, 0.1f), 0);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (defeated == true)
         {

@@ -12,8 +12,8 @@ public class chickenMovement : MonoBehaviour
     private int waitTimer = 0;
     private int waitCount = 60;
 
-    private float[] xCord = { 0f, -0.006f, -0.003f, 0.003f, 0.006f };
-    private float[] yCord = { 0f, -0.006f, -0.003f, 0.003f, 0.006f };
+    private float[] xCord = { 0f, -0.06f, -0.03f, 0.03f, 0.06f };
+    private float[] yCord = { 0f, -0.06f, -0.03f, 0.03f, 0.06f };
 
     void Start()
     {
@@ -22,6 +22,15 @@ public class chickenMovement : MonoBehaviour
     }
 
     void Update()
+    {
+        //if (win == false)
+        //{
+        //    DirectionModifier();
+        //    Movement();
+        //}
+    }
+
+    private void FixedUpdate()
     {
         if (win == false)
         {
@@ -41,7 +50,7 @@ public class chickenMovement : MonoBehaviour
             y = yCord[yindex];
 
             waitTimer = 0;
-            waitCount = Random.Range(60, 240);
+            waitCount = Random.Range(15, 60);
         }
 
         waitTimer++;

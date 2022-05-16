@@ -5,7 +5,7 @@ using UnityEngine;
 public class chargedSpatula : Minigame
 {
     public float speedSpatula = 10f;
-    public float speedPlayer = 600f;
+    public float speedPlayer = 100f;
 
     private string minigameStatus; //{ inProgress, win, lose }
 
@@ -15,7 +15,6 @@ public class chargedSpatula : Minigame
     [SerializeField] private GameObject enemy;
     [SerializeField] private csEnemy controller;
 
-    // Start is called before the first frame update
     void Awake()
     {
         minigameStatus = "inProgress";
@@ -23,8 +22,23 @@ public class chargedSpatula : Minigame
         controller = enemy.GetComponent<csEnemy>();
     }
 
-    // Update is called once per frame
     void Update()
+    {
+        switch (minigameStatus)
+        {
+            case "inProgress":
+                SpatulaMovement(); 
+                break;
+            case "win": // win and lose movement is done in fixedUpdate() could delete them
+                break;
+            case "lose":
+                break;
+            default:
+                break;
+        }
+    }
+
+    void FixedUpdate()
     {
         switch (minigameStatus)
         {
@@ -36,6 +50,8 @@ public class chargedSpatula : Minigame
                 break;
             case "lose":
                 break;
+            default:
+                break;
         }
     }
 
@@ -45,20 +61,20 @@ public class chargedSpatula : Minigame
 
         if (eulerZ >= 0)
         {
-            transform.Rotate(Vector3.back * speedSpatula * Time.deltaTime);
+            transform.Rotate(Vector3.back * speedSpatula * Time.fixedDeltaTime);
         }
-            
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            transform.Rotate(Vector3.forward * speedPlayer * Time.deltaTime);
-        }
-
-        Debug.Log("inProgress");
 
         if (eulerZ >= 0.9f)
         {
             minigameStatus = "win";
+        }
+    }
+
+    void SpatulaMovement()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            transform.Rotate(Vector3.forward * speedPlayer * Time.deltaTime);
         }
     }
 
@@ -68,8 +84,8 @@ public class chargedSpatula : Minigame
 
         if (winSpeed > 0)
         {
-            transform.Rotate(Vector3.back * winSpeed * Time.deltaTime);
-            winSpeed -= 10f;
+            transform.Rotate(Vector3.back * winSpeed * Time.fixedDeltaTime);
+            winSpeed -= 50f;
         }
         else
         {
