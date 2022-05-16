@@ -41,6 +41,12 @@ public class playerController : MonoBehaviour
             animator.SetFloat("Vertical", movement.y);
             animator.SetFloat("Speed", movement.sqrMagnitude);
 
+            if (movement.x == 1 || movement.x == -1 || movement.y == 1 || movement.y == -1)
+            {
+                animator.SetFloat("lastMoveX", movement.x);
+                animator.SetFloat("lastMoveY", movement.y);
+            }
+
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Interactable?.Interact(this);
