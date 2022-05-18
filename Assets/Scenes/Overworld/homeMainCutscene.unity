@@ -2153,7 +2153,7 @@ Transform:
   - {fileID: 1794541466}
   - {fileID: 1178094426}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1214148231
 PrefabInstance:
@@ -3666,6 +3666,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2090421566 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7960704008933148865, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+  m_PrefabInstance: {fileID: 6304825844450867739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2114071218
 GameObject:
   m_ObjectHideFlags: 0
@@ -3678,7 +3683,7 @@ GameObject:
   - component: {fileID: 2114071219}
   m_Layer: 0
   m_Name: Overworld_1_8_bit_rough_mix
-  m_TagString: Untagged
+  m_TagString: Music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3697,7 +3702,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3786,13 +3791,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114071218}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.2667407, y: -1.1147585, z: 0.02624492}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 2090421566}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &197774048693855723
 PrefabInstance:
@@ -3927,6 +3932,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
+--- !u!1001 &6304825844450867739
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4083356481799431448, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: m_Name
+      value: MusicPersistentManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125305283162979353, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: instanceName
+      value: Overworld_1_8_bit_rough_mix
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125305283162979353, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: sceneNames.Array.data[0]
+      value: homeBedroomScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125305283162979353, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: sceneNames.Array.data[1]
+      value: homeMainCutscene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960704008933148865, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960704008933148865, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.2667407
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960704008933148865, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1147585
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960704008933148865, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.02624492
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960704008933148865, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960704008933148865, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960704008933148865, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960704008933148865, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960704008933148865, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960704008933148865, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960704008933148865, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
 --- !u!1001 &7706034308334620552
 PrefabInstance:
   m_ObjectHideFlags: 0
