@@ -28,6 +28,8 @@ public class playerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         inArea = false;
         playerFreeze = false;
+
+        Interactable?.Interact(this); // Launches Dialogue on Awake
     }
 
     private void Update() //inputs
