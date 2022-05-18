@@ -25,7 +25,7 @@ public class SheepJumpController : MonoBehaviour
     }
 
     private void Jump() {
-        m_Animator.Play("SheepKeithJump");
+        m_Animator.Play("PlayerJump");
     }
 
     void OnTriggerEnter2D (Collider2D col)
