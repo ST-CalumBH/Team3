@@ -7,6 +7,9 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text textLabel;
 
+    private GameObject player;
+    private playerController playercontroller;
+
     public bool IsOpen { get; private set; }
 
     private TypewriterEffect typewriterEffect;
@@ -15,6 +18,9 @@ public class DialogueUI : MonoBehaviour
     {
         typewriterEffect = GetComponent<TypewriterEffect>();
         CloseDialogueBox();
+
+        player = GameObject.Find("Player");
+        playercontroller = player.GetComponent<playerController>();
     }
 
     public void ShowDialogue(DialogueObject dialogueObject)
@@ -41,5 +47,6 @@ public class DialogueUI : MonoBehaviour
         IsOpen = false;
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
+        playercontroller.unfreezePlayer();
     }
 }
