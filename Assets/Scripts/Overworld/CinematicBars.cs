@@ -50,16 +50,7 @@ public class CinematicBars : MonoBehaviour
             }
             topBar.sizeDelta = sizeDelta;
             bottomBar.sizeDelta = sizeDelta;
-        }
-
-        if (Input.GetKeyDown(KeyCode.E)) {
-            show(300);
-        }
-
-        if (Input.GetKeyDown(KeyCode.F)) {
-            hide(.3f);
-        }
-            
+        }   
     }
 
     public void show(float targetSize)
