@@ -27,5 +27,6 @@ public class DialogueActivator : MonoBehaviour, IInteractable
    public void Interact(playerController player)
     {
         player.DialogueUI.ShowDialogue(dialogueObject);
+        player.freezePlayer();
     }
 }

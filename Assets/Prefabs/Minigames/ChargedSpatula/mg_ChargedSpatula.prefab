@@ -278,7 +278,7 @@ MonoBehaviour:
   failed: 0
   isInProgress: 1
   speedSpatula: 10
-  speedPlayer: 1800
+  speedPlayer: 300
   winSpeed: 2500
   enemy: {fileID: 0}
   controller: {fileID: 0}
