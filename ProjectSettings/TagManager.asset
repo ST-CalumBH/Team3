@@ -12,6 +12,7 @@ TagManager:
   - LeftHitBox
   - MiddleHitBox
   - RightHitBox
+  - Music
   layers:
   - Default
   - TransparentFX
