@@ -16,11 +16,11 @@ public class DialogueUI : MonoBehaviour
 
     private void Start()
     {
-        typewriterEffect = GetComponent<TypewriterEffect>();
-        CloseDialogueBox();
-
         player = GameObject.Find("Player");
         playercontroller = player.GetComponent<playerController>();
+
+        typewriterEffect = GetComponent<TypewriterEffect>();
+        CloseDialogueBox();
     }
 
     public void ShowDialogue(DialogueObject dialogueObject)

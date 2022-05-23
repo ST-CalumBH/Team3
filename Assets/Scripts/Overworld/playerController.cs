@@ -29,7 +29,7 @@ public class playerController : MonoBehaviour
         inArea = false;
         playerFreeze = false;
 
-        Interactable?.Interact(this); // should launch Dialogue on Awake
+        Interactable?.Interact(this); // should launch Dialogue on Awake, but doesn't
     }
 
     private void Update() //inputs
