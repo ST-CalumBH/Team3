@@ -5,25 +5,22 @@ using UnityEngine;
 public class backgroundAnimController : MonoBehaviour
 {
     public GameObject BackgroundObject;
+    public string AnimName;
     Animator Animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        BackgroundObject.GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        Animator = BackgroundObject.GetComponent<Animator>();
         
+        Animator.StopPlayback();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            Animator.Play("Disco");
+            Animator.Play("Base Layer."+AnimName);
         }
     }
 }

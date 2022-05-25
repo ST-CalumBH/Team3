@@ -557,10 +557,11 @@ GameObject:
   m_Component:
   - component: {fileID: 314648580}
   - component: {fileID: 314648583}
-  - component: {fileID: 314648582}
   - component: {fileID: 314648581}
+  - component: {fileID: 314648585}
+  - component: {fileID: 314648584}
   m_Layer: 8
-  m_Name: Entrance
+  m_Name: Controller
   m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -574,12 +575,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314648579}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0094, y: 5, z: 0}
-  m_LocalScale: {x: 8.049685, y: 2.2403998, z: 1}
+  m_LocalPosition: {x: 0.0094, y: 5.3369, z: 0}
+  m_LocalScale: {x: 8.049685, y: 1.5664876, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2005772586}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &314648581
 BoxCollider2D:
@@ -607,19 +608,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &314648582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 314648579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dece4ff650e0570499fcfc76d8a1441f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextScene: homeBedroomScene
 --- !u!212 &314648583
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -672,6 +660,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &314648584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314648579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ecc234b77deb34f954f621a6604b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1177013966}
+--- !u!114 &314648585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314648579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b265f7a7c5274a41817c0e8c966c823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BackgroundObject: {fileID: 1512675564}
+  AnimName: Disco
 --- !u!4 &489948420 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 197774049572998480, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
@@ -1020,8 +1035,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586397259}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.0648, y: 2.0651, z: 0}
-  m_LocalScale: {x: 0.14740008, y: 3.6042967, z: 1}
+  m_LocalPosition: {x: -4.0648, y: 3.1977, z: 0}
+  m_LocalScale: {x: 0.14740008, y: 5.869597, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 633740815}
@@ -1724,6 +1739,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7706034308894484279, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
   m_PrefabInstance: {fileID: 163357000}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1177013966 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7706034308894484299, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+  m_PrefabInstance: {fileID: 163357000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177013962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266ccd02feae90a489458ea4377e9fd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1187342761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1984,6 +2010,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1512675565}
   - component: {fileID: 1512675566}
+  - component: {fileID: 1512675567}
   m_Layer: 0
   m_Name: BG
   m_TagString: Untagged
@@ -2058,6 +2085,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1512675567
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512675564}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 298b2d139ae2f7a4a8d508f2ea0731d9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1520864440
 GameObject:
   m_ObjectHideFlags: 0
@@ -2585,8 +2632,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1917369727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0648, y: 2.0687, z: 0}
-  m_LocalScale: {x: 0.14740008, y: 3.6115563, z: 1}
+  m_LocalPosition: {x: 4.0648, y: 3.1916, z: 0}
+  m_LocalScale: {x: 0.14740008, y: 5.8572216, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 633740815}
@@ -2781,38 +2828,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2005772585
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2005772586}
-  m_Layer: 0
-  m_Name: Flags
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2005772586
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005772585}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 314648580}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2085150057
 GameObject:
   m_ObjectHideFlags: 0
