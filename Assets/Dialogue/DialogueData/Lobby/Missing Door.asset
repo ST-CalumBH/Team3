@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Uh oh!
-  - Looks like the artist did get to finish this section.
+  - Looks like the artist didn't get to finish this section.
   - 'Better take the left lift. '
