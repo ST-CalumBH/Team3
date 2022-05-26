@@ -13,6 +13,7 @@ public class officeLobbyGameController : MonoBehaviour
     [SerializeField] private GameObject leftDoor;
     [SerializeField] private GameObject midDoor;
     [SerializeField] private GameObject rightDoor;
+    [SerializeField] private GameObject Parent;
     Animator leftDoorAnim;
     Animator midDoorAnim;
     Animator rightDoorAnim;
@@ -133,17 +134,22 @@ public class officeLobbyGameController : MonoBehaviour
                 midDoorSR.enabled = true;
                 midDoorAnim.Play("Base Layer.DuckDoor");
                 yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
+                leftDoorSR.enabled = true;
+                leftDoorAnim.Play("Base Layer.CorrectDoor");
                 break;
             case 2:
                 player.DialogueUI.ShowDialogue(blankDialogue);
                 rightDoorSR.enabled = true;
                 rightDoorAnim.Play("Base Layer.MissingDoor");
                 yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
+                leftDoorSR.enabled = true;
+                leftDoorAnim.Play("Base Layer.CorrectDoor");
                 break;
         }
+        Parent.SetActive(false);
         player.unfreezePlayer();
         player.moveSpeed = playerSpeed;
         yield return new WaitForSeconds(0f);
-
+        
     } 
 }
