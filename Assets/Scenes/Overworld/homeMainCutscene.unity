@@ -416,6 +416,8 @@ PlayableDirector:
     value: {fileID: 1962416790}
   - key: {fileID: -6799495137805130266, guid: bbc861c158cff904c9a84878f8225e74, type: 2}
     value: {fileID: 1962416793}
+  - key: {fileID: 5224035553575948982, guid: bbc861c158cff904c9a84878f8225e74, type: 2}
+    value: {fileID: 2051181864}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &97516911
@@ -4262,7 +4264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changeSizeAmount: 0
   targetSize: 300
-  isActive: 1
+  isActive: 0
 --- !u!95 &2051181864
 Animator:
   serializedVersion: 4
