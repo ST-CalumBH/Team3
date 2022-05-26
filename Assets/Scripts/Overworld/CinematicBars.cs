@@ -9,7 +9,7 @@ public class CinematicBars : MonoBehaviour
     [SerializeField] private float changeSizeAmount;
     [SerializeField] private float targetSize;
 
-    [SerializeField] private bool isActive = true;
+    [SerializeField] private bool isActive = false;
 
     void Awake()
     {
@@ -50,7 +50,17 @@ public class CinematicBars : MonoBehaviour
             }
             topBar.sizeDelta = sizeDelta;
             bottomBar.sizeDelta = sizeDelta;
-        }   
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            show(300f);
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            hide(.3f);
+        }
     }
 
     public void show(float targetSize)
