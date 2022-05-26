@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Correct Door
   m_EditorClassIdentifier: 
   dialogue:
-  - You must be Psychic!
+  - You must be psychic!
   - You guessed the correct door!

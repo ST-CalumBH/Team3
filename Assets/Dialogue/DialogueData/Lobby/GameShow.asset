@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameShow
   m_EditorClassIdentifier: 
   dialogue:
-  - 'Hello and Welcome to the show tonight!
+  - 'Hello and welcome to the show tonight!
 
 '
   - Today we welcome Keith, our esteemed contestant, to guess the correct lift!
@@ -22,4 +22,4 @@ MonoBehaviour:
     ...
 
     ...'
-  - "Anyway, \nLet us begin!"
+  - "Anyway, \nlet us begin!"
