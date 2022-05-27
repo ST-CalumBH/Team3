@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1360c88e71a0c7498b2b96985a1ddd1, type: 3}
-  m_Name: Kettle
+  m_Name: Locked door 1
   m_EditorClassIdentifier: 
   dialogue:
-  - '*Kettle noises'
+  - "This room has been under renovation for months now, I want my bathroom back,
+    I hate having to use the office toilets and visiting \nmy neighbour Shareen,
+    she's pretty judgy"

@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1360c88e71a0c7498b2b96985a1ddd1, type: 3}
-  m_Name: Kettle
+  m_Name: Locked door 3
   m_EditorClassIdentifier: 
   dialogue:
-  - '*Kettle noises'
+  - "My wife never let me go in here, not even when we bought the\nhouse, even though
+    she is gone it still feels like taboo to peak \ninside."
