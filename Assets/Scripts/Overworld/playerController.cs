@@ -28,6 +28,8 @@ public class playerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         inArea = false;
         playerFreeze = false;
+
+        Interactable?.Interact(this); // should launch Dialogue on Awake, but doesn't
     }
 
     private void Update() //inputs
@@ -99,7 +101,5 @@ public class playerController : MonoBehaviour
     {
         freezePlayer();
         timeline.beginCutsceneTimeline();
-        Debug.Log("Interact Successful");
-
     }
 }
