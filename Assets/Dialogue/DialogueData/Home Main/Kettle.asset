@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Kettle
   m_EditorClassIdentifier: 
   dialogue:
-  - Kettle noises
+  - '*Kettle noises'

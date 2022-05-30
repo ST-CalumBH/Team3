@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Microwave
   m_EditorClassIdentifier: 
   dialogue:
-  - ribbit
+  - "Is there a difference between cheap and expensive microwaves?\nI mean does it
+    just heat food faster? Is that healthy? \nWhat are microwaves anyway, how do
+    they work?"
