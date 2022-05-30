@@ -56,7 +56,7 @@ public class CinematicBars : MonoBehaviour
     public void show(float targetSize)
     {
         this.targetSize = targetSize;
-        changeSizeAmount =  (targetSize - topBar.sizeDelta.y) / .3f;
+        changeSizeAmount = (targetSize - topBar.sizeDelta.y) / .3f;
         isActive = true;
     }
 
