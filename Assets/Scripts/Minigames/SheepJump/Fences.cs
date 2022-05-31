@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Parallax : MonoBehaviour
+public class Fences : MonoBehaviour
 {
-    public float depth = 1;
+
     Player player;
 
     private void Awake()
@@ -12,25 +12,28 @@ public class Parallax : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Player>();
 
     }
-
-
+ 
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+
+    void Update()
     {
-        float realVelocity = player.velocity.x / depth;
+        
+    }
+
+    private void FixedUpdate()
+    {
         Vector2 pos = transform.position;
 
-        pos.x -= realVelocity * Time.fixedDeltaTime;
+        pos.x -= player.velocity.x * Time.fixedDeltaTime;
 
         if (pos.x <= -28)
             pos.x = 49;
 
-            transform.position = pos;
+        transform.position = pos;
 
     }
 }

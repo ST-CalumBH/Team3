@@ -19,9 +19,11 @@ public class Player : MonoBehaviour
     public float maxHoldJumpTime = 0.15f;
     public float holdJumpTimer = 0.0f;
 
+    private Animator animator;
+
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
 
