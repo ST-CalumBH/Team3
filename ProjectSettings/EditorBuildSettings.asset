@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TitleScreen.unity
+    path: Assets/Scenes/titleScreen.unity
     guid: e2e0a243fa6f2d149b238cd49fbfcf19
   - enabled: 1
     path: Assets/Scenes/Overworld/homeBedroomScene.unity
@@ -26,4 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Overworld/officeScene.unity
     guid: d884ca35797d79f43bf35e7b4454e739
+  - enabled: 1
+    path: Assets/Scenes/Overworld/Post Combat Home Scenes/postCombatHomeScene.unity
+    guid: 801f01ff99534b04093f4ddc2ca7194a
+  - enabled: 1
+    path: Assets/Scenes/Overworld/Post Combat Home Scenes/postCombatHomeScene2.unity
+    guid: c931b4a84d79c1541976513529fbef96
+  - enabled: 1
+    path: Assets/Scenes/Overworld/Post Combat Home Scenes/postCombatBedroomScene.unity
+    guid: 845faddbc77e72b4b8f0619edb0226c9
   m_configObjects: {}
