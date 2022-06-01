@@ -13,4 +13,14 @@ MonoBehaviour:
   m_Name: Fridge
   m_EditorClassIdentifier: 
   dialogue:
-  - 
+  - 'Guess what Becky, this fridge doesn''t have an ice maker either,
+
+    kinda
+    sucks you have to work in a place without one.'
+  - I hate Becky.
+  - '...
+
+    ...
+
+    ...'
+  - I want an ice maker :(
