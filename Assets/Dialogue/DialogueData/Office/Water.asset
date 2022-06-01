@@ -13,4 +13,14 @@ MonoBehaviour:
   m_Name: Water
   m_EditorClassIdentifier: 
   dialogue:
-  - 
+  - 'Ah the amount of office hours I''ve wasted because of this thing.
+
+    Its a
+    cycle you see, Workplace Health and Safetly asks for workers
+
+    to not be seated
+    longer than 30 minutes without a break'
+  - "So every 30 minutes I go get a cup of water. Of course those \nwaters add up
+    and I will obviously have to... dispose of that liquid eventually. "
+  - "Therefore mathmatically, water time plus pee time equals me \nwasting much of
+    the businesses time and still getting paid for it."
