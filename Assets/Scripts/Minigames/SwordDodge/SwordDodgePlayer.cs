@@ -7,6 +7,10 @@ public enum PositionEnum { LEFT, MIDDLE, RIGHT };
 public class SwordDodgePlayer : MonoBehaviour
 {
 
+    [SerializeField] private AudioClip woosh;
+
+    AudioSource audioSource;
+
     public Transform[] HBtransforms;
     public int curPosition = 1;
     
@@ -15,6 +19,7 @@ public class SwordDodgePlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,10 +33,12 @@ public class SwordDodgePlayer : MonoBehaviour
                     Debug.Log("Left Wall");
                     break;
                 case 1:
+                    audioSource.PlayOneShot(woosh);
                     transform.position = HBtransforms[0].position;
                     curPosition = 0;
                     break;
                 case 2:
+                    audioSource.PlayOneShot(woosh);
                     transform.position = HBtransforms[1].position;
                     curPosition = 1;
                     break;
@@ -41,10 +48,12 @@ public class SwordDodgePlayer : MonoBehaviour
             switch (curPosition)
             {
                 case 0:
+                    audioSource.PlayOneShot(woosh);
                     transform.position = HBtransforms[1].position;
                     curPosition = 1;
                     break;
                 case 1:
+                    audioSource.PlayOneShot(woosh);
                     transform.position = HBtransforms[2].position;
                     curPosition = 2;
                     break;
