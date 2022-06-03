@@ -99,6 +99,23 @@ public class Player : MonoBehaviour
             }
         }
 
+        Vector2 obstOrigin = new Vector2(pos.x, pos.y);
+        RaycastHit2D obstHitX = Physics2D.Raycast(obstOrigin, Vector2.right, velocity.x * Time.fixedDeltaTime);
+        if (obstHitX.collider != null)
+        {
+            Fences fences = obstHitX.collider.GetComponent<Fences>();
+            if(fences != null)
+            {
+                hitObstacle(fences);
+            }
+        }
+
         transform.position = pos;
+    }
+
+    void hitObstacle( Fences fences)
+    {
+        Destroy(fences.gameObject);
+        
     }
 }
