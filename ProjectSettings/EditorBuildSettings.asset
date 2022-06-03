@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/titleScreen.unity
     guid: e2e0a243fa6f2d149b238cd49fbfcf19
   - enabled: 1
+    path: Assets/Scenes/Testing/sheepTest.unity
+    guid: 810b7f9c1cf1a4d4cb9ef5a50a2fa328
+  - enabled: 1
     path: Assets/Scenes/Overworld/homeBedroomScene.unity
     guid: 92155ae81a58a0347be3fdc3395790a7
   - enabled: 1
