@@ -207,7 +207,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1165809471363184300
+--- !u!1001 &1092124735
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -216,7 +216,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1165809471205156286, guid: 9490a6a017885cd45b97ea79db21f3db, type: 3}
       propertyPath: m_Name
-      value: SwordDodgeMinigame
+      value: mg_SwordDodgeMinigame
       objectReference: {fileID: 0}
     - target: {fileID: 1165809471205156287, guid: 9490a6a017885cd45b97ea79db21f3db, type: 3}
       propertyPath: m_RootOrder

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1360c88e71a0c7498b2b96985a1ddd1, type: 3}
+  m_Name: Fridge
+  m_EditorClassIdentifier: 
+  dialogue:
+  - 'Guess what Becky, this fridge doesn''t have an ice maker either,
+
+    kinda
+    sucks you have to work in a place without one.'
+  - I hate Becky.
+  - '...
+
+    ...
+
+    ...'
+  - I want an ice maker :(

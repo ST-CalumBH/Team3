@@ -15,11 +15,18 @@ public class chargedSpatula : Minigame
     [SerializeField] private GameObject enemy;
     [SerializeField] private csEnemy controller;
 
+    [SerializeField] private float chargePoint;
+
+    [SerializeField] private AudioClip whack;
+
+    AudioSource AS;
+
     void Awake()
     {
         minigameStatus = "inProgress";
         enemy = GameObject.Find("enemy");
         controller = enemy.GetComponent<csEnemy>();
+        AS = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -64,8 +71,9 @@ public class chargedSpatula : Minigame
             transform.Rotate(Vector3.back * speedSpatula * Time.fixedDeltaTime);
         }
 
-        if (eulerZ >= 0.9f)
+        if (eulerZ >= chargePoint)
         {
+            AS.PlayOneShot(whack);
             minigameStatus = "win";
         }
     }

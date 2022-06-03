@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bed
   m_EditorClassIdentifier: 
   dialogue:
-  - Please let me go back to bed, if this was a video game or something the designers
-    would definitely let me sleep, probably for a joke or something
+  - "Please let me go back to bed, if this was a video game or \nsomething the designers
+    would definitely let me sleep, probably \nfor a joke or something"
   - Alas, it is not, the reality of the situation is dawning on me
   - Please... Please let me sleep

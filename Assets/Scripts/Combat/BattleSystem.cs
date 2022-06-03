@@ -8,6 +8,7 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
 {
+	[SerializeField] private string nextScene;
 
 	public GameObject playerPrefab;
 	public GameObject enemyPrefab;
@@ -122,14 +123,22 @@ public class BattleSystem : MonoBehaviour
 
 	}
 
+	IEnumerator EndCombat()
+    {
+		yield return new WaitForSeconds(1f);
+		SceneManager.LoadScene(nextScene);
+	}
+
 	void EndBattle()
 	{
 		if(state == BattleState.WON)
 		{
 			dialogueText.text = "You won the battle!";
+			StartCoroutine(EndCombat());
 		} else if (state == BattleState.LOST)
 		{
 			dialogueText.text = "You were defeated.";
+			StartCoroutine(EndCombat());
 		}
 	}
 

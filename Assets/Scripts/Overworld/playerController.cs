@@ -23,6 +23,8 @@ public class playerController : MonoBehaviour
 
     public Animator animator;
 
+    float playerSpeed;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -89,12 +91,18 @@ public class playerController : MonoBehaviour
 
     public void freezePlayer()
     {
+        //playerSpeed = moveSpeed;
         playerFreeze = true;
+        //moveSpeed = 0f;
+        //animator.SetFloat("Horizontal", 0);
+        //animator.SetFloat("Vertical", 0);
+        //animator.SetFloat("Speed", 0);
     }
 
     public void unfreezePlayer()
     {
         playerFreeze = false;
+        //moveSpeed = playerSpeed;
     }
 
     private void Interact(eventTimeline timeline)

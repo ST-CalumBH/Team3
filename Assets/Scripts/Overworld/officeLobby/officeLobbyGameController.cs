@@ -5,15 +5,30 @@ using UnityEngine;
 public class officeLobbyGameController : MonoBehaviour
 {
     [SerializeField] private playerController player;
+
     [SerializeField] private DialogueObject dialogueObject;
     [SerializeField] private DialogueObject correctDialogue;
     [SerializeField] private DialogueObject duckDialogue;
     [SerializeField] private DialogueObject blankDialogue;
+
     [SerializeField] private GameObject doorSelector;
+    [SerializeField] private SpriteRenderer eSpriteRenderer;
     [SerializeField] private GameObject leftDoor;
     [SerializeField] private GameObject midDoor;
     [SerializeField] private GameObject rightDoor;
+
     [SerializeField] private GameObject Parent;
+
+    [SerializeField] private AudioSource sceneAudioSource;
+
+    [SerializeField] private AudioClip elevatorDing;
+    [SerializeField] private AudioClip correctSound;
+    [SerializeField] private AudioClip incorrectSound;
+    //[SerializeField] private AudioClip doorNoise;
+    //[SerializeField] private AudioClip normalMusic;
+    //[SerializeField] private AudioClip gameshowMusic;
+
+
     Animator leftDoorAnim;
     Animator midDoorAnim;
     Animator rightDoorAnim;
@@ -40,6 +55,7 @@ public class officeLobbyGameController : MonoBehaviour
         midDoorSR = midDoor.GetComponent<SpriteRenderer>();
         rightDoorSR = rightDoor.GetComponent<SpriteRenderer>();
         dsSpriteRenderer.enabled = false;
+        eSpriteRenderer.enabled = false;
         leftDoorSR.enabled = false;
         midDoorSR.enabled = false;
         rightDoorSR.enabled = false;
@@ -115,34 +131,42 @@ public class officeLobbyGameController : MonoBehaviour
         yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
         gameStart = true;
         dsSpriteRenderer.enabled = true;
+        eSpriteRenderer.enabled = true;
         dsAnimator.Play("Base Layer.MidDoorIdle");
     }
 
     private IEnumerator Check()
     {
         dsSpriteRenderer.enabled = false;
+        eSpriteRenderer.enabled = false;
+        sceneAudioSource.PlayOneShot(elevatorDing,0.25f);
         switch (curPosition)
         {
             case 0:
+                sceneAudioSource.PlayOneShot(correctSound);
                 player.DialogueUI.ShowDialogue(correctDialogue);
                 leftDoorSR.enabled = true;
                 leftDoorAnim.Play("Base Layer.CorrectDoor");
                 yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
                 break;
             case 1:
+                sceneAudioSource.PlayOneShot(incorrectSound);
                 player.DialogueUI.ShowDialogue(duckDialogue);
                 midDoorSR.enabled = true;
                 midDoorAnim.Play("Base Layer.DuckDoor");
                 yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
                 leftDoorSR.enabled = true;
+                sceneAudioSource.PlayOneShot(elevatorDing, 0.25f);
                 leftDoorAnim.Play("Base Layer.CorrectDoor");
                 break;
             case 2:
+                sceneAudioSource.PlayOneShot(incorrectSound);
                 player.DialogueUI.ShowDialogue(blankDialogue);
                 rightDoorSR.enabled = true;
                 rightDoorAnim.Play("Base Layer.MissingDoor");
                 yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
                 leftDoorSR.enabled = true;
+                sceneAudioSource.PlayOneShot(elevatorDing, 0.25f);
                 leftDoorAnim.Play("Base Layer.CorrectDoor");
                 break;
         }
