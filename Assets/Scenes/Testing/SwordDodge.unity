@@ -207,7 +207,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1165809471363184300
+--- !u!1001 &1092124735
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -216,7 +216,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1165809471205156286, guid: 9490a6a017885cd45b97ea79db21f3db, type: 3}
       propertyPath: m_Name
-      value: SwordDodgeMinigame
+      value: mg_SwordDodgeMinigame
       objectReference: {fileID: 0}
     - target: {fileID: 1165809471205156287, guid: 9490a6a017885cd45b97ea79db21f3db, type: 3}
       propertyPath: m_RootOrder
@@ -262,5 +262,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1165809472051366295, guid: 9490a6a017885cd45b97ea79db21f3db, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165809472051366295, guid: 9490a6a017885cd45b97ea79db21f3db, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165809472051366295, guid: 9490a6a017885cd45b97ea79db21f3db, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165809472051366295, guid: 9490a6a017885cd45b97ea79db21f3db, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 2dbd0d5de30c9e845b96a82ef1cb1a2d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9490a6a017885cd45b97ea79db21f3db, type: 3}

@@ -5,6 +5,9 @@ using UnityEngine;
 public class chickenMovement : MonoBehaviour
 {
     [SerializeField] private int lives;
+
+    private Animator anim;
+
     private bool win = false;
 
     private float x;
@@ -12,13 +15,14 @@ public class chickenMovement : MonoBehaviour
     private int waitTimer = 0;
     private int waitCount = 60;
 
-    private float[] xCord = { 0f, -0.06f, -0.03f, 0.03f, 0.06f };
-    private float[] yCord = { 0f, -0.06f, -0.03f, 0.03f, 0.06f };
+    private float[] xCord = { 0f, -0.1f, -0.05f, 0.05f, 0.1f };
+    private float[] yCord = { 0f, -0.1f, -0.05f, 0.05f, 0.1f };
 
     void Start()
     {
         x = 0f;
         y = 0f;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -63,6 +67,7 @@ public class chickenMovement : MonoBehaviour
 
     public void Hit()
     {
+        anim.Play("hit");
         win = true;
     }
 }

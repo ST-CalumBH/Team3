@@ -13,11 +13,7 @@ MonoBehaviour:
   m_Name: Fridge
   m_EditorClassIdentifier: 
   dialogue:
-  - 'Becky from work just loooooves to tell me how much
-
-    she loves her ice maker
-    in her fridge. Like I get it Becky
-
-    not all of us have the funds to afford
-    such luxuries'
+  - "Becky from work just loooooves to tell me how much she loves \nher ice maker
+    in her fridge. Like I get it Becky not all of us have \nthe funds to afford such
+    luxuries."
   - I reall wish I had a ice maker :(

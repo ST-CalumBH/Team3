@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1360c88e71a0c7498b2b96985a1ddd1, type: 3}
+  m_Name: Donuts
+  m_EditorClassIdentifier: 
+  dialogue:
+  - MMMMMMMMM Donuts...
+  - "I actually have no idea who brings these in everyday, I bet its \nMalcom he's
+    the best, he's the kind of guy to bring people stuff \neach day. "
+  - "Couldnt hurt to have one now, \nMmm, ugh, yeah thats a day old, didnt know what
+    else expect \nhonestly. No one else is here, how could this be a fresh batch?"

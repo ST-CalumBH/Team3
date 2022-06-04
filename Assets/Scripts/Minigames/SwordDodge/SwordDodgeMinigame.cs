@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class SwordDodgeMinigame : Minigame
 {
+    [SerializeField] private AudioClip clang;
+
+    AudioSource audioSource;
+
     public GameObject animatorGO;
     Animator animator;
 
@@ -32,6 +36,7 @@ public class SwordDodgeMinigame : Minigame
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         animator = animatorGO.GetComponent<Animator>();
         animator.StopPlayback();
         warnings.Add(lWarningGO);
@@ -144,6 +149,7 @@ public class SwordDodgeMinigame : Minigame
         animator.Play("Base Layer.Left Lane");
         yield return new WaitForSeconds(0.30f); //Currently just manually inputting the animation length, but should make a dynamic system.
         isAttacking = true;
+        audioSource.PlayOneShot(clang);
         yield return new WaitForSeconds(0.74f);
         isAttacking = false;
         yield return new WaitForSeconds(0.05f);
@@ -157,6 +163,7 @@ public class SwordDodgeMinigame : Minigame
         animator.Play("Base Layer.Mid Lane");
         yield return new WaitForSeconds(0.30f);
         isAttacking = true;
+        audioSource.PlayOneShot(clang);
         yield return new WaitForSeconds(0.74f);
         isAttacking = false;
         yield return new WaitForSeconds(0.05f);
@@ -170,6 +177,7 @@ public class SwordDodgeMinigame : Minigame
         animator.Play("Base Layer.Right Lane");
         yield return new WaitForSeconds(0.30f);
         isAttacking = true;
+        audioSource.PlayOneShot(clang);
         yield return new WaitForSeconds(0.74f);
         isAttacking = false;
         yield return new WaitForSeconds(0.05f);

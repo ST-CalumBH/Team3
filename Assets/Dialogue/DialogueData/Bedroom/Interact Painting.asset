@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Interact Painting
   m_EditorClassIdentifier: 
   dialogue:
-  - This painting really speaks to me. Like deep down this painting was always apart
-    of me. The description spoke about "space" and progression, wonder what it meant.
-  - 'I heard there''s a second painting of this style was made as well, I think from
-    memory it was titled "I can interact with every object in this world", sounds
-    deep '
+  - "This painting really speaks to me. Like deep down this painting \nwas always
+    apart of me. The description spoke about \"space\" \nand progression, wonder
+    what it meant."
+  - "I heard there's a second painting of this style was made as well, \nI think
+    from memory it was titled \"I can interact with every object \nin this world\",
+    sounds deep."

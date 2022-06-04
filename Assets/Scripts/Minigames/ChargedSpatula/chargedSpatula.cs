@@ -4,22 +4,29 @@ using UnityEngine;
 
 public class chargedSpatula : Minigame
 {
-    public float speedSpatula = 10f;
-    public float speedPlayer = 100f;
+    public float speedSpatula;
+    public float speedPlayer;
 
     private string minigameStatus; //{ inProgress, win, lose }
 
     private float eulerZ;
-    [SerializeField] private float winSpeed = 3000f;
+    [SerializeField] private float winSpeed;
 
     [SerializeField] private GameObject enemy;
     [SerializeField] private csEnemy controller;
+
+    [SerializeField] private float chargePoint;
+
+    [SerializeField] private AudioClip whack;
+
+    AudioSource AS;
 
     void Awake()
     {
         minigameStatus = "inProgress";
         enemy = GameObject.Find("enemy");
         controller = enemy.GetComponent<csEnemy>();
+        AS = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -64,8 +71,9 @@ public class chargedSpatula : Minigame
             transform.Rotate(Vector3.back * speedSpatula * Time.fixedDeltaTime);
         }
 
-        if (eulerZ >= 0.9f)
+        if (eulerZ >= chargePoint)
         {
+            AS.PlayOneShot(whack);
             minigameStatus = "win";
         }
     }
@@ -74,7 +82,7 @@ public class chargedSpatula : Minigame
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.Rotate(Vector3.forward * speedPlayer * Time.deltaTime);
+            transform.Rotate(Vector3.forward * speedPlayer * Time.fixedDeltaTime);
         }
     }
 
