@@ -45,6 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneNames:
-  - 
-  - 
+  - homeBedroomScene
+  - homeBedroomScene
+  - officeCutsceneAlphaDemo
+  - officeLobbyScene
+  - officeScene
+  - postCombatBedroomScene
+  - postCombatHomeScene
+  - postCombatHomeScene2
   instanceName: 
