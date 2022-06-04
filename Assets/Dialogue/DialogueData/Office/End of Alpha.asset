@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: End of Alpha
   m_EditorClassIdentifier: 
   dialogue:
-  - "Congrats, youve reached the end of the alpha! Feel free to explore\nthe office,
+  - "Congrats, you've reached the end of the alpha! Feel free to explore\nthe office,
     you can interact with the environment and see what  \nwe are working on next."
   - 'When you are ready, you can return to the title screen or quit the
 
