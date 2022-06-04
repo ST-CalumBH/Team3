@@ -68,7 +68,7 @@ public class BattleSystem : MonoBehaviour
 	{
 		dialogueText.text = "Keith attacks!";
 
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(3f);
 
 		enemyUnit.PlayMinigame(enemyUnit.minigameCount);
 		yield return new WaitUntil(() => !(enemyUnit.playedMinigame.isInProgress));
@@ -78,7 +78,7 @@ public class BattleSystem : MonoBehaviour
 		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
 
 		enemyHUD.SetHP(enemyUnit.currentHP);
-		dialogueText.text = "The attack is successful!";
+		dialogueText.text = "Take that good sir";
 
 		yield return new WaitForSeconds(2f);
 
@@ -96,7 +96,7 @@ public class BattleSystem : MonoBehaviour
 	IEnumerator EnemyTurn()
 	{
 		Debug.Log("Enemy Turn");
-		dialogueText.text = enemyUnit.unitName + " attacks!";
+		dialogueText.text = enemyUnit.unitName + " attacks! Uh Oh";
 
 		yield return new WaitForSeconds(1f);
 
@@ -109,7 +109,7 @@ public class BattleSystem : MonoBehaviour
 
 		playerHUD.SetHP(playerUnit.currentHP);
 
-		yield return new WaitForSeconds(2f);
+		yield return new WaitForSeconds(0f);
 
 		if(isDead)
 		{
@@ -133,7 +133,7 @@ public class BattleSystem : MonoBehaviour
 	{
 		if(state == BattleState.WON)
 		{
-			dialogueText.text = "You won the battle!";
+			dialogueText.text = "AHA, breakfast served sunny side up ;)";
 			StartCoroutine(EndCombat());
 		} else if (state == BattleState.LOST)
 		{
