@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: TV
   m_EditorClassIdentifier: 
   dialogue:
-  - 'I sent in my application for The Bachelor last week '
+  - I sent in my application for The Bachelor last week.

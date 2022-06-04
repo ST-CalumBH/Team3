@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Desk 6
   m_EditorClassIdentifier: 
   dialogue:
-  - 
+  - "This is Jack's desk, a good mate and a good bloke. Tends to get a \nlittle tempered
+    when playing games sometimes, but he's absolutely \nhilarious"

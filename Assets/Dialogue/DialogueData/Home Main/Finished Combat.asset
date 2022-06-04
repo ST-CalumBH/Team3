@@ -10,7 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1360c88e71a0c7498b2b96985a1ddd1, type: 3}
-  m_Name: Desk 7
+  m_Name: Finished Combat
   m_EditorClassIdentifier: 
   dialogue:
-  - I honestly have no idea who works here and I honestly don't care.
+  - 'Well that was uhh... Interesting to uhh... Say the least...
+
+    ...
+
+    ...'
+  - "Anywayssss I have more important things to do than worry about \nthan sentient
+    chickens that hatched from an egg weilding a sword\nand cladded in knights armour.
+    Like making it to work on time."

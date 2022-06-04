@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1360c88e71a0c7498b2b96985a1ddd1, type: 3}
-  m_Name: Desk 7
+  m_Name: Front Desk
   m_EditorClassIdentifier: 
   dialogue:
-  - I honestly have no idea who works here and I honestly don't care.
+  - "Shouldn't there be someone here?\nIf she doesn't sign me in, do I get paid?
+    I could wait but my feet get \nsore. Why aren't there any chairs in this lobby?"
+  - "I feel like that is some sort of OHS violation but I don't get paid \nenough
+    to care. I'm going upstairs."

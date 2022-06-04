@@ -532,22 +532,22 @@ PrefabInstance:
     - target: {fileID: 416894365728401840, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: dialogueObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 32d88b9e8015a744da613923649d3327, type: 2}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Size.x
-      value: 5.5347085
+      value: 7.9640417
       objectReference: {fileID: 0}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Size.y
-      value: 11.41054
+      value: 7.322149
       objectReference: {fileID: 0}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Offset.x
-      value: -0.009159803
+      value: 1.2055068
       objectReference: {fileID: 0}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Offset.y
-      value: 0.39541912
+      value: -3.1893299
       objectReference: {fileID: 0}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_IsTrigger
@@ -1663,7 +1663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 197774049572998480, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.39999998
+      value: 0.42199996
       objectReference: {fileID: 0}
     - target: {fileID: 197774049572998480, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_LocalScale.y
@@ -1675,7 +1675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 197774049572998480, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.77
+      value: -9.7087
       objectReference: {fileID: 0}
     - target: {fileID: 197774049572998480, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1756,22 +1756,22 @@ PrefabInstance:
     - target: {fileID: 416894365728401840, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: dialogueObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 12aa3b625ed4b5b4584a57e05ca16810, type: 2}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Size.x
-      value: 5.5347085
+      value: 7.9187174
       objectReference: {fileID: 0}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Size.y
-      value: 11.41054
+      value: 6.564317
       objectReference: {fileID: 0}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Offset.x
-      value: -0.009159803
+      value: 1.1828451
       objectReference: {fileID: 0}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Offset.y
-      value: 0.39541912
+      value: -2.027692
       objectReference: {fileID: 0}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_IsTrigger
@@ -2295,22 +2295,22 @@ PrefabInstance:
     - target: {fileID: 416894365728401840, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: dialogueObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 791a9f744608a5a4e91ff08d18d7d0fa, type: 2}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Size.x
-      value: 5.5347085
+      value: 7.8636246
       objectReference: {fileID: 0}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Size.y
-      value: 11.41054
+      value: 7.63679
       objectReference: {fileID: 0}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Offset.x
-      value: -0.009159803
+      value: 1.1552982
       objectReference: {fileID: 0}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Offset.y
-      value: 0.39541912
+      value: -2.968231
       objectReference: {fileID: 0}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_IsTrigger
@@ -3462,22 +3462,22 @@ PrefabInstance:
     - target: {fileID: 416894365728401840, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: dialogueObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 610ab627007bb6f4c8a226cd0a20cfad, type: 2}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Size.x
-      value: 20.312508
+      value: 22.505096
       objectReference: {fileID: 0}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Size.y
-      value: 14.359308
+      value: 16.609596
       objectReference: {fileID: 0}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Offset.x
-      value: 0.14805031
+      value: 0.3211503
       objectReference: {fileID: 0}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Offset.y
-      value: 0.011025429
+      value: -1.1141195
       objectReference: {fileID: 0}
     - target: {fileID: 3416784849199644044, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_IsTrigger

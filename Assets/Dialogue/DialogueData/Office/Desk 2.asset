@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: Desk 2
   m_EditorClassIdentifier: 
   dialogue:
-  - 
+  - 'This is Samuele''s desk, he''s quite the gamer, he stutters a little
+
+    but
+    he''s fun to talk to. Samuele and jack are probably the only
+
+    people in this
+    office I hang out with outside office hours.'
