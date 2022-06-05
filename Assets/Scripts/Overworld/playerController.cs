@@ -61,11 +61,11 @@ public class playerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+       /* if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene("homeBedroomScene");
-        }
-    }
+        }*/
+    } 
 
     private void OnTriggerEnter2D(Collider2D other)
     {

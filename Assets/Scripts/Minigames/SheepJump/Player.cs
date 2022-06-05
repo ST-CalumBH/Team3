@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-      public float gravity;
+    public float gravity;
     public Vector2 velocity;
     public float maxAcceleration = 10;
     public float maxXVelocity = 100;
@@ -14,7 +15,7 @@ public class Player : MonoBehaviour
     public float groundHeight = 2;
     public bool isGrounded = false;
 
-    
+
     public bool isHoldingJump = false;
     public float maxHoldJumpTime = 0.15f;
     public float holdJumpTimer = 0.0f;
@@ -52,26 +53,26 @@ public class Player : MonoBehaviour
 
         Vector2 pos = transform.position;
 
-       if (!isGrounded)
+        if (!isGrounded)
         {
-            if(isHoldingJump)
+            if (isHoldingJump)
             {
                 holdJumpTimer += Time.fixedDeltaTime;
-                if (holdJumpTimer>= maxHoldJumpTime)
+                if (holdJumpTimer >= maxHoldJumpTime)
                 {
                     isHoldingJump = false;
                 }
 
             }
             pos.y += velocity.y * Time.fixedDeltaTime;
-            if(!isHoldingJump)
+            if (!isHoldingJump)
             {
-   velocity.y += gravity * Time.fixedDeltaTime;
+                velocity.y += gravity * Time.fixedDeltaTime;
             }
-         
+
 
             //ground collision
-            if(pos.y <= groundHeight)
+            if (pos.y <= groundHeight)
             {
                 pos.y = groundHeight;
                 isGrounded = true;
@@ -86,8 +87,8 @@ public class Player : MonoBehaviour
         // UI score/ counter thing
 
 
-       //speed up on ground and cap speed
-       if (isGrounded)
+        //speed up on ground and cap speed
+        if (isGrounded)
         {
             float velocityRatio = velocity.x / maxXVelocity;
             acceleration = maxAcceleration * (1 - velocityRatio);
@@ -104,7 +105,7 @@ public class Player : MonoBehaviour
         if (obstHitX.collider != null)
         {
             Fences fences = obstHitX.collider.GetComponent<Fences>();
-            if(fences != null)
+            if (fences != null)
             {
                 hitObstacle(fences);
             }
@@ -113,9 +114,9 @@ public class Player : MonoBehaviour
         transform.position = pos;
     }
 
-    void hitObstacle( Fences fences)
+    void hitObstacle(Fences fences)
     {
         Destroy(fences.gameObject);
-        
+        SceneManager.LoadScene("homeBedroomScene");
     }
 }
