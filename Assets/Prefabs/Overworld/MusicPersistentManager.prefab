@@ -48,10 +48,10 @@ MonoBehaviour:
   - homeBedroomScene
   - homeBedroomScene
   - officeCutsceneAlphaDemo
+  - transitionScene
   - officeLobbyScene
   - officeScene
   - postCombatBedroomScene
   - postCombatHomeScene
   - postCombatHomeScene2
-  - transitionScene
   instanceName: 

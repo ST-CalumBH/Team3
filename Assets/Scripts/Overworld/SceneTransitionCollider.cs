@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class SceneTransitionCollider : MonoBehaviour
 {
     [SerializeField] private string nextScene;
+
+    playerController player;
     
     public Animator transition;
 
@@ -15,6 +17,8 @@ public class SceneTransitionCollider : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            player = FindObjectOfType<playerController>();
+            player.freezePlayer();
             changeScene();
         }
     }
