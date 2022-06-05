@@ -13,6 +13,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pauseMenuUI;
     [SerializeField] playerController player;
 
+
+    // Start is called before the first frame update
     void Start()
     {
         pauseMenuUI.SetActive(false);
