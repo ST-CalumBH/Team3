@@ -61,6 +61,14 @@ public class playerController : MonoBehaviour
                 Interact(container);
               
             }
+        } else
+        {
+            movement.x = 0f;
+            movement.y = 0f;
+
+            animator.SetFloat("Horizontal", 0);
+            animator.SetFloat("Vertical", 0);
+            animator.SetFloat("Speed", 0);
         }
 
         if (Input.GetKeyDown(KeyCode.R))
