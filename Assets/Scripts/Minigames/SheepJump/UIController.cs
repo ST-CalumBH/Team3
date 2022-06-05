@@ -25,5 +25,5 @@ public class UIController : MonoBehaviour
     {
         int distance = Mathf.FloorToInt(player.distance);
         distanceText.text = distance + " m";
-    }
+            }
 }

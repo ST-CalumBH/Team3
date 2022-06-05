@@ -83,7 +83,10 @@ public class Player : MonoBehaviour
 
         //gaining distance
         distance += velocity.x * Time.fixedDeltaTime;
-
+        if(distance >= 1000f)
+        {
+            SceneManager.LoadScene("homeBedroomScene");
+        }
         // UI score/ counter thing
 
 
@@ -119,4 +122,6 @@ public class Player : MonoBehaviour
         Destroy(fences.gameObject);
         SceneManager.LoadScene("homeBedroomScene");
     }
+
+    
 }
