@@ -53,4 +53,5 @@ MonoBehaviour:
   - postCombatBedroomScene
   - postCombatHomeScene
   - postCombatHomeScene2
+  - transitionScene
   instanceName: 

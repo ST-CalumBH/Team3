@@ -5,24 +5,44 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoadDialogue : MonoBehaviour
 {
-    [SerializeField] DialogueUI dialogueBox; //Canvas with DialogueUI script attached 
-    [SerializeField] DialogueObject dialogueObject; //Dialogue object to be played
+    [SerializeField] private DialogueObject content; //Dialogue object to be played
+
+    playerController player;
+    float playerSpeed;
     bool isActive = false;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        if (isActive == false)
+        player = FindObjectOfType<playerController>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
         {
-            StartCoroutine(PlayDialogue());
+            if (isActive == false)
+            {
+                StartCoroutine(PlayDialogue());
+            }
         }
     }
-    
+
     IEnumerator PlayDialogue()
     {
-        dialogueBox.ShowDialogue(dialogueObject); //the line that plays the script from dialogue object
+        player.DialogueUI.ShowDialogue(content); //the line that plays the script from dialogue object
         isActive = true;
-        yield return new WaitUntil(() => dialogueBox.IsOpen == false);
+
+        playerSpeed = player.moveSpeed;
+        player.freezePlayer();
+        player.moveSpeed = 0f;
+        player.animator.SetFloat("Horizontal", 0);
+        player.animator.SetFloat("Vertical", 0);
+        player.animator.SetFloat("Speed", 0);
+
+        yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
+        player.unfreezePlayer();
+        player.moveSpeed = playerSpeed;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
