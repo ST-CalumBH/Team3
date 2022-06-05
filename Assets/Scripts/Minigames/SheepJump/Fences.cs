@@ -30,7 +30,7 @@ public class Fences : MonoBehaviour
 
         pos.x -= player.velocity.x * Time.fixedDeltaTime;
 
-        if (pos.x <= -18)
+        if (pos.x <= -12)
             pos.x = 49;
 
         transform.position = pos;
