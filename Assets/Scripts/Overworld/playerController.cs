@@ -25,11 +25,17 @@ public class playerController : MonoBehaviour
 
     float playerSpeed;
 
+    [SerializeField] private AudioClip carpetSFX;
+
+    AudioSource AS;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        AS = GetComponent<AudioSource>();
         inArea = false;
         playerFreeze = false;
+
 
         Interactable?.Interact(this); // should launch Dialogue on Awake, but doesn't
     }
@@ -61,7 +67,8 @@ public class playerController : MonoBehaviour
                 Interact(container);
               
             }
-        } else
+        } 
+        else
         {
             movement.x = 0f;
             movement.y = 0f;
@@ -75,6 +82,16 @@ public class playerController : MonoBehaviour
         {
             SceneManager.LoadScene("homeBedroomScene");
         }
+
+        if (animator.GetFloat("Speed") > 0)
+        {
+            PlayAudioClip();
+        }
+        else
+        {
+            AS.Stop();
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -117,5 +134,13 @@ public class playerController : MonoBehaviour
     {
         freezePlayer();
         timeline.beginCutsceneTimeline();
+    }
+
+    public void PlayAudioClip()
+    {
+        if (!AS.isPlaying)
+        {
+            AS.PlayOneShot(carpetSFX);
+        }
     }
 }

@@ -5819,6 +5819,10 @@ PrefabInstance:
       value: -1.68
       objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484299, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+      propertyPath: carpetSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: f373de096a9950448ba700498c5b0b73, type: 3}
+    - target: {fileID: 7706034308894484299, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: moveSpeed
       value: 8
       objectReference: {fileID: 0}

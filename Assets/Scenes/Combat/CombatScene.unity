@@ -2591,6 +2591,7 @@ MonoBehaviour:
   playerHUD: {fileID: 808901624}
   enemyHUD: {fileID: 810834378}
   state: 0
+  player: {fileID: 1908309660}
 --- !u!4 &1714929644
 Transform:
   m_ObjectHideFlags: 0
