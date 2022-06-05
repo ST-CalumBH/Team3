@@ -78,21 +78,11 @@ public class playerController : MonoBehaviour
             animator.SetFloat("Speed", 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+       /* if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene("homeBedroomScene");
-        }
-
-        if (animator.GetFloat("Speed") > 0)
-        {
-            PlayAudioClip();
-        }
-        else
-        {
-            AS.Stop();
-        }
-
-    }
+        }*/
+    } 
 
     private void OnTriggerEnter2D(Collider2D other)
     {

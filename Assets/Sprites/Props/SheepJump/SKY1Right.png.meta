@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 82f3e1037200b114aa64a664a46bee6b
+guid: b50e15f9ad5c5ee4abbd5418ff6a1d8e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -100,41 +100,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WALK02_0
+      name: SKY1Right_0
       rect:
         serializedVersion: 2
-        x: 49
-        y: 1
-        width: 28
-        height: 41
+        x: 192
+        y: 32
+        width: 192
+        height: 76
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d811ee2dd9cec4b44af27aa3c1b88e3e
-      internalID: -833598692
+      spriteID: a00eff88664c4df498bd8cef40463547
+      internalID: 933961725
       vertices: []
       indices: 
       edges: []
@@ -159,7 +135,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WALK02_0: -833598692
+      SKY1Right_0: 933961725
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
