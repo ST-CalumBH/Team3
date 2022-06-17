@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 5e645833c24d49a49a258b7924a66f6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -363,12 +363,13 @@ MonoBehaviour:
   failed: 0
   isInProgress: 1
   speedSpatula: 10
-  speedPlayer: 300
-  winSpeed: 2500
+  speedPlayer: 120
+  winSpeed: 900
   enemy: {fileID: 0}
   controller: {fileID: 0}
-  chargePoint: 0.45
+  chargePoint: 0.3
   whack: {fileID: 8300000, guid: e4cc582298f16494386c7a106acb848a, type: 3}
+  animator: {fileID: 8688902624002202327}
 --- !u!82 &3883861697022090450
 AudioSource:
   m_ObjectHideFlags: 0
@@ -694,6 +695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2264487929887437669}
   - component: {fileID: 7113878853791358700}
+  - component: {fileID: 8688902624002202327}
   m_Layer: 9
   m_Name: spatula
   m_TagString: Untagged
@@ -755,10 +757,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1000235715
+  m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 1f0af8a3f5c0f6a4ca0ebb6385ac33f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e7cd586527b07c4f8fcb114eeb76cd5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -769,6 +771,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8688902624002202327
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7748813760812273875}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c62b3a4371315c545963546f759d0d9f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8829218957185398248
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +863,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 184334041778d5242942d2c3fd0e1997, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
