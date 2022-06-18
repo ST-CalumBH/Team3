@@ -30,15 +30,14 @@ public class SceneLoadDialogue : MonoBehaviour
 
     IEnumerator PlayDialogue()
     {
-        player.DialogueUI.ShowDialogue(content); //the line that plays the script from dialogue object
         isActive = true;
-
+        player.DialogueUI.ShowDialogue(content); //the line that plays the script from dialogue object
         playerSpeed = player.moveSpeed;
         player.freezePlayer();
-        player.moveSpeed = 0f;
-        player.animator.SetFloat("Horizontal", 0);
-        player.animator.SetFloat("Vertical", 0);
-        player.animator.SetFloat("Speed", 0);
+        //player.moveSpeed = 0f;
+        //player.animator.SetFloat("Horizontal", 0);
+        //player.animator.SetFloat("Vertical", 0);
+        //player.animator.SetFloat("Speed", 0);
 
         yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
         player.unfreezePlayer();

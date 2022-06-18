@@ -7,27 +7,21 @@ public class playerController : MonoBehaviour
 {
     public float moveSpeed = 15f;
     public Rigidbody2D rb;
-    private Vector2 movement;
-
-    private bool inArea;
-    private bool playerFreeze;
+    public Animator animator;
+    public DialogueUI DialogueUI => dialogueUI;
 
     [SerializeField] private GameObject eventTrigger;
     [SerializeField] private eventTimeline container;
-
     [SerializeField] private DialogueUI dialogueUI;
-
-    public DialogueUI DialogueUI => dialogueUI;
-
-    public IInteractable Interactable { get; set; }
-
-    public Animator animator;
-
-    float playerSpeed;
-
     [SerializeField] private AudioClip carpetSFX;
 
-    AudioSource AS;
+    private bool inArea;
+    private bool playerFreeze;//boolean for determining if the player is frozen or not, controlling if the update function accepts input for 
+    private float playerSpeed;//keeps a reference of the player speed to apply when the player is unfrozen
+    private Vector2 movement;
+    private AudioSource AS;
+
+    public IInteractable Interactable { get; set; }
 
     private void Awake()
     {
@@ -35,13 +29,14 @@ public class playerController : MonoBehaviour
         AS = GetComponent<AudioSource>();
         inArea = false;
         playerFreeze = false;
-
+        playerSpeed = moveSpeed;
 
         Interactable?.Interact(this); // should launch Dialogue on Awake, but doesn't
     }
 
     private void Update() //inputs
     {
+        
         if (playerFreeze == false)
         {
             movement.x = Input.GetAxisRaw("Horizontal");
@@ -68,16 +63,6 @@ public class playerController : MonoBehaviour
               
             }
         } 
-        else
-        {
-            movement.x = 0f;
-            movement.y = 0f;
-
-            animator.SetFloat("Horizontal", 0);
-            animator.SetFloat("Vertical", 0);
-            animator.SetFloat("Speed", 0);
-        }
-
        /* if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene("homeBedroomScene");
@@ -106,18 +91,17 @@ public class playerController : MonoBehaviour
 
     public void freezePlayer()
     {
-        //playerSpeed = moveSpeed;
         playerFreeze = true;
-        //moveSpeed = 0f;
-        //animator.SetFloat("Horizontal", 0);
-        //animator.SetFloat("Vertical", 0);
-        //animator.SetFloat("Speed", 0);
+        moveSpeed = 0f;
+        animator.SetFloat("Horizontal", 0);
+        animator.SetFloat("Vertical", 0);
+        animator.SetFloat("Speed", 0);
     }
 
     public void unfreezePlayer()
     {
         playerFreeze = false;
-        //moveSpeed = playerSpeed;
+        moveSpeed = playerSpeed;
     }
 
     private void Interact(eventTimeline timeline)
