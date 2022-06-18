@@ -20,6 +20,7 @@ public class playerController : MonoBehaviour
     private float playerSpeed;//keeps a reference of the player speed to apply when the player is unfrozen
     private Vector2 movement;
     private AudioSource AS;
+    private PauseMenu menu;
 
     public IInteractable Interactable { get; set; }
 
@@ -32,11 +33,12 @@ public class playerController : MonoBehaviour
         playerSpeed = moveSpeed;
 
         Interactable?.Interact(this); // should launch Dialogue on Awake, but doesn't
+        menu = FindObjectOfType<PauseMenu>();
     }
 
     private void Update() //inputs
     {
-        
+
         if (playerFreeze == false)
         {
             movement.x = Input.GetAxisRaw("Horizontal");
@@ -60,14 +62,22 @@ public class playerController : MonoBehaviour
             if (inArea && (Input.GetKeyDown(KeyCode.E)))
             {
                 Interact(container);
-              
+
             }
-        } 
-       /* if (Input.GetKeyDown(KeyCode.R))
+        }
+        if (menu.isGamePaused && playerFreeze == false)//checks if the game is paused and if the player is unfrozen, then freezes the player
+        {
+            freezePlayer();
+        }
+        else if (!menu.isGamePaused && playerFreeze == true)//checks if the game is unpaused and if the player is frozen, then unfreezes the player
+        {
+            unfreezePlayer();
+        }
+        /* if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene("homeBedroomScene");
         }*/
-    } 
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {

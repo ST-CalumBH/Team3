@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueActivatorScript : MonoBehaviour
+public class DialogueComboActivatorScript : MonoBehaviour
 {
     [SerializeField] private DialogueObject dialogueObject;//Text to be said on collision
     public bool isCollider;//select if text should be played on collision with box collider
