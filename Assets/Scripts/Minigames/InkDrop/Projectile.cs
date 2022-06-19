@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
-        minigame = GetComponentInParent<InkDropMinigame>();
+        minigame = FindObjectOfType<InkDropMinigame>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -16,9 +16,8 @@ public class Projectile : MonoBehaviour
         if (collision.collider.CompareTag("CleanUp"))
         {
             //failure
-            minigame.inkCollected = 0;
             Destroy(this.gameObject);
-
+            minigame.CallEndMinigame(false);
         }
         if (collision.collider.CompareTag("Player"))
         {
