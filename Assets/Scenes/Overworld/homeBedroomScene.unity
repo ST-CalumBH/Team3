@@ -476,17 +476,7 @@ MonoBehaviour:
   dialogueObject: {fileID: 11400000, guid: 1d436bb4383935649b5b076ec2b842f1, type: 2}
   isCollider: 1
   isOnStart: 0
---- !u!114 &183225782 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7706034308894484299, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
-  m_PrefabInstance: {fileID: 448526514}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 266ccd02feae90a489458ea4377e9fd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  eventName: E001
 --- !u!1 &264037286
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,9 +746,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1332bbb1b89939b47be52bcc898ede20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 0
+  isGamePaused: 0
   pauseMenuUI: {fileID: 2083983059}
-  player: {fileID: 183225782}
 --- !u!1001 &448526514
 PrefabInstance:
   m_ObjectHideFlags: 0

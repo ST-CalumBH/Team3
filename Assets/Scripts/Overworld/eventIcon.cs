@@ -5,7 +5,7 @@ using UnityEngine;
 public class eventIcon : MonoBehaviour
 {
 
-    private string state; // floating, eventActive (i.e single-use, stays invis)
+    private bool active; // 0 = floating anim, 1 = hide
 
     private bool floatUp;
     private int floatCounter;
@@ -15,7 +15,7 @@ public class eventIcon : MonoBehaviour
 
     void Start()
     {
-        state = "floating";
+        active = true;
         floatUp = true;
         floatCounter = 0;
     }
@@ -23,13 +23,9 @@ public class eventIcon : MonoBehaviour
     
     void FixedUpdate()
     {
-        switch (state)
+        if (active)
         {
-            case "floating":
-                floatingAnimation();
-                break;
-            case "eventActive":
-                break;
+            floatingAnimation();
         }
     }
 
@@ -59,9 +55,9 @@ public class eventIcon : MonoBehaviour
         }
     }
 
-    public void changeToActiveState()
+    public void changeActiveState()
     {
-        state = "eventActive";
-        gameObject.SetActive(false);
+        active = !active;
+        gameObject.SetActive(active);
     }
 }

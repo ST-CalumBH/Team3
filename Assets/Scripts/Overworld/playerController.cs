@@ -48,21 +48,20 @@ public class playerController : MonoBehaviour
             animator.SetFloat("Vertical", movement.y);
             animator.SetFloat("Speed", movement.sqrMagnitude);
 
-            if (movement.x == 1 || movement.x == -1 || movement.y == 1 || movement.y == -1)
+            if (movement.x == 1 || movement.x == -1 || movement.y == 1 || movement.y == -1) // idle facing direction
             {
                 animator.SetFloat("lastMoveX", movement.x);
                 animator.SetFloat("lastMoveY", movement.y);
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))                                                // dialogue interactor
             {
                 Interactable?.Interact(this);
             }
 
-            if (inArea && (Input.GetKeyDown(KeyCode.E)))
+            if (inArea && (Input.GetKeyDown(KeyCode.E)))                                    // event interactor
             {
                 Interact(container);
-
             }
         }
         if (menu.isGamePaused && playerFreeze == false)//checks if the game is paused and if the player is unfrozen, then freezes the player
