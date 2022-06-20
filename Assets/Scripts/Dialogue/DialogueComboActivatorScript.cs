@@ -35,7 +35,7 @@ public class DialogueComboActivatorScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (eventNameChecker() && isCollider)
+        if (eventNameChecker() && isCollider) // eventNameChecker() && 
         {
             if (other.tag == "Player")
             {
@@ -50,6 +50,7 @@ public class DialogueComboActivatorScript : MonoBehaviour
 
     IEnumerator PlayDialogue()
     {
+        PlayerPrefs.SetInt(eventName, 1);
         player.freezePlayer();
         UI.ShowDialogue(dialogueObject); //gets the Dialogue UI component from the Canvas attached to the player object  
         yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
@@ -58,19 +59,20 @@ public class DialogueComboActivatorScript : MonoBehaviour
 
     private bool eventNameChecker()                     // checks whether a one-time event should be played or not
     {
-        if (eventName == null)
+        if (eventName != null)
         {
-            return true;                                // if it has no name, just let it through, most likely a repeatable event eg. object dialogue
+            if (PlayerPrefs.GetInt(eventName, 0) == 0)      // is the named event untriggered?
+            {
+                return true;
+            }
+            else
+            {
+                return false;                               // event was already triggered, so do not proceed with event
+            }
         }
         else
         {
-            if (PlayerPrefs.GetInt(eventName, 0) == 0)     // is the named event untriggered?
-            {
-                PlayerPrefs.SetInt(eventName, 1);       // now it is triggered
-                return true;
-            }
-
-            return false;
+            return true;                                    // if it has no name, just let it through, most likely a repeatable event eg. object dialogue
         }
     }
 }

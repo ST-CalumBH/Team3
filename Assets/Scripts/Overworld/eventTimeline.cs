@@ -17,8 +17,8 @@ public class eventTimeline : MonoBehaviour
 
     void Start()
     {
-        // testing purposes
-        //PlayerPrefs.SetInt(eventName,0);
+        // testing purposes if event has already been triggered
+        //PlayerPrefs.SetInt(eventName,1);
         eventNameChecker();
     }
 
@@ -32,17 +32,17 @@ public class eventTimeline : MonoBehaviour
     {
         icon.changeActiveState();
         cutscene.Play();
-        PlayerPrefs.SetInt(eventName, 1);               // now it is triggered
+        PlayerPrefs.SetInt(eventName, 1);                   // now it is triggered
     }
 
-    private void eventNameChecker()                     // checks whether a one-time event should be played or not
+    private void eventNameChecker()                         // checks whether a one-time event should be played or not
     {
         if (eventName != null)
         {
-            if (PlayerPrefs.GetInt(eventName) == 1)     // has the named event already been triggered?
+            if (PlayerPrefs.GetInt(eventName, 0) == 1)      // has the named event already been triggered?
             {
-                gameObject.SetActive(false);            // disables event trigger
-                icon.changeActiveState();               // disables floating icon
+                gameObject.SetActive(false);                // disables event trigger
+                icon.changeActiveState();                   // disables floating icon
             }
         }
     }
