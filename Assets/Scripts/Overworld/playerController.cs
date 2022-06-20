@@ -24,6 +24,9 @@ public class playerController : MonoBehaviour
 
     public IInteractable Interactable { get; set; }
 
+    [Space(20)]
+    [SerializeField] private Vector2[] spawnPoints;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,8 +35,9 @@ public class playerController : MonoBehaviour
         playerFreeze = false;
         playerSpeed = moveSpeed;
 
-        Interactable?.Interact(this); // should launch Dialogue on Awake, but doesn't
         menu = FindObjectOfType<PauseMenu>();
+
+        MoveToSpawnPoint();
     }
 
     private void Update() //inputs
@@ -76,6 +80,11 @@ public class playerController : MonoBehaviour
         {
             SceneManager.LoadScene("homeBedroomScene");
         }*/
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            PlayerPrefs.DeleteAll();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -125,5 +134,11 @@ public class playerController : MonoBehaviour
         {
             AS.PlayOneShot(carpetSFX);
         }
+    }
+
+    private void MoveToSpawnPoint()
+    {
+        if (spawnPoints == null) return;
+        transform.position = spawnPoints[PlayerPrefs.GetInt("SpawnPoint", 1)]; // defaults to spawn at the first item on the list if a spawnpoint playerpref hasn't been made yet
     }
 }
