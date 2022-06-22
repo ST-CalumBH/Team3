@@ -13,17 +13,19 @@ public class InkDropMinigame : Minigame
     public GameObject projectile;
     public Slider timebar;
 
-    float variance;
-    float time = 0;
-    public float maxTime = 15f;
-    public int projectileCount = 3;
-    public float startGrace = 3f;
-    public float shotDelay = 1f;
+    public float leftBound = -10f;//-10 by default unless walls moved
+    public float rightBound = 10f;//10 by default unless walls moved
+    float variance;//variable that holds the random number between leftBound and rightBound
+    float time = 0f;//current time variable, measured in seconds
+    public float maxTime = 15f;//max time measured in seconds
+    public int projectileCount = 3;//number of projectiles per wave
+    public float startGrace = 3f;//time before shots start
+    public float shotDelay = 1f;//delay between shots in a wave
 
     // Start is called before the first frame update
     void Start()
     {
-        variance = Random.Range(-10f, 10f);
+        variance = Random.Range(leftBound, rightBound);
         inkSpawnRef = inkSpawn;
         timebar.maxValue = maxTime;
         StartCoroutine(WarmUp());

@@ -168,6 +168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: mg_LaneDodge
       objectReference: {fileID: 0}
+    - target: {fileID: 4150911572546822709, guid: 36980c7b006378b449cc3f5c6e46cdac, type: 3}
+      propertyPath: hurt
+      value: 
+      objectReference: {fileID: 2909293449332390883, guid: 5216721c8c953324f90e72b25e91365c, type: 3}
     - target: {fileID: 5466007900978866074, guid: 36980c7b006378b449cc3f5c6e46cdac, type: 3}
       propertyPath: m_RootOrder
       value: 1
