@@ -15,15 +15,12 @@ public class Projectile : MonoBehaviour
     {
         if (collision.collider.CompareTag("CleanUp"))
         {
-            //failure
             Destroy(this.gameObject);
             minigame.CallEndMinigame(false);
         }
         if (collision.collider.CompareTag("Player"))
         {
             Destroy(this.gameObject);
-            minigame.inkCollected++;
-            minigame.CallShotCooldown();
         }
     }
 }
