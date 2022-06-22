@@ -677,7 +677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   rb: {fileID: 4150911572546822708}
-  hurt: {fileID: 2815424096754683367, guid: 1a8de19fd568c9649b70ee58d098f94a, type: 3}
+  hurt: {fileID: 7187973884628724533, guid: 4db40f8431ca7de4faf503b8c9203f1c, type: 3}
 --- !u!50 &4150911572546822708
 Rigidbody2D:
   serializedVersion: 4
@@ -748,7 +748,6 @@ MonoBehaviour:
   isInProgress: 1
   inkSpawn: {fileID: 4150911573743282155}
   projectile: {fileID: 98365228946861656, guid: d55e2bbbd44768049907b661ba475d69, type: 3}
-  inkCounter: {fileID: 0}
   timebar: {fileID: 361315620}
   maxTime: 15
   projectileCount: 3
