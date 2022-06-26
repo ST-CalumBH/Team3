@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("SpawnPoint", 0);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

@@ -41,6 +41,6 @@ public class SceneTransitionCollider : MonoBehaviour
 
     public void SetSpawnPoint()
     {
-        PlayerPrefs.SetInt("SpawnPoint", newSpawnPoint - 1);
+        PlayerPrefs.SetInt("SpawnPoint", newSpawnPoint);
     }
 }

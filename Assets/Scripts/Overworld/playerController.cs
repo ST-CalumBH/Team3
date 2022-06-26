@@ -38,6 +38,8 @@ public class playerController : MonoBehaviour
         menu = FindObjectOfType<PauseMenu>();
 
         MoveToSpawnPoint();
+
+        Debug.Log("Moved to spawn point: " + PlayerPrefs.GetInt("SpawnPoint"));
     }
 
     private void Update() //inputs
@@ -81,9 +83,10 @@ public class playerController : MonoBehaviour
             SceneManager.LoadScene("homeBedroomScene");
         }*/
 
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.O))                    // for testing purposes: sets player to spawn at the first item in the spawn list, resets events such as the kitchen
         {
             PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetInt("SpawnPoint", 0);
         }
     }
 
@@ -138,7 +141,7 @@ public class playerController : MonoBehaviour
 
     private void MoveToSpawnPoint()
     {
-        if (spawnPoints == null) return;
-        transform.position = spawnPoints[PlayerPrefs.GetInt("SpawnPoint", 1)]; // defaults to spawn at the first item on the list if a spawnpoint playerpref hasn't been made yet
+        if (spawnPoints.Length == 0) return;
+        transform.position = spawnPoints[PlayerPrefs.GetInt("SpawnPoint", 0)]; // defaults to spawn at the first item on the list if a spawnpoint playerpref hasn't been made yet
     }
 }
