@@ -8,6 +8,8 @@ public class FPPlayerMovement : MonoBehaviour
 
     public float speed = 12f;
 
+    public IInteractable Interactable { get; set; }
+
     // Update is called once per frame
     void Update()
     {
