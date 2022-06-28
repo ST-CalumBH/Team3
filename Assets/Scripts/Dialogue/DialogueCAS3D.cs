@@ -2,25 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueComboActivatorScript : MonoBehaviour
+public class DialogueCAS3D : MonoBehaviour
 {
     [SerializeField] private DialogueObject dialogueObject;//Text to be said on collision
     public bool isCollider;//select if text should be played on collision with box collider
     public bool isOnStart;//select if text should be played on start
     private DialogueUI UI;
-    private playerController player;
+    private FPPlayerMovement player;
     private bool activated = false;
 
     private void Start()
     {
         UI = FindObjectOfType<DialogueUI>();
-        if(FindObjectOfType<playerController>())
+        if(FindObjectOfType<FPPlayerMovement>())
         {
-            player = FindObjectOfType<playerController>();
+            player = FindObjectOfType<FPPlayerMovement>();
         }
         else
         {
-            player = gameObject.AddComponent<playerController>();
+            player = gameObject.AddComponent<FPPlayerMovement>();
         }
         if(isOnStart)
         {
@@ -28,7 +28,7 @@ public class DialogueComboActivatorScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (isCollider)
         {
@@ -47,7 +47,7 @@ public class DialogueComboActivatorScript : MonoBehaviour
     {
         player.freezePlayer();
         UI.ShowDialogue(dialogueObject); //gets the Dialogue UI component from the Canvas attached to the player object  
-        yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
+        yield return new WaitUntil(() => UI.IsOpen == false);
         player.unfreezePlayer();
     }
 }
