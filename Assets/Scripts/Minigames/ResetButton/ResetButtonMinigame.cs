@@ -26,7 +26,8 @@ public class ResetButtonMinigame : Minigame
     // Start is called before the first frame update
     void Start()
     {
-        timebar.value = timebar.maxValue;
+        selector.maxValue = bounceAngle;
+        selector.minValue = -bounceAngle;
         selector.value = (selector.maxValue+selector.minValue)/2;
         curState = State.CLOCKWISE;
         RectTransform sp = selectorPanel.GetComponent<RectTransform>();
