@@ -5,16 +5,25 @@ using UnityEngine;
 public class Virus : MonoBehaviour
 {
     public float moveSpeed = 4f;
-    public GameObject gameManager;
+    public minigameManager manager;
 
     void Update()
     {
         transform.Translate(moveSpeed * Time.deltaTime * -1, 0, 0);
     }
 
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.name == "player")
+        {
+            manager.LoseLife();
+            Destroy(gameObject);
+        }
+    }
+
     private void OnBecameInvisible()
     {
-        // add lives lost to lose condition
+        manager.LoseLife();
         Destroy(gameObject);
     }
 }

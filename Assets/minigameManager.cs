@@ -14,6 +14,14 @@ public class minigameManager : Minigame
 
     void Update()
     {
-        
+        if (lives == 0)
+        {
+            StartCoroutine(EndMinigame(2f, false));
+        }
+    }
+
+    public void LoseLife()
+    {
+        lives--;
     }
 }
