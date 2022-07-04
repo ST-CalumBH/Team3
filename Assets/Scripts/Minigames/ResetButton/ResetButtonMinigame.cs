@@ -32,7 +32,7 @@ public class ResetButtonMinigame : Minigame
         curState = State.CLOCKWISE;
         RectTransform sp = selectorPanel.GetComponent<RectTransform>();
         sp.sizeDelta = new Vector2(1500 * hitZone, 70);
-        zoneDegrees = 90 * hitZone / 2;
+        zoneDegrees = bounceAngle * hitZone;
         timebar.maxValue = maxTime;
         timebar.value = 0f;
         StartCoroutine(Timer());
@@ -73,11 +73,13 @@ public class ResetButtonMinigame : Minigame
         {
             if (handTransform.eulerAngles.z > (360-zoneDegrees) || handTransform.eulerAngles.z < zoneDegrees)
             {
+                zRotate = 0;
                 StartCoroutine(EndMinigame(true));
             }
         }
         if (time >= maxTime)
         {
+            zRotate = 0;
             StartCoroutine(EndMinigame(false));
         }
     }
