@@ -7,6 +7,9 @@ public class SceneTransitionCollider : MonoBehaviour
 {
     [SerializeField] private string nextScene;
 
+    [Tooltip("Put down the spawn point of the scene it is transitioning to")]
+    [SerializeField] private int newSpawnPoint = 0;  // default value so it doesn't crash
+
     playerController player;
     
     public Animator transition;
@@ -19,6 +22,7 @@ public class SceneTransitionCollider : MonoBehaviour
         {
             player = FindObjectOfType<playerController>();
             player.freezePlayer();
+            SetSpawnPoint();
             changeScene();
         }
     }
@@ -33,5 +37,10 @@ public class SceneTransitionCollider : MonoBehaviour
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(nextScene);
+    }
+
+    public void SetSpawnPoint()
+    {
+        PlayerPrefs.SetInt("SpawnPoint", newSpawnPoint);
     }
 }

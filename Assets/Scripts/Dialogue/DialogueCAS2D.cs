@@ -11,6 +11,10 @@ public class DialogueCAS2D : MonoBehaviour
     private playerController player;
     private bool activated = false;
 
+    [Header("Event Related")]
+    [Tooltip("Do not use for repeatable conversations, also add event to MenuScript so it resets on NewGame")]
+    public string eventName;
+
     private void Start()
     {
         UI = FindObjectOfType<DialogueUI>();
@@ -22,7 +26,8 @@ public class DialogueCAS2D : MonoBehaviour
         {
             player = gameObject.AddComponent<playerController>();
         }
-        if(isOnStart)
+
+        if (eventNameChecker() && isOnStart)                                      // is this a named event? eg.E001
         {
             StartCoroutine(PlayDialogue());
         }
@@ -30,7 +35,7 @@ public class DialogueCAS2D : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (isCollider)
+        if (eventNameChecker() && isCollider) // eventNameChecker() && 
         {
             if (other.tag == "Player")
             {
@@ -45,9 +50,29 @@ public class DialogueCAS2D : MonoBehaviour
 
     IEnumerator PlayDialogue()
     {
+        PlayerPrefs.SetInt(eventName, 1);
         player.freezePlayer();
         UI.ShowDialogue(dialogueObject); //gets the Dialogue UI component from the Canvas attached to the player object  
         yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
         player.unfreezePlayer();
+    }
+
+    private bool eventNameChecker()                     // checks whether a one-time event should be played or not
+    {
+        if (eventName != null)
+        {
+            if (PlayerPrefs.GetInt(eventName, 0) == 0)      // is the named event untriggered?
+            {
+                return true;
+            }
+            else
+            {
+                return false;                               // event was already triggered, so do not proceed with event
+            }
+        }
+        else
+        {
+            return true;                                    // if it has no name, just let it through, most likely a repeatable event eg. object dialogue
+        }
     }
 }
