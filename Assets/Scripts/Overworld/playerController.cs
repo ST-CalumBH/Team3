@@ -24,6 +24,9 @@ public class playerController : MonoBehaviour
 
     public IInteractable Interactable { get; set; }
 
+    [Space(20)]
+    [SerializeField] private Vector2[] spawnPoints;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,8 +35,11 @@ public class playerController : MonoBehaviour
         playerFreeze = false;
         playerSpeed = moveSpeed;
 
-        Interactable?.Interact(this); // should launch Dialogue on Awake, but doesn't
         menu = FindObjectOfType<PauseMenu>();
+
+        MoveToSpawnPoint();
+
+        Debug.Log("Moved to spawn point: " + PlayerPrefs.GetInt("SpawnPoint"));
     }
 
     private void Update() //inputs
@@ -48,21 +54,20 @@ public class playerController : MonoBehaviour
             animator.SetFloat("Vertical", movement.y);
             animator.SetFloat("Speed", movement.sqrMagnitude);
 
-            if (movement.x == 1 || movement.x == -1 || movement.y == 1 || movement.y == -1)
+            if (movement.x == 1 || movement.x == -1 || movement.y == 1 || movement.y == -1) // idle facing direction
             {
                 animator.SetFloat("lastMoveX", movement.x);
                 animator.SetFloat("lastMoveY", movement.y);
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))                                                // dialogue interactor
             {
                 Interactable?.Interact(this);
             }
 
-            if (inArea && (Input.GetKeyDown(KeyCode.E)))
+            if (inArea && (Input.GetKeyDown(KeyCode.E)))                                    // event interactor
             {
                 Interact(container);
-
             }
         }
         if (menu.isGamePaused && playerFreeze == false)//checks if the game is paused and if the player is unfrozen, then freezes the player
@@ -77,6 +82,12 @@ public class playerController : MonoBehaviour
         {
             SceneManager.LoadScene("homeBedroomScene");
         }*/
+
+        if (Input.GetKeyDown(KeyCode.O))                    // for testing purposes: sets player to spawn at the first item in the spawn list, resets events such as the kitchen
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetInt("SpawnPoint", 0);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -126,5 +137,11 @@ public class playerController : MonoBehaviour
         {
             AS.PlayOneShot(carpetSFX);
         }
+    }
+
+    private void MoveToSpawnPoint()
+    {
+        if (spawnPoints.Length == 0) return;
+        transform.position = spawnPoints[PlayerPrefs.GetInt("SpawnPoint", 0)]; // defaults to spawn at the first item on the list if a spawnpoint playerpref hasn't been made yet
     }
 }
