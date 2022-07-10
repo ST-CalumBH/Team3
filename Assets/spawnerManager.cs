@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class spawnerManager : MonoBehaviour
 {
-    public float amountToSpawn;
-    private int spawnCounter = 0;
     public GameObject item;
+    public bool gameActive = true;
 
-    // might make into a list of possible items to spawn, meteors with viruses riding on top
+    // might change data type from 'gameObject' to a 'list' of possible items to spawn, meteors with viruses riding on top
 
-    public float spawnDelay = 6f;                   // randomise this
+    public float spawnDelay = 6f;
     private float spawnElaspedTime = 0f;
 
     [Header("Spawn Range")]
@@ -23,22 +22,32 @@ public class spawnerManager : MonoBehaviour
     {
         spawnElaspedTime += Time.deltaTime;
 
-        if (spawnCounter < amountToSpawn && spawnElaspedTime >= spawnDelay)
+        if (spawnElaspedTime >= spawnDelay && gameActive == true)
         {
-            spawnCounter++;
             spawnElaspedTime = 0f;
-            RandomMove();
-            SpawnItem();
+            spawnDelay = Random.Range(2f, 5f);
+            randomMove();
+            spawnItem();
         }
     }
 
-    void SpawnItem()
+    public void spawnItem()
     {
         Instantiate(item, transform.position, transform.rotation);
     }
 
-    void RandomMove()
+    public void randomMove()
     {
         transform.position = new Vector2(Random.Range(TopX, BottomX), Random.Range(TopY, BottomY));
+    }
+
+    public void changeState()
+    {
+        gameActive = !gameActive;
+    }
+
+    public bool checkState()
+    {
+        return gameActive;
     }
 }

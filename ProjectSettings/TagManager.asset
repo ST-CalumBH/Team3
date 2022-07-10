@@ -13,6 +13,7 @@ TagManager:
   - MiddleHitBox
   - RightHitBox
   - Music
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -27,8 +28,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Player
+  - Bullet
   - 
   - 
   - 

@@ -5,25 +5,38 @@ using UnityEngine;
 public class Virus : MonoBehaviour
 {
     public float moveSpeed = 4f;
-    public minigameManager manager;
+
+    [SerializeField] private minigameManager manager;
+
+    void Start()
+    {
+        manager = GameObject.Find("spawnerManager").GetComponent<minigameManager>();
+    }
 
     void Update()
     {
         transform.Translate(moveSpeed * Time.deltaTime * -1, 0, 0);
     }
 
-    void OnCollisionEnter(Collision col)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (col.gameObject.name == "player")
+        if (collision.tag == "Player")
         {
-            manager.LoseLife();
+            manager.loseLife();
+            Destroy(gameObject);
+        }
+
+        if (collision.tag == "Bullet")
+        {
+            manager.gainPoint();
+            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
     }
 
     private void OnBecameInvisible()
     {
-        manager.LoseLife();
+        manager.loseLife();
         Destroy(gameObject);
     }
 }

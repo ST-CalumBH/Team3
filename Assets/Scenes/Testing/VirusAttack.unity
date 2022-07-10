@@ -316,9 +316,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c05a1e8307904a4d9990578966fb827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountToSpawn: 10
   item: {fileID: 4698070366724741674, guid: 621f2023b843fdf499766f02a9ff6a8e, type: 3}
-  spawnDelay: 6
+  gameActive: 1
+  spawnDelay: 4
   TopX: 9.71
   BottomX: 9.71
   TopY: 3.57
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 518095453}
   - component: {fileID: 518095455}
   - component: {fileID: 518095454}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 537966631}
   - component: {fileID: 537966633}
   - component: {fileID: 537966632}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -591,7 +591,7 @@ GameObject:
   - component: {fileID: 1615083599}
   - component: {fileID: 1615083601}
   - component: {fileID: 1615083600}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -702,7 +702,7 @@ GameObject:
   - component: {fileID: 1756845321}
   - component: {fileID: 1756845323}
   - component: {fileID: 1756845322}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -816,9 +816,9 @@ GameObject:
   - component: {fileID: 1848583336}
   - component: {fileID: 1848583335}
   - component: {fileID: 1848583339}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -850,7 +850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb41f18fff8bf440accc4cb9182f701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 3
   rb: {fileID: 1848583336}
 --- !u!50 &1848583336
 Rigidbody2D:
@@ -939,7 +939,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: ee90040a2ded01c459b5e1b257ad6aac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1089,7 +1089,7 @@ GameObject:
   - component: {fileID: 1903601905}
   m_Layer: 0
   m_Name: minigameManager
-  m_TagString: Untagged
+  m_TagString: CleanUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1124,6 +1124,8 @@ MonoBehaviour:
   result: 0
   isInProgress: 1
   lives: 3
+  enemyKilled: 0
+  spawnManager: {fileID: 376412882}
 --- !u!1 &2134560261
 GameObject:
   m_ObjectHideFlags: 0
