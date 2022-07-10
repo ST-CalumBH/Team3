@@ -78,6 +78,14 @@ public class playerController : MonoBehaviour
         {
             unfreezePlayer();
         }
+        if (dialogueUI.IsOpen && playerFreeze == false)
+        {
+            freezePlayer();
+        }
+        if (!dialogueUI.IsOpen && playerFreeze == true)
+        {
+            unfreezePlayer();
+        }
         /* if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene("homeBedroomScene");

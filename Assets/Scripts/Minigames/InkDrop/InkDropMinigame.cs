@@ -21,6 +21,7 @@ public class InkDropMinigame : Minigame
     public int projectileCount = 3;//number of projectiles per wave
     public float startGrace = 3f;//time before shots start
     public float shotDelay = 1f;//delay between shots in a wave
+    
 
     // Start is called before the first frame update
     void Start()
@@ -69,6 +70,11 @@ public class InkDropMinigame : Minigame
             inkSpawn.position = temp;
             Instantiate(projectile, inkSpawn);
             inkSpawn.DetachChildren();
+            Projectile[] projectiles = FindObjectsOfType<Projectile>();
+            foreach (Projectile p in projectiles)
+            {
+                p.transform.SetParent(transform, true);
+            }
             variance = Random.Range(-10f, 10f);
             yield return new WaitForSeconds(shotDelay);
             i++;
