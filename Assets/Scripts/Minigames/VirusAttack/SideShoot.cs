@@ -22,6 +22,7 @@ public class SideShoot : MonoBehaviour
 
     void ShootProjectile()
     {
-        Instantiate(bullet, transform.position, transform.rotation);
+        GameObject temp = Instantiate(bullet, transform.position, transform.rotation);
+        temp.transform.SetParent(transform.parent.transform, true);
     }
 }

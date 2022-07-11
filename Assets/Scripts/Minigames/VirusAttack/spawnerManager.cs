@@ -33,7 +33,8 @@ public class spawnerManager : MonoBehaviour
 
     public void spawnItem()
     {
-        Instantiate(item, transform.position, transform.rotation);
+        GameObject temp = Instantiate(item, transform.position, transform.rotation);
+        temp.transform.SetParent(transform.parent.transform, true);
     }
 
     public void randomMove()
