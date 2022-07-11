@@ -12,6 +12,10 @@ public class Animationtrigger : MonoBehaviour
         {
             myAnimationController.SetBool("PopOut1", true);
         }
+        else if (other.CompareTag("Player"))
+        {
+            myAnimationController.SetBool("slide", true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -19,6 +23,10 @@ public class Animationtrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             myAnimationController.SetBool("PopOut1", false);
+        }
+        else if (other.CompareTag("Player"))
+        {
+            myAnimationController.SetBool("slide", false);
         }
     }
 }
