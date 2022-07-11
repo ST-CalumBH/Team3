@@ -68,13 +68,8 @@ public class InkDropMinigame : Minigame
             Vector3 temp = inkSpawn.position;
             temp.x = variance;
             inkSpawn.position = temp;
-            Instantiate(projectile, inkSpawn);
-            inkSpawn.DetachChildren();
-            Projectile[] projectiles = FindObjectsOfType<Projectile>();
-            foreach (Projectile p in projectiles)
-            {
-                p.transform.SetParent(transform, true);
-            }
+            GameObject p = Instantiate(projectile, inkSpawn);
+            p.transform.SetParent(transform, true);
             variance = Random.Range(-10f, 10f);
             yield return new WaitForSeconds(shotDelay);
             i++;
