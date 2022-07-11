@@ -28,9 +28,12 @@ public class BattleSystem : MonoBehaviour
 
 	Camera cam;
 
+	public playerController player;
+
 	// Start is called before the first frame update
 	void Start()
     {
+		player.freezePlayer();
 		cam = Camera.main;
 		state = BattleState.START;
 		StartCoroutine(SetupBattle());

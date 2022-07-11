@@ -17,7 +17,7 @@ public class m2SceneManager : Minigame
     void Start()
     {
         timer.text = gameLength.ToString();
-        failed = false;
+        result = false;
         StartCoroutine(Countdown());
         StartCoroutine(Timer());
     }
@@ -25,10 +25,10 @@ public class m2SceneManager : Minigame
     // Update is called once per frame
     void Update()
     {
-        if (failed == true)
+        if (result == true)
         {
             loss.SetActive(true);
-            failed = true;
+            result = true;
             StartCoroutine(EndMinigame());
         }
     }
@@ -36,7 +36,7 @@ public class m2SceneManager : Minigame
     IEnumerator Countdown()
     {
         yield return new WaitForSeconds(gameLength);
-        if (failed == false)
+        if (result == false)
         {
             win.SetActive(true);
             StartCoroutine(EndMinigame());

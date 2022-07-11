@@ -29,7 +29,7 @@ public class m2PlayerController : MonoBehaviour
         if (collision.collider.CompareTag("Obstacle"))
         {
             Debug.Log("Collision");
-            sceneManager.failed = true;
+            sceneManager.result = true;
         }
     }
 
