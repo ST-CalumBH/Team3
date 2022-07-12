@@ -16,7 +16,7 @@ public class SwordDodgeMinigame : Minigame
     public Warning mWarningGO;
     public Warning rWarningGO;
 
-    public SwordDodgePlayer Player;
+    public SwordDodgePlayer player;
 
     public List<Warning> warnings;
 
@@ -48,7 +48,8 @@ public class SwordDodgeMinigame : Minigame
         lWarning.enabled = false;
         mWarning.enabled = false;
         rWarning.enabled = false;
-        laneNum = Random.Range(0, 3);
+        player = FindObjectOfType<SwordDodgePlayer>();
+        laneNum = player.curPosition;
         StartCoroutine(ShowWarning());
     }
 
@@ -63,7 +64,7 @@ public class SwordDodgeMinigame : Minigame
                 switch (laneNum)
                 {
                     case 0:
-                        if (Player.isTouching == PositionEnum.LEFT)
+                        if (player.isTouching == PositionEnum.LEFT)
                         {
                             Debug.Log("Left Hit");
                             dodgeCount = 0;
@@ -72,7 +73,7 @@ public class SwordDodgeMinigame : Minigame
                         }
                         break;
                     case 1:
-                        if (Player.isTouching == PositionEnum.MIDDLE)
+                        if (player.isTouching == PositionEnum.MIDDLE)
                         {
                             Debug.Log("Middle Hit");
                             dodgeCount = 0;
@@ -81,7 +82,7 @@ public class SwordDodgeMinigame : Minigame
                         }
                         break;
                     case 2:
-                        if (Player.isTouching == PositionEnum.RIGHT)
+                        if (player.isTouching == PositionEnum.RIGHT)
                         {
                             Debug.Log("Right Hit");
                             dodgeCount = 0;
@@ -154,7 +155,7 @@ public class SwordDodgeMinigame : Minigame
         isAttacking = false;
         yield return new WaitForSeconds(0.05f);
         animator.Play("Base Layer.Neutral");
-        laneNum = Random.Range(0, 3);
+        laneNum = player.curPosition;
         dodgeCount++;
         CheckForTnight();
     }
@@ -168,7 +169,7 @@ public class SwordDodgeMinigame : Minigame
         isAttacking = false;
         yield return new WaitForSeconds(0.05f);
         animator.Play("Base Layer.Neutral");
-        laneNum = Random.Range(0, 3);
+        laneNum = player.curPosition;
         dodgeCount++;
         CheckForTnight();
     }
@@ -182,14 +183,14 @@ public class SwordDodgeMinigame : Minigame
         isAttacking = false;
         yield return new WaitForSeconds(0.05f);
         animator.Play("Base Layer.Neutral");
-        laneNum = Random.Range(0, 3);
+        laneNum = player.curPosition;
         dodgeCount++;
         CheckForTnight();
     }
 
     IEnumerator Hurt()
     {
-        ParticleSystem ps = Instantiate(hurt, Player.transform);
+        ParticleSystem ps = Instantiate(hurt, player.transform);
         ps.Play();
         yield return new WaitForSeconds(2f);
         Destroy(ps);

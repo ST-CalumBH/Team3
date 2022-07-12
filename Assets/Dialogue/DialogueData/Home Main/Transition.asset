@@ -13,7 +13,17 @@ MonoBehaviour:
   m_Name: Transition
   m_EditorClassIdentifier: 
   dialogue:
-  - 'Eternity Later....
+  - "I'm not in the mood for this, I hate driving, too much traffic. \n... \n..."
+  - 'I saw a duck, that was pretty cool
 
-    Way too long man....'
-  - And Later...
+    ...
+
+    ...
+
+    ...'
+  - 'It pooped on my car, not happy
+
+    ...
+
+    ...'
+  - We're here... yay, let the torture begin

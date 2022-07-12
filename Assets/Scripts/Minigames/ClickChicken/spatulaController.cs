@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class spatulaController : Minigame
 {
+    public AudioSource whack;
+
     public float moveSpeed = 15f;
     public Rigidbody2D rb;
 
@@ -48,7 +50,7 @@ public class spatulaController : Minigame
         if (swatCooldown == false)
         {
             Debug.Log("Swat Action");
-
+            whack.Play();
             swatCooldown = true;
         }
     }

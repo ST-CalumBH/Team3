@@ -6,17 +6,17 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
    
-    public static bool isGamePaused = false;
+    public bool isGamePaused = false;
 
-    public float playerSpeed;
+    //public float playerSpeed;
 
     [SerializeField] GameObject pauseMenuUI;
-    [SerializeField] playerController player;
 
+
+    // Start is called before the first frame update
     void Start()
     {
         pauseMenuUI.SetActive(false);
-        playerSpeed = player.moveSpeed;
         isGamePaused = false;
     }
 
@@ -39,8 +39,6 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        player.unfreezePlayer();
-        player.moveSpeed = playerSpeed;
         isGamePaused = false;
     }
 
@@ -48,11 +46,6 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        player.freezePlayer();
-        player.moveSpeed = 0f;
-        player.animator.SetFloat("Horizontal", 0);
-        player.animator.SetFloat("Vertical", 0);
-        player.animator.SetFloat("Speed", 0);
         isGamePaused = true;
     }
 
