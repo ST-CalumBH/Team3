@@ -28,6 +28,8 @@ public class collisionEventDialogue : MonoBehaviour
 
     IEnumerator PlayDialogue()
     {
+        PlayerPrefs.SetInt("E003", 1); // this should be properly replaced by the dialogue combo script later on, this doesn't test anything since activated is doing that job atm
+
         player.DialogueUI.ShowDialogue(dialogueObject); //gets the Dialogue UI component from the Canvas attached to the player object
         activated = true;
         playerSpeed = player.moveSpeed;
