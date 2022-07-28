@@ -6,22 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class eventTimeline : MonoBehaviour
 {
-    [SerializeField] private eventIcon icon;
+    [SerializeField] private eventIcon icon;                            // might use subscriber and publisher events to prevent dependancies
     [SerializeField] private PlayableDirector cutscene;
 
     [SerializeField] private string nextScene;
 
     [Header("Event Related")]
-    [Tooltip("Do not use for repeatable conversations, also add event to MenuScript so it resets on NewGame")]
-    public string eventName;
+    [Tooltip("Do not use for repeatable conversations")]
+    [SerializeField] private string eventName;
+    [SerializeField] private string[] previousEventsRequired;
 
     void Start()
     {
-        // testing purposes if event has already been triggered
-        //PlayerPrefs.SetInt(eventName,1);
         eventNameChecker();
     }
-
 
     void Update()
     {
@@ -37,6 +35,17 @@ public class eventTimeline : MonoBehaviour
 
     private void eventNameChecker()                         // checks whether a one-time event should be played or not
     {
+        if (previousEventsRequired != null)                 // are there any previous events to check?
+        {
+            foreach (string i in previousEventsRequired)    // iterates through the list
+            {
+                if (PlayerPrefs.GetInt(i, 0) == 0)          // has the event NOT been triggered?
+                {
+                    return;                                 // if not, do not proceed with event
+                }
+            }
+        }
+
         if (eventName != null)
         {
             if (PlayerPrefs.GetInt(eventName, 0) == 1)      // has the named event already been triggered?

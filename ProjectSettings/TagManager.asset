@@ -13,6 +13,7 @@ TagManager:
   - MiddleHitBox
   - RightHitBox
   - Music
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -20,16 +21,16 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - Main
   - Minigame
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Player
+  - Bullet
+  - InvisWall
   - 
   - 
   - 

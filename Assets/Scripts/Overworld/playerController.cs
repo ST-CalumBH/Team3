@@ -16,7 +16,7 @@ public class playerController : MonoBehaviour
     [SerializeField] private AudioClip carpetSFX;
 
     private bool inArea;
-    private bool playerFreeze;//boolean for determining if the player is frozen or not, controlling if the update function accepts input for 
+    [SerializeField] private bool playerFreeze;//boolean for determining if the player is frozen or not, controlling if the update function accepts input for 
     private float playerSpeed;//keeps a reference of the player speed to apply when the player is unfrozen
     private Vector2 movement;
     private AudioSource AS;
@@ -39,11 +39,12 @@ public class playerController : MonoBehaviour
 
         MoveToSpawnPoint();
 
-        Debug.Log("Moved to spawn point: " + PlayerPrefs.GetInt("SpawnPoint"));
+        // Debug.Log("Moved to spawn point: " + PlayerPrefs.GetInt("SpawnPoint"));
     }
 
     private void Update() //inputs
     {
+        if (Time.timeScale == 0) return;                                                    // if Pause is on, skip the rest of update
 
         if (playerFreeze == false)
         {
@@ -70,22 +71,26 @@ public class playerController : MonoBehaviour
                 Interact(container);
             }
         }
-        if (menu.isGamePaused && playerFreeze == false)//checks if the game is paused and if the player is unfrozen, then freezes the player
-        {
-            freezePlayer();
-        }
-        else if (!menu.isGamePaused && playerFreeze == true)//checks if the game is unpaused and if the player is frozen, then unfreezes the player
-        {
-            unfreezePlayer();
-        }
-        if (dialogueUI.IsOpen && playerFreeze == false)
-        {
-            freezePlayer();
-        }
-        if (!dialogueUI.IsOpen && playerFreeze == true)
-        {
-            unfreezePlayer();
-        }
+
+        //if (menu.isGamePaused && playerFreeze == false)//checks if the game is paused and if the player is unfrozen, then freezes the player
+        //{
+        //    freezePlayer();
+        //}
+        //else if (!menu.isGamePaused && playerFreeze == true)//checks if the game is unpaused and if the player is frozen, then unfreezes the player
+        //{
+        //    unfreezePlayer();
+        //}
+
+        //if (dialogueUI.IsOpen && playerFreeze == false)
+        //{
+        //    freezePlayer();
+        //}
+
+        //if (!dialogueUI.IsOpen && playerFreeze == true)
+        //{
+        //    unfreezePlayer();
+        //}
+
         /* if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene("homeBedroomScene");
