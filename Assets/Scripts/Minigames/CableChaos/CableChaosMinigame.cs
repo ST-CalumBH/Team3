@@ -14,11 +14,15 @@ public class CableChaosMinigame : Minigame
 
     RectTransform timingBarRect;
     float timingBarWidth;
-    float[] threeInputLoc = {0.375f,0.625f,0.875f};
-    float[] fourInputLoc = {0.3f,0.5f,0.7f,0.9f};
-    enum gameStates {A,B,C}
+    //float[] threeInputLoc = {0.375f,0.625f,0.875f};
+    //float[] fourInputLoc = {0.3f,0.5f,0.7f,0.9f};
 
-    gameStates curState;
+    private enum GameStates {A,B,C}
+
+    GameStates curState;
+    float selectPos = 0;
+    public float moveSpeed = 0.1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,13 +34,18 @@ public class CableChaosMinigame : Minigame
         timingBarRect = timingBar.GetComponent<RectTransform>();
         timingBarWidth = timingBarRect.rect.width;
         timingBar.maxValue = timingBarWidth;
-        curState = gameStates.A;
+        curState = GameStates.A;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(curState == gameStates.A)
+        
+    }
+
+    private void FixedUpdate()
+    {
+        if (curState == GameStates.A)
         {
             Debug.Log("GameState A");
             a1.gameObject.SetActive(true);
@@ -44,7 +53,36 @@ public class CableChaosMinigame : Minigame
             s1.gameObject.SetActive(false);
             d1.gameObject.SetActive(true);
             d2.gameObject.SetActive(false);
-            a1.anchoredPosition.Set(100, 100);
-;        }
+            a1.anchoredPosition = new Vector2(375f, 100f);
+            a2.anchoredPosition = new Vector2(750f, 100f);
+            d1.anchoredPosition = new Vector2(1125f, 100f);
+        }
+        if (curState == GameStates.B)
+        {
+            Debug.Log("GameState B");
+            a1.gameObject.SetActive(true);
+            a2.gameObject.SetActive(false);
+            s1.gameObject.SetActive(true);
+            d1.gameObject.SetActive(true);
+            d2.gameObject.SetActive(false);
+            s1.anchoredPosition = new Vector2(375f, 100f);
+            a1.anchoredPosition = new Vector2(750f, 100f);
+            d1.anchoredPosition = new Vector2(1125f, 100f);
+        }
+        if (curState == GameStates.C)
+        {
+            Debug.Log("GameState C");
+            a1.gameObject.SetActive(true);
+            a2.gameObject.SetActive(true);
+            s1.gameObject.SetActive(false);
+            d1.gameObject.SetActive(true);
+            d2.gameObject.SetActive(true);
+            a1.anchoredPosition = new Vector2(300f, 100f);
+            d1.anchoredPosition = new Vector2(600f, 100f);
+            a2.anchoredPosition = new Vector2(900f, 100f);
+            d2.anchoredPosition = new Vector2(1200f, 100f);
+        }
+        selectPos += moveSpeed;
+        timingBar.value = selectPos;
     }
 }
