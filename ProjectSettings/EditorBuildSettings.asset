@@ -14,13 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Overworld/homeBedroomScene.unity
     guid: 92155ae81a58a0347be3fdc3395790a7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Overworld/homeMainScene.unity
     guid: 948a57c4a37d5454ba171c0632f53a57
   - enabled: 1
     path: Assets/Scenes/Overworld/homeMainCutscene.unity
     guid: 4fbef69bf87456a4cb0be1dbcf0693e8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Overworld/homeBedroomScene Re-entered.unity
     guid: ca8cead795d2a144f96b55fdcfa6a93b
   - enabled: 1
