@@ -10,13 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1360c88e71a0c7498b2b96985a1ddd1, type: 3}
-  m_Name: Desk 2
+  m_Name: Cloud sinks
   m_EditorClassIdentifier: 
   dialogue:
-  - 'This is Samuele''s desk, he''s quite the gamer, he stutters a little
-
-    but
-    he''s fun to talk to. Samuele and Jack are probably the only
-
-    people in this
-    office I hang out with outside office hours.'
+  - "The cloud sinks are a bit overkill don't you think, the golden gate \nway in
+    here, plus the fabulous toilets, having your water come \ndirectly from clouds
+    just seems so uneccessary."

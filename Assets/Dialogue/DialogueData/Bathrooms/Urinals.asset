@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1360c88e71a0c7498b2b96985a1ddd1, type: 3}
-  m_Name: Desk 2
+  m_Name: Urinals
   m_EditorClassIdentifier: 
   dialogue:
-  - 'This is Samuele''s desk, he''s quite the gamer, he stutters a little
+  - 'Picking a urinal is one of the toughest choices a man has to make.
 
-    but
-    he''s fun to talk to. Samuele and Jack are probably the only
+    Personally
+    I try to avoid the issue altogether by just picking one of
 
-    people in this
-    office I hang out with outside office hours.'
+    the stalls instead,
+    that or holding it till I get home.'

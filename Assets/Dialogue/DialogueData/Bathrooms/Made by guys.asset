@@ -10,13 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1360c88e71a0c7498b2b96985a1ddd1, type: 3}
-  m_Name: Desk 2
+  m_Name: Made by guys
   m_EditorClassIdentifier: 
   dialogue:
-  - 'This is Samuele''s desk, he''s quite the gamer, he stutters a little
-
-    but
-    he''s fun to talk to. Samuele and Jack are probably the only
-
-    people in this
-    office I hang out with outside office hours.'
+  - "In all honesty this game was made by a team of guys so we have \nabsolutely
+    no idea what a females bathroom looks like, so this is\nour perception of the
+    forbidden room"
