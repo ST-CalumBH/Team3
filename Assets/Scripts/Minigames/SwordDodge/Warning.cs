@@ -6,14 +6,6 @@ public class Warning : MonoBehaviour
 {
     [SerializeField] private float flashTime = 0.3f;
     [SerializeField] private float flashCount = 3f;
-    [SerializeField] private AudioClip warningSound;
-    AudioSource source;
-
-    private void Start()
-    {
-        source = GetComponent<AudioSource>();
-        
-    }
 
     public float GetTotalFlashTime()
     {
@@ -28,7 +20,6 @@ public class Warning : MonoBehaviour
     public IEnumerator Flash()
     {
         //Debug.Log("Enum Start");
-        source.PlayOneShot(warningSound);
         int i = 0;
         SpriteRenderer tWarning = GetComponent<SpriteRenderer>();
         while (i < flashCount)

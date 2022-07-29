@@ -22,6 +22,7 @@ public class CableChaosMinigame : Minigame
     GameStates curState;
     float selectPos = 0;
     public float moveSpeed = 0.1f;
+    bool tilesMoved;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class CableChaosMinigame : Minigame
         timingBarRect = timingBar.GetComponent<RectTransform>();
         timingBarWidth = timingBarRect.rect.width;
         timingBar.maxValue = timingBarWidth;
+        tilesMoved = false;
         curState = GameStates.A;
     }
 
@@ -45,7 +47,7 @@ public class CableChaosMinigame : Minigame
 
     private void FixedUpdate()
     {
-        if (curState == GameStates.A)
+        if (curState == GameStates.A && tilesMoved == false)
         {
             Debug.Log("GameState A");
             a1.gameObject.SetActive(true);
@@ -56,8 +58,9 @@ public class CableChaosMinigame : Minigame
             a1.anchoredPosition = new Vector2(375f, 100f);
             a2.anchoredPosition = new Vector2(750f, 100f);
             d1.anchoredPosition = new Vector2(1125f, 100f);
+            tilesMoved = true;
         }
-        if (curState == GameStates.B)
+        if (curState == GameStates.B && tilesMoved == false)
         {
             Debug.Log("GameState B");
             a1.gameObject.SetActive(true);
@@ -68,8 +71,9 @@ public class CableChaosMinigame : Minigame
             s1.anchoredPosition = new Vector2(375f, 100f);
             a1.anchoredPosition = new Vector2(750f, 100f);
             d1.anchoredPosition = new Vector2(1125f, 100f);
+            tilesMoved = true;
         }
-        if (curState == GameStates.C)
+        if (curState == GameStates.C && tilesMoved == false)
         {
             Debug.Log("GameState C");
             a1.gameObject.SetActive(true);
@@ -81,6 +85,7 @@ public class CableChaosMinigame : Minigame
             d1.anchoredPosition = new Vector2(600f, 100f);
             a2.anchoredPosition = new Vector2(900f, 100f);
             d2.anchoredPosition = new Vector2(1200f, 100f);
+            tilesMoved = true;
         }
         selectPos += moveSpeed;
         timingBar.value = selectPos;
