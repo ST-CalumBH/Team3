@@ -856,6 +856,7 @@ GameObject:
   - component: {fileID: 3320595310844766278}
   - component: {fileID: 8032168280097012082}
   - component: {fileID: 527016317}
+  - component: {fileID: 4951551108106920477}
   m_Layer: 0
   m_Name: spatulaClick
   m_TagString: Untagged
@@ -871,9 +872,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8787746845676907833}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.489999, y: -1.8534999, z: 0}
+  m_LocalPosition: {x: -12.39, y: -1.8535, z: 0}
   m_LocalScale: {x: 1.0833361, y: 1.0833361, z: 1.0833361}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 9137753762869496139}
   m_RootOrder: 0
@@ -943,7 +944,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0023787022, y: 6.669901}
+  m_Offset: {x: 0.057676077, y: 7.056988}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -954,7 +955,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.1120667, y: 5.4190574}
+  m_Size: {x: 3.4531245, y: 3.7601185}
   m_EdgeRadius: 0
 --- !u!50 &3320595310844766278
 Rigidbody2D:
@@ -989,11 +990,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0607993ae005339428097e683114686f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  failed: 0
+  result: 0
   isInProgress: 1
   whack: {fileID: 527016317}
   moveSpeed: 5
   rb: {fileID: 3320595310844766278}
+  fireDelay: 1
 --- !u!82 &527016317
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1090,6 +1092,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &4951551108106920477
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8787746845676907833}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 84578170d844e0b429bc74e5463d197c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9010668284139472163
 GameObject:
   m_ObjectHideFlags: 0
