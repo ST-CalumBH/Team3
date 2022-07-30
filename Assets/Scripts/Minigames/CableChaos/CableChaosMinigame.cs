@@ -21,12 +21,15 @@ public class CableChaosMinigame : Minigame
 
     GameStates curState;
     float selectPos = 0;
-    public float moveSpeed = 0.1f;
+
+    public float roundLength;
+    float moveSpeed = 0.1f;
     bool tilesMoved;
 
     // Start is called before the first frame update
     void Start()
     {
+        moveSpeed = ((1500 / roundLength) / 60);
         a1.gameObject.SetActive(false);
         a2.gameObject.SetActive(false);
         s1.gameObject.SetActive(false);
@@ -37,6 +40,7 @@ public class CableChaosMinigame : Minigame
         timingBar.maxValue = timingBarWidth;
         tilesMoved = false;
         curState = GameStates.A;
+        StartCoroutine(Tick());
     }
 
     // Update is called once per frame
@@ -89,5 +93,12 @@ public class CableChaosMinigame : Minigame
         }
         selectPos += moveSpeed;
         timingBar.value = selectPos;
+    }
+
+    IEnumerator Tick()
+    {
+        Debug.Log("Tick");
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(Tick());
     }
 }

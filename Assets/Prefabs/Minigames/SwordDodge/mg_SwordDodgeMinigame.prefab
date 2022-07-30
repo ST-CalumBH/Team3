@@ -470,8 +470,8 @@ MonoBehaviour:
   isInProgress: 1
   clang: {fileID: 8300000, guid: 037eb39aee3616940813df858a76fd4f, type: 3}
   animatorGO: {fileID: 1165809472273538164}
-  lWarningGO: {fileID: 0}
-  mWarningGO: {fileID: 0}
+  lWarningGO: {fileID: 6606531999828730133}
+  mWarningGO: {fileID: 6437074052008165102}
   rWarningGO: {fileID: 7293071866526463426}
   player: {fileID: 1165809472494972610}
   warnings: []
