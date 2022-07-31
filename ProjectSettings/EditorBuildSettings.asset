@@ -5,19 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/titleScreen.unity
     guid: e2e0a243fa6f2d149b238cd49fbfcf19
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Testing/minigame_SheepJump.unity
     guid: e8f13f48336f871459b207754d8db14f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Overworld/homeBedroomScene.unity
     guid: 92155ae81a58a0347be3fdc3395790a7
   - enabled: 0
     path: Assets/Scenes/Overworld/homeMainScene.unity
     guid: 948a57c4a37d5454ba171c0632f53a57
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Overworld/homeMainCutscene.unity
     guid: 4fbef69bf87456a4cb0be1dbcf0693e8
   - enabled: 0
@@ -26,28 +26,28 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Combat/CombatScene.unity
     guid: 0f0551b9255eb11488252d963d125e4d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Overworld/transitionScene.unity
     guid: 1e2ea0bd3c992ba43aac21004170cf3c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Overworld/officeLobbyScene.unity
     guid: 0ddcf466684691144b70c98135d8c830
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Overworld/officeScene.unity
     guid: d884ca35797d79f43bf35e7b4454e739
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Overworld/Post Combat Home Scenes/postCombatHomeScene.unity
     guid: 801f01ff99534b04093f4ddc2ca7194a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Overworld/Post Combat Home Scenes/postCombatHomeScene2.unity
     guid: c931b4a84d79c1541976513529fbef96
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Overworld/Post Combat Home Scenes/postCombatBedroomScene.unity
     guid: 845faddbc77e72b4b8f0619edb0226c9
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Overworld/FemaleBathroom.unity
     guid: f8836a597d3b0084682bda1024bc2fc3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Overworld/MaleBathroom.unity
     guid: a2e2e2a411712f84ebf432386840e2d9
   m_configObjects: {}
