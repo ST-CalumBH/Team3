@@ -2927,7 +2927,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 91247adc28510084a9ac63d72efb57e0, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -4595,7 +4595,7 @@ GameObject:
   - component: {fileID: 1865115823}
   - component: {fileID: 1865115822}
   m_Layer: 8
-  m_Name: Female Bathroom (1)
+  m_Name: Male Bathroom
   m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
