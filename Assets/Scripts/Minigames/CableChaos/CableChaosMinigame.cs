@@ -11,21 +11,27 @@ public class CableChaosMinigame : Minigame
     public RectTransform d1;
     public RectTransform d2;
     public Slider timingBar;
+    public Animator animController;
+    public float roundLength;
+    public float cooldownLength = 0.1f;
 
     RectTransform timingBarRect;
     float timingBarWidth;
-    //float[] threeInputLoc = {0.375f,0.625f,0.875f};
-    //float[] fourInputLoc = {0.3f,0.5f,0.7f,0.9f};
+    float selectPos = 0;
+    float margin;
+    float moveSpeed = 0.1f;
+
+    bool tilesMoved;
+    bool paused = false;
+    bool cooldown = false;
+
+    float[] threeInputLoc = {375f,750f,1125f};
+    float[] fourInputLoc = {300f,600f,900f,1200f};
+    bool[] results = {false, false, false, false};
 
     private enum GameStates {A,B,C}
-
     GameStates curState;
-    float selectPos = 0;
-
-    public float roundLength;
-    float moveSpeed = 0.1f;
-    bool tilesMoved;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -40,13 +46,150 @@ public class CableChaosMinigame : Minigame
         timingBar.maxValue = timingBarWidth;
         tilesMoved = false;
         curState = GameStates.A;
-        StartCoroutine(Tick());
+        margin = a1.rect.width / 2;
+        paused = false;
+        animController.Play("Idle");
     }
 
     // Update is called once per frame
     void Update()
     {
+        switch (curState)
+        {
+            case GameStates.A:
+                if (cooldown == false)
+                {
+                    if (Input.GetKeyDown(KeyCode.A))
+                    {
+                        if (selectPos > threeInputLoc[0] - margin && selectPos < threeInputLoc[0] + margin)
+                        {
+                            results[0] = true;
+                            animController.Play("Key Pressed");
+                        }
+                        else if (selectPos > threeInputLoc[1] - margin && selectPos < threeInputLoc[1] + margin)
+                        {
+                            results[1] = true;
+                            animController.Play("Key Pressed");
+                        }
+                        else { cooldown = true; }
+                    }
+                    if (Input.GetKeyDown(KeyCode.D))
+                    {
+                        if (selectPos > threeInputLoc[2] - margin && selectPos < threeInputLoc[2] + margin)
+                        {
+                            results[2] = true;
+                            results[3] = true;
+                            animController.Play("Attack");
+                            StartCoroutine(StateTransition());
+                        }
+                        else { cooldown = true; }
+                    }
+                }
+                for (int i = 0; i < 3; i++)
+                { 
+                    if(selectPos > (threeInputLoc[i] + margin) && results[i] == false)
+                    {
+                        StartCoroutine(MissedKey());
+                    }
+                }
+                break;
+            case GameStates.B:
+                if (cooldown == false)
+                {
+                    if (Input.GetKeyDown(KeyCode.S))
+                    {
+                        if (selectPos > threeInputLoc[0] - margin && selectPos < threeInputLoc[0] + margin)
+                        {
+                            results[0] = true;
+                            animController.Play("Key Pressed");
+                        }
+                        else { cooldown = true; }
+                    }
+                    if (Input.GetKeyDown(KeyCode.A))
+                    {
+                        if (selectPos > threeInputLoc[1] - margin && selectPos < threeInputLoc[1] + margin)
+                        {
+                            results[1] = true;
+                            animController.Play("Key Pressed");
+                        }
+                        else { cooldown = true; }
+                    }
+                    if (Input.GetKeyDown(KeyCode.D))
+                    {
+                        if (selectPos > threeInputLoc[2] - margin && selectPos < threeInputLoc[2] + margin)
+                        {
+                            results[2] = true;
+                            results[3] = true;
+                            animController.Play("Attack");
+                            StartCoroutine(StateTransition());
+                        }
+                        else { cooldown = true; }
+                    }
+                    
+                }
+                for (int i = 0; i < 3; i++)
+                {
+                    if (selectPos > (threeInputLoc[i] + margin) && results[i] == false)
+                    {
+                        StartCoroutine(MissedKey());
+                    }
+                }
+                break;
+            case GameStates.C:
+                if (cooldown == false)
+                {
+                    if (Input.GetKeyDown(KeyCode.A))
+                    {
+                        if (selectPos > fourInputLoc[0] - margin && selectPos < fourInputLoc[0] + margin)
+                        {
+                            results[0] = true;
+                            animController.Play("Key Pressed");
+                        }
+                        else if (selectPos > fourInputLoc[2] - margin && selectPos < fourInputLoc[2] + margin)
+                        {
+                            results[2] = true;
+                            animController.Play("Key Pressed");
+                        }
+                        else { cooldown = true; }
+                    }
+                    if (Input.GetKeyDown(KeyCode.D))
+                    {
+                        if (selectPos > fourInputLoc[1] - margin && selectPos < fourInputLoc[1] + margin)
+                        {
+                            results[1] = true;
+                            animController.Play("Key Pressed");
+                        }
+                        else if (selectPos > fourInputLoc[3] - margin && selectPos < fourInputLoc[3] + margin)
+                        {
+                            results[3] = true;
+                            animController.Play("Attack");
+                            StartCoroutine(StateTransition());
+                        }
+                        else { cooldown = true; }
+                    }
+                }
+                for (int i = 0; i < 4; i++)
+                {
+                    if (selectPos > (fourInputLoc[i] + margin) && results[i] == false)
+                    {
+                        StartCoroutine(MissedKey());
+                    }
+                }
+                break;
+        }
         
+    }
+
+    IEnumerator MissedKey()
+    {
+        selectPos = 0;
+        paused = true;
+        animController.Play("Hit By Printer");
+        yield return new WaitForSeconds(2f);
+        Debug.Log("Missed Key Called");
+        paused = false;
+        
+        //Missed key badness here
     }
 
     private void FixedUpdate()
@@ -91,14 +234,46 @@ public class CableChaosMinigame : Minigame
             d2.anchoredPosition = new Vector2(1200f, 100f);
             tilesMoved = true;
         }
-        selectPos += moveSpeed;
-        timingBar.value = selectPos;
+        if (paused == false)
+        {
+            selectPos += moveSpeed;
+            timingBar.value = selectPos;
+        }
+        if (cooldown == true)
+        {
+            float timer = 0;
+            if (timer >= (cooldownLength*60f))
+            { 
+                cooldown = false;
+                Debug.Log("Cooldown Over");
+            }
+            timer += 1;
+        }
     }
 
-    IEnumerator Tick()
+    IEnumerator StateTransition()
     {
-        Debug.Log("Tick");
-        yield return new WaitForSeconds(1f);
-        StartCoroutine(Tick());
+        yield return new WaitForSeconds(2f);
+        selectPos = 0;
+        results[0] = false;
+        results[1] = false;
+        results[2] = false;
+        results[3] = false;
+        if (curState == GameStates.A)
+        {
+            curState = GameStates.B;
+            tilesMoved = false;
+        }
+        else if(curState == GameStates.B)
+        {
+            curState = GameStates.C;
+            tilesMoved = false;
+        }
+        else if (curState == GameStates.C)
+        {
+            Debug.Log("Won Minigame");
+            paused = true;
+            EndMinigame(true);
+        }
     }
 }
