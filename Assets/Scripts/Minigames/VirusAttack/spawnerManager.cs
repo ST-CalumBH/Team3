@@ -9,8 +9,15 @@ public class spawnerManager : MonoBehaviour
 
     // might change data type from 'gameObject' to a 'list' of possible items to spawn, meteors with viruses riding on top
 
-    public float spawnDelay = 6f;
+    public float spawnDelay = 6f;                                       // initial spawn delay
     private float spawnElaspedTime = 0f;
+
+    [SerializeField] private float btmSpawnDelay;
+    [SerializeField] private float topSpawnDelay;
+
+    public bool limitedSpawn = false;
+    [SerializeField] private int amount2Spawn;
+    private int spawnCounter = 0;
 
     [Header("Spawn Range")]
     public float TopX;
@@ -24,10 +31,21 @@ public class spawnerManager : MonoBehaviour
 
         if (spawnElaspedTime >= spawnDelay && gameActive == true)
         {
-            spawnElaspedTime = 0f;
-            spawnDelay = Random.Range(2f, 5f);
-            randomMove();
-            spawnItem();
+            if (spawnCounter < amount2Spawn && limitedSpawn == true)
+            {
+                spawnCounter++;
+                spawnElaspedTime = 0f;
+                spawnDelay = Random.Range(btmSpawnDelay, topSpawnDelay);
+                randomMove();
+                spawnItem();
+            }
+            else if (limitedSpawn == false)
+            {
+                spawnElaspedTime = 0f;
+                spawnDelay = Random.Range(btmSpawnDelay, topSpawnDelay);
+                randomMove();
+                spawnItem();
+            }
         }
     }
 
