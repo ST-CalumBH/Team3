@@ -319,6 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 627420125}
   - component: {fileID: 627420126}
+  - component: {fileID: 627420127}
   m_Layer: 0
   m_Name: gameManager
   m_TagString: Untagged
@@ -353,6 +354,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc96e820f1dd6b4cb63be5715697b45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &627420127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627420124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a51ec165921f1ba488cfd01bd0e2c561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  result: 0
+  isInProgress: 1
+  CurrentAds: 3
+  spawnManager: {fileID: 376412882}
 --- !u!4 &709018496 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2803187344514857275, guid: 774265b3dc52ce44c8159eef51f29e3c, type: 3}
@@ -371,11 +388,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2803187344514857275, guid: 774265b3dc52ce44c8159eef51f29e3c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.92
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 2803187344514857275, guid: 774265b3dc52ce44c8159eef51f29e3c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.04
+      value: -1.29
       objectReference: {fileID: 0}
     - target: {fileID: 2803187344514857275, guid: 774265b3dc52ce44c8159eef51f29e3c, type: 3}
       propertyPath: m_LocalPosition.z

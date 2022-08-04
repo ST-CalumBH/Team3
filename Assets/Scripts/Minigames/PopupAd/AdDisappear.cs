@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class AdDisappear : MonoBehaviour
 {
+    [SerializeField] private popupadManager manager;
+
+    void OnAwake()
+    {
+        manager = GameObject.Find("gameManager").GetComponent<popupadManager>();
+        manager.AdAdded();
+    }
 
     public void DestroySelf()
     {
+        manager.AdDeleted();
         Destroy(gameObject);
-        Debug.Log("Destroyed");
     }
 }
