@@ -69,13 +69,15 @@ public class spatulaController : Minigame
     {
         if (other.tag == "Enemy")
         {
-            Debug.Log("Within Area");
             inArea = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        inArea = false;
+        if (other.tag == "Enemy")
+        {
+            inArea = false;
+        }
     }
 }
