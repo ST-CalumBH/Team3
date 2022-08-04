@@ -565,8 +565,8 @@ MonoBehaviour:
 
     New Text'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d453decdb35e438469ccb32138458b25, type: 2}
-  m_sharedMaterial: {fileID: 2310307123040015061, guid: d453decdb35e438469ccb32138458b25, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dda2c8e523f23814784623341e272f4e, type: 2}
+  m_sharedMaterial: {fileID: 411435958290736353, guid: dda2c8e523f23814784623341e272f4e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1303,17 +1303,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
---- !u!114 &400075016 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7706034308894484299, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
-  m_PrefabInstance: {fileID: 400075015}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400075018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 266ccd02feae90a489458ea4377e9fd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &400075017 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7706034308894484301, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
@@ -1358,9 +1347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1332bbb1b89939b47be52bcc898ede20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 0
+  isGamePaused: 0
   pauseMenuUI: {fileID: 1238926793}
-  player: {fileID: 400075016}
 --- !u!114 &466772985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2501,6 +2489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: postCombatBedroomScene
+  newSpawnPoint: 0
   transition: {fileID: 649798498}
   transitionTime: 1
 --- !u!212 &1036617635
@@ -4782,6 +4771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: transitionScene
+  newSpawnPoint: 0
   transition: {fileID: 649798498}
   transitionTime: 1
 --- !u!212 &2074091910
