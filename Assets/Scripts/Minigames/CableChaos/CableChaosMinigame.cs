@@ -182,10 +182,12 @@ public class CableChaosMinigame : Minigame
 
     IEnumerator MissedKey()
     {
-        selectPos = 0;
+        
         paused = true;
+        ResetResults();
+        timingBar.value = selectPos;
         animController.Play("Hit By Printer");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         Debug.Log("Missed Key Called");
         paused = false;
         
@@ -250,15 +252,18 @@ public class CableChaosMinigame : Minigame
             timer += 1;
         }
     }
-
-    IEnumerator StateTransition()
+    void ResetResults()
     {
-        yield return new WaitForSeconds(2f);
         selectPos = 0;
         results[0] = false;
         results[1] = false;
         results[2] = false;
         results[3] = false;
+    }
+    IEnumerator StateTransition()
+    {
+        yield return new WaitForSeconds(2f);
+        ResetResults();
         if (curState == GameStates.A)
         {
             curState = GameStates.B;

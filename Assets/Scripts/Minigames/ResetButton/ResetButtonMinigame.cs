@@ -69,7 +69,7 @@ public class ResetButtonMinigame : Minigame
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (handTransform.eulerAngles.z > (360-zoneDegrees) || handTransform.eulerAngles.z < zoneDegrees)
             {
