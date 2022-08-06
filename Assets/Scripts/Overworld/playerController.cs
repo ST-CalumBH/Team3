@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class playerController : MonoBehaviour 
 {
@@ -14,6 +15,7 @@ public class playerController : MonoBehaviour
     [SerializeField] private eventTimeline container;
     [SerializeField] private DialogueUI dialogueUI;
     [SerializeField] private AudioClip carpetSFX;
+    [SerializeField] private GameObject indicatorObject;
 
     private bool inArea;
     [SerializeField] private bool playerFreeze;//boolean for determining if the player is frozen or not, controlling if the update function accepts input for 
@@ -21,6 +23,7 @@ public class playerController : MonoBehaviour
     private Vector2 movement;
     private AudioSource AS;
     private PauseMenu menu;
+    float degreeRotation;
 
     public IInteractable Interactable { get; set; }
 
@@ -59,7 +62,44 @@ public class playerController : MonoBehaviour
             {
                 animator.SetFloat("lastMoveX", movement.x);
                 animator.SetFloat("lastMoveY", movement.y);
+                if (movement.x > 0f)
+                {
+                    degreeRotation = 180f;
+                }
+                if (movement.x < 0f)
+                {
+                    degreeRotation = 0f;
+                }
+                if (movement.y > 0f)
+                {
+                    degreeRotation = -90f;
+                }
+                if (movement.y < 0f)
+                {
+                    degreeRotation = 90f;
+                }
+                indicatorObject.transform.eulerAngles = new Vector3(indicatorObject.transform.rotation.x, indicatorObject.transform.rotation.y, degreeRotation);
             }
+
+            //switch (movement.x)
+            //{
+            //    case -1:
+            //        indicatorObject.transform.rotation.Set(indicatorObject.transform.rotation.x, indicatorObject.transform.rotation.y, 0, indicatorObject.transform.rotation.w);
+            //        break;
+            //    case 1:
+            //        indicatorObject.transform.Rotate(indicatorObject.transform.rotation.x, indicatorObject.transform.rotation.y, 180f);
+            //        break;
+            //}
+
+            //switch (movement.y)
+            //{
+            //    case -1:
+            //        indicatorObject.transform.Rotate(indicatorObject.transform.rotation.x, indicatorObject.transform.rotation.y, 270f);
+            //        break;
+            //    case 1:
+            //        indicatorObject.transform.Rotate(indicatorObject.transform.rotation.x, indicatorObject.transform.rotation.y, 90f);
+            //        break;
+            //}
 
             if (Input.GetKeyDown(KeyCode.E))                                                // dialogue interactor
             {
