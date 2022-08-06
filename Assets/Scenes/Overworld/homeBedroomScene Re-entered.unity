@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: homeMainCutscene
+  newSpawnPoint: 0
   transition: {fileID: 952883025}
   transitionTime: 1
 --- !u!212 &24649977
@@ -402,17 +403,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.39765543, y: 1.0646126}
   m_EdgeRadius: 0
---- !u!114 &183225782 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7706034308894484299, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
-  m_PrefabInstance: {fileID: 448526514}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 266ccd02feae90a489458ea4377e9fd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &264037286
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,9 +672,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1332bbb1b89939b47be52bcc898ede20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 0
+  isGamePaused: 0
   pauseMenuUI: {fileID: 2083983059}
-  player: {fileID: 183225782}
 --- !u!1001 &448526514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -983,8 +972,8 @@ MonoBehaviour:
 
     New Text'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d453decdb35e438469ccb32138458b25, type: 2}
-  m_sharedMaterial: {fileID: 2310307123040015061, guid: d453decdb35e438469ccb32138458b25, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dda2c8e523f23814784623341e272f4e, type: 2}
+  m_sharedMaterial: {fileID: 411435958290736353, guid: dda2c8e523f23814784623341e272f4e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1360c88e71a0c7498b2b96985a1ddd1, type: 3}
+  m_Name: Cloud sinks
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "The cloud sinks are a bit overkill don't you think, the golden gate \nway in
+    here, plus the fabulous toilets, having your water come \ndirectly from clouds
+    just seems so uneccessary."

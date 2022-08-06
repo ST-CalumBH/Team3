@@ -54,4 +54,6 @@ MonoBehaviour:
   - postCombatBedroomScene
   - postCombatHomeScene
   - postCombatHomeScene2
+  - MaleBathroom
+  - FemaleBathroom
   instanceName: 

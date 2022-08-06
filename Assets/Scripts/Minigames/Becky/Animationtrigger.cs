@@ -8,25 +8,27 @@ public class Animationtrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            myAnimationController.SetBool("PopOut1", true);
-        }
-        else if (other.CompareTag("Player"))
-        {
-            myAnimationController.SetBool("slide", true);
-        }
+        myAnimationController.Play("Popout 1");
+
+        //if (other.CompareTag("Player"))
+        //{
+        //    myAnimationController.SetBool("PopOut1", true);
+        //}
+        //else if (other.CompareTag("Player"))
+        //{
+        //    myAnimationController.SetBool("slide", true);
+        //}
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            myAnimationController.SetBool("PopOut1", false);
-        }
-        else if (other.CompareTag("Player"))
-        {
-            myAnimationController.SetBool("slide", false);
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        myAnimationController.SetBool("PopOut1", false);
+    //    }
+    //    else if (other.CompareTag("Player"))
+    //    {
+    //        myAnimationController.SetBool("slide", false);
+    //    }
+    //}
 }

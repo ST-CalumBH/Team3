@@ -1308,9 +1308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1332bbb1b89939b47be52bcc898ede20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 0
+  isGamePaused: 0
   pauseMenuUI: {fileID: 166063083}
-  player: {fileID: 1177013966}
 --- !u!1 &568069329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,6 +1988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: officeScene
+  newSpawnPoint: 0
   transition: {fileID: 3199908345976529805}
   transitionTime: 1
 --- !u!212 &1052908271
@@ -2718,8 +2718,8 @@ MonoBehaviour:
 
     New Text'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d453decdb35e438469ccb32138458b25, type: 2}
-  m_sharedMaterial: {fileID: 2310307123040015061, guid: d453decdb35e438469ccb32138458b25, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dda2c8e523f23814784623341e272f4e, type: 2}
+  m_sharedMaterial: {fileID: 411435958290736353, guid: dda2c8e523f23814784623341e272f4e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
