@@ -212,10 +212,10 @@ MonoBehaviour:
   item: {fileID: 2803187344514857413, guid: 774265b3dc52ce44c8159eef51f29e3c, type: 3}
   gameActive: 1
   spawnDelay: 2
-  btmSpawnDelay: 0.5
+  btmSpawnDelay: 1
   topSpawnDelay: 2
-  limitedSpawn: 0
-  amount2Spawn: 0
+  limitedSpawn: 1
+  amount2Spawn: 12
   TopX: -4.54
   BottomX: 4.9
   TopY: 1.84
@@ -382,6 +382,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 260099281}
     m_Modifications:
+    - target: {fileID: 2803187344514857274, guid: 774265b3dc52ce44c8159eef51f29e3c, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2803187344514857275, guid: 774265b3dc52ce44c8159eef51f29e3c, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -580,6 +584,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 260099281}
     m_Modifications:
+    - target: {fileID: 2803187344514857274, guid: 774265b3dc52ce44c8159eef51f29e3c, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2803187344514857275, guid: 774265b3dc52ce44c8159eef51f29e3c, type: 3}
       propertyPath: m_RootOrder
       value: 3

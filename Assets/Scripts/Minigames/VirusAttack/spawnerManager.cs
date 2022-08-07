@@ -15,11 +15,12 @@ public class spawnerManager : MonoBehaviour
     [SerializeField] private float btmSpawnDelay;
     [SerializeField] private float topSpawnDelay;
 
+    [Header("Spawn Options")]
     public bool limitedSpawn = false;
     [SerializeField] private int amount2Spawn;
     private int spawnCounter = 0;
 
-    [Header("Spawn Range")]
+    [Header("Spawn Area")]
     public float TopX;
     public float BottomX;
     public float TopY;

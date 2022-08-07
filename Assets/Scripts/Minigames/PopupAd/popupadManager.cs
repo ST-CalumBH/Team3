@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class popupadManager : Minigame
+public class popUpAdManager : Minigame
 {
     [SerializeField] private int CurrentAds = 0;
 
     [SerializeField] private spawnerManager spawnManager;
-
-
-    void Start()
-    {
-
-    }
 
     void Update()
     {
