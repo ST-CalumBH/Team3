@@ -9,6 +9,12 @@ public class Animationtrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         myAnimationController.Play("Popout 1");
+        myAnimationController.Play("Popout 2");
+        myAnimationController.Play("Popout 3");
+        myAnimationController.Play("Popout 4");
+        myAnimationController.Play("Popout 5");
+        myAnimationController.Play("Popout 6");
+
 
         //if (other.CompareTag("Player"))
         //{
