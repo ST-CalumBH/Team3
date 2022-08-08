@@ -6,6 +6,13 @@ public class Animationtrigger : MonoBehaviour
 {
     [SerializeField] private Animator myAnimationController;
 
+    private BoxCollider boxCol;
+
+    private void Start()
+    {
+        boxCol = gameObject.GetComponent<BoxCollider>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         myAnimationController.Play("Popout 1");
@@ -14,6 +21,8 @@ public class Animationtrigger : MonoBehaviour
         myAnimationController.Play("Popout 4");
         myAnimationController.Play("Popout 5");
         myAnimationController.Play("Popout 6");
+
+        boxCol.enabled = false;
 
 
         //if (other.CompareTag("Player"))
@@ -37,4 +46,7 @@ public class Animationtrigger : MonoBehaviour
     //        myAnimationController.SetBool("slide", false);
     //    }
     //}
+
+
+
 }
