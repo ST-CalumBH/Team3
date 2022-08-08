@@ -61,9 +61,9 @@ public class spawnerManager : MonoBehaviour
         transform.position = new Vector2(Random.Range(TopX, BottomX), Random.Range(TopY, BottomY));
     }
 
-    public void changeState()
+    public void spawnerOff()
     {
-        gameActive = !gameActive;
+        gameActive = false;
     }
 
     public bool checkState()

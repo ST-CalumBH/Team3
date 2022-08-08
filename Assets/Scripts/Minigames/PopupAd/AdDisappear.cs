@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class AdDisappear : MonoBehaviour
 {
-    [SerializeField] private popUpAdManager manager;
+    [SerializeField] private popupadManager manager;
 
     void Awake()
     {
-        manager = GameObject.Find("gameManager").GetComponent<popUpAdManager>();
+        manager = GameObject.Find("gameManager").GetComponent<popupadManager>();
         manager.AdAdded();
     }
 

@@ -13,12 +13,12 @@ public class minigameManager : Minigame
     {
         if (lives == 0)
         {
-            spawnManager.changeState();
+            spawnManager.spawnerOff();
             StartCoroutine(EndMinigame(2f, false));
         }
         else if (enemyKilled == 10)
         {
-            spawnManager.changeState();
+            spawnManager.spawnerOff();
             StartCoroutine(EndMinigame(2f, true));
         }
     }

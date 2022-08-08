@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ClickDetect : MonoBehaviour
 {
+    private bool isDistracted = true;
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && isDistracted)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -18,5 +20,10 @@ public class ClickDetect : MonoBehaviour
                 hit.collider.gameObject.SendMessage("DestroySelf");
             }
         }
+    }
+
+    public void distractionChange()
+    {
+        isDistracted = !isDistracted;
     }
 }
