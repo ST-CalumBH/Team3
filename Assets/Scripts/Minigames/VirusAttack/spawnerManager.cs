@@ -9,10 +9,18 @@ public class spawnerManager : MonoBehaviour
 
     // might change data type from 'gameObject' to a 'list' of possible items to spawn, meteors with viruses riding on top
 
-    public float spawnDelay = 6f;
+    public float spawnDelay = 6f;                                       // initial spawn delay
     private float spawnElaspedTime = 0f;
 
-    [Header("Spawn Range")]
+    [SerializeField] private float btmSpawnDelay;
+    [SerializeField] private float topSpawnDelay;
+
+    [Header("Spawn Options")]
+    public bool limitedSpawn = false;
+    [SerializeField] private int amount2Spawn;
+    private int spawnCounter = 0;
+
+    [Header("Spawn Area")]
     public float TopX;
     public float BottomX;
     public float TopY;
@@ -24,10 +32,21 @@ public class spawnerManager : MonoBehaviour
 
         if (spawnElaspedTime >= spawnDelay && gameActive == true)
         {
-            spawnElaspedTime = 0f;
-            spawnDelay = Random.Range(2f, 5f);
-            randomMove();
-            spawnItem();
+            if (spawnCounter < amount2Spawn && limitedSpawn == true)
+            {
+                spawnCounter++;
+                spawnElaspedTime = 0f;
+                spawnDelay = Random.Range(btmSpawnDelay, topSpawnDelay);
+                randomMove();
+                spawnItem();
+            }
+            else if (limitedSpawn == false)
+            {
+                spawnElaspedTime = 0f;
+                spawnDelay = Random.Range(btmSpawnDelay, topSpawnDelay);
+                randomMove();
+                spawnItem();
+            }
         }
     }
 
@@ -42,9 +61,9 @@ public class spawnerManager : MonoBehaviour
         transform.position = new Vector2(Random.Range(TopX, BottomX), Random.Range(TopY, BottomY));
     }
 
-    public void changeState()
+    public void spawnerOff()
     {
-        gameActive = !gameActive;
+        gameActive = false;
     }
 
     public bool checkState()
