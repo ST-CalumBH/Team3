@@ -2812,6 +2812,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: 6ed073737ee9ebc48b107c35ca9c2436, type: 2}
+--- !u!1 &1064056903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9051398502988797710, guid: 5d985b097bf5a544bb40a66dc57ac0ea, type: 3}
+  m_PrefabInstance: {fileID: 1925419261}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1090466817
 GameObject:
   m_ObjectHideFlags: 0
@@ -2948,7 +2953,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 91247adc28510084a9ac63d72efb57e0, type: 2}
-  m_InitialState: 0
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -4971,6 +4976,22 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 9051398502988797699, guid: 5d985b097bf5a544bb40a66dc57ac0ea, type: 3}
   m_PrefabInstance: {fileID: 1925419261}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1925419264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064056903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dece4ff650e0570499fcfc76d8a1441f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: Becky horror maze
+  newSpawnPoint: 0
+  transition: {fileID: 1570611875}
+  transitionTime: 1
 --- !u!1 &1934037016
 GameObject:
   m_ObjectHideFlags: 0
