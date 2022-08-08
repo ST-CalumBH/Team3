@@ -81,26 +81,6 @@ public class playerController : MonoBehaviour
                 indicatorObject.transform.eulerAngles = new Vector3(indicatorObject.transform.rotation.x, indicatorObject.transform.rotation.y, degreeRotation);
             }
 
-            //switch (movement.x)
-            //{
-            //    case -1:
-            //        indicatorObject.transform.rotation.Set(indicatorObject.transform.rotation.x, indicatorObject.transform.rotation.y, 0, indicatorObject.transform.rotation.w);
-            //        break;
-            //    case 1:
-            //        indicatorObject.transform.Rotate(indicatorObject.transform.rotation.x, indicatorObject.transform.rotation.y, 180f);
-            //        break;
-            //}
-
-            //switch (movement.y)
-            //{
-            //    case -1:
-            //        indicatorObject.transform.Rotate(indicatorObject.transform.rotation.x, indicatorObject.transform.rotation.y, 270f);
-            //        break;
-            //    case 1:
-            //        indicatorObject.transform.Rotate(indicatorObject.transform.rotation.x, indicatorObject.transform.rotation.y, 90f);
-            //        break;
-            //}
-
             if (Input.GetKeyDown(KeyCode.E))                                                // dialogue interactor
             {
                 Interactable?.Interact(this);
