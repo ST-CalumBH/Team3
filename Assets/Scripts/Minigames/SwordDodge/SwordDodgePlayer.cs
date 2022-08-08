@@ -25,6 +25,8 @@ public class SwordDodgePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0f) return;
+
         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
         {
             switch(curPosition)

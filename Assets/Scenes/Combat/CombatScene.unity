@@ -782,7 +782,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &634187135
 GameObject:
@@ -1244,7 +1244,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 141972477
+  m_SortingLayerID: -1956602973
   m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &864106693
@@ -1262,7 +1262,7 @@ RectTransform:
   - {fileID: 874584807}
   - {fileID: 991652870}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2581,7 +2581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace5d3b76e8bbd94d8faa070310b062d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: postCombatHomeScene
+  nextScene: eostCombatHomeScene
   playerPrefab: {fileID: 8762642743693062449, guid: 835af96d49ea759499743204341cf168, type: 3}
   enemyPrefab: {fileID: 1949845171411925893, guid: 40799ac2c48dc5b469da406a406f9a4d, type: 3}
   playerBattleStation: {fileID: 1672390813}
@@ -2604,7 +2604,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1846745255
 GameObject:

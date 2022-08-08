@@ -23,6 +23,8 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0f) return;
+
         int distance = Mathf.FloorToInt(player.distance);
         distanceText.text = distance + " m";
             }

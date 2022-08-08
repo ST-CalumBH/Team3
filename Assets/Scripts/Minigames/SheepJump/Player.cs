@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f) return;
+
         if (isGrounded)
         {
             if (Input.GetKeyDown(KeyCode.Space))

@@ -17,11 +17,12 @@ public class SheepJumpController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0f) return;
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
         }
-        
     }
 
     private void Jump() {

@@ -31,6 +31,7 @@ public class chargedSpatula : Minigame
 
     void Update()
     {
+        if (Time.timeScale == 0f) return;
         switch (minigameStatus)
         {
             case "inProgress":
