@@ -11,7 +11,8 @@ public class CableChaosMinigame : Minigame
     public RectTransform d1;
     public RectTransform d2;
     public Slider timingBar;
-    public Animator animController;
+    public Animator animControllerPrinter;
+    public Animator animControllerKeith;
     public float roundLength;
     public float cooldownLength = 0.1f;
 
@@ -48,7 +49,8 @@ public class CableChaosMinigame : Minigame
         curState = GameStates.A;
         margin = a1.rect.width / 2;
         paused = false;
-        animController.Play("Idle");
+        animControllerPrinter.Play("Idle");
+        animControllerKeith.Play("Idle");
     }
 
     // Update is called once per frame
@@ -64,12 +66,12 @@ public class CableChaosMinigame : Minigame
                         if (selectPos > threeInputLoc[0] - margin && selectPos < threeInputLoc[0] + margin)
                         {
                             results[0] = true;
-                            animController.Play("Key Pressed");
+                            animControllerKeith.Play("Key Pressed");
                         }
                         else if (selectPos > threeInputLoc[1] - margin && selectPos < threeInputLoc[1] + margin)
                         {
                             results[1] = true;
-                            animController.Play("Key Pressed");
+                            animControllerKeith.Play("Key Pressed");
                         }
                         else { cooldown = true; }
                     }
@@ -79,7 +81,8 @@ public class CableChaosMinigame : Minigame
                         {
                             results[2] = true;
                             results[3] = true;
-                            animController.Play("Attack");
+                            animControllerKeith.Play("Attack");
+                            animControllerPrinter.Play("Attacked");
                             StartCoroutine(StateTransition());
                         }
                         else { cooldown = true; }
@@ -101,7 +104,7 @@ public class CableChaosMinigame : Minigame
                         if (selectPos > threeInputLoc[0] - margin && selectPos < threeInputLoc[0] + margin)
                         {
                             results[0] = true;
-                            animController.Play("Key Pressed");
+                            animControllerKeith.Play("Key Pressed");
                         }
                         else { cooldown = true; }
                     }
@@ -110,7 +113,7 @@ public class CableChaosMinigame : Minigame
                         if (selectPos > threeInputLoc[1] - margin && selectPos < threeInputLoc[1] + margin)
                         {
                             results[1] = true;
-                            animController.Play("Key Pressed");
+                            animControllerKeith.Play("Key Pressed");
                         }
                         else { cooldown = true; }
                     }
@@ -120,7 +123,8 @@ public class CableChaosMinigame : Minigame
                         {
                             results[2] = true;
                             results[3] = true;
-                            animController.Play("Attack");
+                            animControllerKeith.Play("Attack");
+                            animControllerPrinter.Play("Attacked");
                             StartCoroutine(StateTransition());
                         }
                         else { cooldown = true; }
@@ -143,12 +147,12 @@ public class CableChaosMinigame : Minigame
                         if (selectPos > fourInputLoc[0] - margin && selectPos < fourInputLoc[0] + margin)
                         {
                             results[0] = true;
-                            animController.Play("Key Pressed");
+                            animControllerKeith.Play("Key Pressed");
                         }
                         else if (selectPos > fourInputLoc[2] - margin && selectPos < fourInputLoc[2] + margin)
                         {
                             results[2] = true;
-                            animController.Play("Key Pressed");
+                            animControllerKeith.Play("Key Pressed");
                         }
                         else { cooldown = true; }
                     }
@@ -157,12 +161,13 @@ public class CableChaosMinigame : Minigame
                         if (selectPos > fourInputLoc[1] - margin && selectPos < fourInputLoc[1] + margin)
                         {
                             results[1] = true;
-                            animController.Play("Key Pressed");
+                            animControllerKeith.Play("Key Pressed");
                         }
                         else if (selectPos > fourInputLoc[3] - margin && selectPos < fourInputLoc[3] + margin)
                         {
                             results[3] = true;
-                            animController.Play("Attack");
+                            animControllerKeith.Play("Attack");
+                            animControllerPrinter.Play("Attacked");
                             StartCoroutine(StateTransition());
                         }
                         else { cooldown = true; }
@@ -186,7 +191,7 @@ public class CableChaosMinigame : Minigame
         paused = true;
         ResetResults();
         timingBar.value = selectPos;
-        animController.Play("Hit By Printer");
+        animControllerKeith.Play("Hit By Printer");
         yield return new WaitForSeconds(1f);
         Debug.Log("Missed Key Called");
         paused = false;
