@@ -162,11 +162,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 78349515, guid: 36980c7b006378b449cc3f5c6e46cdac, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3660321854510298841, guid: 36980c7b006378b449cc3f5c6e46cdac, type: 3}
       propertyPath: m_Name
       value: mg_InkDrop
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660321854510298841, guid: 36980c7b006378b449cc3f5c6e46cdac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5466007900978866074, guid: 36980c7b006378b449cc3f5c6e46cdac, type: 3}
       propertyPath: m_RootOrder
@@ -599,10 +603,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 726159061124631243, guid: ef4f9363138607a4f9cce339d43c55f6, type: 3}
-      propertyPath: cooldownLength
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 726159061744128840, guid: ef4f9363138607a4f9cce339d43c55f6, type: 3}
       propertyPath: m_Name
       value: mg_CableChaos
@@ -678,7 +678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8278988327754698649, guid: 4a1d2e9de91e24d4c8bc1e9b46cff534, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8278988327754698654, guid: 4a1d2e9de91e24d4c8bc1e9b46cff534, type: 3}
       propertyPath: m_RootOrder
@@ -726,11 +726,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8278988327791000028, guid: 4a1d2e9de91e24d4c8bc1e9b46cff534, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.44444445
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8278988327791000028, guid: 4a1d2e9de91e24d4c8bc1e9b46cff534, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8278988328187284893, guid: 4a1d2e9de91e24d4c8bc1e9b46cff534, type: 3}
       propertyPath: hitZone
@@ -746,19 +746,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8278988328386856026, guid: 4a1d2e9de91e24d4c8bc1e9b46cff534, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8278988328636436950, guid: 4a1d2e9de91e24d4c8bc1e9b46cff534, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.44444445
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8278988328636436950, guid: 4a1d2e9de91e24d4c8bc1e9b46cff534, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8278988328636436950, guid: 4a1d2e9de91e24d4c8bc1e9b46cff534, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.44444445
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a1d2e9de91e24d4c8bc1e9b46cff534, type: 3}
