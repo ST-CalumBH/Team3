@@ -13,6 +13,8 @@ public class eventIcon : MonoBehaviour
     private Vector3 vectorUp = (Vector3.up / 100);
     private Vector3 vectorDown = (Vector3.down / 100);
 
+    public Animator animator;
+
     void Start()
     {
         active = true;
@@ -59,5 +61,23 @@ public class eventIcon : MonoBehaviour
     {
         active = !active;
         gameObject.SetActive(active);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Colliding!");
+            animator.SetBool("Dim",true);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Exit Collide!");
+            animator.SetBool("Dim", false);
+        }
     }
 }
