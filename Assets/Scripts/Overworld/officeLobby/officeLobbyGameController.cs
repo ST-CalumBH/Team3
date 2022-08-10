@@ -12,6 +12,7 @@ public class officeLobbyGameController : MonoBehaviour
     [SerializeField] private DialogueObject blankDialogue;
 
     [SerializeField] private GameObject doorSelector;
+    [SerializeField] private GameObject doorCursor;
     [SerializeField] private SpriteRenderer eSpriteRenderer;
     [SerializeField] private GameObject leftDoor;
     [SerializeField] private GameObject midDoor;
@@ -35,6 +36,7 @@ public class officeLobbyGameController : MonoBehaviour
     SpriteRenderer leftDoorSR;
     SpriteRenderer midDoorSR;
     SpriteRenderer rightDoorSR;
+    SpriteRenderer spotlightMask;
     Animator dsAnimator;
     SpriteRenderer dsSpriteRenderer;
     private bool gameStart = false;
@@ -47,7 +49,7 @@ public class officeLobbyGameController : MonoBehaviour
     void Start()
     {
         dsAnimator = doorSelector.GetComponent<Animator>();
-        dsSpriteRenderer = doorSelector.GetComponent<SpriteRenderer>();
+        dsSpriteRenderer = doorCursor.GetComponent<SpriteRenderer>();
         leftDoorAnim = leftDoor.GetComponent<Animator>();
         midDoorAnim = midDoor.GetComponent<Animator>();
         rightDoorAnim = rightDoor.GetComponent<Animator>();
