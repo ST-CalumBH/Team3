@@ -31,8 +31,8 @@ TagManager:
   - Player
   - Bullet
   - InvisWall
-  - 
-  - 
+  - EnemyWall
+  - Enemy
   - 
   - 
   - 

@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: mg_VirusAttack
       objectReference: {fileID: 0}
+    - target: {fileID: 238319502783674114, guid: c00b37628e164664c933b4b344e2452f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 238319502783674115, guid: c00b37628e164664c933b4b344e2452f, type: 3}
       propertyPath: m_RootOrder
       value: 1
