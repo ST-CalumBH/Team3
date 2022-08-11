@@ -34,7 +34,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -520,7 +520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5466007900978866074
 Transform:
   m_ObjectHideFlags: 0
@@ -667,9 +667,9 @@ GameObject:
   - component: {fileID: 4150911572546822707}
   - component: {fileID: 4150911572546822706}
   - component: {fileID: 4150911572546822710}
-  - component: {fileID: 4150911572546822709}
   - component: {fileID: 4150911572546822708}
   - component: {fileID: 376531308}
+  - component: {fileID: 2013459021}
   m_Layer: 9
   m_Name: bucket/bin
   m_TagString: Player
@@ -770,23 +770,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
---- !u!114 &4150911572546822709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4150911572546822705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45c0c3d9ed0438c4d903839a832e48e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 20
-  rb: {fileID: 4150911572546822708}
-  sprRend: {fileID: 4150911572546822706}
-  hurt: {fileID: 2909293449332390883, guid: 5216721c8c953324f90e72b25e91365c, type: 3}
-  animController: {fileID: 376531308}
 --- !u!50 &4150911572546822708
 Rigidbody2D:
   serializedVersion: 4
@@ -828,6 +811,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2013459021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4150911572546822705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c0c3d9ed0438c4d903839a832e48e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 15
+  rb: {fileID: 4150911572546822708}
+  sprRend: {fileID: 4150911572546822706}
+  hurt: {fileID: 2909293449332390883, guid: 5216721c8c953324f90e72b25e91365c, type: 3}
+  animController: {fileID: 376531308}
 --- !u!1 &4150911573032839465
 GameObject:
   m_ObjectHideFlags: 0
