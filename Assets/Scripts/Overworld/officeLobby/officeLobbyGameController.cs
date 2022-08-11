@@ -141,6 +141,7 @@ public class officeLobbyGameController : MonoBehaviour
     {
         dsSpriteRenderer.enabled = false;
         eSpriteRenderer.enabled = false;
+        gameStart = false;
         sceneAudioSource.PlayOneShot(elevatorDing,0.25f);
         switch (curPosition)
         {
