@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class chargedSpatula : Minigame
 {
@@ -23,6 +24,8 @@ public class chargedSpatula : Minigame
 
     public Animator animator;
 
+    public Slider powerBar;
+
     void Awake()
     {
         minigameStatus = "inProgress";
@@ -41,6 +44,8 @@ public class chargedSpatula : Minigame
             default:
                 break;
         }
+
+        powerBar.value = (eulerZ / chargePoint); // (0 - 1) scaling
     }
 
     void FixedUpdate()
