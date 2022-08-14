@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class chargedSpatula : Minigame
 {
@@ -21,6 +22,10 @@ public class chargedSpatula : Minigame
 
     AudioSource AS;
 
+    public Animator animator;
+
+    public Slider powerBar;
+
     void Awake()
     {
         minigameStatus = "inProgress";
@@ -36,13 +41,11 @@ public class chargedSpatula : Minigame
             case "inProgress":
                 SpatulaMovement(); 
                 break;
-            case "win": // win and lose movement is done in fixedUpdate() could delete them
-                break;
-            case "lose":
-                break;
             default:
                 break;
         }
+
+        powerBar.value = (eulerZ / chargePoint); // (0 - 1) scaling
     }
 
     void FixedUpdate()
@@ -66,6 +69,8 @@ public class chargedSpatula : Minigame
     {
         eulerZ = transform.rotation.z;
 
+        
+
         if (eulerZ >= 0)
         {
             transform.Rotate(Vector3.back * speedSpatula * Time.fixedDeltaTime);
@@ -76,6 +81,8 @@ public class chargedSpatula : Minigame
             AS.PlayOneShot(whack);
             minigameStatus = "win";
         }
+
+        animator.SetFloat("ChargeLevel", (eulerZ / chargePoint)); // scales our eulerZ from (0 - chargePoint) into (0 - 1) so our animator can read it.
     }
 
     void SpatulaMovement()
@@ -86,9 +93,10 @@ public class chargedSpatula : Minigame
         }
     }
 
-    void win()
+    void win() // once we have our swatting animation, we can delete just the if statement and leave just the top two lines
     {
         controller.defeatedStateChange();
+        animator.SetBool("FullyCharged", true);
 
         if (winSpeed > 0)
         {
