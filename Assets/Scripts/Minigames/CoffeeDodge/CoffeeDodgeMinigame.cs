@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SwordDodgeMinigame : Minigame
+public class CoffeeDodgeMinigame : Minigame
 {
     [SerializeField] private AudioClip clang;
 
@@ -16,7 +16,7 @@ public class SwordDodgeMinigame : Minigame
     public Warning mWarningGO;
     public Warning rWarningGO;
 
-    public SwordDodgePlayer player;
+    public CoffeeDodgePlayer player;
 
     public List<Warning> warnings;
 
@@ -48,7 +48,7 @@ public class SwordDodgeMinigame : Minigame
         lWarning.enabled = false;
         mWarning.enabled = false;
         rWarning.enabled = false;
-        player = FindObjectOfType<SwordDodgePlayer>();
+        player = FindObjectOfType<CoffeeDodgePlayer>();
         laneNum = player.curPosition;
         StartCoroutine(ShowWarning());
     }
@@ -64,7 +64,7 @@ public class SwordDodgeMinigame : Minigame
                 switch (laneNum)
                 {
                     case 0:
-                        if (player.isTouching == SwordDodgePositionEnum.LEFT)
+                        if (player.isTouching == CoffeeDodgePositionEnum.LEFT)
                         {
                             Debug.Log("Left Hit");
                             dodgeCount = 0;
@@ -73,7 +73,7 @@ public class SwordDodgeMinigame : Minigame
                         }
                         break;
                     case 1:
-                        if (player.isTouching == SwordDodgePositionEnum.MIDDLE)
+                        if (player.isTouching == CoffeeDodgePositionEnum.MIDDLE)
                         {
                             Debug.Log("Middle Hit");
                             dodgeCount = 0;
@@ -82,7 +82,7 @@ public class SwordDodgeMinigame : Minigame
                         }
                         break;
                     case 2:
-                        if (player.isTouching == SwordDodgePositionEnum.RIGHT)
+                        if (player.isTouching == CoffeeDodgePositionEnum.RIGHT)
                         {
                             Debug.Log("Right Hit");
                             dodgeCount = 0;

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum SwordDodgePositionEnum { LEFT, MIDDLE, RIGHT };
+public enum CoffeeDodgePositionEnum {LEFT, MIDDLE, RIGHT};
 
-public class SwordDodgePlayer : MonoBehaviour
+public class CoffeeDodgePlayer : MonoBehaviour
 {
 
     [SerializeField] private AudioClip woosh;
@@ -14,7 +14,7 @@ public class SwordDodgePlayer : MonoBehaviour
     public Transform[] HBtransforms;
     public int curPosition = 1;
     
-    public SwordDodgePositionEnum isTouching;
+    public CoffeeDodgePositionEnum isTouching;
 
     // Start is called before the first frame update
     void Start()
@@ -68,15 +68,15 @@ public class SwordDodgePlayer : MonoBehaviour
     {
         if (other.tag == "LeftHitBox")
         {
-            isTouching = SwordDodgePositionEnum.LEFT;
+            isTouching = CoffeeDodgePositionEnum.LEFT;
         }
         if (other.tag == "MiddleHitBox")
         {
-            isTouching = SwordDodgePositionEnum.MIDDLE;
+            isTouching = CoffeeDodgePositionEnum.MIDDLE;
         }
         if (other.tag == "RightHitBox")
         {
-            isTouching = SwordDodgePositionEnum.RIGHT;
+            isTouching = CoffeeDodgePositionEnum.RIGHT;
         }
     }
 
