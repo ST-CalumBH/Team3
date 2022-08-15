@@ -28,24 +28,19 @@ public class BattleSystem : MonoBehaviour
 
 	Camera cam;
 
-	public playerController player;
+	[Header("Dialogue Lines")]
+	public string attack;
+	public string successfulAttack;
+	public string defend;
+	public string victory;
 
 	// Start is called before the first frame update
 	void Start()
     {
-		player.freezePlayer();
 		cam = Camera.main;
 		state = BattleState.START;
 		StartCoroutine(SetupBattle());
     }
-
-    private void Update()
-    {
-		if (Input.GetKeyDown(KeyCode.R))
-		{
-			SceneManager.LoadScene("homeBedroomScene");
-		}
-	}
 
     IEnumerator SetupBattle()
 	{
@@ -69,7 +64,7 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator PlayerAttack()
 	{
-		dialogueText.text = "Keith attacks!";
+		dialogueText.text = attack;
 
 		yield return new WaitForSeconds(3f);
 
@@ -81,7 +76,7 @@ public class BattleSystem : MonoBehaviour
 		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
 
 		enemyHUD.SetHP(enemyUnit.currentHP);
-		dialogueText.text = "Take that good sir";
+		dialogueText.text = successfulAttack;
 
 		yield return new WaitForSeconds(2f);
 
@@ -99,7 +94,7 @@ public class BattleSystem : MonoBehaviour
 	IEnumerator EnemyTurn()
 	{
 		Debug.Log("Enemy Turn");
-		dialogueText.text = enemyUnit.unitName + " attacks! Uh Oh";
+		dialogueText.text = defend;
 
 		yield return new WaitForSeconds(1f);
 
@@ -136,7 +131,7 @@ public class BattleSystem : MonoBehaviour
 	{
 		if(state == BattleState.WON)
 		{
-			dialogueText.text = "AHA, breakfast served sunny side up ;)";
+			dialogueText.text = victory;
 			StartCoroutine(EndCombat());
 		} else if (state == BattleState.LOST)
 		{

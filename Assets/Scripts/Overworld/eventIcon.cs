@@ -67,7 +67,6 @@ public class eventIcon : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Colliding!");
             animator.SetBool("Dim",true);
         }
     }
@@ -76,7 +75,6 @@ public class eventIcon : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Exit Collide!");
             animator.SetBool("Dim", false);
         }
     }
