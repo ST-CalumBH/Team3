@@ -28,7 +28,7 @@ public class CoffeeDodgeMinigame : Minigame
     SpriteRenderer mWarning;
     SpriteRenderer rWarning;
 
-    int laneNum;
+    int[] laneNum;
     public int dodgeCount = 0;
     public bool isAttacking;
     bool cooldown = false;
@@ -50,7 +50,7 @@ public class CoffeeDodgeMinigame : Minigame
         rWarning.enabled = false;
         player = FindObjectOfType<CoffeeDodgePlayer>();
         laneNum = player.curPosition;
-        StartCoroutine(ShowWarning());
+        StartCoroutine(QueueAttacks());
     }
 
     // Update is called once per frame
@@ -95,6 +95,20 @@ public class CoffeeDodgeMinigame : Minigame
         }
     }
 
+    public void QueueAttacks()
+    {
+        int numQueues = 3;
+        laneNum = new int[3]
+        
+        //Generate three lane positions
+        Random randNum = new Random();
+        for (int i = 0; i < laneNum.Length; i++)
+        {
+            laneNum[i] = randNum.Next(0, numQueues - 1);
+        }
+
+        
+    }
     public void Slash()
     {
         switch (laneNum)
