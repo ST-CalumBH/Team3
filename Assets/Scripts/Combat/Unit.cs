@@ -19,6 +19,9 @@ public class Unit : MonoBehaviour
 
 	Camera cam;
 
+	[Space(20)]
+	public DialogueObject[] dialogueList = new DialogueObject[5];				// 1 = encounter, 2 = attack, 3 = successful attack, 4 = defend, 5 = win quote
+
 	// Start is called before the first frame update
 	void Start()
 	{

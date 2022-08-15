@@ -28,17 +28,14 @@ public class BattleSystem : MonoBehaviour
 
 	Camera cam;
 
-	[Header("Dialogue Lines")]
-	public string attack;
-	public string successfulAttack;
-	public string defend;
-	public string victory;
+	public DialogueUI diagUI;
 
 	// Start is called before the first frame update
 	void Start()
     {
 		cam = Camera.main;
 		state = BattleState.START;
+		diagUI = FindObjectOfType<DialogueUI>();
 		StartCoroutine(SetupBattle());
     }
 
@@ -50,7 +47,7 @@ public class BattleSystem : MonoBehaviour
 		GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
 		enemyUnit = enemyGO.GetComponent<Unit>();
 
-		dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
+		diagUI.ShowDialogue(enemyUnit.dialogueList[0]);
 
 		playerHUD.SetHUD(playerUnit);
 		enemyHUD.SetHUD(enemyUnit);
@@ -64,7 +61,7 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator PlayerAttack()
 	{
-		dialogueText.text = attack;
+		diagUI.ShowDialogue(enemyUnit.dialogueList[1]);
 
 		yield return new WaitForSeconds(3f);
 
@@ -76,7 +73,7 @@ public class BattleSystem : MonoBehaviour
 		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
 
 		enemyHUD.SetHP(enemyUnit.currentHP);
-		dialogueText.text = successfulAttack;
+		diagUI.ShowDialogue(enemyUnit.dialogueList[2]);
 
 		yield return new WaitForSeconds(2f);
 
@@ -94,7 +91,7 @@ public class BattleSystem : MonoBehaviour
 	IEnumerator EnemyTurn()
 	{
 		Debug.Log("Enemy Turn");
-		dialogueText.text = defend;
+		diagUI.ShowDialogue(enemyUnit.dialogueList[3]);
 
 		yield return new WaitForSeconds(1f);
 
@@ -131,7 +128,7 @@ public class BattleSystem : MonoBehaviour
 	{
 		if(state == BattleState.WON)
 		{
-			dialogueText.text = victory;
+			diagUI.ShowDialogue(enemyUnit.dialogueList[4]);
 			StartCoroutine(EndCombat());
 		} else if (state == BattleState.LOST)
 		{
