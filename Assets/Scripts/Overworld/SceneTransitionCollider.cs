@@ -16,14 +16,32 @@ public class SceneTransitionCollider : MonoBehaviour
 
     public float transitionTime = 1f;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private bool inArea;
+
+    private void Update()
     {
-        if (other.tag == "Player")
+        if (Input.GetKeyDown(KeyCode.E) && inArea == true)
         {
             player = FindObjectOfType<playerController>();
             player.freezePlayer();
             SetSpawnPoint();
             changeScene();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            inArea = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            inArea = false;
         }
     }
 
