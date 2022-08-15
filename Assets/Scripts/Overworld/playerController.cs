@@ -105,7 +105,7 @@ public class playerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Interact")
+        if (other.tag == "Cutscene")
         {
             inArea = true;
             eventTrigger = other.gameObject;

@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 76289551}
   m_Layer: 8
   m_Name: Stove
-  m_TagString: Interact
+  m_TagString: Cutscene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2518,6 +2518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fda8da0c9740fac4eba5b62a869654a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!212 &1065088993
 SpriteRenderer:
   m_ObjectHideFlags: 0
