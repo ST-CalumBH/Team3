@@ -1585,7 +1585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705f4b4b05fd403449d879dc2b218335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashTime: 0.2
+  flashTime: 0.3
   flashCount: 1
 --- !u!1001 &1165809472921903656
 PrefabInstance:
@@ -1683,7 +1683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705f4b4b05fd403449d879dc2b218335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashTime: 0.1
+  flashTime: 0.3
   flashCount: 1
 --- !u!1001 &2537840409416140002
 PrefabInstance:
@@ -1776,7 +1776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705f4b4b05fd403449d879dc2b218335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashTime: 0.1
+  flashTime: 0.3
   flashCount: 1
 --- !u!4 &5857097348705717258 stripped
 Transform:

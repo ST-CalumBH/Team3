@@ -27,8 +27,9 @@ public class CoffeeDodgeMinigame : Minigame
     SpriteRenderer lWarning;
     SpriteRenderer mWarning;
     SpriteRenderer rWarning;
-
-    int[] laneNum;
+    
+    List<int> attackQueue;
+    int attackNumber = 0;
     public int dodgeCount = 0;
     public bool isAttacking;
     bool cooldown = false;
@@ -49,8 +50,7 @@ public class CoffeeDodgeMinigame : Minigame
         mWarning.enabled = false;
         rWarning.enabled = false;
         player = FindObjectOfType<CoffeeDodgePlayer>();
-        laneNum = player.curPosition;
-        StartCoroutine(QueueAttacks());
+        StartCoroutine(QueueAttacks(2));
     }
 
     // Update is called once per frame
@@ -61,13 +61,13 @@ public class CoffeeDodgeMinigame : Minigame
         {
             if (isAttacking == true)
             {
-                switch (laneNum)
+                switch (attackQueue[attackNumber])
                 {
                     case 0:
                         if (player.isTouching == CoffeeDodgePositionEnum.LEFT)
                         {
                             Debug.Log("Left Hit");
-                            dodgeCount = 0;
+                            dodgeCount--;
                             StartCoroutine(Hurt());
                             StartCoroutine(CooldownTimer());
                         }
@@ -76,7 +76,7 @@ public class CoffeeDodgeMinigame : Minigame
                         if (player.isTouching == CoffeeDodgePositionEnum.MIDDLE)
                         {
                             Debug.Log("Middle Hit");
-                            dodgeCount = 0;
+                            dodgeCount--;
                             StartCoroutine(Hurt());
                             StartCoroutine(CooldownTimer());
                         }
@@ -85,7 +85,7 @@ public class CoffeeDodgeMinigame : Minigame
                         if (player.isTouching == CoffeeDodgePositionEnum.RIGHT)
                         {
                             Debug.Log("Right Hit");
-                            dodgeCount = 0;
+                            dodgeCount--;
                             StartCoroutine(Hurt());
                             StartCoroutine(CooldownTimer());
                         }
@@ -95,43 +95,10 @@ public class CoffeeDodgeMinigame : Minigame
         }
     }
 
-    public void QueueAttacks()
-    {
-        int numQueues = 3;
-        laneNum = new int[3]
-        
-        //Generate three lane positions
-        Random randNum = new Random();
-        for (int i = 0; i < laneNum.Length; i++)
-        {
-            laneNum[i] = randNum.Next(0, numQueues - 1);
-        }
-
-        
-    }
-    public void Slash()
-    {
-        switch (laneNum)
-        {
-            case 0:
-                StartCoroutine(LeftAttack());
-            break;
-            case 1:
-                StartCoroutine(MiddleAttack());
-            break;
-            case 2:
-                StartCoroutine(RightAttack());
-            break;
-            default:
-                StartCoroutine(MiddleAttack());
-            break;
-        };
-        
-    }
 
     public void CallShowWarning()
     {
-        StartCoroutine(ShowWarning());
+        StartCoroutine(ShowWarning(attackQueue[attackNumber]));
     }
 
     public void CallEndMinigame()
@@ -141,65 +108,75 @@ public class CoffeeDodgeMinigame : Minigame
 
     public void CheckForTnight()//I love Fortnite
     {
-        if (dodgeCount == 3)
+        if (dodgeCount == 5)
         {
             StartCoroutine(EndMinigame());
         }
         else
         {
-            StartCoroutine(ShowWarning());
+            StartCoroutine(QueueAttacks(3));
         }
     }
 
-    IEnumerator ShowWarning()
+    IEnumerator QueueAttacks(int numAttacks)
     {
-        yield return new WaitForSeconds(1f);
-        warnings[laneNum].StartFlash();
-        yield return new WaitForSeconds(warnings[laneNum].GetTotalFlashTime() + 1f);
-        Slash();
+        yield return new WaitForSeconds(0.5f);
+        
+        //Manually initializing the attack queue like this guarantees the attacks will be spread out evenly.
+        //However, it also means we cannot attack more than three times per round. Need to randomly generate the list if we want more.
+        attackQueue = new List<int> {0, 1, 2};
+        attackNumber = 0;
+
+        //Shuffle list
+        //https://answers.unity.com/questions/486626/how-can-i-shuffle-alist.html
+        for (int i = 0; i < attackQueue.Count; i++) {
+            int temp = attackQueue[i];
+            int randomIndex = Random.Range(i, attackQueue.Count);
+            attackQueue[i] = attackQueue[randomIndex];
+            attackQueue[randomIndex] = temp;
+        }
+        while (attackQueue.Count > numAttacks) {
+            attackQueue.RemoveAt(0);
+        }
+        StartCoroutine(ShowWarning(attackQueue[attackNumber]));
     }
 
-    IEnumerator LeftAttack()
+    IEnumerator ShowWarning(int laneNum) 
     {
-        animator.Play("Base Layer.Left Lane");
+        warnings[laneNum].StartFlash();
+        
+        if (++attackNumber >= attackQueue.Count) {
+            yield return new WaitForSeconds(warnings[laneNum].GetTotalFlashTime() + 0.5f);
+            attackNumber = 0;
+            StartCoroutine(Attack(attackQueue[attackNumber]));
+        } 
+        else {
+            yield return new WaitForSeconds(warnings[laneNum].GetTotalFlashTime() + 0.4f);
+            StartCoroutine(ShowWarning(attackQueue[attackNumber]));
+        }
+
+    }
+    IEnumerator Attack(int laneNum)
+    {
+        string laneName = laneNum == 2 ? "Right" : laneNum == 0 ? "Left" : "Mid";
+        animator.Play("Base Layer."+laneName+" Lane");
         yield return new WaitForSeconds(0.30f); //Currently just manually inputting the animation length, but should make a dynamic system.
         isAttacking = true;
         audioSource.PlayOneShot(clang);
-        yield return new WaitForSeconds(0.74f);
+        yield return new WaitForSeconds(0.44f);
         isAttacking = false;
         yield return new WaitForSeconds(0.05f);
         animator.Play("Base Layer.Neutral");
-        laneNum = player.curPosition;
-        dodgeCount++;
-        CheckForTnight();
-    }
-    IEnumerator MiddleAttack()
-    {
-        animator.Play("Base Layer.Mid Lane");
-        yield return new WaitForSeconds(0.30f);
-        isAttacking = true;
-        audioSource.PlayOneShot(clang);
-        yield return new WaitForSeconds(0.74f);
-        isAttacking = false;
-        yield return new WaitForSeconds(0.05f);
-        animator.Play("Base Layer.Neutral");
-        laneNum = player.curPosition;
-        dodgeCount++;
-        CheckForTnight();
-    }
-    IEnumerator RightAttack()
-    {
-        animator.Play("Base Layer.Right Lane");
-        yield return new WaitForSeconds(0.30f);
-        isAttacking = true;
-        audioSource.PlayOneShot(clang);
-        yield return new WaitForSeconds(0.74f);
-        isAttacking = false;
-        yield return new WaitForSeconds(0.05f);
-        animator.Play("Base Layer.Neutral");
-        laneNum = player.curPosition;
-        dodgeCount++;
-        CheckForTnight();
+
+        if (++attackNumber >= attackQueue.Count) {
+            attackNumber = 0;
+            dodgeCount++;
+            CheckForTnight();
+        } 
+        else {
+            yield return new WaitForSeconds(0.05f);
+            StartCoroutine(Attack(attackQueue[attackNumber]));
+        }
     }
 
     IEnumerator Hurt()
