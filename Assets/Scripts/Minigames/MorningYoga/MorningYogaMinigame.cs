@@ -16,11 +16,13 @@ public class MorningYogaMinigame : Minigame
     public RectTransform W;
     public RectTransform Z;
 
+    public Animator backgroundAnim;
+    public Animator keithAnim;
+
     private enum GameStates { A, B, C, D }
     GameStates curState;
 
     bool tilesMoved;
-    
 
     readonly float[] keyLocations = { -500f, -250f, 0f, 250f, 500f };
     readonly KeyCode[] stateA = { KeyCode.E, KeyCode.W };
@@ -28,7 +30,7 @@ public class MorningYogaMinigame : Minigame
     readonly KeyCode[] stateC = { KeyCode.Q, KeyCode.A, KeyCode.Z, KeyCode.R };
     readonly KeyCode[] stateD = { KeyCode.P, KeyCode.A, KeyCode.L, KeyCode.Z, KeyCode.G };
 
-    bool[] stateAResult = { false, false};
+    bool[] stateAResult = { false, false };
     bool[] stateBResult = { false, false, false };
     bool[] stateCResult = { false, false, false, false };
     bool[] stateDResult = { false, false, false, false, false };
@@ -252,11 +254,6 @@ public class MorningYogaMinigame : Minigame
                 }
             }
         }
-    }
-
-    private void OnGUI()
-    {
-        
     }
 
     private void FixedUpdate()
