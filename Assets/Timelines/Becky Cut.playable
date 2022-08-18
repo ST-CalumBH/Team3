@@ -168,7 +168,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 7.766667
+    m_StopTime: 7.0666666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -233,18 +233,11 @@ AnimationClip:
     floatParameter: 300
     intParameter: 0
     messageOptions: 0
-  - time: 7.7
+  - time: 7.0666666
     functionName: changeScene
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 7.766667
-    functionName: hide
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 1
     intParameter: 0
     messageOptions: 0
 --- !u!74 &-2951166480918059730
