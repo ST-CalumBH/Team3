@@ -39,6 +39,8 @@ public class MorningYogaMinigame : Minigame
     {
         tilesMoved = false;
         curState = GameStates.A;
+        //keithAnim.Play("Idle");
+        backgroundAnim.Play("Idle");
         ResetLetters();
     }
 
@@ -50,6 +52,7 @@ public class MorningYogaMinigame : Minigame
             if (Input.anyKey && !Input.GetKey(stateA[0]) && !Input.GetKey(stateA[1]))
             {
                 //Debug.Log("Wrong Input");
+                keithAnim.Play("Idle");
                 stateAResult[0] = false;
                 stateAResult[1] = false;
             }
@@ -58,13 +61,16 @@ public class MorningYogaMinigame : Minigame
                 if (Input.GetKey(stateA[0]))
                 {
                     stateAResult[0] = true;
+                    keithAnim.Play("One");
                 }
                 if (Input.GetKey(stateA[1]))
                 {
+                    keithAnim.Play("Two");
                     stateAResult[1] = true;
                 }
                 else
                 {
+                    keithAnim.Play("Idle");
                     stateAResult[0] = false;
                     stateAResult[1] = false;
                 }
@@ -94,6 +100,7 @@ public class MorningYogaMinigame : Minigame
         {
             if (Input.anyKey && !Input.GetKey(stateB[0]) && !Input.GetKey(stateB[1]) && !Input.GetKey(stateB[2]))
             {
+                keithAnim.Play("Idle");
                 stateBResult[0] = false;
                 stateBResult[1] = false;
                 stateBResult[2] = false;
@@ -102,18 +109,22 @@ public class MorningYogaMinigame : Minigame
             {
                 if (Input.GetKey(stateB[0]))
                 {
+                    keithAnim.Play("One");
                     stateBResult[0] = true;
                 }
                 if (Input.GetKey(stateB[1]))
                 {
+                    keithAnim.Play("Two");
                     stateBResult[1] = true;
                 }
                 if (Input.GetKey(stateB[2]))
                 {
+                    keithAnim.Play("Three");
                     stateBResult[2] = true;
                 }
                 else
                 {
+                    keithAnim.Play("Idle");
                     stateBResult[0] = false;
                     stateBResult[1] = false;
                     stateBResult[2] = false;
@@ -144,6 +155,7 @@ public class MorningYogaMinigame : Minigame
         {
             if (Input.anyKey && !Input.GetKey(stateC[0]) && !Input.GetKey(stateC[1]) && !Input.GetKey(stateC[2]) && !Input.GetKey(stateC[3]))
             {
+                keithAnim.Play("Idle");
                 stateCResult[0] = false;
                 stateCResult[1] = false;
                 stateCResult[2] = false;
@@ -153,22 +165,27 @@ public class MorningYogaMinigame : Minigame
             {
                 if (Input.GetKey(stateC[0]))
                 {
+                    keithAnim.Play("One");
                     stateCResult[0] = true;
                 }
                 if (Input.GetKey(stateC[1]))
                 {
+                    keithAnim.Play("Two");
                     stateCResult[1] = true;
                 }
                 if (Input.GetKey(stateC[2]))
                 {
+                    keithAnim.Play("Three");
                     stateCResult[2] = true;
                 }
                 if (Input.GetKey(stateC[3]))
                 {
+                    keithAnim.Play("Four");
                     stateCResult[3] = true;
                 }
                 else
                 {
+                    keithAnim.Play("Idle");
                     stateCResult[0] = false;
                     stateCResult[1] = false;
                     stateCResult[2] = false;
@@ -200,6 +217,7 @@ public class MorningYogaMinigame : Minigame
         {
             if (Input.anyKey && !Input.GetKey(stateD[0]) && !Input.GetKey(stateD[1]) && !Input.GetKey(stateD[2]) && !Input.GetKey(stateD[3]) && !Input.GetKey(stateD[4]))
             {
+                keithAnim.Play("Idle");
                 stateDResult[0] = false;
                 stateDResult[1] = false;
                 stateDResult[2] = false;
@@ -210,26 +228,32 @@ public class MorningYogaMinigame : Minigame
             {
                 if (Input.GetKey(stateD[0]))
                 {
+                    keithAnim.Play("One");
                     stateDResult[0] = true;
                 }
                 if (Input.GetKey(stateD[1]))
                 {
+                    keithAnim.Play("Two");
                     stateDResult[1] = true;
                 }
                 if (Input.GetKey(stateD[2]))
                 {
+                    keithAnim.Play("Three");
                     stateDResult[2] = true;
                 }
                 if (Input.GetKey(stateD[3]))
                 {
+                    keithAnim.Play("Four");
                     stateDResult[3] = true;
                 }
                 if (Input.GetKey(stateD[4]))
                 {
+                    keithAnim.Play("Five");
                     stateDResult[4] = true;
                 }
                 else
                 {
+                    keithAnim.Play("Idle");
                     stateDResult[0] = false;
                     stateDResult[1] = false;
                     stateDResult[2] = false;
