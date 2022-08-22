@@ -421,6 +421,10 @@ PlayableDirector:
     value: {fileID: 1658007770}
   - key: {fileID: 849341290900789857, guid: bbc861c158cff904c9a84878f8225e74, type: 2}
     value: {fileID: 1658007767}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: -8322698369541710383, guid: bbc861c158cff904c9a84878f8225e74, type: 2}
+    value: {fileID: 1101144902}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &87077553
@@ -2732,6 +2736,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 1164827106}
   textLabel: {fileID: 1502555125}
+  canProgress: 1
+  dialogueDuration: 5
 --- !u!114 &1101144900
 MonoBehaviour:
   m_ObjectHideFlags: 0

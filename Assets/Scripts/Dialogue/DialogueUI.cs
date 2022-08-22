@@ -12,6 +12,7 @@ namespace Dialogue {
         private playerController player;
 
         public bool canProgress = true;
+        public float dialogueDuration = 5f;
         public bool IsOpen { get; private set; }
 
         private TypewriterEffect typewriterEffect;
@@ -38,7 +39,7 @@ namespace Dialogue {
                 yield return RunTypingEffect(dialogue);
 
                 textLabel.text = dialogue;
-                    
+
                 yield return null;
 
                 if (canProgress == true)
@@ -47,7 +48,7 @@ namespace Dialogue {
                 }
                 else
                 {
-                    yield return new WaitForSeconds(5);
+                    yield return new WaitForSeconds(dialogueDuration);
                 }
             }
 
@@ -77,5 +78,16 @@ namespace Dialogue {
 
             if (player != null) { player.unfreezePlayer(); }
         }
+
+        public void SwapProgressState(bool state)                                  // dialogue can swap from automatic to manual. true = manual, false = auto
+        {
+            canProgress = state;
+        }
+
+        public void DialogueLength(float duration)
+        {
+            dialogueDuration = duration;
+        }
     }
+
 }
