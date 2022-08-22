@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Combat;
 
-public class InkDropMinigame : Minigame
+namespace InkDrop {
+    public class InkDropMinigame : Minigame
 {
     
     Transform inkSpawnRef;
@@ -90,4 +92,5 @@ public class InkDropMinigame : Minigame
         StartCoroutine(ShootProjectiles());
     }
    
+}
 }

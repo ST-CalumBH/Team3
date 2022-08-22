@@ -2,32 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class csEnemy : MonoBehaviour
-{
-    private bool defeated = false;
-    private Vector3 direction;
-
-    void Start()
+namespace ChargedSpatula {
+    public class csEnemy : MonoBehaviour
     {
-        direction = new Vector3(Random.Range(0.06f, 0.1f), Random.Range(0.06f, 0.1f), 0);
-    }
+        private bool defeated = false;
+        private Vector3 direction;
 
-    void FixedUpdate()
-    {
-        if (defeated == true)
+        void Start()
         {
-            Spin();
+            direction = new Vector3(Random.Range(0.06f, 0.1f), Random.Range(0.06f, 0.1f), 0);
         }
-    }
 
-    public void Spin()
-    {
-        transform.position += direction;
-        transform.Rotate(Vector3.back * 1000f * Time.deltaTime);
-    }
+        void FixedUpdate()
+        {
+            if (defeated == true)
+            {
+                Spin();
+            }
+        }
 
-    public void defeatedStateChange()
-    {
-        defeated = true;
+        public void Spin()
+        {
+            transform.position += direction;
+            transform.Rotate(Vector3.back * 1000f * Time.deltaTime);
+        }
+
+        public void defeatedStateChange()
+        {
+            defeated = true;
+        }
     }
 }

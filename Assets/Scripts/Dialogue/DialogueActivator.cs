@@ -1,32 +1,35 @@
 using UnityEngine;
+using Overworld;
 
-public class DialogueActivator : MonoBehaviour, IInteractable
-{
-    [SerializeField] private DialogueObject dialogueObject;
-
-
-    private void OnTriggerEnter2D(Collider2D other)
+namespace Dialogue {
+    public class DialogueActivator : MonoBehaviour, IInteractable
     {
-        if (other.CompareTag("Player") && other.TryGetComponent(out playerController player))
-        {
-            player.Interactable = this;
-        }
-    }
+        [SerializeField] private DialogueObject dialogueObject;
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player") && other.TryGetComponent(out playerController player))
+
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            if (player.Interactable is DialogueActivator dialogueActivator && dialogueActivator == this)
+            if (other.CompareTag("Player") && other.TryGetComponent(out playerController player))
             {
-                player.Interactable = null;
+                player.Interactable = this;
             }
         }
-    }
 
-   public void Interact(playerController player)
-    {
-        player.DialogueUI.ShowDialogue(dialogueObject);
-        player.freezePlayer();
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag("Player") && other.TryGetComponent(out playerController player))
+            {
+                if (player.Interactable is DialogueActivator dialogueActivator && dialogueActivator == this)
+                {
+                    player.Interactable = null;
+                }
+            }
+        }
+
+    public void Interact(playerController player)
+        {
+            player.DialogueUI.ShowDialogue(dialogueObject);
+            player.freezePlayer();
+        }
     }
 }

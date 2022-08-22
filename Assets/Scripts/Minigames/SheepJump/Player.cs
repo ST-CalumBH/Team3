@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+namespace SheepJump {
+    public class Player : MonoBehaviour
 {
     public float gravity;
     public Vector2 velocity;
@@ -124,4 +125,5 @@ public class Player : MonoBehaviour
     }
 
     
+}
 }

@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPrefsPreset : MonoBehaviour
-{
-    [SerializeField] private string[] EventsSetToTriggered;
-
-    void Start()
+namespace Overworld {
+    public class PlayerPrefsPreset : MonoBehaviour
     {
-        PlayerPrefs.DeleteAll();
+        [SerializeField] private string[] EventsSetToTriggered;
 
-        if (EventsSetToTriggered != null)                 // are there any previous events to check?
+        void Start()
         {
-            foreach (string i in EventsSetToTriggered)    // iterates through the list
+            PlayerPrefs.DeleteAll();
+
+            if (EventsSetToTriggered != null)                 // are there any previous events to check?
             {
-                PlayerPrefs.SetInt(i, 1);                 // sets events to triggered
+                foreach (string i in EventsSetToTriggered)    // iterates through the list
+                {
+                    PlayerPrefs.SetInt(i, 1);                 // sets events to triggered
+                }
             }
         }
     }

@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AdDisappear : MonoBehaviour
-{
-    [SerializeField] private popupadManager manager;
-
-    void Awake()
+namespace PopupAd {
+    public class AdDisappear : MonoBehaviour
     {
-        manager = GameObject.Find("gameManager").GetComponent<popupadManager>();
-        manager.AdAdded();
-    }
+        [SerializeField] private popupadManager manager;
 
-    public void DestroySelf()
-    {
-        manager.AdDeleted();
-        Destroy(gameObject);
+        void Awake()
+        {
+            manager = GameObject.Find("gameManager").GetComponent<popupadManager>();
+            manager.AdAdded();
+        }
+
+        public void DestroySelf()
+        {
+            manager.AdDeleted();
+            Destroy(gameObject);
+        }
     }
 }

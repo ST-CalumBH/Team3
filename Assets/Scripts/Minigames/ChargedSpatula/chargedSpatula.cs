@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Combat;
 
-public class chargedSpatula : Minigame
+namespace ChargedSpatula {
+    public class chargedSpatula : Minigame
 {
     public float speedSpatula;
     public float speedPlayer;
@@ -113,4 +115,5 @@ public class chargedSpatula : Minigame
     {
 
     }
+}
 }

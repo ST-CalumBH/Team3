@@ -2,36 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Virus : MonoBehaviour
-{
-    private float moveSpeed = 4f;
-
-    [SerializeField] private minigameManager manager;
-
-    void Start()
+namespace VirusAttack {
+    public class Virus : MonoBehaviour
     {
-        manager = GameObject.Find("minigameManager").GetComponent<minigameManager>();
-        moveSpeed = Random.Range(1f, 2f);
-    }
+        private float moveSpeed = 4f;
 
-    void Update()
-    {
-        transform.parent.Translate(moveSpeed * Time.deltaTime * -1, 0, 0);
-    }
+        [SerializeField] private minigameManager manager;
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player") || (collision.gameObject.CompareTag("CleanUp")))
+        void Start()
         {
-            manager.loseLife();
-            Destroy(transform.parent.gameObject);
+            manager = GameObject.Find("minigameManager").GetComponent<minigameManager>();
+            moveSpeed = Random.Range(1f, 2f);
         }
 
-        if (collision.gameObject.CompareTag("Bullet"))
+        void Update()
         {
-            manager.gainPoint();
-            Destroy(collision.gameObject);
-            Destroy(transform.parent.gameObject);
+            transform.parent.Translate(moveSpeed * Time.deltaTime * -1, 0, 0);
+        }
+
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player") || (collision.gameObject.CompareTag("CleanUp")))
+            {
+                manager.loseLife();
+                Destroy(transform.parent.gameObject);
+            }
+
+            if (collision.gameObject.CompareTag("Bullet"))
+            {
+                manager.gainPoint();
+                Destroy(collision.gameObject);
+                Destroy(transform.parent.gameObject);
+            }
         }
     }
 }

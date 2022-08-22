@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PositionEnum { LEFT, MIDDLE, RIGHT };
+namespace SwordDodge {
+    public enum PositionEnum { LEFT, MIDDLE, RIGHT };
 
-public class SwordDodgePlayer : MonoBehaviour
+    public class SwordDodgePlayer : MonoBehaviour
 {
 
     [SerializeField] private AudioClip woosh;
@@ -81,4 +82,5 @@ public class SwordDodgePlayer : MonoBehaviour
     }
 
 
+}
 }

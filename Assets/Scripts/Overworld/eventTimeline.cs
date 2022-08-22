@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
-public class eventTimeline : MonoBehaviour
+namespace Overworld {
+    public class eventTimeline : MonoBehaviour
 {
     [SerializeField] private eventIcon icon;                            // might use subscriber and publisher events to prevent dependancies
     [SerializeField] private PlayableDirector cutscene;
@@ -55,4 +56,5 @@ public class eventTimeline : MonoBehaviour
             }
         }
     }
+}
 }

@@ -1,42 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VirusAttack;
+using Combat;
 
-public class popupadManager : Minigame
-{
-    [SerializeField] private int CurrentAds = 0;
-
-    [SerializeField] private spawnerManager spawnManager;
-
-    private bool updateOn = false;
-
-    private void Start()
+namespace PopupAd {
+    public class popupadManager : Minigame
     {
-        StartCoroutine(UpdatePause());
-    }
+        [SerializeField] private int CurrentAds = 0;
 
-    void Update()
-    {
-        if (CurrentAds == 0 && updateOn == true)
+        [SerializeField] private spawnerManager spawnManager;
+
+        private bool updateOn = false;
+
+        private void Start()
         {
-            spawnManager.spawnerOff();
-            StartCoroutine(EndMinigame(2f, true));
+            StartCoroutine(UpdatePause());
         }
-    }
 
-    public void AdAdded()
-    {
-        CurrentAds++;
-    }
+        void Update()
+        {
+            if (CurrentAds == 0 && updateOn == true)
+            {
+                spawnManager.spawnerOff();
+                StartCoroutine(EndMinigame(2f, true));
+            }
+        }
 
-    public void AdDeleted()
-    {
-        CurrentAds--;
-    }
+        public void AdAdded()
+        {
+            CurrentAds++;
+        }
 
-    IEnumerator UpdatePause()
-    {
-        yield return new WaitForSeconds(1f);
-        updateOn = true;
+        public void AdDeleted()
+        {
+            CurrentAds--;
+        }
+
+        IEnumerator UpdatePause()
+        {
+            yield return new WaitForSeconds(1f);
+            updateOn = true;
+        }
     }
 }

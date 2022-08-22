@@ -2,38 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fences : MonoBehaviour
-{
-
-    Player player;
-
-    private void Awake()
+namespace SheepJump {
+    public class Fences : MonoBehaviour
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
 
-    }
- 
-    void Start()
-    {
-        
-    }
+        Player player;
+
+        private void Awake()
+        {
+            player = GameObject.Find("Player").GetComponent<Player>();
+
+        }
+    
+        void Start()
+        {
+            
+        }
 
 
-    void Update()
-    {
-        
-    }
+        void Update()
+        {
+            
+        }
 
-    private void FixedUpdate()
-    {
-        Vector2 pos = transform.position;
+        private void FixedUpdate()
+        {
+            Vector2 pos = transform.position;
 
-        pos.x -= player.velocity.x * Time.fixedDeltaTime;
+            pos.x -= player.velocity.x * Time.fixedDeltaTime;
 
-        if (pos.x <= -12)
-            pos.x = 49;
+            if (pos.x <= -12)
+                pos.x = 49;
 
-        transform.position = pos;
+            transform.position = pos;
 
+        }
     }
 }

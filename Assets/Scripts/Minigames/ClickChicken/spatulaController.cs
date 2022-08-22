@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Combat;
 
-public class spatulaController : Minigame
+namespace ClickChicken {
+    public class spatulaController : Minigame
 {
     public AudioSource whack;
 
@@ -80,4 +82,5 @@ public class spatulaController : Minigame
             inArea = false;
         }
     }
+}
 }

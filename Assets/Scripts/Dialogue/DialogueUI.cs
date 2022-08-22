@@ -1,78 +1,81 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using Overworld;
 
-public class DialogueUI : MonoBehaviour
-{
-    [SerializeField] private GameObject dialogueBox;
-    [SerializeField] private TMP_Text textLabel;
-
-    private playerController player;
-
-    public bool canProgress = true;
-    public bool IsOpen { get; private set; }
-
-    private TypewriterEffect typewriterEffect;
-
-    private void Start()
+namespace Dialogue {
+    public class DialogueUI : MonoBehaviour
     {
-        player = FindObjectOfType<playerController>();
+        [SerializeField] private GameObject dialogueBox;
+        [SerializeField] private TMP_Text textLabel;
 
-        typewriterEffect = GetComponent<TypewriterEffect>();
-        CloseDialogueBox();
-    }
+        private playerController player;
 
-    public void ShowDialogue(DialogueObject dialogueObject)
-    {
-        IsOpen = true;
-        dialogueBox.SetActive(true);
-        StartCoroutine(StepThroughDialogue(dialogueObject));
-    }
+        public bool canProgress = true;
+        public bool IsOpen { get; private set; }
 
-    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
-    {
-        foreach (string dialogue in dialogueObject.Dialogue)
+        private TypewriterEffect typewriterEffect;
+
+        private void Start()
         {
-            yield return RunTypingEffect(dialogue);
+            player = FindObjectOfType<playerController>();
 
-            textLabel.text = dialogue;
-                
-            yield return null;
+            typewriterEffect = GetComponent<TypewriterEffect>();
+            CloseDialogueBox();
+        }
 
-            if (canProgress == true)
+        public void ShowDialogue(DialogueObject dialogueObject)
+        {
+            IsOpen = true;
+            dialogueBox.SetActive(true);
+            StartCoroutine(StepThroughDialogue(dialogueObject));
+        }
+
+        private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
+        {
+            foreach (string dialogue in dialogueObject.Dialogue)
             {
-                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0));
+                yield return RunTypingEffect(dialogue);
+
+                textLabel.text = dialogue;
+                    
+                yield return null;
+
+                if (canProgress == true)
+                {
+                    yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0));
+                }
+                else
+                {
+                    yield return new WaitForSeconds(5);
+                }
             }
-            else
+
+            CloseDialogueBox();
+        }
+
+        private IEnumerator RunTypingEffect(string dialogue)
+        {
+            typewriterEffect.Run(dialogue, textLabel);
+
+            while (typewriterEffect.IsRunning)
             {
-                yield return new WaitForSeconds(5);
+                yield return null;
+
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+                {
+                    typewriterEffect.Stop();
+                }
             }
         }
 
-        CloseDialogueBox();
-    }
-
-    private IEnumerator RunTypingEffect(string dialogue)
-    {
-        typewriterEffect.Run(dialogue, textLabel);
-
-        while (typewriterEffect.IsRunning)
+        private void CloseDialogueBox()
         {
-            yield return null;
+            IsOpen = false;
+            dialogueBox.SetActive(false);
+            textLabel.text = string.Empty;
 
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
-            {
-                typewriterEffect.Stop();
-            }
+            if (player != null) { player.unfreezePlayer(); }
         }
-    }
-
-    private void CloseDialogueBox()
-    {
-        IsOpen = false;
-        dialogueBox.SetActive(false);
-        textLabel.text = string.Empty;
-
-        if (player != null) { player.unfreezePlayer(); }
     }
 }

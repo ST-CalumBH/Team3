@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Combat;
 
-public class MontyHallMinigame : Minigame
+public class MontyHall : Minigame
 {
     // Start is called before the first frame update
     void Start()
