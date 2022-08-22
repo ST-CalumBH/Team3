@@ -9,7 +9,7 @@ public class DialogueUI : MonoBehaviour
 
     private playerController player;
 
-
+    public bool canProgress = true;
     public bool IsOpen { get; private set; }
 
     private TypewriterEffect typewriterEffect;
@@ -36,9 +36,17 @@ public class DialogueUI : MonoBehaviour
             yield return RunTypingEffect(dialogue);
 
             textLabel.text = dialogue;
-
+                
             yield return null;
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0));
+
+            if (canProgress == true)
+            {
+                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0));
+            }
+            else
+            {
+                yield return new WaitForSeconds(5);
+            }
         }
 
         CloseDialogueBox();

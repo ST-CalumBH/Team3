@@ -497,8 +497,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   result: 0
   isInProgress: 1
-  speedSpatula: 10
-  speedPlayer: 120
+  speedSpatula: 5
+  speedPlayer: 150
   winSpeed: 900
   enemy: {fileID: 0}
   controller: {fileID: 0}

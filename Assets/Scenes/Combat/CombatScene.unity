@@ -1255,6 +1255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 1867488452}
   textLabel: {fileID: 1884579778}
+  canProgress: 0
 --- !u!1 &874584806
 GameObject:
   m_ObjectHideFlags: 0
