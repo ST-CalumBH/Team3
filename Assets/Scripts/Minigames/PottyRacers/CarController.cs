@@ -6,6 +6,9 @@ public class CarController : MonoBehaviour
 {
     //car basic stuff
     [Header("Car Settings")]
+
+    public float driftFactor = 0.95f;
+
     public float accelFactor = 30.0f;
     public float turnFacotor = 3.5f;
 
@@ -24,20 +27,12 @@ public class CarController : MonoBehaviour
 
     }
 
-    void Start()
-    {
-        
-    }
-
-    
-    void Update()
-    {
-        
-    }
     void FixedUpdate()
     {
 
         ApplyEngineForce();
+
+        killSideVelocity();
 
         ApplySteering();
 
@@ -65,5 +60,12 @@ public class CarController : MonoBehaviour
     
     }
 
+    void killSideVelocity()
+    {
+        Vector2 forwardVelocity = transform.up * Vector2.Dot(carRigidbody2D.velocity, transform.up);
+        Vector2 rightVelocity = transform.right * Vector2.Dot(carRigidbody2D.velocity, transform.right);
+
+        carRigidbody2D.velocity = forwardVelocity + rightVelocity * driftFactor;
+    }
 
 }
