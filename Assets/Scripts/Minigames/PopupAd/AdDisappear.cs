@@ -7,10 +7,23 @@ namespace PopupAd {
     {
         [SerializeField] private popupadManager manager;
 
+        public Sprite[] advertismentSprites;
+
+        private int randomiser;
+
         void Awake()
         {
             manager = GameObject.Find("gameManager").GetComponent<popupadManager>();
             manager.AdAdded();
+
+            SpriteChange();
+        }
+
+        public void SpriteChange()
+        {
+            randomiser = Random.Range(0, advertismentSprites.Length);
+            Debug.Log("Sprite: " + randomiser + "/" + advertismentSprites.Length);
+            GetComponent<SpriteRenderer>().sprite = advertismentSprites[randomiser];
         }
 
         public void DestroySelf()

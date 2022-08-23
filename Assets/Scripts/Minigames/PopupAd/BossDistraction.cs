@@ -6,9 +6,9 @@ namespace PopupAd {
     public class BossDistraction : MonoBehaviour
     {
         public int numToPacify;                                     // how many times does apce need to be pressed
-        [SerializeField] private int counter = 0;
+        private int counter = 0;
 
-        [SerializeField] private ClickDetect clickDetect;
+        [SerializeField] private ClickDetect clickDetect;           // connected so that it can disable the mouse's detection
 
         void Start()
         {

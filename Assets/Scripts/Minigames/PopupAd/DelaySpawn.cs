@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace PopupAd {
     public class DelaySpawn : MonoBehaviour
     {
-        public float delaySeconds;
+        public float delaySeconds = 5f;
         public GameObject spawnObject;
 
         void Start()
@@ -24,8 +23,8 @@ namespace PopupAd {
         {
             yield return new WaitForSeconds(delaySeconds);
 
-            GameObject temp = Instantiate(spawnObject, transform.position, transform.rotation);
-            temp.transform.SetParent(transform.parent.transform, true);
+            GameObject temp = Instantiate(spawnObject);
+            temp.transform.SetParent(transform, true);
         }
     }
 }
