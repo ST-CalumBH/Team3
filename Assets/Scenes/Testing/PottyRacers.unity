@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 523462468}
   - component: {fileID: 523462467}
   - component: {fileID: 523462466}
+  - component: {fileID: 523462469}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -172,16 +173,16 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -207,6 +208,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &523462469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523462465}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 16
+  m_RefResolutionX: 320
+  m_RefResolutionY: 180
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &1035914854
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,8 +380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b633107fb035034d86bb856120e0f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  driftFactor: 0.95
-  accelFactor: 30
+  driftFactor: 0.55
+  maxSpeed: 10
+  accelFactor: 10
   turnFacotor: 3.5
 --- !u!114 &1572369245
 MonoBehaviour:
