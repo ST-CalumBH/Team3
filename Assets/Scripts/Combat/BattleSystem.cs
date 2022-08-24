@@ -34,14 +34,14 @@ namespace Combat {
 
 		// Start is called before the first frame update
 		void Start()
-			{
+		{
 			cam = Camera.main;
 			state = BattleState.START;
 			diagUI = FindObjectOfType<DialogueUI>();
 			StartCoroutine(SetupBattle());
-			}
+		}
 
-			IEnumerator SetupBattle()
+		IEnumerator SetupBattle()
 		{
 			GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
 			playerUnit = playerGO.GetComponent<Unit>();
@@ -65,11 +65,17 @@ namespace Combat {
 		{
 			diagUI.ShowDialogue(enemyUnit.dialogueList[1]);
 
-			yield return new WaitForSeconds(3f);
-
 			enemyUnit.PlayMinigame(enemyUnit.minigameCount);
 			yield return new WaitUntil(() => !(enemyUnit.playedMinigame.isInProgress));
-			if (enemyUnit.minigameCount < enemyUnit.minigames.Length - 1)
+			if (enemyUnit.playedMinigame.result == false)
+            {
+				diagUI.ShowDialogue(enemyUnit.dialogueList[5]);
+				yield return new WaitForSeconds(3f);
+				StartCoroutine(PlayerAttack());
+				Debug.Log("Player");
+				yield break;
+            }
+			else if (enemyUnit.minigameCount < enemyUnit.minigames.Length - 1)
 			{ enemyUnit.minigameCount++; }
 
 			bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
@@ -99,7 +105,15 @@ namespace Combat {
 
 			enemyUnit.PlayMinigame(enemyUnit.minigameCount);
 			yield return new WaitUntil(() => !(enemyUnit.playedMinigame.isInProgress));
-			if (enemyUnit.minigameCount < enemyUnit.minigames.Length - 1)
+			if (enemyUnit.playedMinigame.result == false)
+			{
+				diagUI.ShowDialogue(enemyUnit.dialogueList[5]);
+				yield return new WaitForSeconds(3f);
+				StartCoroutine(EnemyTurn());
+				Debug.Log("Enemy");
+				yield break;
+			}
+			else if(enemyUnit.minigameCount < enemyUnit.minigames.Length - 1)
 			{ enemyUnit.minigameCount++; }
 
 			bool isDead = playerUnit.TakeDamage(enemyUnit.damage);

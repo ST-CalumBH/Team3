@@ -63,7 +63,7 @@ namespace ClickChicken {
         if (inArea)
         {
             controller.Hit();
-            StartCoroutine(EndMinigame());
+            StartCoroutine(EndMinigame(true));
         }
     }
 

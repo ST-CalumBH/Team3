@@ -176,7 +176,6 @@ namespace SwordDodge {
             yield return new WaitForSeconds(0.05f);
             animator.Play("Base Layer.Neutral");
             laneNum = player.curPosition;
-            Debug.Log("Increment");
             CheckForTnight();
         }
         IEnumerator MiddleAttack()
@@ -190,8 +189,6 @@ namespace SwordDodge {
             yield return new WaitForSeconds(0.05f);
             animator.Play("Base Layer.Neutral");
             laneNum = player.curPosition;
-            Debug.Log("Increment");
-            
             CheckForTnight();
         }
         IEnumerator RightAttack()
@@ -205,7 +202,6 @@ namespace SwordDodge {
             yield return new WaitForSeconds(0.05f);
             animator.Play("Base Layer.Neutral");
             laneNum = player.curPosition;
-            Debug.Log("Increment");
             CheckForTnight();
         }
 

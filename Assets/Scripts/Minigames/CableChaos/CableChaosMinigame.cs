@@ -285,7 +285,7 @@ namespace CableChaos {
             {
                 Debug.Log("Won Minigame");
                 paused = true;
-                EndMinigame(true);
+                StartCoroutine(EndMinigame(true));
             }
         }
     }
