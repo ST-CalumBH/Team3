@@ -42,10 +42,11 @@ namespace SheepJump {
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        /*if (Input.GetKeyUp(KeyCode.Space))
         {
             isHoldingJump = false;
         }
+        */
     }
 
     //calculating the coming down from the jump
@@ -84,7 +85,7 @@ namespace SheepJump {
 
         //gaining distance
         distance += velocity.x * Time.fixedDeltaTime;
-        if(distance >= 1000f)
+        if(distance >= 500f)
         {
             SceneManager.LoadScene("homeBedroomScene");
         }
