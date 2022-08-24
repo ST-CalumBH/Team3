@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< .merge_file_a35132
 namespace InkDrop {
     public class PlayerLaneMovement : MonoBehaviour
+=======
+public class PLayerLaneMovement : MonoBehaviour
+>>>>>>> .merge_file_a15896
 {
     public float moveSpeed = 15f;
     public Rigidbody2D rb;

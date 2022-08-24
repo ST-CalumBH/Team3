@@ -269,6 +269,7 @@ namespace CableChaos {
         }
         IEnumerator StateTransition()
         {
+<<<<<<< .merge_file_a38324
             yield return new WaitForSeconds(2f);
             ResetResults();
             if (curState == GameStates.A)
@@ -287,6 +288,11 @@ namespace CableChaos {
                 paused = true;
                 StartCoroutine(EndMinigame(true));
             }
+=======
+            Debug.Log("Won Minigame");
+            paused = true;
+            StartCoroutine(EndMinigame(true));
+>>>>>>> .merge_file_a38044
         }
     }
 }
