@@ -425,6 +425,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 8302643813599912268, guid: bbc861c158cff904c9a84878f8225e74, type: 2}
     value: {fileID: 680933033}
+  - key: {fileID: -8056524145869156497, guid: bbc861c158cff904c9a84878f8225e74, type: 2}
+    value: {fileID: 680933033}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &97516911
@@ -1704,8 +1706,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 85947c2992d782244bc2dd322e5e61ea, type: 2}
   - {fileID: 11400000, guid: a3655209a39887047ab9d7be36977d12, type: 2}
   duration:
-  - 1.5
-  - 2.5
+  - 1.2
+  - 2.2
 --- !u!1 &695578873
 GameObject:
   m_ObjectHideFlags: 0
@@ -2347,7 +2349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3199908346073744226, guid: fe269729f252858458709edf73cd94eb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe269729f252858458709edf73cd94eb, type: 3}
