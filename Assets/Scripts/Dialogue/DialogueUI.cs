@@ -1,65 +1,81 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using Overworld;
 
-public class DialogueUI : MonoBehaviour
-{
-    [SerializeField] private GameObject dialogueBox;
-    [SerializeField] private TMP_Text textLabel;
-
-
-    public bool IsOpen { get; private set; }
-
-    private TypewriterEffect typewriterEffect;
-
-    private void Start()
+namespace Dialogue {
+    public class DialogueUI : MonoBehaviour
     {
-        typewriterEffect = GetComponent<TypewriterEffect>();
-        CloseDialogueBox();
-    }
+        [SerializeField] private GameObject dialogueBox;
+        [SerializeField] private TMP_Text textLabel;
 
-    public void ShowDialogue(DialogueObject dialogueObject)
-    {
-        IsOpen = true;
-        dialogueBox.SetActive(true);
-        StartCoroutine(StepThroughDialogue(dialogueObject));
-    }
+        private playerController player;
 
-    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
-    {
-        foreach (string dialogue in dialogueObject.Dialogue)
+        public bool canProgress = true;
+        public bool IsOpen { get; private set; }
+
+        private TypewriterEffect typewriterEffect;
+
+        private void Start()
         {
-            yield return RunTypingEffect(dialogue);
+            player = FindObjectOfType<playerController>();
 
-            textLabel.text = dialogue;
-
-            yield return null;
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0));
+            typewriterEffect = GetComponent<TypewriterEffect>();
+            CloseDialogueBox();
         }
 
-        CloseDialogueBox();
-    }
-
-    private IEnumerator RunTypingEffect(string dialogue)
-    {
-        typewriterEffect.Run(dialogue, textLabel);
-
-        while (typewriterEffect.IsRunning)
+        public void ShowDialogue(DialogueObject dialogueObject)
         {
-            yield return null;
+            IsOpen = true;
+            dialogueBox.SetActive(true);
+            StartCoroutine(StepThroughDialogue(dialogueObject));
+        }
 
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+        private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
+        {
+            foreach (string dialogue in dialogueObject.Dialogue)
             {
-                typewriterEffect.Stop();
+                yield return RunTypingEffect(dialogue);
+
+                textLabel.text = dialogue;
+                    
+                yield return null;
+
+                if (canProgress == true)
+                {
+                    yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0));
+                }
+                else
+                {
+                    yield return new WaitForSeconds(5);
+                }
+            }
+
+            CloseDialogueBox();
+        }
+
+        private IEnumerator RunTypingEffect(string dialogue)
+        {
+            typewriterEffect.Run(dialogue, textLabel);
+
+            while (typewriterEffect.IsRunning)
+            {
+                yield return null;
+
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+                {
+                    typewriterEffect.Stop();
+                }
             }
         }
-    }
 
-    private void CloseDialogueBox()
-    {
-        IsOpen = false;
-        dialogueBox.SetActive(false);
-        textLabel.text = string.Empty;
-        Debug.Log("player freeze removed here");
+        private void CloseDialogueBox()
+        {
+            IsOpen = false;
+            dialogueBox.SetActive(false);
+            textLabel.text = string.Empty;
+
+            if (player != null) { player.unfreezePlayer(); }
+        }
     }
 }

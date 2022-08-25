@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Combat;
 
-public class ResetButtonMinigame : Minigame
+namespace ResetButton {
+    public class ResetButtonMinigame : Minigame
 {
     public GameObject Hand;
     public GameObject Button;
@@ -69,7 +71,7 @@ public class ResetButtonMinigame : Minigame
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown(KeyCode.E)))
         {
             if (handTransform.eulerAngles.z > (360-zoneDegrees) || handTransform.eulerAngles.z < zoneDegrees)
             {
@@ -95,4 +97,5 @@ public class ResetButtonMinigame : Minigame
         }
     }
 
+}
 }

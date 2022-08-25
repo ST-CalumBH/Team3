@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyMinigameLoader : MonoBehaviour
-{
-    [SerializeField] private GameObject minigameName;
 
-    Camera cam;
-
-    public void Start()
+namespace Sketches {
+    public class enemyMinigameLoader : MonoBehaviour
     {
-        cam = Camera.main;
-    }
+        [SerializeField] private GameObject minigameName;
 
-    public void InstantiateMinigame()
-    {
-        Instantiate(minigameName, new Vector3(cam.transform.position.x, cam.transform.position.y, 0), Quaternion.identity);
+        Camera cam;
+
+        public void Start()
+        {
+            cam = Camera.main;
+        }
+
+        public void InstantiateMinigame()
+        {
+            Instantiate(minigameName, new Vector3(cam.transform.position.x, cam.transform.position.y, 0), Quaternion.identity);
+        }
     }
 }

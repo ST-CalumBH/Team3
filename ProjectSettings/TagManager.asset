@@ -14,6 +14,7 @@ TagManager:
   - RightHitBox
   - Music
   - Bullet
+  - Cutscene
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - Main
   - Minigame
@@ -31,8 +32,8 @@ TagManager:
   - Player
   - Bullet
   - InvisWall
-  - 
-  - 
+  - EnemyWall
+  - Enemy
   - 
   - 
   - 

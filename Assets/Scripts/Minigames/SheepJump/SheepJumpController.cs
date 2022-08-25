@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SheepJumpController : MonoBehaviour
+namespace SheepJump {
+    public class SheepJumpController : MonoBehaviour
 {
 
     Animator m_Animator;
@@ -32,4 +33,5 @@ public class SheepJumpController : MonoBehaviour
     {
         SceneManager.LoadScene("homeBedroomScene");
     }
+}
 }

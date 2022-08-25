@@ -3,146 +3,141 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Dialogue;
 
-public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
+namespace Combat {
+	public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
-public class BattleSystem : MonoBehaviour
-{
-	[SerializeField] private string nextScene;
-
-	public GameObject playerPrefab;
-	public GameObject enemyPrefab;
-
-	public Transform playerBattleStation;
-	public Transform enemyBattleStation;
-
-	Unit playerUnit;
-	Unit enemyUnit;
-
-	public Text dialogueText;
-
-	public BattleHUD playerHUD;
-	public BattleHUD enemyHUD;
-
-	public BattleState state;
-
-	Camera cam;
-
-	public playerController player;
-
-	// Start is called before the first frame update
-	void Start()
-    {
-		player.freezePlayer();
-		cam = Camera.main;
-		state = BattleState.START;
-		StartCoroutine(SetupBattle());
-    }
-
-    private void Update()
-    {
-		if (Input.GetKeyDown(KeyCode.R))
-		{
-			SceneManager.LoadScene("homeBedroomScene");
-		}
-	}
-
-    IEnumerator SetupBattle()
+	public class BattleSystem : MonoBehaviour
 	{
-		GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-		playerUnit = playerGO.GetComponent<Unit>();
+		[SerializeField] private string nextScene;
 
-		GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
-		enemyUnit = enemyGO.GetComponent<Unit>();
+		public GameObject playerPrefab;
+		public GameObject enemyPrefab;
 
-		dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
+		public Transform playerBattleStation;
+		public Transform enemyBattleStation;
 
-		playerHUD.SetHUD(playerUnit);
-		enemyHUD.SetHUD(enemyUnit);
+		Unit playerUnit;
+		Unit enemyUnit;
 
-		yield return new WaitForSeconds(2f);
+		public Text dialogueText;
 
-		state = BattleState.PLAYERTURN;
-		Debug.Log("Player Turn");
-		StartCoroutine(PlayerAttack());
-	}
+		public BattleHUD playerHUD;
+		public BattleHUD enemyHUD;
 
-	IEnumerator PlayerAttack()
-	{
-		dialogueText.text = "Keith attacks!";
+		public BattleState state;
 
-		yield return new WaitForSeconds(3f);
+		Camera cam;
 
-		enemyUnit.PlayMinigame(enemyUnit.minigameCount);
-		yield return new WaitUntil(() => !(enemyUnit.playedMinigame.isInProgress));
-		if (enemyUnit.minigameCount < enemyUnit.minigames.Length - 1)
-		{ enemyUnit.minigameCount++; }
+		public DialogueUI diagUI;
 
-		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+		// Start is called before the first frame update
+		void Start()
+			{
+			cam = Camera.main;
+			state = BattleState.START;
+			diagUI = FindObjectOfType<DialogueUI>();
+			StartCoroutine(SetupBattle());
+			}
 
-		enemyHUD.SetHP(enemyUnit.currentHP);
-		dialogueText.text = "Take that good sir";
-
-		yield return new WaitForSeconds(2f);
-
-		if(isDead)
+			IEnumerator SetupBattle()
 		{
-			state = BattleState.WON;
-			EndBattle();
-		} else
-		{
-			state = BattleState.ENEMYTURN;
-			StartCoroutine(EnemyTurn());
-		}
-	}
+			GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+			playerUnit = playerGO.GetComponent<Unit>();
 
-	IEnumerator EnemyTurn()
-	{
-		Debug.Log("Enemy Turn");
-		dialogueText.text = enemyUnit.unitName + " attacks! Uh Oh";
+			GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+			enemyUnit = enemyGO.GetComponent<Unit>();
 
-		yield return new WaitForSeconds(1f);
+			diagUI.ShowDialogue(enemyUnit.dialogueList[0]);
 
-		enemyUnit.PlayMinigame(enemyUnit.minigameCount);
-		yield return new WaitUntil(() => !(enemyUnit.playedMinigame.isInProgress));
-		if (enemyUnit.minigameCount < enemyUnit.minigames.Length - 1)
-		{ enemyUnit.minigameCount++; }
+			playerHUD.SetHUD(playerUnit);
+			enemyHUD.SetHUD(enemyUnit);
 
-		bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+			yield return new WaitForSeconds(2f);
 
-		playerHUD.SetHP(playerUnit.currentHP);
-
-		yield return new WaitForSeconds(0f);
-
-		if(isDead)
-		{
-			state = BattleState.LOST;
-			EndBattle();
-		} else
-		{
 			state = BattleState.PLAYERTURN;
+			Debug.Log("Player Turn");
 			StartCoroutine(PlayerAttack());
 		}
 
-	}
-
-	IEnumerator EndCombat()
-    {
-		yield return new WaitForSeconds(1f);
-		SceneManager.LoadScene(nextScene);
-	}
-
-	void EndBattle()
-	{
-		if(state == BattleState.WON)
+		IEnumerator PlayerAttack()
 		{
-			dialogueText.text = "AHA, breakfast served sunny side up ;)";
-			StartCoroutine(EndCombat());
-		} else if (state == BattleState.LOST)
-		{
-			dialogueText.text = "You were defeated.";
-			StartCoroutine(EndCombat());
+			diagUI.ShowDialogue(enemyUnit.dialogueList[1]);
+
+			yield return new WaitForSeconds(3f);
+
+			enemyUnit.PlayMinigame(enemyUnit.minigameCount);
+			yield return new WaitUntil(() => !(enemyUnit.playedMinigame.isInProgress));
+			if (enemyUnit.minigameCount < enemyUnit.minigames.Length - 1)
+			{ enemyUnit.minigameCount++; }
+
+			bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+
+			enemyHUD.SetHP(enemyUnit.currentHP);
+			diagUI.ShowDialogue(enemyUnit.dialogueList[2]);
+
+			yield return new WaitForSeconds(2f);
+
+			if(isDead)
+			{
+				state = BattleState.WON;
+				EndBattle();
+			} else
+			{
+				state = BattleState.ENEMYTURN;
+				StartCoroutine(EnemyTurn());
+			}
 		}
-	}
 
+		IEnumerator EnemyTurn()
+		{
+			Debug.Log("Enemy Turn");
+			diagUI.ShowDialogue(enemyUnit.dialogueList[3]);
+
+			yield return new WaitForSeconds(1f);
+
+			enemyUnit.PlayMinigame(enemyUnit.minigameCount);
+			yield return new WaitUntil(() => !(enemyUnit.playedMinigame.isInProgress));
+			if (enemyUnit.minigameCount < enemyUnit.minigames.Length - 1)
+			{ enemyUnit.minigameCount++; }
+
+			bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+
+			playerHUD.SetHP(playerUnit.currentHP);
+
+			yield return new WaitForSeconds(0f);
+
+			if(isDead)
+			{
+				state = BattleState.LOST;
+				EndBattle();
+			} else
+			{
+				state = BattleState.PLAYERTURN;
+				StartCoroutine(PlayerAttack());
+			}
+
+		}
+
+		IEnumerator EndCombat()
+			{
+			yield return new WaitForSeconds(1f);
+			SceneManager.LoadScene(nextScene);
+		}
+
+		void EndBattle()
+		{
+			if(state == BattleState.WON)
+			{
+				diagUI.ShowDialogue(enemyUnit.dialogueList[4]);
+				StartCoroutine(EndCombat());
+			} else if (state == BattleState.LOST)
+			{
+				dialogueText.text = "You were defeated.";
+				StartCoroutine(EndCombat());
+			}
+		}
+
+	}
 }

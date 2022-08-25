@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Combat;
 
-public class SwordDodgeMinigame : Minigame
+namespace SwordDodge {
+    public class SwordDodgeMinigame : Minigame
 {
     [SerializeField] private AudioClip clang;
 
@@ -202,4 +204,5 @@ public class SwordDodgeMinigame : Minigame
         yield return new WaitForSeconds(1.5f);
         cooldown = false;
     }
+}
 }

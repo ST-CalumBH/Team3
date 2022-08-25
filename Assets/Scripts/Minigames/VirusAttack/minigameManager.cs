@@ -1,35 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Combat;
 
-public class minigameManager : Minigame
-{
-    public int lives = 3;
-    public int enemyKilled = 0;
-
-    [SerializeField] private spawnerManager spawnManager;
-
-    void Update()
+namespace VirusAttack {
+    public class minigameManager : Minigame
     {
-        if (lives == 0)
+        public int lives = 3;
+        public int enemyKilled = 0;
+
+        [SerializeField] private spawnerManager spawnManager;
+
+        void Update()
         {
-            spawnManager.changeState();
-            StartCoroutine(EndMinigame(2f, false));
+            if (lives == 0)
+            {
+                spawnManager.spawnerOff();
+                StartCoroutine(EndMinigame(2f, false));
+            }
+            else if (enemyKilled == 10)
+            {
+                spawnManager.spawnerOff();
+                StartCoroutine(EndMinigame(2f, true));
+            }
         }
-        else if (enemyKilled == 10)
+
+        public void loseLife()
         {
-            spawnManager.changeState();
-            StartCoroutine(EndMinigame(2f, true));
+            if (spawnManager.checkState()) { lives--; }         // if minigame is active, lose a life
         }
-    }
 
-    public void loseLife()
-    {
-        if (spawnManager.checkState()) { lives--; }         // if minigame is active, lose a life
-    }
-
-    public void gainPoint()
-    {
-        if (spawnManager.checkState()) { enemyKilled++; }         // if minigame is active, lose a life
+        public void gainPoint()
+        {
+            if (spawnManager.checkState()) { enemyKilled++; }         // if minigame is active, lose a life
+        }
     }
 }

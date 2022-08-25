@@ -2,25 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
-{
-    public InkDropMinigame minigame;
-
-    private void Start()
+namespace InkDrop {
+    public class Projectile : MonoBehaviour
     {
-        minigame = FindObjectOfType<InkDropMinigame>();
-    }
+        public InkDropMinigame minigame;
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("CleanUp"))
+        private void Start()
         {
-            Destroy(this.gameObject);
-            minigame.CallEndMinigame(false);
+            minigame = FindObjectOfType<InkDropMinigame>();
         }
-        if (collision.collider.CompareTag("Player"))
+
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            Destroy(this.gameObject);
+            if (collision.collider.CompareTag("CleanUp"))
+            {
+                Destroy(this.gameObject);
+                minigame.CallEndMinigame(false);
+            }
+            if (collision.collider.CompareTag("Player"))
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }

@@ -2,46 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Overworld;
 
-public class SceneLoadDialogue : MonoBehaviour
-{
-    [SerializeField] private DialogueObject content; //Dialogue object to be played
-
-    playerController player;
-    float playerSpeed;
-    bool isActive = false;
-
-    // Start is called before the first frame update
-    private void Start()
+namespace Dialogue {
+    public class SceneLoadDialogue : MonoBehaviour
     {
-        player = FindObjectOfType<playerController>();
-    }
+        [SerializeField] private DialogueObject content; //Dialogue object to be played
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Player")
+        playerController player;
+        float playerSpeed;
+        bool isActive = false;
+
+        // Start is called before the first frame update
+        private void Start()
         {
-            if (isActive == false)
+            player = FindObjectOfType<playerController>();
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.tag == "Player")
             {
-                StartCoroutine(PlayDialogue());
+                if (isActive == false)
+                {
+                    StartCoroutine(PlayDialogue());
+                }
             }
         }
-    }
 
-    IEnumerator PlayDialogue()
-    {
-        isActive = true;
-        player.DialogueUI.ShowDialogue(content); //the line that plays the script from dialogue object
-        playerSpeed = player.moveSpeed;
-        player.freezePlayer();
-        //player.moveSpeed = 0f;
-        //player.animator.SetFloat("Horizontal", 0);
-        //player.animator.SetFloat("Vertical", 0);
-        //player.animator.SetFloat("Speed", 0);
+        IEnumerator PlayDialogue()
+        {
+            isActive = true;
+            player.DialogueUI.ShowDialogue(content); //the line that plays the script from dialogue object
+            playerSpeed = player.moveSpeed;
+            player.freezePlayer();
+            //player.moveSpeed = 0f;
+            //player.animator.SetFloat("Horizontal", 0);
+            //player.animator.SetFloat("Vertical", 0);
+            //player.animator.SetFloat("Speed", 0);
 
-        yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
-        player.unfreezePlayer();
-        player.moveSpeed = playerSpeed;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
+            player.unfreezePlayer();
+            player.moveSpeed = playerSpeed;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }

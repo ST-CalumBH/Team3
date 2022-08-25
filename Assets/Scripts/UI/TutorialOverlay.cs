@@ -2,34 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialOverlay : MonoBehaviour
-{
-    [SerializeField] GameObject tutorialUI;
-
-    // Start is called before the first frame update
-    void Start()
+namespace UI {
+    public class TutorialOverlay : MonoBehaviour
     {
-        Freeze();
-    }
+        [SerializeField] GameObject tutorialUI;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Start is called before the first frame update
+        void Start()
         {
-            GameStart();
+            Freeze();
         }
-    }
 
-    void GameStart()
-    {
-        tutorialUI.SetActive(false);
-        Time.timeScale = 1f;
-    }
+        // Update is called once per frame
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                GameStart();
+            }
+        }
 
-    void Freeze()
-    {
-        tutorialUI.SetActive(true);
-        Time.timeScale = 0f;
+        void GameStart()
+        {
+            tutorialUI.SetActive(false);
+            Time.timeScale = 1f;
+        }
+
+        void Freeze()
+        {
+            tutorialUI.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 }
