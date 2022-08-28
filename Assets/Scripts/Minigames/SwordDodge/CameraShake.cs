@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-<<<<<<< .merge_file_a39732
 namespace SwordDodge {
     public class CameraShake : MonoBehaviour
     {
@@ -44,25 +43,3 @@ namespace SwordDodge {
         }
     }
 }
-=======
-public class CameraShake : MonoBehaviour
-{
-    public Transform cameraTransform = default;
-    private Vector3 _originalPosOfCam = default;
-    public float shakeFrequency = default;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        _originalPosOfCam = cameraTransform.position;
-        cameraTransform = Transform.FindObjectOfType<Camera>().transform;
-    }
-
-    private void CameraBake()
-    {
-        cameraTransform.position = _originalPosOfCam + Random.insideUnitSphere * shakeFrequency;
-    }
-        
-  
-}
->>>>>>> .merge_file_a38720

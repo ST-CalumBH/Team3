@@ -16,13 +16,14 @@ namespace CableChaos {
         public Animator animControllerPrinter;
         public Animator animControllerKeith;
         public float roundLength;
-        public float cooldownLength = 0.1f;
+        
 
         RectTransform timingBarRect;
         float timingBarWidth;
         float selectPos = 0;
         float margin;
         float moveSpeed = 0.1f;
+        float cooldownLength;
 
         bool tilesMoved;
         bool paused = false;
@@ -53,6 +54,7 @@ namespace CableChaos {
             paused = false;
             animControllerPrinter.Play("Idle");
             animControllerKeith.Play("Idle");
+            cooldownLength = roundLength / 4;
         }
 
         // Update is called once per frame
@@ -194,10 +196,10 @@ namespace CableChaos {
             ResetResults();
             timingBar.value = selectPos;
             animControllerKeith.Play("Hit By Printer");
-            yield return new WaitForSeconds(1f);
-            Debug.Log("Missed Key Called");
+            //yield return new WaitForSeconds(1f);
+            //Debug.Log("Missed Key Called");
             paused = false;
-            
+            yield return null;
             //Missed key badness here
         }
 
@@ -269,7 +271,6 @@ namespace CableChaos {
         }
         IEnumerator StateTransition()
         {
-<<<<<<< .merge_file_a38324
             yield return new WaitForSeconds(2f);
             ResetResults();
             if (curState == GameStates.A)
@@ -288,11 +289,6 @@ namespace CableChaos {
                 paused = true;
                 StartCoroutine(EndMinigame(true));
             }
-=======
-            Debug.Log("Won Minigame");
-            paused = true;
-            StartCoroutine(EndMinigame(true));
->>>>>>> .merge_file_a38044
         }
     }
 }
