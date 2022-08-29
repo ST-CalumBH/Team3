@@ -15,6 +15,7 @@ namespace Combat {
         {
             yield return new WaitForSeconds(1f);
             isInProgress = false;
+            CheckResult();
             Destroy(transform.parent.gameObject);
         }
         public IEnumerator EndMinigame(bool res)
@@ -23,6 +24,7 @@ namespace Combat {
             isInProgress = false;
             result = res;
             Debug.Log(res.ToString());
+            CheckResult();
             Destroy(transform.parent.gameObject);
         }
 
@@ -30,6 +32,7 @@ namespace Combat {
         {
             yield return new WaitForSeconds(time);
             isInProgress = false;
+            CheckResult();
             Destroy(transform.parent.gameObject);
         }
         public IEnumerator EndMinigame(float time, bool res)
@@ -38,7 +41,16 @@ namespace Combat {
             isInProgress = false;
             result = res;
             Debug.Log(res.ToString());
+            CheckResult();
             Destroy(transform.parent.gameObject);
+        }
+
+        private void CheckResult()
+        {
+            if (result == false)
+            {
+                LifeSystem.Instance.playerLives--;
+            }
         }
     }
 }
