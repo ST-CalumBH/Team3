@@ -15,6 +15,8 @@ namespace Dialogue {
         public float dialogueDuration = 5f;
         public bool IsOpen { get; private set; }
 
+        private bool cutsceneState = false;
+
         private TypewriterEffect typewriterEffect;
 
         private void Start()
@@ -63,7 +65,7 @@ namespace Dialogue {
             {
                 yield return null;
 
-                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+                if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)) && canProgress == true)
                 {
                     typewriterEffect.Stop();
                 }
@@ -76,7 +78,7 @@ namespace Dialogue {
             dialogueBox.SetActive(false);
             textLabel.text = string.Empty;
 
-            if (player != null) { player.unfreezePlayer(); }
+            if (player != null && cutsceneState == false) { player.unfreezePlayer(); }
         }
 
         public void SwapProgressState(bool state)                                  // dialogue can swap from automatic to manual. true = manual, false = auto
@@ -88,6 +90,13 @@ namespace Dialogue {
         {
             dialogueDuration = duration;
         }
+
+        public void CutsceneState(bool state)
+        {
+            cutsceneState = state;
+        }
+
+        public bool checkCutsceneState() { return cutsceneState; }
     }
 
 }

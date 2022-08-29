@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class iconE : MonoBehaviour
 {
+    private bool canChange = true;
 
     void Start()
     {
@@ -17,12 +18,22 @@ public class iconE : MonoBehaviour
 
     public void Show()
     {
-        gameObject.SetActive(true);
+        if (canChange) { gameObject.SetActive(true); }
     }
 
     public void Hide()
     {
-        gameObject.SetActive(false);
+        if (canChange) { gameObject.SetActive(false); }
+    }
+
+    public void Disable()
+    {
+        canChange = false;
+    }
+
+    public void Enable()
+    {
+        canChange = true;
     }
 
 }
