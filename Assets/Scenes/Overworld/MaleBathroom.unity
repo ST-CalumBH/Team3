@@ -851,7 +851,7 @@ GameObject:
   - component: {fileID: 1007336557}
   m_Layer: 0
   m_Name: blowdriers
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1274,6 +1274,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 211447114}
   textLabel: {fileID: 1334439313}
+  canProgress: 1
+  dialogueDuration: 5
 --- !u!114 &1071022120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1370,7 +1372,7 @@ GameObject:
   - component: {fileID: 1125462988}
   m_Layer: 0
   m_Name: sink
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1657,7 +1659,7 @@ GameObject:
   - component: {fileID: 1781782000}
   m_Layer: 0
   m_Name: Urinals
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

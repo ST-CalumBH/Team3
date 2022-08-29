@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 142341037}
   m_Layer: 8
   m_Name: Small Dresser
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 264037287}
   m_Layer: 0
   m_Name: tutorial painting movement
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -653,6 +653,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 1494339963}
   textLabel: {fileID: 552032328}
+  canProgress: 1
+  dialogueDuration: 5
 --- !u!114 &390280146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,6 +759,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1467029589993430710, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467029589993430710, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 636165387
+      objectReference: {fileID: 0}
     - target: {fileID: 1699659817306789324, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.55448
@@ -1186,7 +1196,7 @@ GameObject:
   - component: {fileID: 557651770}
   m_Layer: 8
   m_Name: Bed
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1422,7 +1432,7 @@ GameObject:
   - component: {fileID: 725683278}
   m_Layer: 8
   m_Name: Big Dresser
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1684,7 +1694,7 @@ GameObject:
   - component: {fileID: 816385167}
   m_Layer: 0
   m_Name: tutorial painting
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

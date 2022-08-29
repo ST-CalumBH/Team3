@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 186302}
   m_Layer: 8
   m_Name: Pot Plant 2
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 79626502}
   m_Layer: 0
   m_Name: Kettle
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 218722002}
   m_Layer: 8
   m_Name: Printer
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -766,7 +766,7 @@ GameObject:
   - component: {fileID: 350142428}
   m_Layer: 8
   m_Name: 'Desks '
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1148,6 +1148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 1516794862}
   textLabel: {fileID: 296624679}
+  canProgress: 1
+  dialogueDuration: 5
 --- !u!114 &515149667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1405,7 +1407,7 @@ GameObject:
   - component: {fileID: 539724146}
   m_Layer: 8
   m_Name: Desk 4
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1557,7 +1559,7 @@ GameObject:
   - component: {fileID: 604858758}
   m_Layer: 8
   m_Name: Desk 7
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2077,7 +2079,7 @@ GameObject:
   - component: {fileID: 694491468}
   m_Layer: 8
   m_Name: Desk 1
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2229,7 +2231,7 @@ GameObject:
   - component: {fileID: 708577326}
   m_Layer: 8
   m_Name: Pot Plant
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2482,7 +2484,7 @@ GameObject:
   - component: {fileID: 939000944}
   m_Layer: 0
   m_Name: Fridge
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2638,7 +2640,7 @@ GameObject:
   - component: {fileID: 976964560}
   m_Layer: 0
   m_Name: Donuts
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2712,7 +2714,7 @@ GameObject:
   - component: {fileID: 1013826722}
   m_Layer: 8
   m_Name: sink
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3277,7 +3279,7 @@ GameObject:
   - component: {fileID: 1149968063}
   m_Layer: 8
   m_Name: Desk 6
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3432,7 +3434,7 @@ GameObject:
   - component: {fileID: 1263317933}
   m_Layer: 0
   m_Name: Microwave
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3808,7 +3810,7 @@ GameObject:
   - component: {fileID: 1451012363}
   m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4097,7 +4099,7 @@ GameObject:
   - component: {fileID: 1780267340}
   m_Layer: 8
   m_Name: Desk 5
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4512,7 +4514,7 @@ GameObject:
   - component: {fileID: 1864740237}
   m_Layer: 8
   m_Name: Desk 3
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5056,7 +5058,7 @@ GameObject:
   - component: {fileID: 1934037021}
   m_Layer: 8
   m_Name: Desk 2
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5208,7 +5210,7 @@ GameObject:
   - component: {fileID: 2022360703}
   m_Layer: 8
   m_Name: Desk 8
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5563,7 +5565,7 @@ GameObject:
   - component: {fileID: 2082359736}
   m_Layer: 8
   m_Name: Desks 2
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

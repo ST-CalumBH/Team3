@@ -25,6 +25,8 @@ namespace Overworld {
         private AudioSource AS;
         private PauseMenu menu;
 
+        public iconE indicatorE;
+
         public IInteractable Interactable { get; set; }
 
         [Space(20)]
@@ -113,12 +115,19 @@ namespace Overworld {
                 inArea = true;
                 eventTrigger = other.gameObject;
                 container = eventTrigger.GetComponent<eventTimeline>();
+                indicatorE.Show();
+            }
+
+            if (other.tag == "Interact")
+            {
+                indicatorE.Show();
             }
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
             inArea = false;
+            indicatorE.Hide();
         }
 
         void FixedUpdate() //movement, physics

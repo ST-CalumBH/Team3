@@ -631,7 +631,7 @@ GameObject:
   - component: {fileID: 142341037}
   m_Layer: 8
   m_Name: TV
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -913,7 +913,7 @@ GameObject:
   - component: {fileID: 404547942}
   m_Layer: 8
   m_Name: Plant
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1064,7 +1064,7 @@ GameObject:
   - component: {fileID: 465901091}
   m_Layer: 8
   m_Name: Kettle
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1807,7 +1807,7 @@ GameObject:
   - component: {fileID: 725683278}
   m_Layer: 8
   m_Name: 'Couch '
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2177,7 +2177,7 @@ GameObject:
   - component: {fileID: 909243250}
   m_Layer: 8
   m_Name: Microwave
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4200,7 +4200,7 @@ GameObject:
   - component: {fileID: 1566597691}
   m_Layer: 8
   m_Name: Sink
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4383,7 +4383,7 @@ GameObject:
   - component: {fileID: 1577111567}
   m_Layer: 8
   m_Name: Fridge
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5791,6 +5791,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4063428640147325723, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484279, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_Name
       value: Player
