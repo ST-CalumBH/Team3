@@ -153,11 +153,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6811042640672295954, guid: bd4fee93261d54541b86a7c07fa87005, type: 3}
   m_PrefabInstance: {fileID: 1220982345}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &307693332 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8855652218845913499, guid: 2998907b4236abc428fbe055f0f3bfb0, type: 3}
-  m_PrefabInstance: {fileID: 8855652218546873999}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &639495707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -405,9 +400,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd4fee93261d54541b86a7c07fa87005, type: 3}
---- !u!95 &1222425569 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8855652219744050542, guid: 2998907b4236abc428fbe055f0f3bfb0, type: 3}
+--- !u!224 &1489145964 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1228084579986561484, guid: 2998907b4236abc428fbe055f0f3bfb0, type: 3}
   m_PrefabInstance: {fileID: 8855652218546873999}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1958574802
@@ -791,38 +786,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8855652218845913500, guid: 2998907b4236abc428fbe055f0f3bfb0, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 29f740699fd7a8348b3a67cfe15ade93, type: 3}
-    - target: {fileID: 8855652218845913500, guid: 2998907b4236abc428fbe055f0f3bfb0, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8855652218845913500, guid: 2998907b4236abc428fbe055f0f3bfb0, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8855652218845913500, guid: 2998907b4236abc428fbe055f0f3bfb0, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8855652219081520858, guid: 2998907b4236abc428fbe055f0f3bfb0, type: 3}
-      propertyPath: keithAnim
+      propertyPath: T
       value: 
-      objectReference: {fileID: 307693332}
-    - target: {fileID: 8855652219081520858, guid: 2998907b4236abc428fbe055f0f3bfb0, type: 3}
-      propertyPath: backgroundAnim
-      value: 
-      objectReference: {fileID: 1222425569}
-    - target: {fileID: 8855652219744050543, guid: 2998907b4236abc428fbe055f0f3bfb0, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 58b13e93f6dd1ac4ea6437c00b876aa1, type: 3}
-    - target: {fileID: 8855652219744050543, guid: 2998907b4236abc428fbe055f0f3bfb0, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1489145964}
     - target: {fileID: 8855652220162538393, guid: 2998907b4236abc428fbe055f0f3bfb0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
