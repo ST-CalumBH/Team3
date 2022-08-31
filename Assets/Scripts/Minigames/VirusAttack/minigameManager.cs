@@ -8,6 +8,7 @@ namespace VirusAttack {
     {
         public int lives = 3;
         public int enemyKilled = 0;
+        public int enemyGoal = 20;
 
         [SerializeField] private spawnerManager spawnManager;
 
@@ -18,7 +19,7 @@ namespace VirusAttack {
                 spawnManager.spawnerOff();
                 StartCoroutine(EndMinigame(2f, false));
             }
-            else if (enemyKilled == 10)
+            else if (enemyGoal == enemyKilled)
             {
                 spawnManager.spawnerOff();
                 StartCoroutine(EndMinigame(2f, true));

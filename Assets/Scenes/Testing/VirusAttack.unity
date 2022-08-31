@@ -214,13 +214,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 238319502399938816, guid: c00b37628e164664c933b4b344e2452f, type: 3}
+      propertyPath: spawnDelay
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 238319502399938816, guid: c00b37628e164664c933b4b344e2452f, type: 3}
+      propertyPath: btmSpawnDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 238319502399938816, guid: c00b37628e164664c933b4b344e2452f, type: 3}
+      propertyPath: topSpawnDelay
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 238319502783674114, guid: c00b37628e164664c933b4b344e2452f, type: 3}
       propertyPath: m_Name
       value: mg_VirusAttack
       objectReference: {fileID: 0}
     - target: {fileID: 238319502783674114, guid: c00b37628e164664c933b4b344e2452f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 238319502783674115, guid: c00b37628e164664c933b4b344e2452f, type: 3}
       propertyPath: m_RootOrder
@@ -265,6 +277,14 @@ PrefabInstance:
     - target: {fileID: 238319502783674115, guid: c00b37628e164664c933b4b344e2452f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 238319503343624057, guid: c00b37628e164664c933b4b344e2452f, type: 3}
+      propertyPath: fireDelay
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898855382318000270, guid: c00b37628e164664c933b4b344e2452f, type: 3}
+      propertyPath: enemyGoal
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c00b37628e164664c933b4b344e2452f, type: 3}

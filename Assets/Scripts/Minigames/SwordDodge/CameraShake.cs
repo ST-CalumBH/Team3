@@ -15,7 +15,6 @@ namespace SwordDodge {
 
         public void Shake()
         {
-            shakeFrequency = 0.1f;
             InvokeRepeating("CameraBake", 0, 0.01f);
             Invoke("CameraStop", 0.2f);
         }
