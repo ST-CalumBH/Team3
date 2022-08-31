@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Overworld/homeMainCutscene.unity
     guid: 4fbef69bf87456a4cb0be1dbcf0693e8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Overworld/homeBedroomScene Re-entered.unity
     guid: ca8cead795d2a144f96b55fdcfa6a93b
   - enabled: 1
@@ -53,4 +53,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Environment Minigames/Becky horror maze.unity
     guid: b8a888b0bb4d39e46981e60a15a2aa59
+  - enabled: 1
+    path: Assets/Scenes/Overworld/Post Combat Home Scenes/OfficePostPrinter.unity
+    guid: 940f820e916c9e941a13e98b43c43df4
+  - enabled: 1
+    path: Assets/Scenes/Combat/Combat printer.unity
+    guid: 7e081f77cd0e96c46b2ff52126a36d17
+  - enabled: 1
+    path: Assets/Scenes/Overworld/BossesOffice.unity
+    guid: 10dcce474dc673d4c82f3f5bccf8d382
+  - enabled: 1
+    path: Assets/Scenes/Combat/CombatBoss.unity
+    guid: 1438cdfb930e1cb49a149863066bf4a5
+  - enabled: 1
+    path: Assets/Scenes/Overworld/Ending.unity
+    guid: 5abd66df83ef4764ab5419e541381aad
   m_configObjects: {}
