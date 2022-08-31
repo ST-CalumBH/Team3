@@ -234,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: OfficePostPrinter
   playerPrefab: {fileID: 8762642743693062449, guid: 835af96d49ea759499743204341cf168, type: 3}
-  enemyPrefab: {fileID: 1949845171411925893, guid: 40799ac2c48dc5b469da406a406f9a4d, type: 3}
+  enemyPrefab: {fileID: 1949845171411925893, guid: 38efc866c2d4a42428205bf20fcf0494, type: 3}
   playerBattleStation: {fileID: 905665791}
   enemyBattleStation: {fileID: 324320695}
   dialogueText: {fileID: 222565199}
