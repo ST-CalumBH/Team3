@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Overworld {
-    public class SceneTransitionCollider : MonoBehaviour
+    public class SceneTransitionScript : MonoBehaviour
     {
         [SerializeField] private string nextScene;
 
         [Tooltip("Put down the spawn point of the scene it is transitioning to")]
         [SerializeField] private int newSpawnPoint = 0;  // default value so it doesn't crash
+        [SerializeField] private bool colliderTransition = true;
+        [SerializeField] private bool interactTransition = false;
 
         playerController player;
         
@@ -21,12 +23,14 @@ namespace Overworld {
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.E) && inArea == true)
-            {
-                player = FindObjectOfType<playerController>();
-                player.freezePlayer();
-                SetSpawnPoint();
-                changeScene();
+            if (interactTransition == true) {
+                if (Input.GetKeyDown(KeyCode.E) && inArea == true)
+                {
+                    player = FindObjectOfType<playerController>();
+                    player.freezePlayer();
+                    SetSpawnPoint();
+                    changeScene();
+                }
             }
         }
 
@@ -35,6 +39,11 @@ namespace Overworld {
             if (other.tag == "Player")
             {
                 inArea = true;
+            }
+            if(other.tag == "Player" && colliderTransition == true)
+            {
+                SetSpawnPoint();
+                changeScene();
             }
         }
 

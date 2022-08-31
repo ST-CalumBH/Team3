@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
-namespace Combat {
     public class Minigame : MonoBehaviour
     {
 
@@ -51,4 +49,3 @@ namespace Combat {
             }
         }
     }
-}

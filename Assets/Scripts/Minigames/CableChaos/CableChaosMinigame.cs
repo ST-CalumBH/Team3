@@ -15,6 +15,7 @@ namespace CableChaos {
         public Slider timingBar;
         public Animator animControllerPrinter;
         public Animator animControllerKeith;
+        public GameObject lifeObject;
         public float roundLength;
         
 
@@ -32,6 +33,8 @@ namespace CableChaos {
         float[] threeInputLoc = {375f,750f,1125f};
         float[] fourInputLoc = {300f,600f,900f,1200f};
         bool[] results = {false, false, false, false};
+        bool spareLife;
+
 
         private enum GameStates {A,B,C}
         GameStates curState;
@@ -39,6 +42,7 @@ namespace CableChaos {
         // Start is called before the first frame update
         void Start()
         {
+            spareLife = true;
             moveSpeed = ((1500 / roundLength) / 60);
             a1.gameObject.SetActive(false);
             a2.gameObject.SetActive(false);
@@ -196,6 +200,14 @@ namespace CableChaos {
             ResetResults();
             timingBar.value = selectPos;
             animControllerKeith.Play("Hit By Printer");
+            if (spareLife == true)
+            {
+                spareLife = false;
+            }
+            else
+            {
+                StartCoroutine(EndMinigame(false));
+            }
             //yield return new WaitForSeconds(1f);
             //Debug.Log("Missed Key Called");
             paused = false;
@@ -205,6 +217,10 @@ namespace CableChaos {
 
         private void FixedUpdate()
         {
+            if (spareLife == false && lifeObject.activeInHierarchy)
+            {
+                lifeObject.SetActive(false);
+            }
             if (curState == GameStates.A && tilesMoved == false)
             {
                 Debug.Log("GameState A");

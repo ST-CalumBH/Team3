@@ -68,27 +68,45 @@ namespace CoffeeDodge
                         case 0:
                             if (player.isTouching == CoffeeDodgePositionEnum.LEFT)
                             {
-                                Debug.Log("Left Hit");
-                                dodgeCount--;
+                                //Debug.Log("Left Hit");
+                                Debug.Log("Reset");
+                                dodgeCount = 0;
                                 StartCoroutine(Hurt());
+                                StartCoroutine(CooldownTimer());
+                            }
+                            else
+                            {
+                                dodgeCount++;
                                 StartCoroutine(CooldownTimer());
                             }
                             break;
                         case 1:
                             if (player.isTouching == CoffeeDodgePositionEnum.MIDDLE)
                             {
-                                Debug.Log("Middle Hit");
-                                dodgeCount--;
+                                //Debug.Log("Middle Hit");
+                                Debug.Log("Reset");
+                                dodgeCount = 0;
                                 StartCoroutine(Hurt());
+                                StartCoroutine(CooldownTimer());
+                            }
+                            else
+                            {
+                                dodgeCount++;
                                 StartCoroutine(CooldownTimer());
                             }
                             break;
                         case 2:
                             if (player.isTouching == CoffeeDodgePositionEnum.RIGHT)
                             {
-                                Debug.Log("Right Hit");
-                                dodgeCount--;
+                                //Debug.Log("Right Hit");
+                                Debug.Log("Reset");
+                                dodgeCount = 0;
                                 StartCoroutine(Hurt());
+                                StartCoroutine(CooldownTimer());
+                            }
+                            else
+                            {
+                                dodgeCount++;
                                 StartCoroutine(CooldownTimer());
                             }
                             break;

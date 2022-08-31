@@ -2123,7 +2123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: postCombatHomeScene
   playerPrefab: {fileID: 8762642743693062449, guid: 835af96d49ea759499743204341cf168, type: 3}
-  enemyPrefab: {fileID: 7251285168196830140, guid: 11157b38df373014f85bf3aa6aa109b8, type: 3}
+  enemyPrefab: {fileID: 1949845171411925893, guid: 40799ac2c48dc5b469da406a406f9a4d, type: 3}
   playerBattleStation: {fileID: 1672390813}
   enemyBattleStation: {fileID: 1434653684}
   dialogueText: {fileID: 1584004651}

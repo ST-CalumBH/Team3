@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Combat {
 
     // https://www.youtube.com/watch?v=CPKAgyp8cno&ab_channel=ResoCoder
     public class LifeSystem : MonoBehaviour
@@ -26,11 +25,10 @@ namespace Combat {
 
         private void Update()
         {
-            if (playerLives >= 0)
+            if (playerLives <= 0)
             {
                 Debug.Log("Game Over!");
                 // something should happen here?
             }
         }
     }
-}
