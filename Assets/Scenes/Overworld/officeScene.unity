@@ -4581,6 +4581,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: 
   newSpawnPoint: 0
+  colliderTransition: 1
+  interactTransition: 0
   transition: {fileID: 1570611875}
   transitionTime: 1
 --- !u!212 &1829193622
@@ -4846,6 +4848,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: MaleBathroom
   newSpawnPoint: 1
+  colliderTransition: 0
+  interactTransition: 1
   transition: {fileID: 1570611875}
   transitionTime: 1
 --- !u!212 &1865115824
@@ -5177,6 +5181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: Becky horror maze
   newSpawnPoint: 0
+  colliderTransition: 1
+  interactTransition: 0
   transition: {fileID: 1570611875}
   transitionTime: 1
 --- !u!1 &1934037016
@@ -5542,6 +5548,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: FemaleBathroom
   newSpawnPoint: 1
+  colliderTransition: 0
+  interactTransition: 1
   transition: {fileID: 1570611875}
   transitionTime: 1
 --- !u!212 &2041730058

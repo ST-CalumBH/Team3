@@ -156,6 +156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: postCombatHomeScene2
   newSpawnPoint: 0
+  colliderTransition: 0
+  interactTransition: 1
   transition: {fileID: 116275511}
   transitionTime: 1
 --- !u!212 &24649977

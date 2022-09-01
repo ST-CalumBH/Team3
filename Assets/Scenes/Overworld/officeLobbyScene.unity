@@ -2109,6 +2109,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: officeScene
   newSpawnPoint: 0
+  colliderTransition: 1
+  interactTransition: 0
   transition: {fileID: 3199908345976529805}
   transitionTime: 1
 --- !u!212 &1052908271

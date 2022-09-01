@@ -254,6 +254,7 @@ MonoBehaviour:
   dialogueBox: {fileID: 1621469434}
   textLabel: {fileID: 484757104}
   canProgress: 1
+  dialogueDuration: 5
 --- !u!114 &223604437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,6 +646,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: Becky horror maze
   newSpawnPoint: 0
+  colliderTransition: 1
+  interactTransition: 0
   transition: {fileID: 1307267625}
   transitionTime: 1
 --- !u!1 &436250542
@@ -706,6 +709,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: CombatBoss
   newSpawnPoint: 0
+  colliderTransition: 0
+  interactTransition: 1
   transition: {fileID: 1307267625}
   transitionTime: 1
 --- !u!212 &436250545
