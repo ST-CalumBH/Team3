@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7583235605326110501}
   - component: {fileID: 7813941349707293494}
   - component: {fileID: 8583694503877374202}
+  - component: {fileID: 1714744319344997823}
   m_Layer: 0
   m_Name: Duck
   m_TagString: Untagged
@@ -96,7 +97,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.01, y: -1.15}
@@ -124,4 +125,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f684463fc8937b4db7fd35104a669bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 1714744319344997823}
   ScrollSpeed: 4
+--- !u!95 &1714744319344997823
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5446176602870436047}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0501f27b725efe4f93e2799ec14db6c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

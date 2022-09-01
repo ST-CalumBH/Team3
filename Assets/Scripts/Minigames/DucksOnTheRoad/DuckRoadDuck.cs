@@ -5,6 +5,8 @@ using UnityEngine;
 namespace DucksOnTheRoad {
     public class DuckRoadDuck : MonoBehaviour
     {
+        public Animator anim;
+
         public float ScrollSpeed = 4f;
         // Start is called before the first frame update
         void Start()
@@ -28,6 +30,15 @@ namespace DucksOnTheRoad {
                 Destroy(gameObject);
                 
             transform.position = pos;
+        }
+        void OnTriggerEnter2D(Collider2D collider)
+        {
+            if (collider.gameObject.name == "Player")
+            {
+                Debug.Log("Duck dies");
+                anim.Play("Base Layer.DuckCollision");
+
+            }
         }
     }
 }
