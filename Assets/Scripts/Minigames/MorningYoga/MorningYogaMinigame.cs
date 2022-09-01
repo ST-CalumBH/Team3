@@ -26,6 +26,7 @@ public class MorningYogaMinigame : Minigame
     GameStates curState;
 
     bool tilesMoved;
+    bool recInput;
 
     readonly float[] keyLocations = { -500f, -250f, 0f, 250f, 500f };
     readonly KeyCode[] stateA = { KeyCode.E, KeyCode.W };
@@ -40,9 +41,10 @@ public class MorningYogaMinigame : Minigame
 
     void Start()
     {
+        recInput = true;
         tilesMoved = false;
         curState = GameStates.A;
-        //keithAnim.Play("Idle");
+        keithAnim.Play("Idle");
         backgroundAnim.Play("Idle");
         ResetLetters();
     }
@@ -50,7 +52,7 @@ public class MorningYogaMinigame : Minigame
     // Update is called once per frame
     void Update()
     {
-        if (curState == GameStates.A)
+        if (curState == GameStates.A && recInput)
         {
             if (Input.anyKey && !Input.GetKey(stateA[0]) && !Input.GetKey(stateA[1]))
             {
@@ -59,24 +61,28 @@ public class MorningYogaMinigame : Minigame
                 stateAResult[0] = false;
                 stateAResult[1] = false;
             }
-            else
+            else if (Input.anyKey && (Input.GetKey(stateA[0]) | Input.GetKey(stateA[1])))
             {
                 if (Input.GetKey(stateA[0]))
                 {
                     stateAResult[0] = true;
-                    keithAnim.Play("One");
+                    if (Input.GetKey(stateA[1]))
+                    {
+                        keithAnim.Play("Two");
+                        stateAResult[1] = true;
+                    }
+                    else
+                    {
+                        keithAnim.Play("One");
+                    }
                 }
-                if (Input.GetKey(stateA[1]))
-                {
-                    keithAnim.Play("Two");
-                    stateAResult[1] = true;
-                }
-                else
-                {
-                    keithAnim.Play("Idle");
-                    stateAResult[0] = false;
-                    stateAResult[1] = false;
-                }
+                
+            }
+            else
+            {
+                keithAnim.Play("Idle");
+                stateAResult[0] = false;
+                stateAResult[1] = false;
             }
             int i = 0;
             foreach (bool b in stateAResult)
@@ -91,15 +97,14 @@ public class MorningYogaMinigame : Minigame
                 }
                 if (i >= stateAResult.Length)
                 {
-                    
+                    recInput = false;
                     Debug.Log("Success");
                     i = 0;
-                    curState = GameStates.B;
-                    tilesMoved = false;
+                    StartCoroutine(StateTransition());
                 }
             }
         }
-        else if (curState == GameStates.B)
+        else if (curState == GameStates.B && recInput)
         {
             if (Input.anyKey && !Input.GetKey(stateB[0]) && !Input.GetKey(stateB[1]) && !Input.GetKey(stateB[2]))
             {
@@ -108,30 +113,37 @@ public class MorningYogaMinigame : Minigame
                 stateBResult[1] = false;
                 stateBResult[2] = false;
             }
-            else
+            else if (Input.anyKey && (Input.GetKey(stateB[0]) | Input.GetKey(stateB[1]) | Input.GetKey(stateB[2])))
             {
                 if (Input.GetKey(stateB[0]))
                 {
-                    keithAnim.Play("One");
                     stateBResult[0] = true;
+                    if (Input.GetKey(stateB[1]))
+                    {
+                        stateBResult[1] = true;
+                        
+                        if (Input.GetKey(stateB[2]))
+                        {
+                            keithAnim.Play("Three");
+                            stateBResult[2] = true;
+                        }
+                        else
+                        {
+                            keithAnim.Play("Two");
+                        }
+                    }
+                    else
+                    {
+                        keithAnim.Play("One");
+                    }
                 }
-                if (Input.GetKey(stateB[1]))
-                {
-                    keithAnim.Play("Two");
-                    stateBResult[1] = true;
-                }
-                if (Input.GetKey(stateB[2]))
-                {
-                    keithAnim.Play("Three");
-                    stateBResult[2] = true;
-                }
-                else
-                {
-                    keithAnim.Play("Idle");
-                    stateBResult[0] = false;
-                    stateBResult[1] = false;
-                    stateBResult[2] = false;
-                }
+            }
+            else
+            {
+                keithAnim.Play("Idle");
+                stateBResult[0] = false;
+                stateBResult[1] = false;
+                stateBResult[2] = false;
             }
             int i = 0;
             foreach (bool b in stateBResult)
@@ -147,14 +159,14 @@ public class MorningYogaMinigame : Minigame
                 if (i >= stateBResult.Length)
                 {
 
+                    recInput = false;
                     Debug.Log("Success");
                     i = 0;
-                    curState = GameStates.C;
-                    tilesMoved = false;
+                    StartCoroutine(StateTransition());
                 }
             }
         }
-        else if (curState == GameStates.C)
+        else if (curState == GameStates.C && recInput)
         {
             if (Input.anyKey && !Input.GetKey(stateC[0]) && !Input.GetKey(stateC[1]) && !Input.GetKey(stateC[2]) && !Input.GetKey(stateC[3]))
             {
@@ -164,36 +176,45 @@ public class MorningYogaMinigame : Minigame
                 stateCResult[2] = false;
                 stateCResult[3] = false;
             }
-            else
+            else if (Input.anyKey && (Input.GetKey(stateC[0]) | Input.GetKey(stateC[1]) | Input.GetKey(stateC[2]) | Input.GetKey(stateC[3])))
             {
                 if (Input.GetKey(stateC[0]))
                 {
-                    keithAnim.Play("One");
                     stateCResult[0] = true;
+                    if (Input.GetKey(stateC[1]))
+                    {
+                        stateCResult[1] = true;
+                        if (Input.GetKey(stateC[2]))
+                        {
+                            stateCResult[2] = true;
+                            if (Input.GetKey(stateC[3]))
+                            {
+                                keithAnim.Play("Four");
+                                stateCResult[3] = true;
+                            }
+                            else
+                            {
+                                keithAnim.Play("Three");
+                            }
+                        }
+                        else
+                        {
+                            keithAnim.Play("Two");
+                        }
+                    }
+                    else
+                    {
+                        keithAnim.Play("One");
+                    }
                 }
-                if (Input.GetKey(stateC[1]))
-                {
-                    keithAnim.Play("Two");
-                    stateCResult[1] = true;
-                }
-                if (Input.GetKey(stateC[2]))
-                {
-                    keithAnim.Play("Three");
-                    stateCResult[2] = true;
-                }
-                if (Input.GetKey(stateC[3]))
-                {
-                    keithAnim.Play("Four");
-                    stateCResult[3] = true;
-                }
-                else
-                {
-                    keithAnim.Play("Idle");
-                    stateCResult[0] = false;
-                    stateCResult[1] = false;
-                    stateCResult[2] = false;
-                    stateCResult[3] = false;
-                }
+            }
+            else
+            {
+                keithAnim.Play("Idle");
+                stateCResult[0] = false;
+                stateCResult[1] = false;
+                stateCResult[2] = false;
+                stateCResult[3] = false;
             }
             int i = 0;
             foreach (bool b in stateCResult)
@@ -209,16 +230,16 @@ public class MorningYogaMinigame : Minigame
                 if (i >= stateCResult.Length)
                 {
 
+                    recInput = false;
                     Debug.Log("Success");
                     i = 0;
-                    curState = GameStates.D;
-                    tilesMoved = false;
+                    StartCoroutine(StateTransition());
                 }
             }
         }
-        else if (curState == GameStates.D)
+        else if (curState == GameStates.D && recInput)
         {
-            if (Input.anyKey && !Input.GetKey(stateD[0]) && !Input.GetKey(stateD[1]) && !Input.GetKey(stateD[2]) && !Input.GetKey(stateD[3]) && !Input.GetKey(stateD[4]))
+            if (Input.anyKey && !Input.GetKey(stateD[0]) && !Input.GetKey(stateD[1]) && !Input.GetKey(stateD[2]) && !Input.GetKey(stateD[3]))
             {
                 keithAnim.Play("Idle");
                 stateDResult[0] = false;
@@ -226,36 +247,45 @@ public class MorningYogaMinigame : Minigame
                 stateDResult[2] = false;
                 stateDResult[3] = false;
             }
-            else
+            else if (Input.anyKey && (Input.GetKey(stateD[0]) | Input.GetKey(stateD[1]) | Input.GetKey(stateD[2]) | Input.GetKey(stateD[3])))
             {
                 if (Input.GetKey(stateD[0]))
                 {
-                    keithAnim.Play("One");
                     stateDResult[0] = true;
+                    if (Input.GetKey(stateD[1]))
+                    {
+                        stateDResult[1] = true;
+                        if (Input.GetKey(stateD[2]))
+                        {
+                            stateDResult[2] = true;
+                            if (Input.GetKey(stateD[3]))
+                            {
+                                stateDResult[3] = true;
+                                keithAnim.Play("Four");
+                            }
+                            else
+                            {
+                                keithAnim.Play("Three");
+                            }
+                        }
+                        else
+                        {
+                            keithAnim.Play("Two");
+                        }
+                    }
+                    else
+                    {
+                        keithAnim.Play("One");
+                    }
                 }
-                if (Input.GetKey(stateD[1]))
-                {
-                    keithAnim.Play("Two");
-                    stateDResult[1] = true;
-                }
-                if (Input.GetKey(stateD[2]))
-                {
-                    keithAnim.Play("Three");
-                    stateDResult[2] = true;
-                }
-                if (Input.GetKey(stateD[3]))
-                {
-                    keithAnim.Play("Four");
-                    stateDResult[3] = true;
-                }
-                else
-                {
-                    keithAnim.Play("Idle");
-                    stateDResult[0] = false;
-                    stateDResult[1] = false;
-                    stateDResult[2] = false;
-                    stateDResult[3] = false;
-                }
+            }
+            else
+            {
+                keithAnim.Play("Idle");
+                stateDResult[0] = false;
+                stateDResult[1] = false;
+                stateDResult[2] = false;
+                stateDResult[3] = false;
             }
             int i = 0;
             foreach (bool b in stateDResult)
@@ -270,9 +300,48 @@ public class MorningYogaMinigame : Minigame
                 }
                 if (i >= stateDResult.Length)
                 {
-                    StartCoroutine(EndMinigame(true));
+                    recInput = false;
+                    Debug.Log("Success");
+                    i = 0;
+                    StartCoroutine(StateTransition());
                 }
             }
+        }
+    }
+
+    IEnumerator StateTransition()
+    {
+        ResetLetters();
+        if (curState == GameStates.A)
+        {
+            keithAnim.Play("Two");
+            yield return new WaitForSeconds(2f);
+            curState = GameStates.B;
+            tilesMoved = false;
+            recInput = true;
+        }
+        else if (curState == GameStates.B)
+        {
+            keithAnim.Play("Three");
+            yield return new WaitForSeconds(2f);
+            curState = GameStates.C;
+            tilesMoved = false;
+            recInput = true;
+        }
+        else if(curState == GameStates.C)
+        {
+            keithAnim.Play("Four");
+            yield return new WaitForSeconds(2f);
+            curState = GameStates.D;
+            tilesMoved = false;
+            recInput = true;
+        }
+        else if (curState == GameStates.D)
+        {
+            keithAnim.Play("Four");
+            yield return new WaitForSeconds(2f);
+            Debug.Log("Won Minigame");
+            StartCoroutine(EndMinigame(true));
         }
     }
 
