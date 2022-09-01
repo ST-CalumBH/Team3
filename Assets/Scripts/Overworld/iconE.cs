@@ -5,20 +5,18 @@ using UnityEngine;
 public class iconE : MonoBehaviour
 {
     private bool canChange = true;
+    private Animator anim;
 
     void Start()
     {
         gameObject.SetActive(false);
-    }
-
-    void Update()
-    {
-        
+        anim = GetComponent<Animator>();
     }
 
     public void Show()
     {
         if (canChange) { gameObject.SetActive(true); }
+        anim.Play("eExpand");
     }
 
     public void Hide()
