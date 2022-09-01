@@ -6,7 +6,7 @@ using Combat;
 namespace DucksOnTheRoad {
     public class DuckRoadController : Minigame
     {
-        private float[] yPositions = {-1.09f, -2.7f, -3.8f};
+        private float[] yPositions = {-1f, -2.5f, -3.4f};
         public GameObject duckPrefab;
         // Start is called before the first frame update
         void Start()
@@ -19,7 +19,7 @@ namespace DucksOnTheRoad {
         {
             
             var lane = Random.Range(0, 10000);
-            if (lane < 5) spawnDuck();
+            if (lane < 10) spawnDuck();
         }
 
         void spawnDuck() {

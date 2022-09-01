@@ -25,7 +25,7 @@ namespace DucksOnTheRoad {
         {
             rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         }
-        void OnCollisionEnter(Collision collision)
+        void OnCollisionEnter2D(Collision2D collision)
         {
             Debug.Log("DUCK DOWN");
         }
