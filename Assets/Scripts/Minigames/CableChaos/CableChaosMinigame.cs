@@ -58,7 +58,7 @@ namespace CableChaos {
             paused = false;
             animControllerPrinter.Play("Idle");
             animControllerKeith.Play("Idle");
-            cooldownLength = roundLength / 4;
+            cooldownLength = roundLength / 5;
         }
 
         // Update is called once per frame
