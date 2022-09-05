@@ -156,6 +156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: homeBedroomScene
   newSpawnPoint: 1
+  colliderTransition: 0
+  interactTransition: 1
   transition: {fileID: 927126922}
   transitionTime: 1
 --- !u!212 &24649977
@@ -3518,6 +3520,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: CombatScene
   newSpawnPoint: 0
+  colliderTransition: 1
+  interactTransition: 0
   transition: {fileID: 927126922}
   transitionTime: 1
 --- !u!1 &1192560049

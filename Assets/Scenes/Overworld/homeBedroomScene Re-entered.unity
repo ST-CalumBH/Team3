@@ -156,6 +156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: homeMainCutscene
   newSpawnPoint: 0
+  colliderTransition: 0
+  interactTransition: 1
   transition: {fileID: 952883025}
   transitionTime: 1
 --- !u!212 &24649977
@@ -521,8 +523,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264037286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.4871, y: 6.0177, z: 0}
-  m_LocalScale: {x: 1.7063013, y: 1.6538564, z: 1.4666666}
+  m_LocalPosition: {x: 5.38, y: 6.1359, z: 0}
+  m_LocalScale: {x: 1.4788835, y: 1.4334286, z: 1.2711875}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -711,6 +713,14 @@ PrefabInstance:
       propertyPath: dialogueUI
       value: 
       objectReference: {fileID: 390280145}
+    - target: {fileID: 7706034308894484300, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706034308894484300, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1371204575
+      objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484301, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1686,7 +1696,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816385166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.36, y: 6.21, z: 0}
+  m_LocalPosition: {x: -8.45, y: 6.21, z: 0}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.037037}
   m_ConstrainProportionsScale: 1
   m_Children: []

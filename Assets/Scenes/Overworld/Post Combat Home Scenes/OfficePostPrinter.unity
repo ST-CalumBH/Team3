@@ -416,6 +416,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: BossesOffice
   newSpawnPoint: 0
+  colliderTransition: 0
+  interactTransition: 1
   transition: {fileID: 1570611875}
   transitionTime: 1
 --- !u!212 &112027684
@@ -1134,6 +1136,7 @@ MonoBehaviour:
   dialogueBox: {fileID: 1516794862}
   textLabel: {fileID: 296624679}
   canProgress: 1
+  dialogueDuration: 5
 --- !u!114 &515149667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3065,8 +3068,16 @@ PrefabInstance:
       value: 7.1
       objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484300, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706034308894484300, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706034308894484300, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1371204575
       objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484301, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_RootOrder
@@ -4471,6 +4482,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: 
   newSpawnPoint: 0
+  colliderTransition: 1
+  interactTransition: 0
   transition: {fileID: 1570611875}
   transitionTime: 1
 --- !u!212 &1829193622
@@ -4736,6 +4749,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: MaleBathroom
   newSpawnPoint: 1
+  colliderTransition: 0
+  interactTransition: 1
   transition: {fileID: 1570611875}
   transitionTime: 1
 --- !u!212 &1865115824
@@ -5090,6 +5105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: Becky horror maze
   newSpawnPoint: 0
+  colliderTransition: 1
+  interactTransition: 0
   transition: {fileID: 1570611875}
   transitionTime: 1
 --- !u!1 &1934037016
@@ -5455,6 +5472,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: FemaleBathroom
   newSpawnPoint: 1
+  colliderTransition: 0
+  interactTransition: 1
   transition: {fileID: 1570611875}
   transitionTime: 1
 --- !u!212 &2041730058
