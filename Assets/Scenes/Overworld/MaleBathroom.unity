@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dece4ff650e0570499fcfc76d8a1441f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: officeScene
+  nextScene: OfficeReturned
   newSpawnPoint: 2
   colliderTransition: 1
   interactTransition: 0
