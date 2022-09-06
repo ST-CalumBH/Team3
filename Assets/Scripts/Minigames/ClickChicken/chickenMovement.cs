@@ -13,13 +13,13 @@ namespace ClickChicken {
         private Animator anim;
         private SpriteRenderer sprite;
 
-        [SerializeField] private bool win = false;
-        [SerializeField] private bool hitStun = false;
+        private bool win = false;
+        private bool hitStun = false;
 
-        [SerializeField] private float x;
-        [SerializeField] private float y;
-        [SerializeField] private float blinkTimer = 0;
-        [SerializeField] private float blinkLength = 3f;
+        private float x;
+        private float y;
+        private float blinkTimer = 0;
+        private float blinkLength = 3f;
 
         void Start()
         {
@@ -41,9 +41,10 @@ namespace ClickChicken {
             while (win == false)
             {
                 transform.Translate(x * Time.deltaTime, y * Time.deltaTime, 0);
+                
+                yield return null;
             }
 
-            yield return null;
         }
 
         private void DirectionModifier()
@@ -68,6 +69,7 @@ namespace ClickChicken {
                 win = true;
             }
         }
+
         IEnumerator DamageRecieved()
         {
             blinkTimer = 0;
