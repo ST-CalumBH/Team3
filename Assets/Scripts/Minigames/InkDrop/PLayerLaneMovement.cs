@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace InkDrop {
-    public class PlayerLaneMovement : MonoBehaviour
+public class PlayerLaneMovement : MonoBehaviour
 {
     public float moveSpeed = 15f;
     public Rigidbody2D rb;
@@ -57,4 +56,4 @@ namespace InkDrop {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
-}
+

@@ -155,6 +155,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: homeBedroomScene
+  newSpawnPoint: 0
+  colliderTransition: 0
+  interactTransition: 1
+  transition: {fileID: 0}
+  transitionTime: 1
 --- !u!212 &24649977
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -306,6 +311,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: CombatScene
+  newSpawnPoint: 0
+  colliderTransition: 1
+  interactTransition: 0
+  transition: {fileID: 0}
+  transitionTime: 1
 --- !u!212 &313951587
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -634,7 +644,7 @@ SpriteRenderer:
   m_Size: {x: 61.15, y: 43.145386}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &448281406

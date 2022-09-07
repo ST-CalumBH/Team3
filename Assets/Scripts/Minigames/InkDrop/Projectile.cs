@@ -17,7 +17,14 @@ namespace InkDrop {
             if (collision.collider.CompareTag("CleanUp"))
             {
                 Destroy(this.gameObject);
-                minigame.CallEndMinigame(false);
+                if (minigame.spareLife == false)
+                {
+                    minigame.CallEndMinigame(false);
+                }
+                else
+                {
+                    minigame.spareLife = false;
+                }
             }
             if (collision.collider.CompareTag("Player"))
             {

@@ -107,7 +107,7 @@ namespace ChargedSpatula {
         }
         else
         {
-            StartCoroutine(EndMinigame());
+            StartCoroutine(EndMinigame(true));
         }
     }
 

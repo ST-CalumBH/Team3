@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
-namespace Combat {
     public class Minigame : MonoBehaviour
     {
 
@@ -23,6 +21,7 @@ namespace Combat {
             isInProgress = false;
             result = res;
             Debug.Log(res.ToString());
+            CheckResult(res);
             Destroy(transform.parent.gameObject);
         }
 
@@ -38,7 +37,15 @@ namespace Combat {
             isInProgress = false;
             result = res;
             Debug.Log(res.ToString());
+            CheckResult(res);
             Destroy(transform.parent.gameObject);
         }
+
+        private void CheckResult(bool result)
+        {
+            if (result == false)
+            {
+                LifeSystem.Instance.playerLives--;
+            }
+        }
     }
-}

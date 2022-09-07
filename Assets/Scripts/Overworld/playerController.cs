@@ -25,6 +25,9 @@ namespace Overworld {
         private AudioSource AS;
         private PauseMenu menu;
 
+        public iconE indicatorE;
+        [SerializeField] private int inAreaCounter = 0;              // the 'E' indicator will only turn off if the player is no longer on top of any other collisions
+
         public IInteractable Interactable { get; set; }
 
         [Space(20)]
@@ -113,12 +116,30 @@ namespace Overworld {
                 inArea = true;
                 eventTrigger = other.gameObject;
                 container = eventTrigger.GetComponent<eventTimeline>();
+                indicatorE.Show();
+                inAreaCounter++;
+            }
+
+            if (other.tag == "Interact")
+            {
+                indicatorE.Show();
+                inAreaCounter++;
             }
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            inArea = false;
+            if (other.tag == "Interact" || other.tag == "Cutscene")
+            {
+                inAreaCounter--;  
+            }
+            
+
+            if (inAreaCounter == 0)
+            { 
+                inArea = false;
+                indicatorE.Hide();
+            }
         }
 
         void FixedUpdate() //movement, physics
@@ -133,12 +154,17 @@ namespace Overworld {
             animator.SetFloat("Horizontal", 0);
             animator.SetFloat("Vertical", 0);
             animator.SetFloat("Speed", 0);
+
+            indicatorE.Hide();
+            indicatorE.Disable();
         }
 
         public void unfreezePlayer()
         {
             playerFreeze = false;
             moveSpeed = playerSpeed;
+
+            indicatorE.Enable();
         }
 
         private void Interact(eventTimeline timeline)

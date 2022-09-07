@@ -5,14 +5,16 @@ using UnityEngine;
 namespace VirusAttack {
     public class Virus : MonoBehaviour
     {
-        private float moveSpeed = 4f;
+        private float moveSpeed = 2f;
+        [SerializeField] private float topSpeed = 2f;
+        [SerializeField] private float bottomSpeed = 4f;
 
         [SerializeField] private minigameManager manager;
 
         void Start()
         {
             manager = GameObject.Find("minigameManager").GetComponent<minigameManager>();
-            moveSpeed = Random.Range(1f, 2f);
+            moveSpeed = Random.Range(bottomSpeed, topSpeed);
         }
 
         void Update()
