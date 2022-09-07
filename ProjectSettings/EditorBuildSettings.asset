@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Overworld/transitionScene.unity
     guid: 1e2ea0bd3c992ba43aac21004170cf3c
   - enabled: 1
+    path: Assets/Scenes/Environment Minigames/DuckRoad.unity
+    guid: 41d288294518a694fa7cd16b9c47f714
+  - enabled: 1
     path: Assets/Scenes/Overworld/officeLobbyScene.unity
     guid: 0ddcf466684691144b70c98135d8c830
   - enabled: 1

@@ -57,6 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1371350684345087609}
   - component: {fileID: 8539311745744389826}
+  - component: {fileID: 4068759341174514761}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -94,6 +95,25 @@ MonoBehaviour:
   result: 0
   isInProgress: 1
   duckPrefab: {fileID: 5446176602870436047, guid: ecca61d16885f0e48b124f2d8211f13d, type: 3}
+  minigameDuration: 20
+--- !u!114 &4068759341174514761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293106731239885547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dece4ff650e0570499fcfc76d8a1441f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: officeLobbyScene
+  newSpawnPoint: 0
+  colliderTransition: 0
+  interactTransition: 1
+  transition: {fileID: 0}
+  transitionTime: 1
 --- !u!1 &723264155882707599
 GameObject:
   m_ObjectHideFlags: 0

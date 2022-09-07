@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using Combat;
+using Overworld;
 
 namespace DucksOnTheRoad {
     public class DuckRoadController : Minigame
     {
         private float[] yPositions = {-1f, -2.5f, -3.4f};
+        private SceneTransitionScript SceneTransition; 
         public GameObject duckPrefab;
+        public float minigameDuration;
+        
         // Start is called before the first frame update
         void Start()
-        {
+        {   
+            SceneTransition = gameObject.GetComponent<SceneTransitionScript>();
             spawnDuck();
+            StartCoroutine(ExecuteAfterTime(minigameDuration));
         }
 
         // Update is called once per frame
@@ -29,6 +36,12 @@ namespace DucksOnTheRoad {
             var duckRenderer = duck.GetComponent<SpriteRenderer>();
             duckRenderer.sortingLayerID = SortingLayer.NameToID("Player");
             duckRenderer.sortingOrder = lane;
+        }
+
+         IEnumerator ExecuteAfterTime(float time)
+        {
+            yield return new WaitForSeconds(time);
+            SceneTransition.changeScene();
         }
     }
 }
