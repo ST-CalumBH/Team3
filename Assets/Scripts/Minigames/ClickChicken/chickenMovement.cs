@@ -10,6 +10,8 @@ namespace ClickChicken {
         [SerializeField] private float topRange;
         [SerializeField] private float directionFrequency;
 
+        [SerializeField] private chickenLifeDisplay controller;
+
         private Animator anim;
         private SpriteRenderer sprite;
 
@@ -29,11 +31,6 @@ namespace ClickChicken {
             sprite = GetComponent<SpriteRenderer>();
             InvokeRepeating("DirectionModifier", 0, directionFrequency);
             StartCoroutine(Movement());
-        }
-
-        void Update()
-        {
-
         }
 
         IEnumerator Movement()
@@ -58,6 +55,7 @@ namespace ClickChicken {
             if (hitStun == false)
             {
                 lives--;
+                controller.LoseLife();
 
                 if (lives > 0) { StartCoroutine(DamageRecieved()); }    // prevent damage flash when turned into egg
                 
