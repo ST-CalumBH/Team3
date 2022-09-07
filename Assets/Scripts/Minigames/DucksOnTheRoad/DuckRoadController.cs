@@ -17,8 +17,8 @@ namespace DucksOnTheRoad {
         void Start()
         {   
             SceneTransition = gameObject.GetComponent<SceneTransitionScript>();
-            spawnDuck();
-            StartCoroutine(ExecuteAfterTime(minigameDuration));
+            StartCoroutine(spawnDuck());
+            StartCoroutine(endGame(minigameDuration));
         }
 
         // Update is called once per frame
@@ -29,18 +29,28 @@ namespace DucksOnTheRoad {
             if (lane < 10) spawnDuck();
         }
 
-        void spawnDuck() {
-            var lane = Random.Range(0, 3);
+        IEnumerator spawnDuck(float waitTime = 0, int previousDuckLane = -1) {
+
+            yield return new WaitForSeconds(waitTime);
+
+            float nextDuckDelay = Random.Range(1f, 3f);
+            int lane; 
+            do {
+                lane = Random.Range(0, 3);
+            } while (lane == previousDuckLane);
+
 
             var duck = Instantiate(duckPrefab, new Vector3(11.5f, yPositions[lane], 0), Quaternion.identity);
             var duckRenderer = duck.GetComponent<SpriteRenderer>();
             duckRenderer.sortingLayerID = SortingLayer.NameToID("Player");
             duckRenderer.sortingOrder = lane;
+
+            StartCoroutine(spawnDuck(nextDuckDelay, lane));
         }
 
-         IEnumerator ExecuteAfterTime(float time)
+        IEnumerator endGame(float waitTime = 0)
         {
-            yield return new WaitForSeconds(time);
+            yield return new WaitForSeconds(waitTime);
             SceneTransition.changeScene();
         }
     }
