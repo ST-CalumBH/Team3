@@ -11,6 +11,8 @@ namespace DucksOnTheRoad {
         private float[] yPositions = {-1f, -2.5f, -3.4f};
         private SceneTransitionScript SceneTransition; 
         public GameObject duckPrefab;
+        public float MinimumSpawnDelay;
+        public float MaximumSpawnDelay;
         public float minigameDuration;
         
         // Start is called before the first frame update
@@ -33,7 +35,7 @@ namespace DucksOnTheRoad {
 
             yield return new WaitForSeconds(waitTime);
 
-            float nextDuckDelay = Random.Range(1f, 3f);
+            float nextDuckDelay = Random.Range(MinimumSpawnDelay, MaximumSpawnDelay);
             int lane; 
             do {
                 lane = Random.Range(0, 3);

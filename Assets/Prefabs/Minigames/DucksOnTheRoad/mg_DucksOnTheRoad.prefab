@@ -95,6 +95,8 @@ MonoBehaviour:
   result: 0
   isInProgress: 1
   duckPrefab: {fileID: 5446176602870436047, guid: ecca61d16885f0e48b124f2d8211f13d, type: 3}
+  MinimumSpawnDelay: 1
+  MaximumSpawnDelay: 2.5
   minigameDuration: 20
 --- !u!114 &4068759341174514761
 MonoBehaviour:
@@ -1086,6 +1088,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Duck
       objectReference: {fileID: 0}
+    - target: {fileID: 8583694503877374202, guid: ecca61d16885f0e48b124f2d8211f13d, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 7014523635855473243}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecca61d16885f0e48b124f2d8211f13d, type: 3}
 --- !u!4 &4096208942572942345 stripped

@@ -17,6 +17,13 @@ namespace DucksOnTheRoad {
         // Update is called once per frame
         void Update()
         {
+            SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+            GameObject player = GameObject.Find("Player");
+            Bounds playerBounds = player.GetComponent<BoxCollider2D>().bounds;
+            Bounds colliderBounds = GetComponent<BoxCollider2D>().bounds;
+
+            string chosenLayer = playerBounds.min.y > colliderBounds.max.y ? "Overlay" : "Default";
+            renderer.sortingLayerID = SortingLayer.NameToID(chosenLayer);
             
         }
 
