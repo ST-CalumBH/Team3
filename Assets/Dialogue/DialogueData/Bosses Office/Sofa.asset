@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1360c88e71a0c7498b2b96985a1ddd1, type: 3}
-  m_Name: Filing Cabinet
+  m_Name: Sofa
   m_EditorClassIdentifier: 
   dialogue:
-  - "Do people look at the files that go in these things or do they just \nslipinto
-    the void never to be seen again? Pretty sure the only \nreason the boss would
-    come to this side of the room is for coffee."
+  - "Mmmm nothing more thrilling than being called into the bosses \noffice and having
+    to wait on this couch, having absolutely no \nidea whether you're about to lose
+    your job."
+  - "All the while she is casually talking to another employee. Unaware \nof the
+    torture she is putting us poor souls through.\nOr... Or maybe she does know..."
