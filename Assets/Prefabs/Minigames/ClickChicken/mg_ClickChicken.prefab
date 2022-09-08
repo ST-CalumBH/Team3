@@ -626,7 +626,10 @@ MonoBehaviour:
   btmRange: -10
   topRange: 10
   directionFrequency: 1.5
+  frequencyMultiplier: 0.8
+  movementMultiplier: 1
   controller: {fileID: 4151162277553399793}
+  timerChecker: 0
 --- !u!1 &4475129864626701124
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,9 @@ namespace ClickChicken {
         [SerializeField] private float topRange;
         [SerializeField] private float directionFrequency;
 
+        [SerializeField] private float frequencyMultiplier; // 0.9 etc
+        [SerializeField] private float movementMultiplier; // 1.1 etc
+
         [SerializeField] private chickenLifeDisplay controller;
 
         private Animator anim;
@@ -22,6 +25,9 @@ namespace ClickChicken {
         private float y;
         private float blinkTimer = 0;
         private float blinkLength = 3f;
+        private float directionElaspedTime = 0f;
+
+        public float timerChecker = 0f;
 
         void Start()
         {
@@ -29,7 +35,7 @@ namespace ClickChicken {
             y = 0f;
             anim = GetComponent<Animator>();
             sprite = GetComponent<SpriteRenderer>();
-            InvokeRepeating("DirectionModifier", 0, directionFrequency);
+            StartCoroutine(DirectionModifier());
             StartCoroutine(Movement());
         }
 
@@ -44,10 +50,24 @@ namespace ClickChicken {
 
         }
 
-        private void DirectionModifier()
+        IEnumerator DirectionModifier()
         {
-            x = Random.Range(btmRange, topRange);
-            y = Random.Range(btmRange, topRange);
+            while (true)
+            {
+                directionElaspedTime += Time.deltaTime;
+
+                timerChecker = directionElaspedTime;
+
+                if (directionElaspedTime >= directionFrequency)
+                {
+                    directionElaspedTime = 0f;
+
+                    x = Random.Range(btmRange, topRange);
+                    y = Random.Range(btmRange, topRange);
+                }
+
+                yield return null;
+            }
         }
 
         public void Hit()
@@ -58,7 +78,7 @@ namespace ClickChicken {
                 controller.LoseLife();
 
                 if (lives > 0) { StartCoroutine(DamageRecieved()); }    // prevent damage flash when turned into egg
-                
+                DifficultyMultiplier();                                 // makeas da game harder 
             }
             
             if (lives == 0)
@@ -97,5 +117,11 @@ namespace ClickChicken {
             return lives;
         }
 
+        private void DifficultyMultiplier()
+        {
+            directionFrequency *= frequencyMultiplier; 
+            topRange *= movementMultiplier;
+            btmRange *= movementMultiplier;
+        }
     }
 }
