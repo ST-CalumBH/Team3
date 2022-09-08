@@ -981,8 +981,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350142426}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.666975, y: 2.8186812, z: 0.6874159}
-  m_LocalScale: {x: 28.832113, y: 5.6741734, z: 1}
+  m_LocalPosition: {x: -13.1082, y: 2.7511, z: 0.6874159}
+  m_LocalScale: {x: 21.713465, y: 5.809219, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1393193383}
@@ -1001,7 +1001,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.030608043, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1012,7 +1012,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9387839, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &350142429
 SpriteRenderer:
@@ -1416,7 +1416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 197774049572998482, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Size.x
-      value: 17.418966
+      value: 12.992239
       objectReference: {fileID: 0}
     - target: {fileID: 197774049572998482, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Size.y
@@ -1424,7 +1424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 197774049572998482, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Offset.x
-      value: -10.454101
+      value: -8.240736
       objectReference: {fileID: 0}
     - target: {fileID: 197774049572998482, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Offset.y
@@ -3674,19 +3674,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 197774049572998482, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Size.x
-      value: 17.387129
+      value: 13.038143
       objectReference: {fileID: 0}
     - target: {fileID: 197774049572998482, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Size.y
-      value: 3.3349087
+      value: 2.0986097
       objectReference: {fileID: 0}
     - target: {fileID: 197774049572998482, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Offset.x
-      value: -10.336556
+      value: -8.1620655
       objectReference: {fileID: 0}
     - target: {fileID: 197774049572998482, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_Offset.y
-      value: 0.09460962
+      value: 0.71275914
       objectReference: {fileID: 0}
     - target: {fileID: 197774049572998482, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -4643,6 +4643,7 @@ GameObject:
   - component: {fileID: 1512537656}
   - component: {fileID: 1512537655}
   - component: {fileID: 1512537657}
+  - component: {fileID: 1512537658}
   m_Layer: 0
   m_Name: malcolm-walk-back-2
   m_TagString: Untagged
@@ -4743,6 +4744,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.32, y: 1.4665918}
   m_EdgeRadius: 0
+--- !u!114 &1512537658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512537654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0229be274d0bb2d44b501e36c6c07eda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 86744810}
 --- !u!1 &1516794862
 GameObject:
   m_ObjectHideFlags: 0
@@ -6579,8 +6593,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082359734}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.722275, y: -8.868619, z: 0.6874159}
-  m_LocalScale: {x: 28.832113, y: 5.819262, z: 1}
+  m_LocalPosition: {x: -13.0734, y: -8.9137, z: 0.6874159}
+  m_LocalScale: {x: 21.534706, y: 5.90946, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1393193383}
