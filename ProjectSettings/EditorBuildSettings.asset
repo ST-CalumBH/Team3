@@ -54,11 +54,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Overworld/MaleBathroom.unity
     guid: a2e2e2a411712f84ebf432386840e2d9
   - enabled: 1
+    path: Assets/Scenes/Overworld/FemaleBathroom 1.unity
+    guid: 4c11435b29453cc4ba0b17d0978ef3aa
+  - enabled: 1
+    path: Assets/Scenes/Overworld/MaleBathroom 1.unity
+    guid: b4af955d7b9479e41bd3c838309a10db
+  - enabled: 1
     path: Assets/Scenes/Environment Minigames/Becky horror maze.unity
     guid: b8a888b0bb4d39e46981e60a15a2aa59
   - enabled: 1
     path: Assets/Scenes/Overworld/Post Combat Home Scenes/OfficePostPrinter.unity
     guid: 940f820e916c9e941a13e98b43c43df4
+  - enabled: 1
+    path: Assets/Scenes/Overworld/OfficeReturned.unity
+    guid: 607cbd9f63c0dc949a45f1dc1b12dc03
   - enabled: 1
     path: Assets/Scenes/Combat/Combat printer.unity
     guid: 7e081f77cd0e96c46b2ff52126a36d17
