@@ -137,3 +137,10 @@ MonoBehaviour:
   minigames: []
   playedMinigame: {fileID: 0}
   minigameCount: 0
+  dialogueList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

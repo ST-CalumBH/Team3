@@ -32,5 +32,13 @@ namespace Dialogue {
 
             diagUI.SwapProgressState(state);
         }
+
+        public void IsCutscene(int flag)
+        {
+            if (flag == 0) { state = false; }
+            else { state = true; }
+
+            diagUI.CutsceneState(state);
+        }
     }
 }
