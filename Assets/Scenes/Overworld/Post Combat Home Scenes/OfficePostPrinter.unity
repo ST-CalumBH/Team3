@@ -5122,7 +5122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dece4ff650e0570499fcfc76d8a1441f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: MaleBathroom
+  nextScene: MaleBathroom 1
   newSpawnPoint: 1
   colliderTransition: 0
   interactTransition: 1
@@ -5956,7 +5956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dece4ff650e0570499fcfc76d8a1441f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: FemaleBathroom
+  nextScene: FemaleBathroom 1
   newSpawnPoint: 1
   colliderTransition: 0
   interactTransition: 1
