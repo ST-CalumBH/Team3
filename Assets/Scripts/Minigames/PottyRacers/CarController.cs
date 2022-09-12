@@ -13,6 +13,8 @@ public class CarController : MonoBehaviour
     public float accelFactor = 30.0f;
     public float turnFacotor = 3.5f;
 
+    public float drag = 3f;
+
     //local variables
     float accelInput = 0;
     float steeringInput = 0;
@@ -62,7 +64,7 @@ public class CarController : MonoBehaviour
         //applying drag or friction when zero accel
 
         if (accelInput == 0)
-            carRigidbody2D.drag = Mathf.Lerp(carRigidbody2D.drag, 3.0f, Time.fixedDeltaTime * 3);
+            carRigidbody2D.drag = Mathf.Lerp(carRigidbody2D.drag, drag, Time.fixedDeltaTime * 3);
         else carRigidbody2D.drag = 0;
 
         Vector2 engineForceVector = transform.up * accelInput * accelFactor;
