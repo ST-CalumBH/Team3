@@ -16,8 +16,9 @@ namespace Overworld {
     [Tooltip("Do not use for repeatable conversations")]
     [SerializeField] private string eventName;
     [SerializeField] private string[] previousEventsRequired;
+    [SerializeField] private string[] customDropdownHere = new string[] { "onAwake", "onTriggerEnter", "onInteraction" };
 
-    void Start()
+        void Start()
     {
         eventNameChecker();
     }
@@ -27,7 +28,7 @@ namespace Overworld {
         
     }
 
-    public void beginCutsceneTimeline()
+    public void beginCutsceneTimeline()                     // might have to make event interactions based on this script
     {
         icon.changeActiveState();
         cutscene.Play();
