@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerLaneMovement : MonoBehaviour
+public class PLayerLaneMovement : MonoBehaviour
 {
     public float moveSpeed = 15f;
     public Rigidbody2D rb;
