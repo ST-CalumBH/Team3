@@ -17,8 +17,12 @@ namespace CableChaos {
         public Animator animControllerKeith;
         public GameObject lifeObject;
         public float roundLength;
-        
 
+        Image a1Image;
+        Image a2Image;
+        Image s1Image;
+        Image d1Image;
+        Image d2Image;   
         RectTransform timingBarRect;
         float timingBarWidth;
         float selectPos = 0;
@@ -49,6 +53,11 @@ namespace CableChaos {
             s1.gameObject.SetActive(false);
             d1.gameObject.SetActive(false);
             d2.gameObject.SetActive(false);
+            a1Image = a1.GetComponent<Image>();
+            a2Image = a2.GetComponent<Image>();
+            s1Image = s1.GetComponent<Image>();
+            d1Image = d1.GetComponent<Image>();
+            d2Image = d2.GetComponent<Image>();
             timingBarRect = timingBar.GetComponent<RectTransform>();
             timingBarWidth = timingBarRect.rect.width;
             timingBar.maxValue = timingBarWidth;
@@ -75,6 +84,7 @@ namespace CableChaos {
                             {
                                 results[0] = true;
                                 animControllerKeith.Play("Key Pressed");
+                                
                             }
                             else if (selectPos > threeInputLoc[1] - margin && selectPos < threeInputLoc[1] + margin)
                             {
@@ -207,12 +217,11 @@ namespace CableChaos {
             else
             {
                 StartCoroutine(EndMinigame(false));
+                yield return null;
             }
-            //yield return new WaitForSeconds(1f);
-            //Debug.Log("Missed Key Called");
+            yield return new WaitForSeconds(1f);
             paused = false;
             yield return null;
-            //Missed key badness here
         }
 
         private void FixedUpdate()
@@ -305,6 +314,11 @@ namespace CableChaos {
                 paused = true;
                 StartCoroutine(EndMinigame(true));
             }
+        }
+
+        IEnumerator KeyColourChange(Image image)
+        {
+            yield return new WaitForSeconds(1f);
         }
     }
 }

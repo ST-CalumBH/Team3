@@ -13,7 +13,20 @@ public class MinigameSFX : MonoBehaviour
 
     public void PlaySound(int songNum)
     {
-        if (audioClips == null)
+        if (audioClips != null)
+        {
+            mgAudioSource.PlayOneShot(audioClips[songNum]);
+        }
+        else
+        {
+            Debug.Log("Audio clips is empty");
+        }
+    }
+
+    public IEnumerator PlaySoundWait(int songNum, float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        if (audioClips != null)
         {
             mgAudioSource.PlayOneShot(audioClips[songNum]);
         }

@@ -30,10 +30,12 @@ namespace ResetButton
         bool cooldown;
         float cooldownTimer = 0;
         float cooldownLengthFrames;
+        MinigameSFX mSFX;
 
         // Start is called before the first frame update
         void Start()
         {
+            mSFX = GetComponent<MinigameSFX>();
             cooldownLengthFrames = cooldownLength * 50f;
             cooldown = false;
             handRotation = handTransform.rotation.eulerAngles.z;
@@ -91,11 +93,15 @@ namespace ResetButton
             {
                 if (handTransform.eulerAngles.z > (handRotation - zoneDegrees) && handTransform.eulerAngles.z < (handRotation + zoneDegrees) && cooldown==false)
                 {
+                    mSFX.PlaySound(0);
+                    mSFX.PlaySound(1);
                     zRotate = 0;
                     StartCoroutine(EndMinigame(true));
                 }
                 else
                 {
+                    mSFX.PlaySound(2);
+                    mSFX.PlaySound(3);
                     cooldown = true;
                     cooldownTimer = 0;
                     Debug.Log("Cooldown Start");
