@@ -6,56 +6,106 @@ using UnityEngine.SceneManagement;
 
 namespace Overworld {
     public class eventTimeline : MonoBehaviour
-{
-    [SerializeField] private eventIcon icon;                            // might use subscriber and publisher events to prevent dependancies
-    [SerializeField] private PlayableDirector cutscene;
+    {
+        private enum eventType { onTriggerEnter, onInteraction }; // onAwake has bugs atm
 
-    [SerializeField] private string nextScene;
+        [SerializeField] private eventIcon icon;                            // might use subscriber and publisher events to prevent dependancies
+        [SerializeField] private PlayableDirector cutscene;
 
-    [Header("Event Related")]
-    [Tooltip("Do not use for repeatable conversations")]
-    [SerializeField] private string eventName;
-    [SerializeField] private string[] previousEventsRequired;
-    [SerializeField] private string[] customDropdownHere = new string[] { "onAwake", "onTriggerEnter", "onInteraction" };
+        private GameObject player;
+        private playerController playerController;
+        private bool inArea;
+
+        [SerializeField] private string nextScene;
+
+        [Header("Event Related")]
+        [Tooltip("Do not use for repeatable conversations")]
+        [SerializeField] private string eventName;
+        [SerializeField] private eventType _type;
+        [SerializeField] private string[] previousEventsRequired;
 
         void Start()
-    {
-        eventNameChecker();
-    }
-
-    void Update()
-    {
-        
-    }
-
-    public void beginCutsceneTimeline()                     // might have to make event interactions based on this script
-    {
-        icon.changeActiveState();
-        cutscene.Play();
-        PlayerPrefs.SetInt(eventName, 1);                   // now it is triggered
-    }
-
-    private void eventNameChecker()                         // checks whether a one-time event should be played or not
-    {
-        if (previousEventsRequired != null)                 // are there any previous events to check?
         {
-            foreach (string i in previousEventsRequired)    // iterates through the list
+            player = GameObject.FindWithTag("Player");
+            playerController = player.GetComponent<playerController>();
+
+            eventNameChecker();
+        }
+
+        void Update()
+        {
+            if (inArea && (Input.GetKeyDown(KeyCode.E)) && _type == eventType.onInteraction )                                    // event interactor
             {
-                if (PlayerPrefs.GetInt(i, 0) == 0)          // has the event NOT been triggered?
+                beginCutsceneTimeline();
+            }
+        }
+
+        public void beginCutsceneTimeline()                     // might have to make event interactions based on this script
+        {
+            playerController.freezePlayer();
+            icon.changeActiveState(false);
+            cutscene.Play();
+            PlayerPrefs.SetInt(eventName, 1);                   // now it is triggered
+        }
+
+        private void eventNameChecker()                         // checks whether a one-time event should be played or not
+        {
+            
+
+            //if (_type == eventType.onAwake)
+            //{
+            //    icon.changeActiveState(false);
+            //}
+            
+            if (eventName != null)
+            {
+                if (PlayerPrefs.GetInt(eventName, 0) == 1)      // has the named event already been triggered? also the event icon shouldn't appear for onAwake and onTriggerEnter
                 {
-                    return;                                 // if not, do not proceed with event
+                    gameObject.SetActive(false);                // disables event trigger
+                    icon.changeActiveState(false);              // disables floating icon
+                    return;                                     // stops the code here
                 }
             }
+            
+            if (previousEventsRequired != null)                 // are there any previous events to check?
+            {
+                foreach (string i in previousEventsRequired)    // iterates through the list
+                {
+                    if (PlayerPrefs.GetInt(i, 0) == 1)          // has the event been triggered?
+                    {
+                        gameObject.SetActive(false);            // if so, do not proceed with event and make it inactive
+                        return;
+                    }
+                }
+            }
+
+            //if (_type == eventType.onAwake)
+            //{
+            //    beginCutsceneTimeline();
+
+            //    playerController.freezePlayer();
+            //}
         }
 
-        if (eventName != null)
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            if (PlayerPrefs.GetInt(eventName, 0) == 1)      // has the named event already been triggered?
+            if (other.tag == "Player")
             {
-                gameObject.SetActive(false);                // disables event trigger
-                icon.changeActiveState();                   // disables floating icon
+                if (_type == eventType.onTriggerEnter)
+                {
+                    beginCutsceneTimeline();
+                }
+
+                inArea = true;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.tag == "Player")
+            {
+                inArea = false;
             }
         }
     }
-}
 }

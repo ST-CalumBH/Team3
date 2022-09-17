@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595f827f8cc3993479d5802b724c25ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 3125709849391363936}
 --- !u!1 &7706034308894484279
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,13 +309,10 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 0}
   animator: {fileID: 7706034308894484296}
-  eventTrigger: {fileID: 0}
-  container: {fileID: 0}
   dialogueUI: {fileID: 0}
   carpetSFX: {fileID: 8300000, guid: f373de096a9950448ba700498c5b0b73, type: 3}
   playerFreeze: 0
   indicatorE: {fileID: 5801943956100284353}
-  inAreaCounter: 0
   spawnPoints: []
 --- !u!61 &7706034308894484298
 BoxCollider2D:

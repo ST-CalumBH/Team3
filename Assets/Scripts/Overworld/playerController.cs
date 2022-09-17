@@ -6,27 +6,24 @@ using Dialogue;
 using UI;
 
 namespace Overworld {
-    public class playerController : MonoBehaviour 
+    public class playerController : MonoBehaviour
     {
         public float moveSpeed = 15f;
         public Rigidbody2D rb;
         public Animator animator;
         public DialogueUI DialogueUI => dialogueUI;
 
-        [SerializeField] private GameObject eventTrigger;
-        [SerializeField] private eventTimeline container;
         [SerializeField] private DialogueUI dialogueUI;
         [SerializeField] private AudioClip carpetSFX;
 
-        private bool inArea;
-        [SerializeField] private bool playerFreeze;//boolean for determining if the player is frozen or not, controlling if the update function accepts input for 
-        private float playerSpeed;//keeps a reference of the player speed to apply when the player is unfrozen
+        [SerializeField] private bool playerFreeze;                 //boolean for determining if the player is frozen or not, controlling if the update function accepts input for 
+        private float playerSpeed;                                  //keeps a reference of the player speed to apply when the player is unfrozen
         private Vector2 movement;
         private AudioSource AS;
         private PauseMenu menu;
 
         public iconE indicatorE;
-        [SerializeField] private int inAreaCounter = 0;              // the 'E' indicator will only turn off if the player is no longer on top of any other collisions
+        private int inAreaCounter = 0;                              // the 'E' indicator will only turn off if the player is no longer on top of any other collisions
 
         public IInteractable Interactable { get; set; }
 
@@ -37,7 +34,6 @@ namespace Overworld {
         {
             rb = GetComponent<Rigidbody2D>();
             AS = GetComponent<AudioSource>();
-            inArea = false;
             playerFreeze = false;
             playerSpeed = moveSpeed;
 
@@ -70,11 +66,6 @@ namespace Overworld {
                 if (Input.GetKeyDown(KeyCode.E))                                                // dialogue interactor
                 {
                     Interactable?.Interact(this);
-                }
-
-                if (inArea && (Input.GetKeyDown(KeyCode.E)))                                    // event interactor
-                {
-                    Interact(container);
                 }
             }
 
@@ -111,16 +102,7 @@ namespace Overworld {
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.tag == "Cutscene")
-            {
-                inArea = true;
-                eventTrigger = other.gameObject;
-                container = eventTrigger.GetComponent<eventTimeline>();
-                indicatorE.Show();
-                inAreaCounter++;
-            }
-
-            if (other.tag == "Interact")
+            if (other.tag == "Interact" || other.tag == "Cutscene")
             {
                 indicatorE.Show();
                 inAreaCounter++;
@@ -137,7 +119,6 @@ namespace Overworld {
 
             if (inAreaCounter == 0)
             { 
-                inArea = false;
                 indicatorE.Hide();
             }
         }
@@ -165,12 +146,6 @@ namespace Overworld {
             moveSpeed = playerSpeed;
 
             indicatorE.Enable();
-        }
-
-        private void Interact(eventTimeline timeline)
-        {
-            freezePlayer();
-            timeline.beginCutsceneTimeline();
         }
 
         public void PlayAudioClip()
