@@ -15,6 +15,7 @@ TagManager:
   - Music
   - Bullet
   - Cutscene
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
