@@ -2507,6 +2507,7 @@ Transform:
   - {fileID: 1893767853}
   - {fileID: 938515224}
   - {fileID: 332268395}
+  - {fileID: 2101051316}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2837,7 +2838,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: a16376fd988837b498000bffd829da5e, type: 2}
-  m_InitialState: 0
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -2866,8 +2867,10 @@ PlayableDirector:
     value: {fileID: 332268396}
   - key: {fileID: 849341290900789857, guid: bbc861c158cff904c9a84878f8225e74, type: 2}
     value: {fileID: 332268394}
-  - key: {fileID: -8998687547142315203, guid: a16376fd988837b498000bffd829da5e, type: 2}
-    value: {fileID: 715190466}
+  - key: {fileID: -492627414700202614, guid: a16376fd988837b498000bffd829da5e, type: 2}
+    value: {fileID: 86744812}
+  - key: {fileID: -7079206036437621366, guid: a16376fd988837b498000bffd829da5e, type: 2}
+    value: {fileID: 2101051317}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &953092269
@@ -2887,6 +2890,10 @@ MonoBehaviour:
   nextScene: Combat printer
   eventName: E005
   previousEventsRequired: []
+  customDropdownHere:
+  - onAwake
+  - onTriggerEnter
+  - onInteraction
 --- !u!61 &953092270
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3493,7 +3500,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1699659817306789324, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484279, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_Name
@@ -3535,6 +3542,10 @@ PrefabInstance:
       propertyPath: spawnPoints.Array.data[3].y
       value: 7.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7706034308894484300, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8ab1e266e4ae83449bbd745101f66ec1, type: 3}
     - target: {fileID: 7706034308894484300, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_SortingLayer
       value: 1
@@ -4462,8 +4473,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: Combat printer
   newSpawnPoint: 1
-  colliderTransition: 1
-  interactTransition: 0
+  colliderTransition: 0
+  interactTransition: 1
   transition: {fileID: 1570611875}
   transitionTime: 1
 --- !u!212 &1431747223
@@ -6566,6 +6577,10 @@ MonoBehaviour:
   nextScene: 
   eventName: 
   previousEventsRequired: []
+  customDropdownHere:
+  - onAwake
+  - onTriggerEnter
+  - onInteraction
 --- !u!1 &2082359734
 GameObject:
   m_ObjectHideFlags: 0
@@ -6691,3 +6706,108 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 86744810}
+--- !u!1 &2101051315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2101051316}
+  - component: {fileID: 2101051318}
+  - component: {fileID: 2101051317}
+  m_Layer: 0
+  m_Name: printer seperate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2101051316
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101051315}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25.34, y: -8.27, z: 0.0307948}
+  m_LocalScale: {x: 1.654925, y: 1.654925, z: 1.654925}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 891664359}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2101051317
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101051315}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!212 &2101051318
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101051315}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 53cfc716bd9ce5d4c8224769f6267dea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 39.16351, y: 23.980001}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0

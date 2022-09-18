@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class iconE : MonoBehaviour
 {
-    private bool canChange = true;
-    private Animator anim;
+    [SerializeField] private bool canChange = true;
+    [SerializeField] private Animator anim;
 
     void Start()
     {
         gameObject.SetActive(false);
-        anim = GetComponent<Animator>();
     }
 
     public void Show()
     {
-        if (canChange) { gameObject.SetActive(true); }
-        anim.Play("eExpand");
+        if (canChange) { gameObject.SetActive(true); anim.Play("eExpand");}
     }
 
     public void Hide()
