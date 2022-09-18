@@ -17,6 +17,8 @@ namespace CableChaos {
         public Animator animControllerKeith;
         public GameObject lifeObject;
         public float roundLength;
+        public GameObject UI;
+        public GameObject Tutorial;
 
         Image a1Image;
         Image a2Image;
@@ -34,10 +36,13 @@ namespace CableChaos {
         bool paused = false;
         bool cooldown = false;
 
+        Color redColour = Color.red;
+        Color whiteColour = Color.white;
         float[] threeInputLoc = {375f,750f,1125f};
         float[] fourInputLoc = {300f,600f,900f,1200f};
         bool[] results = {false, false, false, false};
         bool spareLife;
+        MinigameSFX mSFX;
 
 
         private enum GameStates {A,B,C}
@@ -46,6 +51,8 @@ namespace CableChaos {
         // Start is called before the first frame update
         void Start()
         {
+            paused = true;
+            mSFX = GetComponent<MinigameSFX>();
             spareLife = true;
             moveSpeed = ((1500 / roundLength) / 60);
             a1.gameObject.SetActive(false);
@@ -64,10 +71,10 @@ namespace CableChaos {
             tilesMoved = false;
             curState = GameStates.A;
             margin = a1.rect.width / 2;
-            paused = false;
             animControllerPrinter.Play("Idle");
             animControllerKeith.Play("Idle");
             cooldownLength = roundLength / 5;
+            StartCoroutine(StartScreen());
         }
 
         // Update is called once per frame
@@ -78,27 +85,33 @@ namespace CableChaos {
                 case GameStates.A:
                     if (cooldown == false)
                     {
-                        if (Input.GetKeyDown(KeyCode.A))
+                        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
                         {
                             if (selectPos > threeInputLoc[0] - margin && selectPos < threeInputLoc[0] + margin)
                             {
                                 results[0] = true;
                                 animControllerKeith.Play("Key Pressed");
-                                
+                                a1Image.color = redColour;
+                                mSFX.PlaySound(0);
                             }
                             else if (selectPos > threeInputLoc[1] - margin && selectPos < threeInputLoc[1] + margin)
                             {
                                 results[1] = true;
                                 animControllerKeith.Play("Key Pressed");
+                                a2Image.color = redColour;
+                                mSFX.PlaySound(0);
                             }
                             else { cooldown = true; }
                         }
-                        if (Input.GetKeyDown(KeyCode.D))
+                        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                         {
                             if (selectPos > threeInputLoc[2] - margin && selectPos < threeInputLoc[2] + margin)
                             {
                                 results[2] = true;
                                 results[3] = true;
+                                d1Image.color = redColour;
+                                mSFX.PlaySound(0);
+                                mSFX.PlaySound(1);
                                 animControllerKeith.Play("Attack");
                                 animControllerPrinter.Play("Attacked");
                                 StartCoroutine(StateTransition());
@@ -117,25 +130,29 @@ namespace CableChaos {
                 case GameStates.B:
                     if (cooldown == false)
                     {
-                        if (Input.GetKeyDown(KeyCode.S))
+                        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
                         {
                             if (selectPos > threeInputLoc[0] - margin && selectPos < threeInputLoc[0] + margin)
                             {
                                 results[0] = true;
                                 animControllerKeith.Play("Key Pressed");
+                                s1Image.color = redColour;
+                                mSFX.PlaySound(0);
                             }
                             else { cooldown = true; }
                         }
-                        if (Input.GetKeyDown(KeyCode.A))
+                        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
                         {
                             if (selectPos > threeInputLoc[1] - margin && selectPos < threeInputLoc[1] + margin)
                             {
                                 results[1] = true;
                                 animControllerKeith.Play("Key Pressed");
+                                a1Image.color = redColour;
+                                mSFX.PlaySound(0);
                             }
                             else { cooldown = true; }
                         }
-                        if (Input.GetKeyDown(KeyCode.D))
+                        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                         {
                             if (selectPos > threeInputLoc[2] - margin && selectPos < threeInputLoc[2] + margin)
                             {
@@ -143,6 +160,9 @@ namespace CableChaos {
                                 results[3] = true;
                                 animControllerKeith.Play("Attack");
                                 animControllerPrinter.Play("Attacked");
+                                d1Image.color = redColour;
+                                mSFX.PlaySound(0);
+                                mSFX.PlaySound(1);
                                 StartCoroutine(StateTransition());
                             }
                             else { cooldown = true; }
@@ -160,32 +180,41 @@ namespace CableChaos {
                 case GameStates.C:
                     if (cooldown == false)
                     {
-                        if (Input.GetKeyDown(KeyCode.A))
+                        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
                         {
                             if (selectPos > fourInputLoc[0] - margin && selectPos < fourInputLoc[0] + margin)
                             {
                                 results[0] = true;
                                 animControllerKeith.Play("Key Pressed");
+                                a1Image.color = redColour;
+                                mSFX.PlaySound(0);
                             }
                             else if (selectPos > fourInputLoc[2] - margin && selectPos < fourInputLoc[2] + margin)
                             {
                                 results[2] = true;
                                 animControllerKeith.Play("Key Pressed");
+                                a2Image.color = redColour;
+                                mSFX.PlaySound(0);
                             }
                             else { cooldown = true; }
                         }
-                        if (Input.GetKeyDown(KeyCode.D))
+                        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                         {
                             if (selectPos > fourInputLoc[1] - margin && selectPos < fourInputLoc[1] + margin)
                             {
                                 results[1] = true;
                                 animControllerKeith.Play("Key Pressed");
+                                d1Image.color = redColour;
+                                mSFX.PlaySound(0);
                             }
                             else if (selectPos > fourInputLoc[3] - margin && selectPos < fourInputLoc[3] + margin)
                             {
                                 results[3] = true;
                                 animControllerKeith.Play("Attack");
                                 animControllerPrinter.Play("Attacked");
+                                d2Image.color = redColour;
+                                mSFX.PlaySound(0);
+                                mSFX.PlaySound(1);
                                 StartCoroutine(StateTransition());
                             }
                             else { cooldown = true; }
@@ -200,12 +229,32 @@ namespace CableChaos {
                     }
                     break;
             }
-            
+            ColourReset();
+        }
+
+        IEnumerator StartScreen()
+        {
+            yield return new WaitForSeconds(2f);
+            Tutorial.SetActive(false);
+            UI.SetActive(true);
+            paused = false;
+        }
+
+        void ColourReset()
+        {
+            if(!Input.anyKey)
+            {
+                a1Image.color = whiteColour;
+                a2Image.color = whiteColour;
+                s1Image.color = whiteColour;
+                d1Image.color = whiteColour;
+                d2Image.color = whiteColour;
+            }
         }
 
         IEnumerator MissedKey()
         {
-            
+            mSFX.PlaySound(2);
             paused = true;
             ResetResults();
             timingBar.value = selectPos;
