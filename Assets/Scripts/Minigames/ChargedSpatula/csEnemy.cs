@@ -7,6 +7,7 @@ namespace ChargedSpatula {
     {
         private bool defeated = false;
         private Vector3 direction;
+        public Animator anim;
 
         void Start()
         {
@@ -17,14 +18,8 @@ namespace ChargedSpatula {
         {
             if (defeated == true)
             {
-                Spin();
+                anim.Play("chicken_flung");
             }
-        }
-
-        public void Spin()
-        {
-            transform.position += direction;
-            transform.Rotate(Vector3.back * 1000f * Time.deltaTime);
         }
 
         public void defeatedStateChange()

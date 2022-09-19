@@ -55,6 +55,27 @@ namespace Overworld {
             }
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.tag == "Player")
+            {
+                inArea = true;
+            }
+            if (other.tag == "Player" && colliderTransition == true)
+            {
+                SetSpawnPoint();
+                changeScene();
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.tag == "Player")
+            {
+                inArea = false;
+            }
+        }
+
         public void changeScene()
         {
             StartCoroutine(LoadLevel());
