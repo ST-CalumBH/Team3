@@ -397,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1165809471205156286, guid: 9490a6a017885cd45b97ea79db21f3db, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1165809471205156287, guid: 9490a6a017885cd45b97ea79db21f3db, type: 3}
       propertyPath: m_RootOrder
@@ -883,6 +883,10 @@ PrefabInstance:
     - target: {fileID: 726159061744128840, guid: ef4f9363138607a4f9cce339d43c55f6, type: 3}
       propertyPath: m_Name
       value: mg_CableChaos
+      objectReference: {fileID: 0}
+    - target: {fileID: 726159061744128840, guid: ef4f9363138607a4f9cce339d43c55f6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 726159061744128843, guid: ef4f9363138607a4f9cce339d43c55f6, type: 3}
       propertyPath: m_RootOrder
