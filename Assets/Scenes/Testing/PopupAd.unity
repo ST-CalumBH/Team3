@@ -294,9 +294,21 @@ PrefabInstance:
       propertyPath: BottomY
       value: -2.06
       objectReference: {fileID: 0}
+    - target: {fileID: 2586043128842857969, guid: 5848ee9e95d68a348b68e48d9d8c61d4, type: 3}
+      propertyPath: btmSpawnDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2586043128842857969, guid: 5848ee9e95d68a348b68e48d9d8c61d4, type: 3}
+      propertyPath: topSpawnDelay
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3950095212159510510, guid: 5848ee9e95d68a348b68e48d9d8c61d4, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464680890287825396, guid: 5848ee9e95d68a348b68e48d9d8c61d4, type: 3}
+      propertyPath: m_Name
+      value: Background
       objectReference: {fileID: 0}
     - target: {fileID: 6733869732689166829, guid: 5848ee9e95d68a348b68e48d9d8c61d4, type: 3}
       propertyPath: m_LocalScale.x

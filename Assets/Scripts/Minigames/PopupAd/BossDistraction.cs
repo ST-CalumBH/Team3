@@ -9,6 +9,7 @@ namespace PopupAd {
         private int counter = 0;
 
         [SerializeField] private ClickDetect clickDetect;           // connected so that it can disable the mouse's detection
+        public Animator anim;
 
         void Start()
         {
@@ -21,7 +22,7 @@ namespace PopupAd {
             if (counter == numToPacify)
             {
                 clickDetect.distractionChange();
-                gameObject.SetActive(false);
+                anim.Play("beckyLeave");
             }
 
             if (Input.GetKeyDown(KeyCode.Space))
