@@ -19,7 +19,7 @@ namespace Dialogue {
 
         private TypewriterEffect typewriterEffect;
 
-        private void Start()
+        private void Awake()
         {
             player = FindObjectOfType<playerController>();
 

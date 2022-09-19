@@ -383,7 +383,7 @@ MonoBehaviour:
   cutscene: {fileID: 76289551}
   nextScene: CombatScene
   eventName: E002
-  _type: 1
+  _type: 2
   previousEventsRequired: []
 --- !u!320 &76289551
 PlayableDirector:

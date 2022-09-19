@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 namespace Overworld {
     public class eventTimeline : MonoBehaviour
     {
-        private enum eventType { onTriggerEnter, onInteraction }; // onAwake has bugs atm
+        private enum eventType { onAwake, onTriggerEnter, onInteraction };  // onAwake has bugs atm
 
         [SerializeField] private eventIcon icon;                            // might use subscriber and publisher events to prevent dependancies
         [SerializeField] private PlayableDirector cutscene;
@@ -50,13 +50,12 @@ namespace Overworld {
 
         private void eventNameChecker()                         // checks whether a one-time event should be played or not
         {
-            
 
-            //if (_type == eventType.onAwake)
-            //{
-            //    icon.changeActiveState(false);
-            //}
-            
+            if (_type == eventType.onAwake)
+            {
+                icon.changeActiveState(false);
+            }
+
             if (eventName != null)
             {
                 if (PlayerPrefs.GetInt(eventName, 0) == 1)      // has the named event already been triggered? also the event icon shouldn't appear for onAwake and onTriggerEnter
@@ -79,12 +78,12 @@ namespace Overworld {
                 }
             }
 
-            //if (_type == eventType.onAwake)
-            //{
-            //    beginCutsceneTimeline();
+            if (_type == eventType.onAwake)
+            {
+                beginCutsceneTimeline();
 
-            //    playerController.freezePlayer();
-            //}
+                playerController.freezePlayer();
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D other)
