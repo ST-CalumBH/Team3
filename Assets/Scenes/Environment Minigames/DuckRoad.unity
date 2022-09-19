@@ -227,6 +227,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 394858440924683966, guid: 4b8a1da1db225c24eb9d1fcaa6fc6996, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f61132b856812c24f8506c2938c339b6, type: 3}
     - target: {fileID: 513953099218244293, guid: 4b8a1da1db225c24eb9d1fcaa6fc6996, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -271,6 +275,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1498179941668715925, guid: 4b8a1da1db225c24eb9d1fcaa6fc6996, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3078719
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498179941668715925, guid: 4b8a1da1db225c24eb9d1fcaa6fc6996, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3078719
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498179941668715925, guid: 4b8a1da1db225c24eb9d1fcaa6fc6996, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3078719
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498179941668715925, guid: 4b8a1da1db225c24eb9d1fcaa6fc6996, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498179941668715925, guid: 4b8a1da1db225c24eb9d1fcaa6fc6996, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.7792
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240221460791492968, guid: 4b8a1da1db225c24eb9d1fcaa6fc6996, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b1dd5a7d8d17e4541a4b0ff5747c0325, type: 3}
     - target: {fileID: 4068759341174514761, guid: 4b8a1da1db225c24eb9d1fcaa6fc6996, type: 3}
       propertyPath: transition
       value: 
@@ -279,6 +307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: mg_DucksOnTheRoad
       objectReference: {fileID: 0}
+    - target: {fileID: 6849247571622747077, guid: 4b8a1da1db225c24eb9d1fcaa6fc6996, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b1dd5a7d8d17e4541a4b0ff5747c0325, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b8a1da1db225c24eb9d1fcaa6fc6996, type: 3}
 --- !u!1001 &1591319665
