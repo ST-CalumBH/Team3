@@ -32,6 +32,8 @@ namespace Combat {
 
 		public DialogueUI diagUI;
 
+		public int spawnPointSetTo = 0;
+
 		// Start is called before the first frame update
 		void Start()
 		{
@@ -135,9 +137,10 @@ namespace Combat {
 		}
 
 		IEnumerator EndCombat()
-			{
+		{
 			yield return new WaitForSeconds(1f);
 			SceneManager.LoadScene(nextScene);
+			PlayerPrefs.SetInt("SpawnPoint", spawnPointSetTo);
 		}
 
 		void EndBattle()
