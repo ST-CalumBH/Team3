@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Couch
   m_EditorClassIdentifier: 
   dialogue:
-  - I never really liked this couch, I mean if you are sitting on the end closest
-    to the TV you are both going to go blind but also not see whats happening.
+  - "I never really liked this couch. I mean, if you are sitting on the end \nclosest
+    to the TV, you are both going to go blind but also not see \nwhat's happening."
   - But I also don't have the heart to just get rid of it. So many great memories
     were had sitting right here on this couch.
   - The chips eaten, the naps taken, the games played, the hours spent finding the

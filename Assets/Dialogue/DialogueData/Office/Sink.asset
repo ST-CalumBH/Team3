@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Sink
   m_EditorClassIdentifier: 
   dialogue:
-  - 'Is it just me or is this kitchen layout seem awfully familiar, I just can''t
-    seem to place where it''s from. '
+  - "Is it just me, or is this kitchen layout seem awfully familiar? I just \ncan't
+    seem to place where it's from. "

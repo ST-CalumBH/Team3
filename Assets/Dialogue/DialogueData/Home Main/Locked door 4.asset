@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Locked door 4
   m_EditorClassIdentifier: 
   dialogue:
-  - "Its kinda cool having a walk in pantry, but since my wife took \nall the food
+  - "It's kinda cool having a walk-in pantry, but since my wife took \nall the food,
     there is no point going in here now."

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - "Why do 99% of printers struggle to do the one thing they were \nmade to do?
-    Every day its a new issue that I have to fix and for what? So we can print of
-    some document no one will read."
+    Every day it's a new issue that I have to fix, and for \nwhat? So we can print
+    off some documents no one will read."
   - "Printers should be rebranded to their one true purpose, scanning \nbutts, its
-    what all the movies show, its what most people try to do\nanyway and it typically
-    the only times it works perfectly."
+    what all the movies show; its what most people try to do\nanyway, plus, it's
+    typically the only time it works perfectly."
