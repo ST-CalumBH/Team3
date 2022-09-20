@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Filing Cabinet
   m_EditorClassIdentifier: 
   dialogue:
-  - "Do people look at the files that go in these things or do they just \nslipinto
+  - "Do people look at the files that go in these things or do they just \nslip into
     the void never to be seen again? Pretty sure the only \nreason the boss would
-    come to this side of the room is for coffee."
+    come to this side of the room is for coffee.."

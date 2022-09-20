@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Slab
   m_EditorClassIdentifier: 
   dialogue:
-  - "I genuinely cannot read this, there is so much cursive, if anyone\nwas able
-    to decipher this for me I'd be greatful. Not that I really \ncare what it says,
-    it just bugs me that I cant read what it says."
+  - "I genuinely cannot read this. There is so much cursive. If anyone\nwas able
+    to decipher this for me, I'd be grateful. Not that I really \ncare what it says;
+    it just bugs me that I can't read what it says."

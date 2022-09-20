@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Small Dresser
   m_EditorClassIdentifier: 
   dialogue:
-  - "Wow this is a cool and epic dresser, however I'm 100% going to \nbreak that
-    alarm clock one day, I hate  waking up  this early \nevery day."
+  - "Wow, this is a cool and epic dresser; however, I'm 100% going to \nbreak that
+    alarm clock one day. I hate waking up this early \nevery day."

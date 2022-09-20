@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: blowdriers
   m_EditorClassIdentifier: 
   dialogue:
-  - "One of lifes greatest joys is on a cold day sticking your hands under \none
-    of these bad boys. Drying your hands or just passing the time, \nit feels great
-    all the same."
+  - "One of life's greatest joys is sticking your hands under one of these \nbad
+    boys on a cold day. Drying your hands or passing the time feels great all the
+    same."

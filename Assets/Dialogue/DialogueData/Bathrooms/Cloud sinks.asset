@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Cloud sinks
   m_EditorClassIdentifier: 
   dialogue:
-  - "The cloud sinks are a bit overkill don't you think, the golden gate \nway in
-    here, plus the fabulous toilets, having your water come \ndirectly from clouds
-    just seems so uneccessary."
+  - "The cloud sinks are a bit overkill, don't you think? The golden gate \nway,
+    plus the fabulous toilets, having your water come directly \nfrom clouds just
+    seems so unnecessary."

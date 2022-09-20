@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Start of day
   m_EditorClassIdentifier: 
   dialogue:
-  - "What a great dream, I ran through those fields for what felt like \neternity.
+  - "What a great dream, I ran through those fields for what felt like an \neternity.
     Someone did a great job taking care of those fences too, \nquality work. Why
     does my mouth taste like grass? "
-  - "Also my feet are really sore, like a ran several marathons. Oh well, \nI have
-    to head to work, I'm really glad I invested in this all in one \nsuit that also
-    acts as pyjamas, saves so much time each morning."
-  - "So the question now is, what do I have for Brekky. Toast? \nPancakes? Nah I
+  - "Also, my feet are really sore, like I ran several marathons. Oh well, \nI have
+    to head to work. I'm really glad I invested in this all-in-one \nsuit that also
+    acts as pyjamas. Saves so much time each morning."
+  - "So the question now is, what do I have for Brekky. Toast? \nPancakes? Nah, I
     think I'll go for some good old eggs."
