@@ -27,5 +27,7 @@ public class PositionHandler : MonoBehaviour
         int carPos = carLapCounters.IndexOf(carLapCounter) + 1;
 
         carLapCounter.SetCarPostion(carPos);
+
     }
+    
 }
