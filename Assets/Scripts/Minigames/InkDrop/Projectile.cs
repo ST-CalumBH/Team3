@@ -16,6 +16,7 @@ namespace InkDrop {
         {
             if (collision.collider.CompareTag("CleanUp"))
             {
+                minigame.mSFX.PlaySound(1);
                 Destroy(this.gameObject);
                 if (minigame.spareLife == false)
                 {
@@ -28,6 +29,7 @@ namespace InkDrop {
             }
             if (collision.collider.CompareTag("Player"))
             {
+                minigame.mSFX.PlaySound(0);
                 Destroy(this.gameObject);
             }
         }

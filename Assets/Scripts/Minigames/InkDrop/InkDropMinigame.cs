@@ -16,6 +16,7 @@ namespace InkDrop
         public GameObject projectile;
         public Slider timebar;
         public GameObject lifeIndicator;
+        public MinigameSFX mSFX;
 
         public float leftBound = -10f;//-10 by default unless walls moved
         public float rightBound = 10f;//10 by default unless walls moved
@@ -30,6 +31,7 @@ namespace InkDrop
         // Start is called before the first frame update
         void Start()
         {
+            mSFX = GetComponent<MinigameSFX>();
             spareLife = true;
             variance = Random.Range(leftBound, rightBound);
             inkSpawnRef = inkSpawn;

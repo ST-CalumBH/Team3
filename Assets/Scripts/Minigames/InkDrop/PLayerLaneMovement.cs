@@ -10,10 +10,14 @@ public class PLayerLaneMovement : MonoBehaviour
     private Vector2 movement;
     public ParticleSystem hurt;
     public Animator animController;
+    public float walkSFXInterval = 1f;
+    bool walkCooldown;
+    MinigameSFX mSFX;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        mSFX = GetComponent<MinigameSFX>();
     }
 
     private void Update() //inputs
@@ -23,11 +27,19 @@ public class PLayerLaneMovement : MonoBehaviour
         {
             animController.Play("Walk");
             sprRend.flipX = false;
+            if (walkCooldown == false)
+            {
+                StartCoroutine(WalkSFX());
+            }
         }
         else if (movement.x < 0)
         {
             animController.Play("Walk");
             sprRend.flipX = true;
+            if (walkCooldown == false)
+            {
+                StartCoroutine(WalkSFX());
+            }
         }
         else
         {
@@ -41,6 +53,14 @@ public class PLayerLaneMovement : MonoBehaviour
         {
             StartCoroutine(Hurt());
         }
+    }
+
+    IEnumerator WalkSFX()
+    {
+        walkCooldown = true;
+        mSFX.PlaySound(0);
+        yield return new WaitForSeconds(walkSFXInterval);
+        walkCooldown = false;
     }
 
     IEnumerator Hurt()
