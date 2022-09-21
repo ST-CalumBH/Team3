@@ -4,32 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using Combat;
 
-namespace SwordDodge {
+namespace SwordDodge
+{
     public class SwordDodgeMinigame : Minigame
     {
-        [SerializeField] private AudioClip clang;
-
-        AudioSource audioSource;
-
         public GameObject animatorGO;
-        Animator animator;
-
         public Warning lWarningGO;
         public Warning mWarningGO;
         public Warning rWarningGO;
-
         public SwordDodgePlayer player;
-
         public List<Warning> warnings;
-
-        public Text text;
-
         public ParticleSystem hurt;
 
         SpriteRenderer lWarning;
         SpriteRenderer mWarning;
         SpriteRenderer rWarning;
-
+        Animator animator;
+        MinigameSFX mSFX;
         int laneNum;
         public int dodgeCount = 0;
         public bool isAttacking;
@@ -38,7 +29,7 @@ namespace SwordDodge {
         // Start is called before the first frame update
         void Start()
         {
-            audioSource = GetComponent<AudioSource>();
+            mSFX = GetComponent<MinigameSFX>();
             animator = animatorGO.GetComponent<Animator>();
             animator.StopPlayback();
             warnings.Add(lWarningGO);
@@ -58,7 +49,6 @@ namespace SwordDodge {
         // Update is called once per frame
         void Update()
         {
-            text.text = dodgeCount.ToString();
             if (!cooldown)
             {
                 if (isAttacking == true)
@@ -121,18 +111,18 @@ namespace SwordDodge {
             {
                 case 0:
                     StartCoroutine(LeftAttack());
-                break;
+                    break;
                 case 1:
                     StartCoroutine(MiddleAttack());
-                break;
+                    break;
                 case 2:
                     StartCoroutine(RightAttack());
-                break;
+                    break;
                 default:
                     StartCoroutine(MiddleAttack());
-                break;
+                    break;
             };
-        
+
         }
 
         public void CallShowWarning()
@@ -170,7 +160,8 @@ namespace SwordDodge {
             animator.Play("Base Layer.Left Lane");
             yield return new WaitForSeconds(0.30f); //Currently just manually inputting the animation length, but should make a dynamic system.
             isAttacking = true;
-            audioSource.PlayOneShot(clang);
+            mSFX.PlaySound(0);
+            mSFX.PlaySound(1);
             yield return new WaitForSeconds(0.74f);
             isAttacking = false;
             yield return new WaitForSeconds(0.05f);
@@ -183,7 +174,8 @@ namespace SwordDodge {
             animator.Play("Base Layer.Mid Lane");
             yield return new WaitForSeconds(0.30f);
             isAttacking = true;
-            audioSource.PlayOneShot(clang);
+            mSFX.PlaySound(0);
+            mSFX.PlaySound(1);
             yield return new WaitForSeconds(0.74f);
             isAttacking = false;
             yield return new WaitForSeconds(0.05f);
@@ -196,7 +188,8 @@ namespace SwordDodge {
             animator.Play("Base Layer.Right Lane");
             yield return new WaitForSeconds(0.30f);
             isAttacking = true;
-            audioSource.PlayOneShot(clang);
+            mSFX.PlaySound(0);
+            mSFX.PlaySound(1);
             yield return new WaitForSeconds(0.74f);
             isAttacking = false;
             yield return new WaitForSeconds(0.05f);
@@ -209,6 +202,7 @@ namespace SwordDodge {
         {
             ParticleSystem ps = Instantiate(hurt, player.transform);
             ps.Play();
+            mSFX.PlaySound(2);
             yield return new WaitForSeconds(2f);
             Destroy(ps);
         }

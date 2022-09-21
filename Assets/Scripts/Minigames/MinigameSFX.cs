@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class MinigameSFX : MonoBehaviour
 {
-    AudioSource mgAudioSource;
+    public AudioSource mgAudioSource;
     public AudioClip[] audioClips;
     // Start is called before the first frame update
     void Start()

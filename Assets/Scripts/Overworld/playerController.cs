@@ -14,12 +14,11 @@ namespace Overworld {
         public DialogueUI DialogueUI => dialogueUI;
 
         [SerializeField] private DialogueUI dialogueUI;
-        [SerializeField] private AudioClip carpetSFX;
 
         [SerializeField] private bool playerFreeze;                 //boolean for determining if the player is frozen or not, controlling if the update function accepts input for 
         private float playerSpeed;                                  //keeps a reference of the player speed to apply when the player is unfrozen
         private Vector2 movement;
-        private AudioSource AS;
+        private MinigameSFX sfxController;
         private PauseMenu menu;
 
         public iconE indicatorE;
@@ -33,7 +32,7 @@ namespace Overworld {
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
-            AS = GetComponent<AudioSource>();
+            sfxController = GetComponent<MinigameSFX>();
             playerFreeze = false;
             playerSpeed = moveSpeed;
 
@@ -59,12 +58,17 @@ namespace Overworld {
 
                 if (movement.x == 1 || movement.x == -1 || movement.y == 1 || movement.y == -1) // idle facing direction
                 {
+                    PlayAudioClip();
                     animator.SetFloat("lastMoveX", movement.x);
                     animator.SetFloat("lastMoveY", movement.y);
                 }
 
                 if (Input.GetKeyDown(KeyCode.E))                                                // dialogue interactor
                 {
+                    if(Interactable != null)
+                    {
+                        sfxController.PlaySound(1);
+                    }
                     Interactable?.Interact(this);
                 }
             }
@@ -150,9 +154,9 @@ namespace Overworld {
 
         public void PlayAudioClip()
         {
-            if (!AS.isPlaying)
+            if (!sfxController.mgAudioSource.isPlaying)
             {
-                AS.PlayOneShot(carpetSFX);
+                sfxController.PlaySound(0);
             }
         }
 

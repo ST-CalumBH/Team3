@@ -7,6 +7,12 @@ namespace SwordDodge {
     {
         [SerializeField] private float flashTime = 0.3f;
         [SerializeField] private float flashCount = 3f;
+        AudioSource aSource;
+
+        private void Start()
+        {
+            aSource = GetComponent<AudioSource>();
+        }
 
         public float GetTotalFlashTime()
         {
@@ -26,6 +32,7 @@ namespace SwordDodge {
             while (i < flashCount)
             {
                 tWarning.enabled = true;
+                aSource.Play();
                 //Debug.Log("FLASH ON");
                 yield return new WaitForSeconds(flashTime);
                 tWarning.enabled = false;

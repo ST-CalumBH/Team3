@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MorningYogaMinigame : Minigame
 {
@@ -21,6 +22,9 @@ public class MorningYogaMinigame : Minigame
 
     public Animator backgroundAnim;
     public Animator keithAnim;
+    public Slider progressBar;
+
+    public float letterHeight = 375f;
 
     private enum GameStates { A, B, C, D }
     GameStates curState;
@@ -39,8 +43,37 @@ public class MorningYogaMinigame : Minigame
     bool[] stateCResult = { false, false, false, false };
     bool[] stateDResult = { false, false, false, false };
 
+    MinigameSFX mSFX;
+    Image aImage;
+    Image dImage;
+    Image eImage;
+    Image gImage;
+    Image hImage;
+    Image lImage;
+    Image mImage;
+    Image pImage;
+    Image qImage;
+    Image rImage;
+    Image tImage;
+    Image wImage;
+    Image zImage;
+
     void Start()
     {
+        aImage = A.GetComponent<Image>();
+        dImage = D.GetComponent<Image>();
+        eImage = E.GetComponent<Image>();
+        gImage = G.GetComponent<Image>();
+        hImage = H.GetComponent<Image>();
+        lImage = L.GetComponent<Image>();
+        mImage = M.GetComponent<Image>();
+        pImage = P.GetComponent<Image>();
+        qImage = Q.GetComponent<Image>();
+        rImage = R.GetComponent<Image>();
+        tImage = T.GetComponent<Image>();
+        wImage = W.GetComponent<Image>();
+        zImage = Z.GetComponent<Image>();
+        mSFX = GetComponent<MinigameSFX>();
         recInput = true;
         tilesMoved = false;
         curState = GameStates.A;
@@ -52,6 +85,12 @@ public class MorningYogaMinigame : Minigame
     // Update is called once per frame
     void Update()
     {
+        if(Input.anyKeyDown)
+        {
+            mSFX.PlaySound(0);
+            int num = Random.Range(2,7);
+            mSFX.PlaySound(num);
+        }
         if (curState == GameStates.A && recInput)
         {
             if (Input.anyKey && !Input.GetKey(stateA[0]) && !Input.GetKey(stateA[1]))
@@ -76,7 +115,6 @@ public class MorningYogaMinigame : Minigame
                         keithAnim.Play("One");
                     }
                 }
-                
             }
             else
             {
@@ -100,6 +138,7 @@ public class MorningYogaMinigame : Minigame
                     recInput = false;
                     Debug.Log("Success");
                     i = 0;
+                    BarUpdate(25f);
                     StartCoroutine(StateTransition());
                 }
             }
@@ -162,6 +201,7 @@ public class MorningYogaMinigame : Minigame
                     recInput = false;
                     Debug.Log("Success");
                     i = 0;
+                    BarUpdate(50f);
                     StartCoroutine(StateTransition());
                 }
             }
@@ -233,6 +273,7 @@ public class MorningYogaMinigame : Minigame
                     recInput = false;
                     Debug.Log("Success");
                     i = 0;
+                    BarUpdate(75f);
                     StartCoroutine(StateTransition());
                 }
             }
@@ -303,14 +344,41 @@ public class MorningYogaMinigame : Minigame
                     recInput = false;
                     Debug.Log("Success");
                     i = 0;
+                    BarUpdate(100f);
                     StartCoroutine(StateTransition());
                 }
             }
+        }
+        ColourReset();
+    }
+
+    void BarUpdate(float progress)
+    {
+        progressBar.value = progress;
+    }
+    void ColourReset()
+    {
+        if (!Input.anyKey)
+        {
+            aImage.color = Color.white;
+            dImage.color = Color.white;
+            eImage.color = Color.white;
+            gImage.color = Color.white;
+            hImage.color = Color.white;
+            lImage.color = Color.white;
+            mImage.color = Color.white;
+            pImage.color = Color.white;
+            qImage.color = Color.white;
+            rImage.color = Color.white;
+            tImage.color = Color.white;
+            wImage.color = Color.white;
+            zImage.color = Color.white;
         }
     }
 
     IEnumerator StateTransition()
     {
+        mSFX.PlaySound(1);
         ResetLetters();
         if (curState == GameStates.A)
         {
@@ -352,8 +420,8 @@ public class MorningYogaMinigame : Minigame
             ResetLetters();
             E.gameObject.SetActive(true);
             W.gameObject.SetActive(true);
-            E.anchoredPosition = new Vector2(keyLocations[0], 375f);
-            W.anchoredPosition = new Vector2(keyLocations[1], 375f);
+            E.anchoredPosition = new Vector2(keyLocations[0], letterHeight);
+            W.anchoredPosition = new Vector2(keyLocations[1], letterHeight);
             tilesMoved = true;
         }
         else if (curState == GameStates.B && tilesMoved == false)
@@ -362,9 +430,9 @@ public class MorningYogaMinigame : Minigame
             A.gameObject.SetActive(true);
             D.gameObject.SetActive(true);
             G.gameObject.SetActive(true);
-            A.anchoredPosition = new Vector2(keyLocations[0], 375f);
-            D.anchoredPosition = new Vector2(keyLocations[1], 375f);
-            G.anchoredPosition = new Vector2(keyLocations[2], 375f);
+            A.anchoredPosition = new Vector2(keyLocations[0], letterHeight);
+            D.anchoredPosition = new Vector2(keyLocations[1], letterHeight);
+            G.anchoredPosition = new Vector2(keyLocations[2], letterHeight);
             tilesMoved = true;
         }
         else if (curState == GameStates.C && tilesMoved == false)
@@ -374,10 +442,10 @@ public class MorningYogaMinigame : Minigame
             A.gameObject.SetActive(true);
             Z.gameObject.SetActive(true);
             T.gameObject.SetActive(true);
-            Q.anchoredPosition = new Vector2(keyLocations[0], 375f);
-            A.anchoredPosition = new Vector2(keyLocations[1], 375f);
-            Z.anchoredPosition = new Vector2(keyLocations[2], 375f);
-            T.anchoredPosition = new Vector2(keyLocations[3], 375f);
+            Q.anchoredPosition = new Vector2(keyLocations[0], letterHeight);
+            A.anchoredPosition = new Vector2(keyLocations[1], letterHeight);
+            Z.anchoredPosition = new Vector2(keyLocations[2], letterHeight);
+            T.anchoredPosition = new Vector2(keyLocations[3], letterHeight);
             tilesMoved = true;
         }
         else if (curState == GameStates.D && tilesMoved == false)
@@ -387,10 +455,10 @@ public class MorningYogaMinigame : Minigame
             A.gameObject.SetActive(true);
             M.gameObject.SetActive(true);
             H.gameObject.SetActive(true);
-            P.anchoredPosition = new Vector2(keyLocations[0], 375f);
-            A.anchoredPosition = new Vector2(keyLocations[1], 375f);
-            M.anchoredPosition = new Vector2(keyLocations[2], 375f);
-            H.anchoredPosition = new Vector2(keyLocations[3], 375f);
+            P.anchoredPosition = new Vector2(keyLocations[0], letterHeight);
+            A.anchoredPosition = new Vector2(keyLocations[1], letterHeight);
+            M.anchoredPosition = new Vector2(keyLocations[2], letterHeight);
+            H.anchoredPosition = new Vector2(keyLocations[3], letterHeight);
             tilesMoved = true;
         }
     }

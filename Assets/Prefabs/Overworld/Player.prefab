@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595f827f8cc3993479d5802b724c25ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canChange: 1
   anim: {fileID: 3125709849391363936}
 --- !u!1 &7706034308894484279
 GameObject:
@@ -218,6 +219,7 @@ GameObject:
   - component: {fileID: 7706034308894484297}
   - component: {fileID: 7706034308894484296}
   - component: {fileID: 8594623953367810578}
+  - component: {fileID: 8370394813321622815}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -310,7 +312,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   animator: {fileID: 7706034308894484296}
   dialogueUI: {fileID: 0}
-  carpetSFX: {fileID: 8300000, guid: f373de096a9950448ba700498c5b0b73, type: 3}
   playerFreeze: 0
   indicatorE: {fileID: 5801943956100284353}
   spawnPoints: []
@@ -477,3 +478,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8370394813321622815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7706034308894484279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94aa644c607d2b040a93e6a54d1f94fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mgAudioSource: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: 28a7d66741039754598dca0bc487e579, type: 3}
+  - {fileID: 8300000, guid: 993f5de0134b9c149b52cc5685f338cb, type: 3}

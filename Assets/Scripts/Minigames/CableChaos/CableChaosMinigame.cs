@@ -364,10 +364,5 @@ namespace CableChaos {
                 StartCoroutine(EndMinigame(true));
             }
         }
-
-        IEnumerator KeyColourChange(Image image)
-        {
-            yield return new WaitForSeconds(1f);
-        }
     }
 }
