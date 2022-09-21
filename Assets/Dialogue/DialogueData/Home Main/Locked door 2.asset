@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - "I can't believe I completely broke the lock on this door. My \nwashing is piling
-    up, the local machines suck, I'm\npretty sure someone died there too."
+    up, the local machines suck, I'm pretty sure \n someone died there too."

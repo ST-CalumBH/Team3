@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - "Becky from work just loooooves to tell me how much she loves \nthe ice maker
-    in her fridge. But, like, I get it Becky, not all of us have \nthe funds to afford
+    in her fridge. But, like, I get it Becky, not all of us \nhave the funds to afford
     such luxuries. "
   - I really wish I had an ice maker :(

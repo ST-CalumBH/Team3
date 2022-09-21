@@ -12,4 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1360c88e71a0c7498b2b96985a1ddd1, type: 3}
   m_Name: Plant 2
   m_EditorClassIdentifier: 
-  dialogue: []
+  dialogue:
+  - 'I think this is the last plant in the office, this name has to be good.
+
+    Ummmm
+    Uhhhhhh
+
+    I don''t know, how about Jacob?'
+  - 'Is Jacob too boring? Probably, actually you know what, I really
+
+    don''t
+    care, you''re Jacob and you''re gonna like it.'
