@@ -14,22 +14,11 @@ namespace Overworld {
         [SerializeField] private DialogueObject blankDialogue;
 
         [SerializeField] private GameObject doorSelector;
-        [SerializeField] private GameObject doorCursor;
-        [SerializeField] private SpriteRenderer eSpriteRenderer;
         [SerializeField] private GameObject leftDoor;
         [SerializeField] private GameObject midDoor;
         [SerializeField] private GameObject rightDoor;
 
         [SerializeField] private GameObject Parent;
-
-        [SerializeField] private AudioSource sceneAudioSource;
-
-        [SerializeField] private AudioClip elevatorDing;
-        [SerializeField] private AudioClip correctSound;
-        [SerializeField] private AudioClip incorrectSound;
-        //[SerializeField] private AudioClip doorNoise;
-        //[SerializeField] private AudioClip normalMusic;
-        //[SerializeField] private AudioClip gameshowMusic;
 
 
         Animator leftDoorAnim;
@@ -40,26 +29,24 @@ namespace Overworld {
         SpriteRenderer rightDoorSR;
         SpriteRenderer spotlightMask;
         Animator dsAnimator;
-        SpriteRenderer dsSpriteRenderer;
+        MinigameSFX mSFX;
         private bool gameStart = false;
         bool freezeStart = false;
         int curPosition = 1;
-        float playerSpeed;
 
 
         // Start is called before the first frame update
         void Start()
         {
+            mSFX = GetComponent<MinigameSFX>();
+            doorSelector.SetActive(false);
             dsAnimator = doorSelector.GetComponent<Animator>();
-            dsSpriteRenderer = doorCursor.GetComponent<SpriteRenderer>();
             leftDoorAnim = leftDoor.GetComponent<Animator>();
             midDoorAnim = midDoor.GetComponent<Animator>();
             rightDoorAnim = rightDoor.GetComponent<Animator>();
             leftDoorSR = leftDoor.GetComponent<SpriteRenderer>();
             midDoorSR = midDoor.GetComponent<SpriteRenderer>();
             rightDoorSR = rightDoor.GetComponent<SpriteRenderer>();
-            dsSpriteRenderer.enabled = false;
-            eSpriteRenderer.enabled = false;
             leftDoorSR.enabled = false;
             midDoorSR.enabled = false;
             rightDoorSR.enabled = false;
@@ -74,6 +61,7 @@ namespace Overworld {
             }
             if (gameStart == true)
             {
+                
                 if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
                 {
                     switch (curPosition)
@@ -83,10 +71,12 @@ namespace Overworld {
                             break;
                         case 1:
                             dsAnimator.Play("Base Layer.MidToLeft");
+                            mSFX.PlaySound(4);
                             curPosition = 0;
                             break;
                         case 2:
                             dsAnimator.Play("Base Layer.RightToMid");
+                            mSFX.PlaySound(4);
                             curPosition = 1;
                             break;
                     }
@@ -97,10 +87,12 @@ namespace Overworld {
                     {
                         case 0:
                             dsAnimator.Play("Base Layer.LeftToMid");
+                            mSFX.PlaySound(4);
                             curPosition = 1;
                             break;
                         case 1:
                             dsAnimator.Play("Base Layer.MidToRight");
+                            mSFX.PlaySound(4);
                             curPosition = 2;
                             break;
                         case 2:
@@ -109,7 +101,7 @@ namespace Overworld {
                     }
                 }
 
-                if (Input.GetKeyUp(KeyCode.E))
+                if (Input.GetKeyUp(KeyCode.E) || Input.GetKeyUp(KeyCode.Space))
                 {
                     StartCoroutine(Check());
                 }
@@ -120,6 +112,7 @@ namespace Overworld {
             if (other.tag == "Player")
             {
                 player.freezePlayer();
+                mSFX.PlaySound(3, 0.15f);
                 StartCoroutine(StartMinigame());
             }
         }
@@ -130,44 +123,42 @@ namespace Overworld {
             freezeStart = true;
             yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
             gameStart = true;
-            dsSpriteRenderer.enabled = true;
-            eSpriteRenderer.enabled = true;
+            doorSelector.SetActive(true);
             dsAnimator.Play("Base Layer.MidDoorIdle");
         }
 
         private IEnumerator Check()
         {
-            dsSpriteRenderer.enabled = false;
-            eSpriteRenderer.enabled = false;
+            doorSelector.SetActive(false);
             gameStart = false;
-            sceneAudioSource.PlayOneShot(elevatorDing,0.25f);
+            mSFX.PlaySound(0, 0.25f);
             switch (curPosition)
             {
                 case 0:
-                    sceneAudioSource.PlayOneShot(correctSound);
+                    mSFX.PlaySound(1);
                     player.DialogueUI.ShowDialogue(correctDialogue);
                     leftDoorSR.enabled = true;
                     leftDoorAnim.Play("Base Layer.CorrectDoor");
                     yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
                     break;
                 case 1:
-                    sceneAudioSource.PlayOneShot(incorrectSound);
+                    mSFX.PlaySound(2);
                     player.DialogueUI.ShowDialogue(duckDialogue);
                     midDoorSR.enabled = true;
                     midDoorAnim.Play("Base Layer.DuckDoor");
                     yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
                     leftDoorSR.enabled = true;
-                    sceneAudioSource.PlayOneShot(elevatorDing, 0.25f);
+                    mSFX.PlaySound(0, 0.25f);
                     leftDoorAnim.Play("Base Layer.CorrectDoor");
                     break;
                 case 2:
-                    sceneAudioSource.PlayOneShot(incorrectSound);
+                    mSFX.PlaySound(2);
                     player.DialogueUI.ShowDialogue(blankDialogue);
                     rightDoorSR.enabled = true;
                     rightDoorAnim.Play("Base Layer.MissingDoor");
                     yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
                     leftDoorSR.enabled = true;
-                    sceneAudioSource.PlayOneShot(elevatorDing, 0.25f);
+                    mSFX.PlaySound(0, 0.25f);
                     leftDoorAnim.Play("Base Layer.CorrectDoor");
                     break;
             }

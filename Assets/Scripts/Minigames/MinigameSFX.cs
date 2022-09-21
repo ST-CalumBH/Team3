@@ -11,11 +11,11 @@ public class MinigameSFX : MonoBehaviour
         mgAudioSource = GetComponent<AudioSource>();
     }
 
-    public void PlaySound(int songNum)
+    public void PlaySound(int soundNum)
     {
         if (audioClips != null)
         {
-            mgAudioSource.PlayOneShot(audioClips[songNum]);
+            mgAudioSource.PlayOneShot(audioClips[soundNum]);
         }
         else
         {
@@ -23,16 +23,42 @@ public class MinigameSFX : MonoBehaviour
         }
     }
 
-    public IEnumerator PlaySoundWait(int songNum, float waitTime)
+    public void PlaySound(int soundNum, float vol)
     {
-        yield return new WaitForSeconds(waitTime);
         if (audioClips != null)
         {
-            mgAudioSource.PlayOneShot(audioClips[songNum]);
+            mgAudioSource.PlayOneShot(audioClips[soundNum],vol);
         }
         else
         {
             Debug.Log("Audio clips is empty");
         }
     }
+
+    public IEnumerator PlaySoundWait(int soundNum, float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        if (audioClips != null)
+        {
+            mgAudioSource.PlayOneShot(audioClips[soundNum]);
+        }
+        else
+        {
+            Debug.Log("Audio clips is empty");
+        }
+    }
+    public IEnumerator PlaySoundWait(int soundNum, float vol, float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        if (audioClips != null)
+        {
+            mgAudioSource.PlayOneShot(audioClips[soundNum], vol);
+        }
+        else
+        {
+            Debug.Log("Audio clips is empty");
+        }
+    }
+
+
 }
