@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace5d3b76e8bbd94d8faa070310b062d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Ending
+  nextScene: Post boss office
   playerPrefab: {fileID: 8762642743693062449, guid: 835af96d49ea759499743204341cf168, type: 3}
   enemyPrefab: {fileID: 1949845171411925893, guid: 0febe2d39e4fdb542a5e860deb5dca2f, type: 3}
   playerBattleStation: {fileID: 905665791}
@@ -242,6 +242,7 @@ MonoBehaviour:
   enemyHUD: {fileID: 177893612}
   state: 0
   diagUI: {fileID: 0}
+  spawnPointSetTo: 0
 --- !u!4 &112044625
 Transform:
   m_ObjectHideFlags: 0
@@ -3246,6 +3247,7 @@ MonoBehaviour:
   dialogueBox: {fileID: 450192128}
   textLabel: {fileID: 1750850898}
   canProgress: 0
+  dialogueDuration: 5
 --- !u!114 &2024666486
 MonoBehaviour:
   m_ObjectHideFlags: 0

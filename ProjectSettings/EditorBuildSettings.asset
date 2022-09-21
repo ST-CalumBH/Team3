@@ -78,6 +78,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Combat/CombatBoss.unity
     guid: 1438cdfb930e1cb49a149863066bf4a5
   - enabled: 1
+    path: Assets/Scenes/Overworld/Post Combat Home Scenes/Post Boss/Leaving Lobby.unity
+    guid: 035727992330e72418ff688abc06f3f4
+  - enabled: 1
+    path: Assets/Scenes/Overworld/Post Combat Home Scenes/Post Boss/Post boss office.unity
+    guid: 9d2c35f850f83ee4fa873fbcfda2ed1c
+  - enabled: 1
     path: Assets/Scenes/Overworld/Ending.unity
     guid: 5abd66df83ef4764ab5419e541381aad
   m_configObjects: {}
