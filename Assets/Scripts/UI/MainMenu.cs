@@ -10,7 +10,9 @@ namespace UI {
         {
             PlayerPrefs.DeleteAll();
             PlayerPrefs.SetInt("SpawnPoint", 0);
+            Time.timeScale = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            
         }
 
         public void QuitGame ()

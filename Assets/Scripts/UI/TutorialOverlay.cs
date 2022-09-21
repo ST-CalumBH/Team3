@@ -8,7 +8,7 @@ namespace UI {
         [SerializeField] GameObject tutorialUI;
 
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             Freeze();
         }

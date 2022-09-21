@@ -3,49 +3,49 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-    public class Minigame : MonoBehaviour
+public class Minigame : MonoBehaviour
+{
+
+    public bool result = false;
+    public bool isInProgress = true;
+
+    public IEnumerator EndMinigame()
     {
+        yield return new WaitForSeconds(1f);
+        isInProgress = false;
+        Destroy(transform.parent.gameObject);
+    }
+    public IEnumerator EndMinigame(bool res)
+    {
+        yield return new WaitForSeconds(1f);
+        isInProgress = false;
+        result = res;
+        Debug.Log(res.ToString());
+        CheckResult(res);
+        Destroy(transform.parent.gameObject);
+    }
 
-        public bool result = false;
-        public bool isInProgress = true;
+    public IEnumerator EndMinigame(float time)
+    {
+        yield return new WaitForSeconds(time);
+        isInProgress = false;
+        Destroy(transform.parent.gameObject);
+    }
+    public IEnumerator EndMinigame(float time, bool res)
+    {
+        yield return new WaitForSeconds(time);
+        isInProgress = false;
+        result = res;
+        Debug.Log(res.ToString());
+        CheckResult(res);
+        Destroy(transform.parent.gameObject);
+    }
 
-        public IEnumerator EndMinigame()
+    private void CheckResult(bool result)
+    {
+        if (result == false)
         {
-            yield return new WaitForSeconds(1f);
-            isInProgress = false;
-            Destroy(transform.parent.gameObject);
-        }
-        public IEnumerator EndMinigame(bool res)
-        {
-            yield return new WaitForSeconds(1f);
-            isInProgress = false;
-            result = res;
-            Debug.Log(res.ToString());
-            CheckResult(res);
-            Destroy(transform.parent.gameObject);
-        }
-
-        public IEnumerator EndMinigame(float time)
-        {
-            yield return new WaitForSeconds(time);
-            isInProgress = false;
-            Destroy(transform.parent.gameObject);
-        }
-        public IEnumerator EndMinigame(float time, bool res)
-        {
-            yield return new WaitForSeconds(time);
-            isInProgress = false;
-            result = res;
-            Debug.Log(res.ToString());
-            CheckResult(res);
-            Destroy(transform.parent.gameObject);
-        }
-
-        private void CheckResult(bool result)
-        {
-            if (result == false)
-            {
-                LifeSystem.Instance.playerLives--;
-            }
+            LifeSystem.Instance.playerLives--;
         }
     }
+}

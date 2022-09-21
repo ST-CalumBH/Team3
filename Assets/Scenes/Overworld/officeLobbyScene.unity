@@ -701,6 +701,7 @@ GameObject:
   - component: {fileID: 314648585}
   - component: {fileID: 314648584}
   - component: {fileID: 314648586}
+  - component: {fileID: 314648587}
   m_Layer: 8
   m_Name: Controller
   m_TagString: Interact
@@ -819,16 +820,10 @@ MonoBehaviour:
   duckDialogue: {fileID: 11400000, guid: 506126bb328a9754c95bc539f2a6b86f, type: 2}
   blankDialogue: {fileID: 11400000, guid: 1cc2213ece2c85544ae4f14da47501d0, type: 2}
   doorSelector: {fileID: 262680817}
-  doorCursor: {fileID: 599795861}
-  eSpriteRenderer: {fileID: 1280124765}
   leftDoor: {fileID: 324147125}
   midDoor: {fileID: 402545048}
   rightDoor: {fileID: 1598162231}
   Parent: {fileID: 314648579}
-  sceneAudioSource: {fileID: 314648586}
-  elevatorDing: {fileID: 8300000, guid: 759892903866bb54a826cab1a2cc7237, type: 3}
-  correctSound: {fileID: 8300000, guid: 52bee79de95c71d46980e26e558408fa, type: 3}
-  incorrectSound: {fileID: 8300000, guid: 76bea4bb79048b44888303fc76310313, type: 3}
 --- !u!114 &314648585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,6 +934,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &314648587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314648579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94aa644c607d2b040a93e6a54d1f94fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mgAudioSource: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: 759892903866bb54a826cab1a2cc7237, type: 3}
+  - {fileID: 8300000, guid: 52bee79de95c71d46980e26e558408fa, type: 3}
+  - {fileID: 8300000, guid: 76bea4bb79048b44888303fc76310313, type: 3}
+  - {fileID: 8300000, guid: 471404dbf062c224180e39d95f60f3ad, type: 3}
+  - {fileID: 8300000, guid: 317855a9e22759446a77427562698ed8, type: 3}
 --- !u!1 &324147125
 GameObject:
   m_ObjectHideFlags: 0
