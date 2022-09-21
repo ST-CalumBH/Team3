@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8246283786033891560}
   - component: {fileID: 3405283884624628079}
-  - component: {fileID: 6455118606811310526}
   - component: {fileID: 3212497808941670920}
   m_Layer: 0
   m_Name: Warning
@@ -86,21 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6455118606811310526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8029046267503723195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66770f3cbe9dac54bb123f0c7c6675e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flashTime: 0.3
-  flashCount: 3
-  warningSound: {fileID: 8300000, guid: a55835fd2c792444baf3c671370470ef, type: 3}
 --- !u!82 &3212497808941670920
 AudioSource:
   m_ObjectHideFlags: 0

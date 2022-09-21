@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace CoffeeDodge {
-    public class Warning : MonoBehaviour
+    public class Coffee : MonoBehaviour
     {
         [SerializeField] private float flashTime = 0.3f;
         [SerializeField] private float flashCount = 3f;
