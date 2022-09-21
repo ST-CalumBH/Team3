@@ -13,10 +13,6 @@ MonoBehaviour:
   m_Name: Desk 1
   m_EditorClassIdentifier: 
   dialogue:
-  - '*sigh* Well, this is me, again, 9 to 5. The same as its been every day
-
-    for
-    the last what, 17 years? Except Christmas'' of course...
-
-    Right, lets do
-    this I guess.'
+  - "*sigh* Well, this is me, again, 9 to 5. The same as it's been every \nday for
+    the last what, 17 years? Except for Christmas' of course...\nRight, lets do this,
+    I guess."

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Coffee Machine
   m_EditorClassIdentifier: 
   dialogue:
-  - "As much I love coffee, I don't think it would be good for my health to\nown
-    one of these bad boys. Besides hot chocolate is sooo much \nbetter, I don't care
-    what anyone thinks."
+  - As much as I love coffee, I don't think it would be good for my health to own
+    one of these bad boys. Besides, hot chocolate is sooo much better, I don't care
+    what anyone thinks.

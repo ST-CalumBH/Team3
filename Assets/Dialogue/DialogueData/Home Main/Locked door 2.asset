@@ -13,10 +13,5 @@ MonoBehaviour:
   m_Name: Locked door 2
   m_EditorClassIdentifier: 
   dialogue:
-  - 'I cant believe that I managed to completely break the lock on
-
-    this door.
-    My washing is piling up, the local machines suck, I''m
-
-    pretty sure someone
-    died there too.'
+  - "I can't believe I completely broke the lock on this door. My \nwashing is piling
+    up, the local machines suck, I'm\npretty sure someone died there too."

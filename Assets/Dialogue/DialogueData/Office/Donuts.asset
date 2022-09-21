@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - MMMMMMMMM Donuts...
-  - "I actually have no idea who brings these in everyday, I bet its \nMalcom he's
-    the best, he's the kind of guy to bring people stuff \neach day. "
-  - "Couldnt hurt to have one now, \nMmm, ugh, yeah thats a day old, didnt know what
-    else expect \nhonestly. No one else is here, how could this be a fresh batch?"
+  - "I actually have no idea who brings these in every day. I bet its \nMalcolm,
+    he's the best; he's the kind of guy to bring people stuff \neach day. "
+  - "It couldn't hurt to have one now, \nMmm, ugh, yeah, that's a day old. That's
+    super disappointing, \nmaybe if i eat the rest, Malcolm will get a nice new fresh
+    batch."

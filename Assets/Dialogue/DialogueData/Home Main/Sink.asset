@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Sink
   m_EditorClassIdentifier: 
   dialogue:
-  - "Why is it alwasys so hard to find a good tea towel? It either never \ndries
-    properly, or it gets wet too quickly or leaves behind weird \nfluff, its ridiculous."
+  - "Why is it always so hard to find a good tea towel? It either never \ndries properly,
+    or it gets wet too quickly or leaves behind weird \nfluff, it's ridiculous."

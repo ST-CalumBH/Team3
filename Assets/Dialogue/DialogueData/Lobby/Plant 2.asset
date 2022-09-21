@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Plant 2
   m_EditorClassIdentifier: 
   dialogue:
-  - 'You shall be Ernie '
+  - You shall be Ernie.

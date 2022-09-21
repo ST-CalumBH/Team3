@@ -13,14 +13,12 @@ MonoBehaviour:
   m_Name: Desk 3
   m_EditorClassIdentifier: 
   dialogue:
-  - 'Jenny sits here, she''s pretty cool, I actually had a bit of a crush on
+  - 'Jenny sits here. She''s pretty cool. I actually had a bit of a crush on
 
     her
-    back in the day, however she has let herself go a little recently.
+    back in the day; however, she has let herself go a little recently.
 
     Probably
     doesn''t help with Malcom bringing so many donuts it in.'
-  - 'If I didn''t have such marvelous self control I could have ended up the same
-    way.
-
-    Phew.'
+  - "If I didn't have such marvellous self-control, I could have ended \nup the same
+    way. Phew."
