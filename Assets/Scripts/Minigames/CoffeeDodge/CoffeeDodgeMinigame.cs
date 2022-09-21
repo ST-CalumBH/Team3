@@ -123,14 +123,14 @@ namespace CoffeeDodge
 
         public void CallEndMinigame()
         {
-            StartCoroutine(EndMinigame());
+            StartCoroutine(EndMinigame(true));
         }
 
         public void CheckForTnight()//I love Fortnite
         {
             if (dodgeCount == 5)
             {
-                StartCoroutine(EndMinigame());
+                StartCoroutine(EndMinigame(true));
             }
             else
             {

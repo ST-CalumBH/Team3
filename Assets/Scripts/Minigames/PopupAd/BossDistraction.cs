@@ -14,14 +14,14 @@ namespace PopupAd {
         void Start()
         {
             clickDetect = GameObject.Find("gameManager").GetComponent<ClickDetect>();
-            clickDetect.distractionChange();
+            clickDetect.distractionChange(true);
         }
 
         void Update()
         {
             if (counter == numToPacify)
             {
-                clickDetect.distractionChange();
+                clickDetect.distractionChange(false);
                 anim.Play("beckyLeave");
             }
 

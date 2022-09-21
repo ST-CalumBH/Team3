@@ -2702,7 +2702,7 @@ MonoBehaviour:
   newSpawnPoint: 0
   colliderTransition: 0
   interactTransition: 1
-  transition: {fileID: 0}
+  transition: {fileID: 1780420829}
   transitionTime: 1
 --- !u!212 &1607855569
 SpriteRenderer:
@@ -2966,6 +2966,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1780420829 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3199908346073744252, guid: fe269729f252858458709edf73cd94eb, type: 3}
+  m_PrefabInstance: {fileID: 3199908345976529804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1868819553
 PrefabInstance:
   m_ObjectHideFlags: 0
