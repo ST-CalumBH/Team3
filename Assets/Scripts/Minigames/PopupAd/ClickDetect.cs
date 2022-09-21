@@ -6,11 +6,16 @@ using UnityEngine;
 namespace PopupAd {
     public class ClickDetect : MonoBehaviour
     {
-        private bool isDistracted = true;
+        [SerializeField] private bool isDistracted;
+
+        private void Start()
+        {
+            isDistracted = false;
+        }
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0) && isDistracted)
+            if (Input.GetMouseButtonDown(0) && (isDistracted == false))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -24,9 +29,9 @@ namespace PopupAd {
             }
         }
 
-        public void distractionChange()
+        public void distractionChange(bool state)
         {
-            isDistracted = !isDistracted;
+            isDistracted = state;
         }
     }
 }
