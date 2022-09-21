@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Overworld;
 
 public class MorningYogaMinigame : Minigame
 {
-    // Start is called before the first frame update
+    private playerController controller;
+
     public RectTransform A;
     public RectTransform D;
     public RectTransform E;
@@ -60,6 +62,9 @@ public class MorningYogaMinigame : Minigame
 
     void Start()
     {
+        controller = GameObject.Find("Player").GetComponent<playerController>();
+        controller.freezePlayer();
+
         aImage = A.GetComponent<Image>();
         dImage = D.GetComponent<Image>();
         eImage = E.GetComponent<Image>();
@@ -409,6 +414,7 @@ public class MorningYogaMinigame : Minigame
             keithAnim.Play("Four");
             yield return new WaitForSeconds(2f);
             Debug.Log("Won Minigame");
+            controller.unfreezePlayer();
             StartCoroutine(EndMinigame(true));
         }
     }
