@@ -10,13 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1360c88e71a0c7498b2b96985a1ddd1, type: 3}
-  m_Name: Microwave
+  m_Name: success 2
   m_EditorClassIdentifier: 
   dialogue:
-  - 'There are two types of people in this world, the ones who endure
-
-    the defeaning
-    beeping when the microwave is done and then
-
-    there is the people who open
-    the door with one second left.'
+  - She is literally Satan

@@ -13,4 +13,13 @@ MonoBehaviour:
   m_Name: Plant 2
   m_EditorClassIdentifier: 
   dialogue:
-  - hi
+  - 'I think this is the last plant in the office, this name has to be good.
+
+    Ummmm
+    Uhhhhhh
+
+    I don''t know, how about Jacob?'
+  - 'Is Jacob too boring? Probably, actually you know what, I really
+
+    don''t
+    care, you''re Jacob and you''re gonna like it.'
