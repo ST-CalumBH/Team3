@@ -3237,20 +3237,28 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484299, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+      propertyPath: spawnPoints.Array.data[0].x
+      value: -21.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706034308894484299, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+      propertyPath: spawnPoints.Array.data[0].y
+      value: 9.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706034308894484299, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: spawnPoints.Array.data[1].x
-      value: -29.18
+      value: -27.58
       objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484299, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: spawnPoints.Array.data[1].y
-      value: -15.53
+      value: 9.09
       objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484299, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: spawnPoints.Array.data[2].x
-      value: 25.51
+      value: -26.32
       objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484299, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: spawnPoints.Array.data[2].y
-      value: 7.1
+      value: -12.09
       objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484299, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: spawnPoints.Array.data[3].x
@@ -3282,11 +3290,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484301, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.17
+      value: -26.28
       objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484301, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.9
+      value: -12.09
       objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484301, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6009,7 +6017,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2075207396
 Transform:
   m_ObjectHideFlags: 0
@@ -6035,7 +6043,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 940899e4ae3b6b447b09fff84b3323c0, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0

@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 492040584}
   - component: {fileID: 492040583}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -605,7 +605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: OfficeReturned
-  newSpawnPoint: 2
+  newSpawnPoint: 3
   colliderTransition: 1
   interactTransition: 0
   transition: {fileID: 1173572114}
