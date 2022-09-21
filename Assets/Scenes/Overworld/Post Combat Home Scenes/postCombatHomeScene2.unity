@@ -3120,7 +3120,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 5814a0047fe54d745bbb327f14c7c47e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -3135,7 +3135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368396242}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.8499994, y: 7.2800016, z: 0.00000024586916}
+  m_LocalPosition: {x: -11.28, y: -42.13, z: 0.00000024586916}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3408,6 +3408,7 @@ GameObject:
   - component: {fileID: 1443692323}
   - component: {fileID: 1443692322}
   - component: {fileID: 1443692321}
+  - component: {fileID: 1443692324}
   m_Layer: 0
   m_Name: event-icon-fade
   m_TagString: Untagged
@@ -3423,7 +3424,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443692319}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.22000027, y: 5, z: 0}
+  m_LocalPosition: {x: 0.39, y: 5, z: 0}
   m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3515,6 +3516,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1443692324
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443692319}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -6.098543}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.67, y: 9.88}
+    newSize: {x: 8.67, y: 9.88}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.67, y: 10.661869}
+  m_EdgeRadius: 0
 --- !u!1 &1515324522
 GameObject:
   m_ObjectHideFlags: 0
