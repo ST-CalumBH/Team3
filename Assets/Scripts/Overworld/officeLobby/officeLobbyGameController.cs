@@ -119,11 +119,7 @@ namespace Overworld {
         {
             if (other.tag == "Player")
             {
-                playerSpeed = player.moveSpeed;
-                player.moveSpeed = 0f;
-                player.animator.SetFloat("Horizontal", 0);
-                player.animator.SetFloat("Vertical", 0);
-                player.animator.SetFloat("Speed", 0);
+                player.freezePlayer();
                 StartCoroutine(StartMinigame());
             }
         }
@@ -177,7 +173,6 @@ namespace Overworld {
             }
             Parent.SetActive(false);
             player.unfreezePlayer();
-            player.moveSpeed = playerSpeed;
             yield return new WaitForSeconds(0f);
             
         } 

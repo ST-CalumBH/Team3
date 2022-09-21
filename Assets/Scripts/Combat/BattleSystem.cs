@@ -66,6 +66,7 @@ namespace Combat {
 		IEnumerator PlayerAttack()
 		{
 			diagUI.ShowDialogue(enemyUnit.dialogueList[1]);
+			yield return new WaitForSeconds(2f);
 
 			enemyUnit.PlayMinigame(enemyUnit.minigameCount);
 			yield return new WaitUntil(() => !(enemyUnit.playedMinigame.isInProgress));
@@ -138,7 +139,7 @@ namespace Combat {
 
 		IEnumerator EndCombat()
 		{
-			yield return new WaitForSeconds(1f);
+			yield return new WaitForSeconds(3f);
 			SceneManager.LoadScene(nextScene);
 			PlayerPrefs.SetInt("SpawnPoint", spawnPointSetTo);
 		}
