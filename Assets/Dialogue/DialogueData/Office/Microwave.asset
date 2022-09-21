@@ -13,10 +13,4 @@ MonoBehaviour:
   m_Name: Microwave
   m_EditorClassIdentifier: 
   dialogue:
-  - 'There are two types of people in this world, the ones who endure
-
-    the defeaning
-    beeping when the microwave is done and then
-
-    there is the people who open
-    the door with one second left.'
+  - 

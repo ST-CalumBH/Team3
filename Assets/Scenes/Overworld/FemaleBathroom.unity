@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: OfficeReturned
-  newSpawnPoint: 2
+  newSpawnPoint: 1
   colliderTransition: 0
   interactTransition: 1
   transition: {fileID: 20076393}

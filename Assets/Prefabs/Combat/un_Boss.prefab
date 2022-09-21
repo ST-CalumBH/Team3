@@ -51,18 +51,15 @@ MonoBehaviour:
   maxHP: 30
   currentHP: 30
   minigames:
-  - {fileID: 1165809471205156286, guid: fa24c558ed452bf45b86b0291ac71804, type: 3}
   - {fileID: 2586043128723799027, guid: 5848ee9e95d68a348b68e48d9d8c61d4, type: 3}
   playedMinigame: {fileID: 0}
   minigameCount: 0
   dialogueList:
-  - {fileID: 11400000, guid: 6dd620fbf4d8c30498957cdeb5961510, type: 2}
-  - {fileID: 11400000, guid: d5b0cc85b5a43614dbae6c97db28991a, type: 2}
-  - {fileID: 11400000, guid: a5232c9cd22604d48a63a4277fadd1c2, type: 2}
-  - {fileID: 11400000, guid: cb557de231d1a9f4aaa6cd8dfdeb5152, type: 2}
-  - {fileID: 11400000, guid: 9be83c53082090046b674b0b53445535, type: 2}
-  - {fileID: 11400000, guid: f585453bf78fbb94fa7fa1620969e3b5, type: 2}
-  - {fileID: 11400000, guid: 1b82336e297e88d4790bf5f85e406c3e, type: 2}
+  - {fileID: 11400000, guid: ac2209a636eb5c3448906b8781464347, type: 2}
+  - {fileID: 11400000, guid: 388556129c40e1d45801b4092636fa12, type: 2}
+  - {fileID: 11400000, guid: f073f54aed1752f4f8d3415eabd3102e, type: 2}
+  - {fileID: 11400000, guid: a7692efbb61a66f498c408b597e5993f, type: 2}
+  - {fileID: 11400000, guid: fcca5736338c7b8428d2eca22afa9e1b, type: 2}
 --- !u!1 &8878252217783823685
 GameObject:
   m_ObjectHideFlags: 0

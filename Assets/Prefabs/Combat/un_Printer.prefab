@@ -57,13 +57,11 @@ MonoBehaviour:
   playedMinigame: {fileID: 0}
   minigameCount: 0
   dialogueList:
-  - {fileID: 11400000, guid: c9fbf6db62934c0459df954889a4441c, type: 2}
-  - {fileID: 11400000, guid: 340fef1843f1bee418d0232622eea15f, type: 2}
-  - {fileID: 11400000, guid: c5b9cfba692f7824a8554d9e777e76ed, type: 2}
-  - {fileID: 11400000, guid: 8d6b16d70af2f754e855c2b54a15f41b, type: 2}
-  - {fileID: 11400000, guid: ec79fc35c31775f43bcb5677202b5fbe, type: 2}
-  - {fileID: 11400000, guid: dbe5af981d59af445a517092e085bf92, type: 2}
-  - {fileID: 11400000, guid: f0571322218a5714483fe87a2f21dec6, type: 2}
+  - {fileID: 11400000, guid: ac2209a636eb5c3448906b8781464347, type: 2}
+  - {fileID: 11400000, guid: 388556129c40e1d45801b4092636fa12, type: 2}
+  - {fileID: 11400000, guid: f073f54aed1752f4f8d3415eabd3102e, type: 2}
+  - {fileID: 11400000, guid: a7692efbb61a66f498c408b597e5993f, type: 2}
+  - {fileID: 11400000, guid: fcca5736338c7b8428d2eca22afa9e1b, type: 2}
 --- !u!1 &8878252217783823685
 GameObject:
   m_ObjectHideFlags: 0

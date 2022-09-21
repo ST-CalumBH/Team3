@@ -34,7 +34,7 @@ namespace Dialogue {
         {
             isActive = true;
             player.DialogueUI.ShowDialogue(content); //the line that plays the script from dialogue object
-            //playerSpeed = player.moveSpeed;
+            playerSpeed = player.moveSpeed;
             player.freezePlayer();
             //player.moveSpeed = 0f;
             //player.animator.SetFloat("Horizontal", 0);
@@ -43,7 +43,7 @@ namespace Dialogue {
 
             yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
             player.unfreezePlayer();
-            //player.moveSpeed = playerSpeed;
+            player.moveSpeed = playerSpeed;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

@@ -466,9 +466,9 @@ GameObject:
   - component: {fileID: 2963090418878430937}
   - component: {fileID: 9061753593242038255}
   - component: {fileID: 195288508822750812}
-  - component: {fileID: 97980813683071234}
   - component: {fileID: 1510316382878573099}
   - component: {fileID: 1899616347253361046}
+  - component: {fileID: 97980813683071234}
   m_Layer: 17
   m_Name: chickenKnight
   m_TagString: Enemy
@@ -556,37 +556,13 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 839832161d64f924bbceb121a3b6e373, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &97980813683071234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3973473695777455130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f442d120c9062cf4ab01df223df80356, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lives: 3
-  btmRange: -10
-  topRange: 10
-  directionFrequency: 1.5
-  frequencyMultiplier: 0.8
-  movementMultiplier: 1
-  controller: {fileID: 4151162277553399793}
-  anim: {fileID: 0}
-  sprite: {fileID: 0}
-  x: 0
-  y: 0
-  timerChecker: 0
 --- !u!61 &1510316382878573099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -634,6 +610,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &97980813683071234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3973473695777455130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f442d120c9062cf4ab01df223df80356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 3
+  btmRange: -10
+  topRange: 10
+  directionFrequency: 1.5
+  frequencyMultiplier: 0.8
+  movementMultiplier: 1
+  controller: {fileID: 4151162277553399793}
+  timerChecker: 0
 --- !u!1 &4475129864626701124
 GameObject:
   m_ObjectHideFlags: 0

@@ -362,63 +362,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 7706034308894484296, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
   m_PrefabInstance: {fileID: 1117575836}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &87080446
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1099695601}
-    m_Modifications:
-    - target: {fileID: 8373641495270752348, guid: 94acacb7029a6d540879e71133242116, type: 3}
-      propertyPath: m_Name
-      value: event-icon-body
-      objectReference: {fileID: 0}
-    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 94acacb7029a6d540879e71133242116, type: 3}
 --- !u!1 &165675695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,17 +975,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &401000919 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8373641496147546364, guid: 94acacb7029a6d540879e71133242116, type: 3}
-  m_PrefabInstance: {fileID: 87080446}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fda8da0c9740fac4eba5b62a869654a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &486195090 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 197774049572998480, guid: f9bc36708b1609e4e98accb155e5edf2, type: 3}
@@ -3030,11 +2962,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6630bd5630bc3a4c89370b0ab5dfd51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 401000919}
-  cutscene: {fileID: 1099695602}
+  icon: {fileID: 0}
+  cutscene: {fileID: 0}
   nextScene: 
-  eventName: BeckyChase
-  _type: 0
+  eventName: 
   previousEventsRequired: []
 --- !u!4 &1099695601
 Transform:
@@ -3047,8 +2978,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1131288783}
+  m_Children: []
   m_Father: {fileID: 252706154}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3062,7 +2992,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 91247adc28510084a9ac63d72efb57e0, type: 2}
-  m_InitialState: 0
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -3093,7 +3023,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1699659817306789324, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484279, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_Name
@@ -3193,11 +3123,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
---- !u!4 &1131288783 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
-  m_PrefabInstance: {fileID: 87080446}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1142270945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5711,6 +5636,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2075207396}
+  - component: {fileID: 2075207398}
   - component: {fileID: 2075207397}
   m_Layer: 0
   m_Name: Maze Aftermath
@@ -5759,10 +5685,25 @@ PlayableDirector:
     value: {fileID: 86744812}
   - key: {fileID: 1825863489231510162, guid: 940899e4ae3b6b447b09fff84b3323c0, type: 2}
     value: {fileID: 1340672187}
-  - key: {fileID: 4680758340062383495, guid: 940899e4ae3b6b447b09fff84b3323c0, type: 2}
-    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &2075207398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075207395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6630bd5630bc3a4c89370b0ab5dfd51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  cutscene: {fileID: 0}
+  nextScene: 
+  eventName: 
+  previousEventsRequired: []
 --- !u!1 &2082359734
 GameObject:
   m_ObjectHideFlags: 0

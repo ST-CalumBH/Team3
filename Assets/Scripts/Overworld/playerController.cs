@@ -8,7 +8,7 @@ using UI;
 namespace Overworld {
     public class playerController : MonoBehaviour
     {
-        [SerializeField] private float moveSpeed = 15f;
+        public float moveSpeed = 15f;
         public Rigidbody2D rb;
         public Animator animator;
         public DialogueUI DialogueUI => dialogueUI;
@@ -34,8 +34,6 @@ namespace Overworld {
             rb = GetComponent<Rigidbody2D>();
             sfxController = GetComponent<MinigameSFX>();
             playerFreeze = false;
-
-            moveSpeed = 8f;                                          // THIS IS NO GOOD SOLUTION, moveSpeed sets to 0 for some reason when re-entering scenes
             playerSpeed = moveSpeed;
 
             menu = FindObjectOfType<PauseMenu>();
@@ -74,6 +72,30 @@ namespace Overworld {
                     Interactable?.Interact(this);
                 }
             }
+
+            //if (menu.isGamePaused && playerFreeze == false)//checks if the game is paused and if the player is unfrozen, then freezes the player
+            //{
+            //    freezePlayer();
+            //}
+            //else if (!menu.isGamePaused && playerFreeze == true)//checks if the game is unpaused and if the player is frozen, then unfreezes the player
+            //{
+            //    unfreezePlayer();
+            //}
+
+            //if (dialogueUI.IsOpen && playerFreeze == false)
+            //{
+            //    freezePlayer();
+            //}
+
+            //if (!dialogueUI.IsOpen && playerFreeze == true)
+            //{
+            //    unfreezePlayer();
+            //}
+
+            /* if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene("homeBedroomScene");
+            }*/
 
             if (Input.GetKeyDown(KeyCode.O))                    // for testing purposes: sets player to spawn at the first item in the spawn list, resets events such as the kitchen
             {
@@ -120,8 +142,6 @@ namespace Overworld {
 
             indicatorE.Hide();
             indicatorE.Disable();
-
-            //Debug.Log("Freeze Move: " + moveSpeed + ", Player: " + playerSpeed);
         }
 
         public void unfreezePlayer()
@@ -130,8 +150,6 @@ namespace Overworld {
             moveSpeed = playerSpeed;
 
             indicatorE.Enable();
-
-            //Debug.Log("UnFreeze Move: " + moveSpeed + ", Player: " + playerSpeed);
         }
 
         public void PlayAudioClip()
