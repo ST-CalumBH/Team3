@@ -1151,7 +1151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0229be274d0bb2d44b501e36c6c07eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 86744810}
 --- !u!212 &478912034
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2827,7 +2827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0229be274d0bb2d44b501e36c6c07eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 86744810}
 --- !u!212 &1009964197
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -7,50 +7,37 @@ namespace CoffeeDodge
 {
     public class CoffeeDodgeMinigame : Minigame
     {
-        [SerializeField] private AudioClip clang;
+        [SerializeField] private AudioClip splash;
 
         AudioSource audioSource;
 
-        public GameObject animatorGO;
         Animator animator;
 
-        public Warning lWarningGO;
-        public Warning mWarningGO;
-        public Warning rWarningGO;
+        public GameObject Boss;
+        public GameObject CoffeePrefab;
 
         public CoffeeDodgePlayer player;
 
-        public List<Warning> warnings;
 
         public Text text;
 
         public ParticleSystem hurt;
 
-        SpriteRenderer lWarning;
-        SpriteRenderer mWarning;
-        SpriteRenderer rWarning;
+        public int winThreshold = 9;
 
         List<int> attackQueue;
+        List<bool> attacking  = new List<bool> { false, false, false };
+
         int attackNumber = 0;
         public int dodgeCount = 0;
-        public bool isAttacking;
         bool cooldown = false;
 
         // Start is called before the first frame update
         void Start()
         {
             audioSource = GetComponent<AudioSource>();
-            animator = animatorGO.GetComponent<Animator>();
+            animator = Boss.GetComponent<Animator>();
             animator.StopPlayback();
-            warnings.Add(lWarningGO);
-            warnings.Add(mWarningGO);
-            warnings.Add(rWarningGO);
-            lWarning = lWarningGO.GetComponent<SpriteRenderer>();
-            mWarning = mWarningGO.GetComponent<SpriteRenderer>();
-            rWarning = rWarningGO.GetComponent<SpriteRenderer>();
-            lWarning.enabled = false;
-            mWarning.enabled = false;
-            rWarning.enabled = false;
             player = FindObjectOfType<CoffeeDodgePlayer>();
             StartCoroutine(QueueAttacks(2));
         }
@@ -61,76 +48,62 @@ namespace CoffeeDodge
             text.text = dodgeCount.ToString();
             if (!cooldown)
             {
-                if (isAttacking == true)
-                {
-                    switch (attackQueue[attackNumber])
+                if (attacking[0]) {
+                    if (player.isTouching == CoffeeDodgePositionEnum.LEFT)
                     {
-                        case 0:
-                            if (player.isTouching == CoffeeDodgePositionEnum.LEFT)
-                            {
-                                //Debug.Log("Left Hit");
-                                Debug.Log("Reset");
-                                dodgeCount = 0;
-                                StartCoroutine(Hurt());
-                                StartCoroutine(CooldownTimer());
-                            }
-                            else
-                            {
-                                dodgeCount++;
-                                StartCoroutine(CooldownTimer());
-                            }
-                            break;
-                        case 1:
-                            if (player.isTouching == CoffeeDodgePositionEnum.MIDDLE)
-                            {
-                                //Debug.Log("Middle Hit");
-                                Debug.Log("Reset");
-                                dodgeCount = 0;
-                                StartCoroutine(Hurt());
-                                StartCoroutine(CooldownTimer());
-                            }
-                            else
-                            {
-                                dodgeCount++;
-                                StartCoroutine(CooldownTimer());
-                            }
-                            break;
-                        case 2:
-                            if (player.isTouching == CoffeeDodgePositionEnum.RIGHT)
-                            {
-                                //Debug.Log("Right Hit");
-                                Debug.Log("Reset");
-                                dodgeCount = 0;
-                                StartCoroutine(Hurt());
-                                StartCoroutine(CooldownTimer());
-                            }
-                            else
-                            {
-                                dodgeCount++;
-                                StartCoroutine(CooldownTimer());
-                            }
-                            break;
+                        Debug.Log("Left Hit");
+                        dodgeCount--;
+                        StartCoroutine(Hurt());
+                        StartCoroutine(CooldownTimer());
+                    }
+                    else
+                    {
+                        dodgeCount++;
+                        StartCoroutine(CooldownTimer());
                     }
                 }
+                if (attacking[1]) {
+                    if (player.isTouching == CoffeeDodgePositionEnum.MIDDLE)
+                    {
+                        Debug.Log("Middle Hit");
+                        dodgeCount--;
+                        StartCoroutine(Hurt());
+                        StartCoroutine(CooldownTimer());
+                    }
+                    else
+                    {
+                        dodgeCount++;
+                        StartCoroutine(CooldownTimer());
+                    }
+                }
+                if (attacking[2]) {
+                    if (player.isTouching == CoffeeDodgePositionEnum.RIGHT)
+                    {
+                        Debug.Log("Right Hit");
+                        dodgeCount--;
+                        StartCoroutine(Hurt());
+                        StartCoroutine(CooldownTimer());
+                    }
+                    else
+                    {
+                        dodgeCount++;
+                        StartCoroutine(CooldownTimer());
+                    }
+                }
+                if (dodgeCount < 0) dodgeCount = 0; 
             }
-        }
-
-
-        public void CallShowWarning()
-        {
-            StartCoroutine(ShowWarning(attackQueue[attackNumber]));
         }
 
         public void CallEndMinigame()
         {
-            StartCoroutine(EndMinigame());
+            StartCoroutine(EndMinigame(true));
         }
 
         public void CheckForTnight()//I love Fortnite
         {
-            if (dodgeCount == 5)
+            if (dodgeCount >= winThreshold)
             {
-                StartCoroutine(EndMinigame());
+                StartCoroutine(EndMinigame(true));
             }
             else
             {
@@ -160,48 +133,35 @@ namespace CoffeeDodge
             {
                 attackQueue.RemoveAt(0);
             }
-            StartCoroutine(ShowWarning(attackQueue[attackNumber]));
+
+            foreach (var lane in attackQueue)
+            {
+                StartCoroutine(Attack(lane));
+                yield return new WaitForSeconds(0.75f);
+            }
         }
 
-        IEnumerator ShowWarning(int laneNum)
-        {
-            warnings[laneNum].StartFlash();
-
-            if (++attackNumber >= attackQueue.Count)
-            {
-                yield return new WaitForSeconds(warnings[laneNum].GetTotalFlashTime() + 0.5f);
-                attackNumber = 0;
-                StartCoroutine(Attack(attackQueue[attackNumber]));
-            }
-            else
-            {
-                yield return new WaitForSeconds(warnings[laneNum].GetTotalFlashTime() + 0.4f);
-                StartCoroutine(ShowWarning(attackQueue[attackNumber]));
-            }
-
-        }
         IEnumerator Attack(int laneNum)
         {
-            string laneName = laneNum == 2 ? "Right" : laneNum == 0 ? "Left" : "Mid";
-            animator.Play("Base Layer." + laneName + " Lane");
-            yield return new WaitForSeconds(0.30f); //Currently just manually inputting the animation length, but should make a dynamic system.
-            isAttacking = true;
-            audioSource.PlayOneShot(clang);
-            yield return new WaitForSeconds(0.44f);
-            isAttacking = false;
-            yield return new WaitForSeconds(0.05f);
-            animator.Play("Base Layer.Neutral");
+            string laneName = laneNum == 2 ? "Right" : laneNum == 0 ? "Left" : "Middle";
+            animator.Play("Base Layer.BossThrow");
+            yield return new WaitForSeconds(0.23f); //Currently just manually inputting the animation length, but should make a dynamic system.
+            var coffee = Instantiate(CoffeePrefab);
+            var coffeeTransform = coffee.GetComponent<Transform>();
+            var coffeeAnimator = coffeeTransform.Find("coffee-cup").GetComponent<Animator>();
+            coffeeAnimator.Play("Base Layer.Coffee" + laneName);
+            yield return new WaitForSeconds(1f);
+            attacking[laneNum] = true;
+            audioSource.PlayOneShot(splash);
+            yield return new WaitForSeconds(0.25f);
+            attacking[laneNum] = false;
+            yield return new WaitForSeconds(0.30f);
+            Destroy(coffee);
 
             if (++attackNumber >= attackQueue.Count)
             {
                 attackNumber = 0;
-                dodgeCount++;
                 CheckForTnight();
-            }
-            else
-            {
-                yield return new WaitForSeconds(0.05f);
-                StartCoroutine(Attack(attackQueue[attackNumber]));
             }
         }
 
@@ -216,7 +176,7 @@ namespace CoffeeDodge
         IEnumerator CooldownTimer()
         {
             cooldown = true;
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(0.3f);
             cooldown = false;
         }
     }
