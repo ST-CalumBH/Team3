@@ -6,12 +6,18 @@ namespace DucksOnTheRoad {
     public class DuckRoadDuck : MonoBehaviour
     {
         public Animator anim;
+        public AudioClip deathSound;
 
         public float ScrollSpeed = 4f;
+
+        
+        AudioSource audioSource;
+
+
         // Start is called before the first frame update
         void Start()
         {
-            
+            audioSource = GetComponent<AudioSource>();
         }
 
         // Update is called once per frame
@@ -43,6 +49,7 @@ namespace DucksOnTheRoad {
             if (collider.gameObject.name == "Player")
             {
                 Debug.Log("Duck dies");
+                audioSource.PlayOneShot(deathSound);
                 anim.Play("Base Layer.DuckCollision");
 
             }

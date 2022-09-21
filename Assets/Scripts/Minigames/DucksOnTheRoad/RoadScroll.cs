@@ -6,6 +6,8 @@ namespace DucksOnTheRoad {
     public class RoadScroll : MonoBehaviour
     {
         public float ScrollSpeed = 0.5f;
+        public float threshold = -20.19f;
+        public float xOffset = 0f;
         
         // Start is called before the first frame update
         void Start()
@@ -23,10 +25,8 @@ namespace DucksOnTheRoad {
 
             var posDelta = -ScrollSpeed * Time.fixedDeltaTime;
 
-            var threshold = -20.19f;
-
             if (pos.x + posDelta <= threshold)
-                pos.x = -1f - posDelta;
+                pos.x = xOffset - posDelta;
             else 
                 pos.x += posDelta;
 
