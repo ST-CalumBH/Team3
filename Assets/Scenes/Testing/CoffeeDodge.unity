@@ -218,25 +218,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: mg_CoffeeDodgeMinigame
       objectReference: {fileID: 0}
-    - target: {fileID: 1165809471205156286, guid: fa24c558ed452bf45b86b0291ac71804, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1165809471205156287, guid: fa24c558ed452bf45b86b0291ac71804, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1165809471205156287, guid: fa24c558ed452bf45b86b0291ac71804, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.49
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1165809471205156287, guid: fa24c558ed452bf45b86b0291ac71804, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.49
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1165809471205156287, guid: fa24c558ed452bf45b86b0291ac71804, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.49
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1165809471205156287, guid: fa24c558ed452bf45b86b0291ac71804, type: 3}
       propertyPath: m_LocalPosition.x
