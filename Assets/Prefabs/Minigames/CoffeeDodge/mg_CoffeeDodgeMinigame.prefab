@@ -467,7 +467,7 @@ MonoBehaviour:
   isInProgress: 1
   splash: {fileID: 8300000, guid: a605c580dfeda524eabba307ba750087, type: 3}
   Boss: {fileID: 3181876520176686201}
-  CoffeePrefab: {fileID: 5446541367029531031, guid: 12570fa5c73ceba4eaed13d177df4c52, type: 3}
+  CoffeePrefab: {fileID: 7228636824668033094, guid: 29c507df6a778954bbf750ccbab9d17d, type: 3}
   player: {fileID: 5916244346256242048}
   text: {fileID: 1165809472051366295}
   hurt: {fileID: 2815424096754683367, guid: 1a8de19fd568c9649b70ee58d098f94a, type: 3}
