@@ -31,6 +31,7 @@ namespace CableChaos {
         float margin;
         float moveSpeed = 0.1f;
         float cooldownLength;
+        float cooldownTimer = 0;
 
         bool tilesMoved;
         bool paused = false;
@@ -326,13 +327,15 @@ namespace CableChaos {
             }
             if (cooldown == true)
             {
-                float timer = 0;
-                if (timer >= (cooldownLength*60f))
+                if (cooldownTimer >= (cooldownLength*60f))
                 { 
                     cooldown = false;
                     Debug.Log("Cooldown Over");
                 }
-                timer += 1;
+                cooldownTimer += 1;
+            }
+            else {
+                cooldownTimer = 0;
             }
         }
         void ResetResults()
