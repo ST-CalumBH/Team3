@@ -86,4 +86,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Overworld/Ending.unity
     guid: 5abd66df83ef4764ab5419e541381aad
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 9476343d7f9f3f74c873d6ad2152a17a, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: e0ce4c11a2fb2c74582dce6c52f25b2a, type: 2}

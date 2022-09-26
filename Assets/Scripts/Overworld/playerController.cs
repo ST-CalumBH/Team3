@@ -14,6 +14,7 @@ namespace Overworld {
         public DialogueUI DialogueUI => dialogueUI;
 
         [SerializeField] private DialogueUI dialogueUI;
+        [SerializeField] private float walkSFXDelay = 0.5f;
 
         [SerializeField] private bool playerFreeze;                 //boolean for determining if the player is frozen or not, controlling if the update function accepts input for 
         private float playerSpeed;                                  //keeps a reference of the player speed to apply when the player is unfrozen
@@ -60,7 +61,7 @@ namespace Overworld {
 
                 if (movement.x == 1 || movement.x == -1 || movement.y == 1 || movement.y == -1) // idle facing direction
                 {
-                    PlayAudioClip();
+                    StartCoroutine(PlayAudioClip(walkSFXDelay));
                     animator.SetFloat("lastMoveX", movement.x);
                     animator.SetFloat("lastMoveY", movement.y);
                 }
@@ -134,12 +135,14 @@ namespace Overworld {
             //Debug.Log("UnFreeze Move: " + moveSpeed + ", Player: " + playerSpeed);
         }
 
-        public void PlayAudioClip()
+        public IEnumerator PlayAudioClip(float time)
         {
+            yield return new WaitForSeconds(time);
             if (!sfxController.mgAudioSource.isPlaying)
             {
                 sfxController.PlaySound(0);
             }
+            
         }
 
         private void MoveToSpawnPoint()
