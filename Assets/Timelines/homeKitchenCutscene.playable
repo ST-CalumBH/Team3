@@ -3575,7 +3575,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 6.1666665
+    m_StopTime: 30.333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -3653,13 +3653,6 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: ChangeProgress
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0
     functionName: IsCutscene
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -3675,6 +3668,13 @@ AnimationClip:
     messageOptions: 0
   - time: 6.1666665
     functionName: PlayDialogue
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 30.333334
+    functionName: IsCutscene
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

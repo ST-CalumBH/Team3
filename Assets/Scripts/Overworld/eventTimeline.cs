@@ -24,10 +24,14 @@ namespace Overworld {
         [SerializeField] private eventType _type;
         [SerializeField] private string[] previousEventsRequired;
 
+        private BoxCollider2D collider2D;
+
         void Start()
         {
             player = GameObject.FindWithTag("Player");
             playerController = player.GetComponent<playerController>();
+
+            collider2D = GetComponent<BoxCollider2D>();
 
             eventNameChecker();
         }
@@ -46,6 +50,7 @@ namespace Overworld {
             icon.changeActiveState(false);
             cutscene.Play();
             PlayerPrefs.SetInt(eventName, 1);                   // now it is triggered
+            collider2D.enabled = false;
         }
 
         private void eventNameChecker()                         // checks whether a one-time event should be played or not

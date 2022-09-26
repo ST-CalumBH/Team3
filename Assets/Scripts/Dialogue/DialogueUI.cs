@@ -81,7 +81,7 @@ namespace Dialogue {
             if (player != null && cutsceneState == false) { player.unfreezePlayer(); }
         }
 
-        public void SwapProgressState(bool state)                                  // dialogue can swap from automatic to manual. true = manual, false = auto
+        public void SwapProgressState(bool state)                                  // dialogue can swap from automatic to manual. true(1) = manual, false(0) = auto
         {
             canProgress = state;
         }
@@ -91,9 +91,10 @@ namespace Dialogue {
             dialogueDuration = duration;
         }
 
-        public void CutsceneState(bool state)
+        public void CutsceneState(bool state)                                       // make sure to set this to true when a cutscene is happening and turn it off once the cutscene is done
         {
-            cutsceneState = state;
+            cutsceneState = state;                                                  // eg. bool true - cutscene mode is true, meaning dialogue box does not unfreeze player and dialogue is false, and dialogue is automatic
+            canProgress = !state;
         }
 
         public bool checkCutsceneState() { return cutsceneState; }
