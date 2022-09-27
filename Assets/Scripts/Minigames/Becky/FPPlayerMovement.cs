@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Dialogue;
 using UI;
+using UnityEngine.Analytics;
 
 namespace Becky {
     public class FPPlayerMovement : MonoBehaviour
@@ -12,6 +13,11 @@ namespace Becky {
         public IInteractable Interactable { get; set; }
         public PauseMenu menu;
         private bool playerFreeze;
+
+        private void Start()
+        {
+            Analytics.CustomEvent("BeckyMaze");
+        }
 
         // Update is called once per frame
         void Update()

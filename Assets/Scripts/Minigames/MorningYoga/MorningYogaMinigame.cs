@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Overworld;
+using UnityEngine.Analytics;
 
 public class MorningYogaMinigame : Minigame
 {
@@ -62,6 +63,7 @@ public class MorningYogaMinigame : Minigame
 
     void Start()
     {
+        Analytics.CustomEvent("MorningYoga");
         controller = GameObject.Find("Player").GetComponent<playerController>();
         controller.freezePlayer();
 

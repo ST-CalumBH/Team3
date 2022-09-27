@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Combat;
+using UnityEngine.Analytics;
 
 namespace VirusAttack {
     public class minigameManager : Minigame
@@ -11,6 +12,11 @@ namespace VirusAttack {
         public int enemyGoal = 20;
 
         [SerializeField] private spawnerManager spawnManager;
+
+        private void Start()
+        {
+            Analytics.CustomEvent("VirusAttack");
+        }
 
         void Update()
         {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.UI;
 
 namespace CoffeeDodge
@@ -35,6 +36,7 @@ namespace CoffeeDodge
         // Start is called before the first frame update
         void Start()
         {
+            Analytics.CustomEvent("CoffeeDodge");
             audioSource = GetComponent<AudioSource>();
             animator = Boss.GetComponent<Animator>();
             animator.StopPlayback();

@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using Combat;
 using Overworld;
+using UnityEngine.Analytics;
 
 namespace DucksOnTheRoad {
     public class DuckRoadController : Minigame
@@ -21,6 +22,7 @@ namespace DucksOnTheRoad {
             SceneTransition = gameObject.GetComponent<SceneTransitionScript>();
             StartCoroutine(spawnDuck());
             StartCoroutine(endGame(minigameDuration));
+            Analytics.CustomEvent("DOTR");
         }
 
         // Update is called once per frame

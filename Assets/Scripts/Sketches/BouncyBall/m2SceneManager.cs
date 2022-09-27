@@ -31,7 +31,7 @@ namespace Sketches {
             {
                 loss.SetActive(true);
                 result = true;
-                StartCoroutine(EndMinigame());
+                StartCoroutine(EndMinigame(false));
             }
         }
 
@@ -41,7 +41,7 @@ namespace Sketches {
             if (result == false)
             {
                 win.SetActive(true);
-                StartCoroutine(EndMinigame());
+                StartCoroutine(EndMinigame(true));
             }
         }
 

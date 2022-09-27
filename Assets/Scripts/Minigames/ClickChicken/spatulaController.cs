@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Combat;
+using UnityEngine.Analytics;
 
 namespace ClickChicken {
     public class spatulaController : Minigame

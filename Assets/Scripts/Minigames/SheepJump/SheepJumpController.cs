@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 namespace SheepJump {
@@ -12,7 +13,8 @@ namespace SheepJump {
     // Start is called before the first frame update
     void Start()
     {
-        m_Animator = gameObject.GetComponent<Animator>();
+            Analytics.CustomEvent("SheepJump");
+            m_Animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame

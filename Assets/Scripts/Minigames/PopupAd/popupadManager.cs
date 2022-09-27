@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VirusAttack;
 using Combat;
+using UnityEngine.Analytics;
 
 namespace PopupAd {
     public class popupadManager : Minigame
@@ -15,6 +16,7 @@ namespace PopupAd {
 
         private void Start()
         {
+            Analytics.CustomEvent("PopupAd");
             StartCoroutine(UpdatePause());
         }
 

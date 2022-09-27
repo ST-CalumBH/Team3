@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Combat;
+using UnityEngine.Analytics;
 
 namespace InkDrop
 {
@@ -31,6 +32,7 @@ namespace InkDrop
         // Start is called before the first frame update
         void Start()
         {
+            Analytics.CustomEvent("InkDrop");
             mSFX = GetComponent<MinigameSFX>();
             spareLife = true;
             variance = Random.Range(leftBound, rightBound);
