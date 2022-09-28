@@ -2018,6 +2018,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carPosText: {fileID: 1738089016}
+  nextScene: OfficeReturned
+  newSpawnPoint: 1
 --- !u!61 &898631706
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3797,6 +3799,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carPosText: {fileID: 2144424337}
+  nextScene: OfficeReturned
+  newSpawnPoint: 1
 --- !u!1 &1644459509
 GameObject:
   m_ObjectHideFlags: 0

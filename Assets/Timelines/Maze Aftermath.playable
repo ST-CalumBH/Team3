@@ -152,7 +152,7 @@ AnimationClip:
     functionName: hide
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 3
+    floatParameter: 2
     intParameter: 0
     messageOptions: 0
 --- !u!74 &-7847213029323611972
@@ -209,7 +209,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.96666664
+    m_StopTime: 18.016666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -295,6 +295,13 @@ AnimationClip:
     messageOptions: 0
   - time: 0.96666664
     functionName: PlayDialogue
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 18.016666
+    functionName: IsCutscene
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -390,7 +397,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 8109372405766027111}
-    m_Duration: 3.45
+    m_Duration: 16.016666666666666
     m_TimeScale: 1
     m_ParentTrack: {fileID: 1825863489231510162}
     m_EaseInDuration: 0

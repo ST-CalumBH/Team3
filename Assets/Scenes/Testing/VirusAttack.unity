@@ -176,7 +176,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -285,6 +285,10 @@ PrefabInstance:
     - target: {fileID: 6898855382318000270, guid: c00b37628e164664c933b4b344e2452f, type: 3}
       propertyPath: enemyGoal
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898855382318000270, guid: c00b37628e164664c933b4b344e2452f, type: 3}
+      propertyPath: nextScene
+      value: OfficeReturned
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c00b37628e164664c933b4b344e2452f, type: 3}

@@ -4,10 +4,14 @@ using UnityEngine;
 using Combat;
 using UnityEngine.Analytics;
 using Unity.Services.Analytics;
+using UnityEngine.SceneManagement;
 
 namespace VirusAttack {
     public class minigameManager : Minigame
     {
+        [SerializeField] private string nextScene;
+        [SerializeField] private int newSpawnPoint = 0;
+
         public int lives = 3;
         public int enemyKilled = 0;
         public int enemyGoal = 20;
@@ -23,13 +27,19 @@ namespace VirusAttack {
         {
             if (lives == 0)
             {
-                spawnManager.spawnerOff();
-                StartCoroutine(EndMinigame(2f, false));
+                PlayerPrefs.SetInt("SpawnPoint", newSpawnPoint);
+                SceneManager.LoadScene(nextScene);
+
+                //spawnManager.spawnerOff();
+                //StartCoroutine(EndMinigame(true)); // meant to be false, but when an EndMinigame(false) is run, it needs the life persistant manager
             }
             else if (enemyGoal == enemyKilled)
             {
-                spawnManager.spawnerOff();
-                StartCoroutine(EndMinigame(2f, true));
+                PlayerPrefs.SetInt("SpawnPoint", newSpawnPoint);
+                SceneManager.LoadScene(nextScene);
+
+                //spawnManager.spawnerOff();
+                //StartCoroutine(EndMinigame(true));
             }
         }
 

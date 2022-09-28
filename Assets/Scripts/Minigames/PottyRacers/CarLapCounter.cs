@@ -21,8 +21,9 @@ public class CarLapCounter : MonoBehaviour
     bool isRaceFinished = false;
 
     int carPos = 0;
-    
 
+    [SerializeField] private string nextScene;
+    [SerializeField] private int newSpawnPoint = 0;
 
     public event Action<CarLapCounter> OnPassCheckpoint;
 
@@ -85,7 +86,8 @@ public class CarLapCounter : MonoBehaviour
                 if (isRaceFinished)
                 {
                     StartCoroutine(ShowPositionCO(100));
-                    SceneManager.LoadScene("officeScene");
+                    PlayerPrefs.SetInt("SpawnPoint", newSpawnPoint);
+                    SceneManager.LoadScene(nextScene);
                 }
                 else StartCoroutine(ShowPositionCO(1.5f));
             }
