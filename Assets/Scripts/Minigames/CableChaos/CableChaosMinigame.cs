@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Combat;
 using UnityEngine.Analytics;
+using Unity.Services.Analytics;
 
 namespace CableChaos {
     public class CableChaosMinigame : Minigame
@@ -53,7 +54,7 @@ namespace CableChaos {
         // Start is called before the first frame update
         void Start()
         {
-            Analytics.CustomEvent("CableChaos");
+            AnalyticsService.Instance.CustomData("CableChaos", new Dictionary<string, object>());
             paused = true;
             mSFX = GetComponent<MinigameSFX>();
             spareLife = true;

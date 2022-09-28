@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
@@ -13,7 +14,7 @@ namespace SheepJump {
     // Start is called before the first frame update
     void Start()
     {
-            Analytics.CustomEvent("SheepJump");
+            AnalyticsService.Instance.CustomData("SheepJump", new Dictionary<string, object>());
             m_Animator = gameObject.GetComponent<Animator>();
     }
 

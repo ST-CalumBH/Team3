@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Combat;
 using UnityEngine.Analytics;
+using Unity.Services.Analytics;
 
 namespace ChargedSpatula
 {
@@ -32,6 +33,8 @@ namespace ChargedSpatula
 
         void Awake()
         {
+            AnalyticsService.Instance.CustomData("ChargedSpatula", new Dictionary<string, object>());
+
             minigameStatus = "inProgress";
             enemy = GameObject.Find("enemy");
             controller = enemy.GetComponent<csEnemy>();

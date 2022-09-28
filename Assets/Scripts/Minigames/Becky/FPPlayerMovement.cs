@@ -4,6 +4,7 @@ using UnityEngine;
 using Dialogue;
 using UI;
 using UnityEngine.Analytics;
+using Unity.Services.Analytics;
 
 namespace Becky {
     public class FPPlayerMovement : MonoBehaviour
@@ -16,7 +17,7 @@ namespace Becky {
 
         private void Start()
         {
-            Analytics.CustomEvent("BeckyMaze");
+            AnalyticsService.Instance.CustomData("BeckyMaze", new Dictionary<string, object>());
         }
 
         // Update is called once per frame

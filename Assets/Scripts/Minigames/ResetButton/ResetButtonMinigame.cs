@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Combat;
 using UnityEngine.Analytics;
+using Unity.Services.Analytics;
 
 namespace ResetButton
 {
@@ -49,7 +50,7 @@ namespace ResetButton
             zoneDegrees = bounceAngle * hitZone;
             timebar.maxValue = maxTime;
             timebar.value = 0f;
-            Analytics.CustomEvent("ResetButton");
+            AnalyticsService.Instance.CustomData("ResetButton", new Dictionary<string, object>());
             StartCoroutine(Timer());
         }
 

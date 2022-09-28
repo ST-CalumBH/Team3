@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Combat;
 using UnityEngine.Analytics;
+using Unity.Services.Analytics;
 
 namespace SwordDodge
 {
@@ -30,7 +31,7 @@ namespace SwordDodge
         // Start is called before the first frame update
         void Start()
         {
-            Analytics.CustomEvent("SwordDodge");
+            AnalyticsService.Instance.CustomData("SwordDodge", new Dictionary<string, object>());
             mSFX = GetComponent<MinigameSFX>();
             animator = animatorGO.GetComponent<Animator>();
             animator.StopPlayback();

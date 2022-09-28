@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Dialogue;
 using UI;
+using Unity.Services.Analytics;
 
 namespace Overworld {
     public class playerController : MonoBehaviour
@@ -70,6 +71,7 @@ namespace Overworld {
                 {
                     if(Interactable != null)
                     {
+                        AnalyticsService.Instance.CustomData("ObjectInteract", new Dictionary<string, object>());
                         sfxController.PlaySound(1);
                     }
                     Interactable?.Interact(this);

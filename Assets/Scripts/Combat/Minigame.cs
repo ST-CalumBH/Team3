@@ -4,6 +4,8 @@ using UnityEngine.Analytics;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Unity.Services.Analytics;
+
 public class Minigame : MonoBehaviour
 {
 
@@ -14,11 +16,12 @@ public class Minigame : MonoBehaviour
     {
         if (res)
         {
-            Analytics.CustomEvent("MinigameWin");
+            AnalyticsService.Instance.CustomData("MinigameWin", new Dictionary<string, object>());
+
         }
         else
         {
-            Analytics.CustomEvent("MinigameLoss");
+            AnalyticsService.Instance.CustomData("MinigameLoss", new Dictionary<string, object>());
         }
         yield return new WaitForSeconds(1f);
         isInProgress = false;

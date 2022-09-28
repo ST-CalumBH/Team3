@@ -1347,6 +1347,7 @@ MonoBehaviour:
   groundHeight: 1.5
   isGrounded: 0
   blackout: {fileID: 1681225193}
+  baasPerSecond: 0.5
   isHoldingJump: 0
   maxHoldJumpTime: 0.2
   holdJumpTimer: 0
@@ -1454,6 +1455,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7e938d53f0fab58449b80a71f89aa524, type: 3}
   - {fileID: 8300000, guid: 317855a9e22759446a77427562698ed8, type: 3}
   - {fileID: 8300000, guid: 9528bf7aa4e608d4891002099e674a68, type: 3}
+  - {fileID: 8300000, guid: 1819351790bdb2746a6fbc96ed7b4693, type: 3}
 --- !u!82 &1121152004
 AudioSource:
   m_ObjectHideFlags: 0

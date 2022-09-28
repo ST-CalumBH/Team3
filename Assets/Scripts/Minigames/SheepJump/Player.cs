@@ -17,12 +17,15 @@ namespace SheepJump
         public float groundHeight = 2;
         public bool isGrounded = false;
         [SerializeField] GameObject blackout;
+        [SerializeField] float baasPerSecond = 1f; //higher is slower.
 
 
         public bool isHoldingJump = false;
         public float maxHoldJumpTime = 0.15f;
         public float holdJumpTimer = 0.0f;
         bool ended = false;
+        float counter = 0;
+        float secondVariable;
 
         private Animator animator;
         MinigameSFX mSFX;
@@ -32,6 +35,8 @@ namespace SheepJump
         {
             animator = GetComponent<Animator>();
             mSFX = GetComponent<MinigameSFX>();
+            counter = 0; 
+            secondVariable = Random.Range(50, 151);
         }
 
 
@@ -101,7 +106,7 @@ namespace SheepJump
                 distance += velocity.x * Time.fixedDeltaTime;
                 if (distance >= 500f)
                 {
-                    SceneManager.LoadScene("homeBedroomScene");
+                    StartCoroutine(EndGame());
                 }
                 // UI score/ counter thing
 
@@ -126,11 +131,21 @@ namespace SheepJump
                     Fences fences = obstHitX.collider.GetComponent<Fences>();
                     if (fences != null)
                     {
-                        
+
                         StartCoroutine(hitObstacle(fences));
                     }
                 }
-
+                
+                if (counter == (secondVariable / baasPerSecond))
+                {
+                    mSFX.PlaySound(3, 0.5f);
+                    counter = 0;
+                    secondVariable = Random.Range(50, 151);
+                }
+                else
+                {
+                    counter++;
+                }
                 transform.position = pos;
             }
         }
@@ -147,6 +162,10 @@ namespace SheepJump
             SceneManager.LoadScene("homeBedroomScene");
         }
 
-
+        IEnumerator EndGame()
+        {
+            yield return new WaitForSeconds(1f);
+            SceneManager.LoadScene("homeBedroomScene");
+        }
     }
 }

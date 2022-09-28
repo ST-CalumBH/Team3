@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Combat;
 using UnityEngine.Analytics;
+using Unity.Services.Analytics;
 
 namespace VirusAttack {
     public class minigameManager : Minigame
@@ -15,7 +16,7 @@ namespace VirusAttack {
 
         private void Start()
         {
-            Analytics.CustomEvent("VirusAttack");
+            AnalyticsService.Instance.CustomData("VirusAttack", new Dictionary<string, object>());
         }
 
         void Update()
