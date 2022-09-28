@@ -14,15 +14,15 @@ public class Minigame : MonoBehaviour
 
     public IEnumerator EndMinigame(bool res)
     {
-        if (res)
-        {
-            AnalyticsService.Instance.CustomData("MinigameWin", new Dictionary<string, object>());
+        //    if (res)
+        //    {
+        //        AnalyticsService.Instance.CustomData("MinigameWin", new Dictionary<string, object>());
 
-        }
-        else
-        {
-            AnalyticsService.Instance.CustomData("MinigameLoss", new Dictionary<string, object>());
-        }
+        //    }
+        //    else
+        //    {
+        //        AnalyticsService.Instance.CustomData("MinigameLoss", new Dictionary<string, object>());
+        //    }
         yield return new WaitForSeconds(1f);
         isInProgress = false;
         result = res;
@@ -33,14 +33,15 @@ public class Minigame : MonoBehaviour
 
     public IEnumerator EndMinigame(float time, bool res)
     {
-        if (res)
-        {
-            Analytics.CustomEvent("MinigameWin");
-        }
-        else
-        {
-            Analytics.CustomEvent("MinigameLoss");
-        }
+        //if (res)
+        //{
+        //    AnalyticsService.Instance.CustomData("MinigameWin", new Dictionary<string, object>());
+
+        //}
+        //else
+        //{
+        //    AnalyticsService.Instance.CustomData("MinigameLoss", new Dictionary<string, object>());
+        //}
         yield return new WaitForSeconds(time);
         isInProgress = false;
         result = res;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using Unity.Services.Analytics;
 
 namespace SheepJump
 {
@@ -33,6 +34,7 @@ namespace SheepJump
 
         void Start()
         {
+            AnalyticsService.Instance.CustomData("SheepJump", new Dictionary<string, object>());
             animator = GetComponent<Animator>();
             mSFX = GetComponent<MinigameSFX>();
             counter = 0; 
