@@ -1148,12 +1148,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 466772986}
     - target: {fileID: 7706034308894484300, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+      propertyPath: m_Size.x
+      value: 2.8866665
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706034308894484300, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+      propertyPath: m_Size.y
+      value: 3.8894033
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706034308894484300, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_SortingLayer
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484300, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_SortingLayerID
       value: -1371204575
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706034308894484300, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484301, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_RootOrder
@@ -1209,6 +1221,11 @@ Transform:
 --- !u!1 &400075018 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7706034308894484279, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+  m_PrefabInstance: {fileID: 400075015}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &400075019 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7706034308894484296, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
   m_PrefabInstance: {fileID: 400075015}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &466772983
@@ -3694,11 +3711,11 @@ PlayableDirector:
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 5485937628838375493, guid: 5841b578405836b49a74c2ae7538fd70, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 400075019}
   - key: {fileID: -1358634471791391211, guid: 5841b578405836b49a74c2ae7538fd70, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 2035519622}
   - key: {fileID: -1840704741151726097, guid: 5841b578405836b49a74c2ae7538fd70, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 400075019}
   - key: {fileID: 6500204593237507215, guid: 5841b578405836b49a74c2ae7538fd70, type: 2}
     value: {fileID: 2130034921}
   - key: {fileID: -8965252277672384433, guid: 5841b578405836b49a74c2ae7538fd70, type: 2}
@@ -5324,7 +5341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeSizeAmount: 0
-  targetSize: 300
+  targetSize: 0
   isActive: 0
 --- !u!1 &2074091906
 GameObject:
