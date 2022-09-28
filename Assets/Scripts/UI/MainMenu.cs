@@ -11,6 +11,13 @@ namespace UI {
 
         public void PlayGame()
         {
+            StartCoroutine(sceneTransition());
+        }
+        IEnumerator sceneTransition() 
+        {
+            var crossfade = FindObjectOfType<Animator>();
+            crossfade.SetTrigger("Start");
+            yield return new WaitForSeconds(1f);
             PlayerPrefs.DeleteAll();
             PlayerPrefs.SetInt("SpawnPoint", 0);
             Time.timeScale = 0;
