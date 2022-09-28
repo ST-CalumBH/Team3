@@ -282,6 +282,10 @@ PrefabInstance:
       propertyPath: fireDelay
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 2439107861853482020, guid: c00b37628e164664c933b4b344e2452f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6898855382318000270, guid: c00b37628e164664c933b4b344e2452f, type: 3}
       propertyPath: enemyGoal
       value: 15

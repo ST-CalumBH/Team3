@@ -292,7 +292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!320 &17754328
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -324,6 +324,8 @@ PlayableDirector:
     value: {fileID: 661888476}
   - key: {fileID: 6382565663991929645, guid: 940899e4ae3b6b447b09fff84b3323c0, type: 2}
     value: {fileID: 1925419265}
+  - key: {fileID: -5146513736603260120, guid: 940899e4ae3b6b447b09fff84b3323c0, type: 2}
+    value: {fileID: 86744812}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &17754329
@@ -2976,7 +2978,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &945475377
 BoxCollider2D:
@@ -3716,7 +3718,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1104457339
 BoxCollider2D:
@@ -3886,7 +3888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484300, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484301, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: m_RootOrder
@@ -4329,7 +4331,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1242419603
 BoxCollider2D:
@@ -5021,7 +5023,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512537654}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.77, y: -0.37, z: 0}
+  m_LocalPosition: {x: -10.6543, y: -0.37370694, z: 0}
   m_LocalScale: {x: 1.8132, y: 1.8132, z: 1.8132}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5209,7 +5211,7 @@ Transform:
   - {fileID: 135563989}
   - {fileID: 1512537656}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1546307802
 PolygonCollider2D:
@@ -6869,8 +6871,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993335068}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.508297, y: 9.749147, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
