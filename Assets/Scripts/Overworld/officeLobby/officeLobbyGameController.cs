@@ -13,7 +13,9 @@ namespace Overworld {
         [SerializeField] private DialogueObject duckDialogue;
         [SerializeField] private DialogueObject blankDialogue;
 
+        [SerializeField] private GameObject blackout;
         [SerializeField] private GameObject doorSelector;
+        [SerializeField] private GameObject correctDoorMask;
         [SerializeField] private GameObject leftDoor;
         [SerializeField] private GameObject midDoor;
         [SerializeField] private GameObject rightDoor;
@@ -31,6 +33,7 @@ namespace Overworld {
         Animator dsAnimator;
         MinigameSFX mSFX;
         private bool gameStart = false;
+        private bool gameOver = false;
         bool freezeStart = false;
         int curPosition = 1;
 
@@ -40,6 +43,7 @@ namespace Overworld {
         {
             mSFX = GetComponent<MinigameSFX>();
             doorSelector.SetActive(false);
+            correctDoorMask.SetActive(false);
             dsAnimator = doorSelector.GetComponent<Animator>();
             leftDoorAnim = leftDoor.GetComponent<Animator>();
             midDoorAnim = midDoor.GetComponent<Animator>();
@@ -109,28 +113,38 @@ namespace Overworld {
         }
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.tag == "Player")
+            if (!gameOver && other.tag == "Player")
             {
                 player.freezePlayer();
-                mSFX.PlaySound(3, 0.15f);
                 StartCoroutine(StartMinigame());
             }
         }
 
         private IEnumerator StartMinigame()
         {
+            mSFX.PlaySound(6, 0.5f);
+            blackout.SetActive(true);
+            yield return new WaitForSeconds(4);
+            blackout.SetActive(false);
+            mSFX.PlaySound(0);
+            yield return new WaitForSeconds(2);
+            mSFX.PlaySound(3, 0.15f);
             player.DialogueUI.ShowDialogue(dialogueObject);
             freezeStart = true;
             yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
+            yield return new WaitForSeconds(0.5f);
             gameStart = true;
             doorSelector.SetActive(true);
+            mSFX.PlaySound(5);
             dsAnimator.Play("Base Layer.MidDoorIdle");
         }
 
         private IEnumerator Check()
         {
-            doorSelector.SetActive(false);
+            GameObject.Find("Cursor").SetActive(false);
             gameStart = false;
+            freezeStart = false;
+            gameOver = true;
             mSFX.PlaySound(0, 0.25f);
             switch (curPosition)
             {
@@ -148,7 +162,8 @@ namespace Overworld {
                     midDoorAnim.Play("Base Layer.DuckDoor");
                     yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
                     leftDoorSR.enabled = true;
-                    mSFX.PlaySound(0, 0.25f);
+                    mSFX.PlaySound(0);
+                    correctDoorMask.SetActive(true);
                     leftDoorAnim.Play("Base Layer.CorrectDoor");
                     break;
                 case 2:
@@ -158,14 +173,12 @@ namespace Overworld {
                     rightDoorAnim.Play("Base Layer.MissingDoor");
                     yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
                     leftDoorSR.enabled = true;
-                    mSFX.PlaySound(0, 0.25f);
+                    mSFX.PlaySound(0);
+                    correctDoorMask.SetActive(true);
                     leftDoorAnim.Play("Base Layer.CorrectDoor");
                     break;
             }
-            Parent.SetActive(false);
             player.unfreezePlayer();
-            yield return new WaitForSeconds(0f);
-            
         } 
     }
 }

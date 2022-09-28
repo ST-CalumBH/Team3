@@ -101,7 +101,7 @@ public class MorningYogaMinigame : Minigame
     // Update is called once per frame
     void Update()
     {
-        if(Input.anyKeyDown)
+        if (Input.anyKeyDown)
         {
             mSFX.PlaySound(0);
             int num = UnityEngine.Random.Range(2,7);
@@ -181,7 +181,7 @@ public class MorningYogaMinigame : Minigame
                     if (Input.GetKey(stateB[1]))
                     {
                         stateBResult[1] = true;
-                        
+
                         if (Input.GetKey(stateB[2]))
                         {
                             keithAnim.Play("Three");
@@ -433,7 +433,7 @@ public class MorningYogaMinigame : Minigame
             tilesMoved = false;
             recInput = true;
         }
-        else if(curState == GameStates.C)
+        else if (curState == GameStates.C)
         {
             keithAnim.Play("Four");
             yield return new WaitForSeconds(2f);
@@ -448,13 +448,13 @@ public class MorningYogaMinigame : Minigame
             Debug.Log("Won Minigame");
             try
             {
-                controller.unfreezePlayer();
+                StartCoroutine(DelayUnfreeze());
             }
             catch (Exception e)
             {
                 Debug.LogException(e);
             }
-            StartCoroutine(EndMinigame(true));
+        StartCoroutine(EndMinigame(true));
         }
     }
 
@@ -477,7 +477,7 @@ public class MorningYogaMinigame : Minigame
 
     private void FixedUpdate()
     {
-        if(curState == GameStates.A && tilesMoved == false)
+        if (curState == GameStates.A && tilesMoved == false)
         {
             ResetLetters();
             E.gameObject.SetActive(true);
@@ -541,5 +541,10 @@ public class MorningYogaMinigame : Minigame
         T.gameObject.SetActive(false);
         W.gameObject.SetActive(false);
         Z.gameObject.SetActive(false);
+    }
+    public IEnumerator DelayUnfreeze()
+    {
+        yield return new WaitForSeconds(1f); // since endMinigame(bool state) defaults to 1f
+        controller.unfreezePlayer();
     }
 }

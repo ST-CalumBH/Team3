@@ -16,7 +16,7 @@ namespace Overworld {
         private playerController playerController;
         private bool inArea;
 
-        [SerializeField] private string nextScene;
+        [SerializeField] private string nextScene;                          // bruh I guess the scene transition collider script is doing this job
 
         [Header("Event Related")]
         [Tooltip("Do not use for repeatable conversations")]
@@ -24,10 +24,17 @@ namespace Overworld {
         [SerializeField] private eventType _type;
         [SerializeField] private string[] previousEventsRequired;
 
+        private BoxCollider2D triggerArea;
+
         void Start()
         {
             player = GameObject.FindWithTag("Player");
             playerController = player.GetComponent<playerController>();
+
+            if (TryGetComponent(out BoxCollider2D box))
+            {
+                triggerArea = box;
+            }
 
             eventNameChecker();
         }
@@ -40,12 +47,13 @@ namespace Overworld {
             }
         }
 
-        public void beginCutsceneTimeline()                     // might have to make event interactions based on this script
+        public void beginCutsceneTimeline()                             // might have to make event interactions based on this script
         {
             playerController.freezePlayer();
             icon.changeActiveState(false);
             cutscene.Play();
-            PlayerPrefs.SetInt(eventName, 1);                   // now it is triggered
+            PlayerPrefs.SetInt(eventName, 1);                           // now it is triggered
+            if (triggerArea != null) { triggerArea.enabled = false; }
         }
 
         private void eventNameChecker()                         // checks whether a one-time event should be played or not

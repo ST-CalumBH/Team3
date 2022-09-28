@@ -22,7 +22,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 4.75
+    m_Start: 5.233333333333333
     m_ClipIn: 0
     m_Asset: {fileID: 4604782796069768904}
     m_Duration: 0.5166666666666684
@@ -436,7 +436,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 2.5
+    m_StopTime: 6.3166666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -514,21 +514,21 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: ChangeProgress
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0
     functionName: IsCutscene
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 1
     messageOptions: 0
   - time: 2.5
     functionName: PlayDialogue
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 6.3166666
+    functionName: IsCutscene
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -976,7 +976,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 4.866667
+    m_StopTime: 4.2166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -1041,11 +1041,11 @@ AnimationClip:
     floatParameter: 300
     intParameter: 0
     messageOptions: 0
-  - time: 4.866667
+  - time: 4.2166667
     functionName: hide
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 1
+    floatParameter: 0.5
     intParameter: 0
     messageOptions: 0
 --- !u!74 &4547576424540667561

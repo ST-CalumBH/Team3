@@ -275,6 +275,88 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: 686cb1c982b794f4a8471c1d19958ef6, type: 2}
+--- !u!1 &17754327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 17754330}
+  - component: {fileID: 17754329}
+  - component: {fileID: 17754328}
+  m_Layer: 0
+  m_Name: Maze Aftermath Scene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!320 &17754328
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17754327}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 940899e4ae3b6b447b09fff84b3323c0, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -5824934557781771337, guid: 91247adc28510084a9ac63d72efb57e0, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 8720550424468374776, guid: 91247adc28510084a9ac63d72efb57e0, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -445470677326633651, guid: 91247adc28510084a9ac63d72efb57e0, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 4037997885288923899, guid: 940899e4ae3b6b447b09fff84b3323c0, type: 2}
+    value: {fileID: 86744812}
+  - key: {fileID: 1825863489231510162, guid: 940899e4ae3b6b447b09fff84b3323c0, type: 2}
+    value: {fileID: 1340672187}
+  - key: {fileID: 4680758340062383495, guid: 940899e4ae3b6b447b09fff84b3323c0, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
+--- !u!114 &17754329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17754327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6630bd5630bc3a4c89370b0ab5dfd51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 205778185}
+  cutscene: {fileID: 17754328}
+  nextScene: 
+  eventName: Maze Aftermath
+  _type: 0
+  previousEventsRequired: []
+--- !u!4 &17754330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17754327}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.8655546, y: 6.0414233, z: -0.053315848}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 205778186}
+  - {fileID: 1340672189}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &79626499
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +511,79 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &205778184
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 17754330}
+    m_Modifications:
+    - target: {fileID: 8373641495270752348, guid: 94acacb7029a6d540879e71133242116, type: 3}
+      propertyPath: m_Name
+      value: event-icon-body
+      objectReference: {fileID: 0}
+    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.8655546
+      objectReference: {fileID: 0}
+    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.0414233
+      objectReference: {fileID: 0}
+    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.053315848
+      objectReference: {fileID: 0}
+    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94acacb7029a6d540879e71133242116, type: 3}
+--- !u!114 &205778185 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8373641496147546364, guid: 94acacb7029a6d540879e71133242116, type: 3}
+  m_PrefabInstance: {fileID: 205778184}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda8da0c9740fac4eba5b62a869654a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &205778186 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8373641495270752349, guid: 94acacb7029a6d540879e71133242116, type: 3}
+  m_PrefabInstance: {fileID: 205778184}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &218721997
 GameObject:
   m_ObjectHideFlags: 0
@@ -2415,7 +2570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 891664359}
   m_Layer: 0
-  m_Name: Office Scene Group
+  m_Name: Printer Scene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2437,7 +2592,7 @@ Transform:
   - {fileID: 2101051316}
   - {fileID: 1431747224}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &939000941
 GameObject:
@@ -4013,7 +4168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1340672188
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4073,13 +4228,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340672187}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.1, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.96, y: -6.04, z: 0.053315848}
   m_LocalScale: {x: 1.651795, y: 1.651795, z: 1.651795}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 17754330}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1340672190
 Animator:
@@ -5494,7 +5649,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1914796178
 PrefabInstance:
@@ -6239,7 +6394,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2075207395
 GameObject:

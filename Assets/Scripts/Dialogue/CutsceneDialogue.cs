@@ -25,15 +25,7 @@ namespace Dialogue {
             indexDiag++;
         }
 
-        public void ChangeProgress(int flag)
-        {
-            if (flag == 0) { state = false; }
-            else { state = true; }
-
-            diagUI.SwapProgressState(state);
-        }
-
-        public void IsCutscene(int flag)
+        public void IsCutscene(int flag)            
         {
             if (flag == 0) { state = false; }
             else { state = true; }
