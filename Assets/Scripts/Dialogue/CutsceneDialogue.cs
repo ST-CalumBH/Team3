@@ -9,6 +9,7 @@ namespace Dialogue {
         [SerializeField] private float[] duration;
 
         private int indexDiag = 0;
+        private int indexDura = 0;
         private bool state;
 
         private DialogueUI diagUI;
@@ -20,9 +21,10 @@ namespace Dialogue {
 
         public void PlayDialogue()
         {
-            diagUI.DialogueLength(duration[indexDiag]);
+            diagUI.DialogueLength(duration[indexDura]);
             diagUI.ShowDialogue(dialogue[indexDiag]);
             indexDiag++;
+            indexDura++;
         }
 
         public void IsCutscene(int flag)            
@@ -31,6 +33,12 @@ namespace Dialogue {
             else { state = true; }
 
             diagUI.CutsceneState(state);
+        }
+
+        public void ChangeDuration()
+        {
+            diagUI.DialogueLength(duration[indexDura]);
+            indexDura++;
         }
     }
 }

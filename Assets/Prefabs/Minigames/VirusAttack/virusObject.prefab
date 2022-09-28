@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 4698070366966332209}
   - component: {fileID: 4698070366966332212}
   - component: {fileID: 4698070366966332214}
-  - component: {fileID: 7900868159037198485}
   - component: {fileID: 3660349996453072059}
+  - component: {fileID: 2470949655884208171}
   m_Layer: 0
   m_Name: virus
   m_TagString: Enemy
@@ -139,32 +139,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &7900868159037198485
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4698070366966332208}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.01, y: 3.22}
-    newSize: {x: 2, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2}
-  m_EdgeRadius: 0
 --- !u!114 &3660349996453072059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,3 +154,19 @@ MonoBehaviour:
   topSpeed: 8
   bottomSpeed: 3
   manager: {fileID: 0}
+--- !u!58 &2470949655884208171
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4698070366966332208}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.070126176, y: -0.060108066}
+  serializedVersion: 2
+  m_Radius: 1.7420131
