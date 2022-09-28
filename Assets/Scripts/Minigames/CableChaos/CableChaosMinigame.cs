@@ -19,6 +19,7 @@ namespace CableChaos {
         public float roundLength;
         public GameObject UI;
         public GameObject Tutorial;
+        public float missCooldownLength;//Higher is shorter cooldown
 
         Image a1Image;
         Image a2Image;
@@ -55,7 +56,7 @@ namespace CableChaos {
             paused = true;
             mSFX = GetComponent<MinigameSFX>();
             spareLife = true;
-            moveSpeed = ((1500 / roundLength) / 60);
+            moveSpeed = ((1500 / roundLength) / 50);
             a1.gameObject.SetActive(false);
             a2.gameObject.SetActive(false);
             s1.gameObject.SetActive(false);
@@ -74,7 +75,7 @@ namespace CableChaos {
             margin = a1.rect.width / 2;
             animControllerPrinter.Play("Idle");
             animControllerKeith.Play("Idle");
-            cooldownLength = roundLength / 5;
+            cooldownLength = roundLength/missCooldownLength;
             StartCoroutine(StartScreen());
         }
 
@@ -102,7 +103,7 @@ namespace CableChaos {
                                 a2Image.color = redColour;
                                 mSFX.PlaySound(0);
                             }
-                            else { cooldown = true; }
+                            else { cooldown = true; cooldownTimer = 0; }
                         }
                         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                         {
@@ -117,7 +118,7 @@ namespace CableChaos {
                                 animControllerPrinter.Play("Attacked");
                                 StartCoroutine(StateTransition());
                             }
-                            else { cooldown = true; }
+                            else { cooldown = true; cooldownTimer = 0; }
                         }
                     }
                     for (int i = 0; i < 3; i++)
@@ -151,7 +152,7 @@ namespace CableChaos {
                                 a1Image.color = redColour;
                                 mSFX.PlaySound(0);
                             }
-                            else { cooldown = true; }
+                            else { cooldown = true; cooldownTimer = 0; }
                         }
                         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                         {
@@ -166,7 +167,7 @@ namespace CableChaos {
                                 mSFX.PlaySound(1);
                                 StartCoroutine(StateTransition());
                             }
-                            else { cooldown = true; }
+                            else { cooldown = true; cooldownTimer = 0; }
                         }
                         
                     }
@@ -197,7 +198,7 @@ namespace CableChaos {
                                 a2Image.color = redColour;
                                 mSFX.PlaySound(0);
                             }
-                            else { cooldown = true; }
+                            else { cooldown = true; cooldownTimer = 0; }
                         }
                         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                         {
@@ -218,7 +219,7 @@ namespace CableChaos {
                                 mSFX.PlaySound(1);
                                 StartCoroutine(StateTransition());
                             }
-                            else { cooldown = true; }
+                            else { cooldown = true; cooldownTimer = 0; }
                         }
                     }
                     for (int i = 0; i < 4; i++)
@@ -327,7 +328,7 @@ namespace CableChaos {
             }
             if (cooldown == true)
             {
-                if (cooldownTimer >= (cooldownLength*60f))
+                if (cooldownTimer >= (cooldownLength*50f))
                 { 
                     cooldown = false;
                     Debug.Log("Cooldown Over");
