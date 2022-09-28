@@ -66,7 +66,7 @@ namespace Overworld {
             if (other.tag == "Player" && colliderTransition == true)
             {
                 player = FindObjectOfType<playerController>();
-                player.freezePlayer();
+                if (player != null) { player.freezePlayer(); }
                 SetSpawnPoint();
                 changeScene();
             }
