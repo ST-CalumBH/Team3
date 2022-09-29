@@ -116,7 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delaySeconds: 5
-  spawnObject: {fileID: 8011426006910563221, guid: 4d0ad16c8dea9204ab3ed0e2ad258435, type: 3}
+  spawnObject: {fileID: 8039168444923257794, guid: b96873a6010f479458e6ec45594f9e82, type: 3}
+  parented: 1
 --- !u!1 &2586043128842857971
 GameObject:
   m_ObjectHideFlags: 0
