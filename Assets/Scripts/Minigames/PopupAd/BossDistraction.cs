@@ -11,6 +11,8 @@ namespace PopupAd {
         [SerializeField] private ClickDetect clickDetect;           // connected so that it can disable the mouse's detection
         public Animator anim;
 
+        public float shakeFrequency;
+
         void Start()
         {
             clickDetect = GameObject.Find("gameManager").GetComponent<ClickDetect>();
@@ -28,6 +30,23 @@ namespace PopupAd {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 counter++;
+
+                CameraBake();
+            }
+        }
+
+        private void CameraBake()
+        {
+            if (shakeFrequency > 0)
+            {
+                Vector3 originalPos = transform.position;
+
+                float offsetX = Random.value * shakeFrequency * 2 - shakeFrequency;
+                float offsetY = Random.value * shakeFrequency * 2 - shakeFrequency;
+                originalPos.x += offsetX;
+                originalPos.y += offsetY;
+
+                transform.position = originalPos;
             }
         }
     }
