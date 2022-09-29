@@ -30,6 +30,7 @@ namespace PopupAd {
 
             if (Input.GetKeyDown(KeyCode.Space) && counter < numToPacify)
             {
+                counter++;
                 StartCoroutine(shaker.CameraBake());
             }
         }
