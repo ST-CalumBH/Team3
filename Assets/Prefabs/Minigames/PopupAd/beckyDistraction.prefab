@@ -391,6 +391,7 @@ MonoBehaviour:
   numToPacify: 15
   clickDetect: {fileID: 0}
   anim: {fileID: 4231604753081031642}
+  shakeFrequency: 0.2
 --- !u!95 &4231604753081031642
 Animator:
   serializedVersion: 4
