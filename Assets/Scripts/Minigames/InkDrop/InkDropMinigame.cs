@@ -19,6 +19,8 @@ namespace InkDrop
         public Slider timebar;
         public GameObject lifeIndicator;
         public MinigameSFX mSFX;
+        public GameObject UI;
+        public GameObject Tutorial;
 
         public float leftBound = -10f;//-10 by default unless walls moved
         public float rightBound = 10f;//10 by default unless walls moved
@@ -29,42 +31,53 @@ namespace InkDrop
         public float startGrace = 3f;//time before shots start
         public float shotDelay = 1f;//delay between shots in a wave
         public bool spareLife;
+        public bool paused;
+        public int counter;
+        public bool warmedUp;
 
         // Start is called before the first frame update
         void Start()
         {
+            warmedUp = false;
+            paused = true;
+            counter = 0;
             AnalyticsService.Instance.CustomData("InkDrop", new Dictionary<string, object>());
             mSFX = GetComponent<MinigameSFX>();
             spareLife = true;
             variance = Random.Range(leftBound, rightBound);
             inkSpawnRef = inkSpawn;
             timebar.maxValue = maxTime;
-            StartCoroutine(WarmUp());
-            StartCoroutine(Timer());
+            
+            StartCoroutine(StartScreen());
         }
 
-        //Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
-            if (time >= maxTime)
+            if (!paused)
             {
-                StartCoroutine(EndMinigame(true));
-            }
-            if (spareLife == false && lifeIndicator.activeInHierarchy)
-            {
-                lifeIndicator.SetActive(false);
+                if (!warmedUp)
+                {
+                    StartCoroutine(WarmUp());
+                    warmedUp = true;
+                }
+                if (time >= maxTime)
+                {
+                    StartCoroutine(EndMinigame(true));
+                }
+                if (spareLife == false && lifeIndicator.activeInHierarchy)
+                {
+                    lifeIndicator.SetActive(false);
+                }
+                time += 0.01f;
+                timebar.value = time;
             }
         }
-
-        IEnumerator Timer()
+        IEnumerator StartScreen()
         {
-            time += 0.01f;
-            timebar.value = time;
-            yield return new WaitForSeconds(0.01f);
-            if (time <= maxTime)
-            {
-                StartCoroutine(Timer());
-            }
+            yield return new WaitForSeconds(2f);
+            Tutorial.SetActive(false);
+            UI.SetActive(true);
+            paused = false;
         }
 
         public IEnumerator WarmUp()

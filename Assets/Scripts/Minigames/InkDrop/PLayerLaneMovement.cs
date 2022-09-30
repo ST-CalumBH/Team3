@@ -1,3 +1,4 @@
+using InkDrop;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,37 +14,42 @@ public class PLayerLaneMovement : MonoBehaviour
     public float walkSFXInterval = 1f;
     bool walkCooldown;
     MinigameSFX mSFX;
+    InkDropMinigame minigame;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         mSFX = GetComponent<MinigameSFX>();
+        minigame = FindObjectOfType<InkDropMinigame>();
     }
 
     private void Update() //inputs
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        if (movement.x > 0)
+        if (!minigame.paused)
         {
-            animController.Play("Walk");
-            sprRend.flipX = false;
-            if (walkCooldown == false)
+            movement.x = Input.GetAxisRaw("Horizontal");
+            if (movement.x > 0)
             {
-                StartCoroutine(WalkSFX());
+                animController.Play("Walk");
+                sprRend.flipX = false;
+                if (walkCooldown == false)
+                {
+                    StartCoroutine(WalkSFX());
+                }
             }
-        }
-        else if (movement.x < 0)
-        {
-            animController.Play("Walk");
-            sprRend.flipX = true;
-            if (walkCooldown == false)
+            else if (movement.x < 0)
             {
-                StartCoroutine(WalkSFX());
+                animController.Play("Walk");
+                sprRend.flipX = true;
+                if (walkCooldown == false)
+                {
+                    StartCoroutine(WalkSFX());
+                }
             }
-        }
-        else
-        {
-            animController.Play("Idle");
+            else
+            {
+                animController.Play("Idle");
+            }
         }
     }
 
@@ -73,7 +79,10 @@ public class PLayerLaneMovement : MonoBehaviour
 
     void FixedUpdate() //movement, physics
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if (!minigame.paused)
+        {
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
     }
 }
 

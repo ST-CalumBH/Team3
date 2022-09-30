@@ -16,6 +16,8 @@ namespace ResetButton
         public Slider selector;
         public Transform handTransform;
         public GameObject selectorPanel;
+        public GameObject Tutorial;
+        public GameObject UI;
 
         public float bounceAngle = 45f;//degrees the hand varies from x axis either side
         public float zRotate = 1f;//Speed of movement
@@ -30,13 +32,16 @@ namespace ResetButton
         float zoneDegrees;
         float handRotation;
         bool cooldown;
+        bool paused = true;
         float cooldownTimer = 0;
         float cooldownLengthFrames;
         MinigameSFX mSFX;
 
+
         // Start is called before the first frame update
         void Start()
         {
+            paused = true;
             mSFX = GetComponent<MinigameSFX>();
             cooldownLengthFrames = cooldownLength * 50f;
             cooldown = false;
@@ -51,42 +56,45 @@ namespace ResetButton
             timebar.maxValue = maxTime;
             timebar.value = 0f;
             AnalyticsService.Instance.CustomData("ResetButton", new Dictionary<string, object>());
-            StartCoroutine(Timer());
+            
+            StartCoroutine(StartScreen());
         }
 
         // Update is called once per frame
         void FixedUpdate()
         {
-
-            if (curState == State.COUNTERCLOCKWISE)
+            if (!paused)
             {
-                handTransform.Rotate(handTransform.rotation.x, handTransform.rotation.y, zRotate);
-                selector.value += zRotate;
-            }
-            if (curState == State.CLOCKWISE)
-            {
-                handTransform.Rotate(handTransform.rotation.x, handTransform.rotation.y, -zRotate);
-                selector.value -= zRotate;
-            }
-            if (handTransform.eulerAngles.z > (handRotation+bounceAngle))
-            {
-                    curState = State.CLOCKWISE;
-            }
-            if (handTransform.eulerAngles.z < (handRotation - bounceAngle))
-            {
-                    curState = State.COUNTERCLOCKWISE;
-            }
-            if (cooldown == true)
-            {
-                if (cooldownTimer >= cooldownLengthFrames)
+                if (curState == State.COUNTERCLOCKWISE)
                 {
-                    cooldown = false;
-                    Debug.Log("Cooldown over");
+                    handTransform.Rotate(handTransform.rotation.x, handTransform.rotation.y, zRotate);
+                    selector.value += zRotate;
                 }
-                else
+                if (curState == State.CLOCKWISE)
                 {
-                    cooldownTimer++;
-                    Debug.Log(cooldownTimer.ToString());
+                    handTransform.Rotate(handTransform.rotation.x, handTransform.rotation.y, -zRotate);
+                    selector.value -= zRotate;
+                }
+                if (handTransform.eulerAngles.z > (handRotation + bounceAngle))
+                {
+                    curState = State.CLOCKWISE;
+                }
+                if (handTransform.eulerAngles.z < (handRotation - bounceAngle))
+                {
+                    curState = State.COUNTERCLOCKWISE;
+                }
+                if (cooldown == true)
+                {
+                    if (cooldownTimer >= cooldownLengthFrames)
+                    {
+                        cooldown = false;
+                        Debug.Log("Cooldown over");
+                    }
+                    else
+                    {
+                        cooldownTimer++;
+                        Debug.Log(cooldownTimer.ToString());
+                    }
                 }
             }
         }
@@ -115,6 +123,15 @@ namespace ResetButton
                 zRotate = 0;
                 StartCoroutine(EndMinigame(false));
             }
+        }
+
+        IEnumerator StartScreen()
+        {
+            yield return new WaitForSeconds(2f);
+            Tutorial.SetActive(false);
+            UI.SetActive(true);
+            paused = false;
+            StartCoroutine(Timer());
         }
 
         IEnumerator Timer()
