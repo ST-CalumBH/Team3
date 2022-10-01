@@ -75,7 +75,7 @@ namespace CableChaos {
             timingBar.maxValue = timingBarWidth;
             tilesMoved = false;
             curState = GameStates.A;
-            margin = a1.rect.width / 2;
+            margin = a1.rect.width / 2 + (a1.rect.width/20);
             animControllerPrinter.Play("Idle");
             animControllerKeith.Play("Idle");
             cooldownLength = roundLength/missCooldownLength;

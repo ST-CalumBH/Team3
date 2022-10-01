@@ -28,6 +28,8 @@ public class MorningYogaMinigame : Minigame
     public Animator backgroundAnim;
     public Animator keithAnim;
     public Slider progressBar;
+    public GameObject Tutorial;
+    public GameObject UI;
 
     public float letterHeight = 375f;
 
@@ -47,6 +49,8 @@ public class MorningYogaMinigame : Minigame
     bool[] stateBResult = { false, false, false };
     bool[] stateCResult = { false, false, false, false };
     bool[] stateDResult = { false, false, false, false };
+
+    bool paused;
 
     MinigameSFX mSFX;
     Image aImage;
@@ -92,301 +96,306 @@ public class MorningYogaMinigame : Minigame
         mSFX = GetComponent<MinigameSFX>();
         recInput = true;
         tilesMoved = false;
+        paused = true;
         curState = GameStates.A;
         keithAnim.Play("Idle");
         backgroundAnim.Play("Idle");
         ResetLetters();
+        StartCoroutine(StartScreen());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (!paused)
         {
-            mSFX.PlaySound(0);
-            int num = UnityEngine.Random.Range(2,7);
-            mSFX.PlaySound(num);
-        }
-        if (curState == GameStates.A && recInput)
-        {
-            if (Input.anyKey && !Input.GetKey(stateA[0]) && !Input.GetKey(stateA[1]))
+            if (Input.anyKeyDown)
             {
-                //Debug.Log("Wrong Input");
-                keithAnim.Play("Idle");
-                stateAResult[0] = false;
-                stateAResult[1] = false;
-                ResetColour();
+                mSFX.PlaySound(0);
+                int num = UnityEngine.Random.Range(2, 7);
+                mSFX.PlaySound(num);
             }
-            else if (Input.anyKey && (Input.GetKey(stateA[0]) | Input.GetKey(stateA[1])))
+            if (curState == GameStates.A && recInput)
             {
-                if (Input.GetKey(stateA[0]))
+                if (Input.anyKey && !Input.GetKey(stateA[0]) && !Input.GetKey(stateA[1]))
                 {
-                    stateAResult[0] = true;
-                    if (Input.GetKey(stateA[1]))
+                    //Debug.Log("Wrong Input");
+                    keithAnim.Play("Idle");
+                    stateAResult[0] = false;
+                    stateAResult[1] = false;
+                    ResetColour();
+                }
+                else if (Input.anyKey && (Input.GetKey(stateA[0]) | Input.GetKey(stateA[1])))
+                {
+                    if (Input.GetKey(stateA[0]))
                     {
-                        keithAnim.Play("Two");
-                        wImage.color = Color.red;
-                        stateAResult[1] = true;
-                    }
-                    else
-                    {
-                        keithAnim.Play("One");
-                        eImage.color = Color.red;
-                    }
-                }
-            }
-            else
-            {
-                keithAnim.Play("Idle");
-                stateAResult[0] = false;
-                stateAResult[1] = false;
-                ResetColour();
-            }
-            int i = 0;
-            foreach (bool b in stateAResult)
-            {
-                if (b == false)
-                {
-                    break;
-                }
-                else
-                {
-                    i++;
-                }
-                if (i >= stateAResult.Length)
-                {
-                    recInput = false;
-                    Debug.Log("Success");
-                    i = 0;
-                    BarUpdate(25f);
-                    StartCoroutine(StateTransition());
-                }
-            }
-        }
-        else if (curState == GameStates.B && recInput)
-        {
-            if (Input.anyKey && !Input.GetKey(stateB[0]) && !Input.GetKey(stateB[1]) && !Input.GetKey(stateB[2]))
-            {
-                keithAnim.Play("Idle");
-                stateBResult[0] = false;
-                stateBResult[1] = false;
-                stateBResult[2] = false;
-                ResetColour();
-            }
-            else if (Input.anyKey && (Input.GetKey(stateB[0]) | Input.GetKey(stateB[1]) | Input.GetKey(stateB[2])))
-            {
-                if (Input.GetKey(stateB[0]))
-                {
-                    stateBResult[0] = true;
-                    if (Input.GetKey(stateB[1]))
-                    {
-                        stateBResult[1] = true;
-
-                        if (Input.GetKey(stateB[2]))
+                        stateAResult[0] = true;
+                        if (Input.GetKey(stateA[1]))
                         {
-                            keithAnim.Play("Three");
-                            gImage.color = Color.red;
-                            stateBResult[2] = true;
+                            keithAnim.Play("Two");
+                            wImage.color = Color.red;
+                            stateAResult[1] = true;
                         }
                         else
                         {
-                            keithAnim.Play("Two");
-                            dImage.color = Color.red;
+                            keithAnim.Play("One");
+                            eImage.color = Color.red;
                         }
                     }
-                    else
-                    {
-                        keithAnim.Play("One");
-                        aImage.color = Color.red;
-                    }
-                }
-            }
-            else
-            {
-                keithAnim.Play("Idle");
-                stateBResult[0] = false;
-                stateBResult[1] = false;
-                stateBResult[2] = false;
-                ResetColour();
-            }
-            int i = 0;
-            foreach (bool b in stateBResult)
-            {
-                if (b == false)
-                {
-                    break;
                 }
                 else
                 {
-                    i++;
+                    keithAnim.Play("Idle");
+                    stateAResult[0] = false;
+                    stateAResult[1] = false;
+                    ResetColour();
                 }
-                if (i >= stateBResult.Length)
+                int i = 0;
+                foreach (bool b in stateAResult)
                 {
-
-                    recInput = false;
-                    Debug.Log("Success");
-                    i = 0;
-                    BarUpdate(50f);
-                    StartCoroutine(StateTransition());
-                }
-            }
-        }
-        else if (curState == GameStates.C && recInput)
-        {
-            if (Input.anyKey && !Input.GetKey(stateC[0]) && !Input.GetKey(stateC[1]) && !Input.GetKey(stateC[2]) && !Input.GetKey(stateC[3]))
-            {
-                keithAnim.Play("Idle");
-                stateCResult[0] = false;
-                stateCResult[1] = false;
-                stateCResult[2] = false;
-                stateCResult[3] = false;
-                ResetColour();
-            }
-            else if (Input.anyKey && (Input.GetKey(stateC[0]) | Input.GetKey(stateC[1]) | Input.GetKey(stateC[2]) | Input.GetKey(stateC[3])))
-            {
-                if (Input.GetKey(stateC[0]))
-                {
-                    stateCResult[0] = true;
-                    if (Input.GetKey(stateC[1]))
+                    if (b == false)
                     {
-                        stateCResult[1] = true;
-                        if (Input.GetKey(stateC[2]))
+                        break;
+                    }
+                    else
+                    {
+                        i++;
+                    }
+                    if (i >= stateAResult.Length)
+                    {
+                        recInput = false;
+                        Debug.Log("Success");
+                        i = 0;
+                        BarUpdate(25f);
+                        StartCoroutine(StateTransition());
+                    }
+                }
+            }
+            else if (curState == GameStates.B && recInput)
+            {
+                if (Input.anyKey && !Input.GetKey(stateB[0]) && !Input.GetKey(stateB[1]) && !Input.GetKey(stateB[2]))
+                {
+                    keithAnim.Play("Idle");
+                    stateBResult[0] = false;
+                    stateBResult[1] = false;
+                    stateBResult[2] = false;
+                    ResetColour();
+                }
+                else if (Input.anyKey && (Input.GetKey(stateB[0]) | Input.GetKey(stateB[1]) | Input.GetKey(stateB[2])))
+                {
+                    if (Input.GetKey(stateB[0]))
+                    {
+                        stateBResult[0] = true;
+                        if (Input.GetKey(stateB[1]))
                         {
-                            stateCResult[2] = true;
-                            if (Input.GetKey(stateC[3]))
+                            stateBResult[1] = true;
+
+                            if (Input.GetKey(stateB[2]))
                             {
-                                keithAnim.Play("Four");
-                                tImage.color = Color.red;
-                                stateCResult[3] = true;
+                                keithAnim.Play("Three");
+                                gImage.color = Color.red;
+                                stateBResult[2] = true;
                             }
                             else
                             {
-                                keithAnim.Play("Three");
-                                zImage.color = Color.red;
+                                keithAnim.Play("Two");
+                                dImage.color = Color.red;
                             }
                         }
                         else
                         {
-                            keithAnim.Play("Two");
+                            keithAnim.Play("One");
                             aImage.color = Color.red;
                         }
                     }
-                    else
-                    {
-                        keithAnim.Play("One");
-                        qImage.color = Color.red;
-                    }
-                }
-            }
-            else
-            {
-                keithAnim.Play("Idle");
-                stateCResult[0] = false;
-                stateCResult[1] = false;
-                stateCResult[2] = false;
-                stateCResult[3] = false;
-                ResetColour();
-            }
-            int i = 0;
-            foreach (bool b in stateCResult)
-            {
-                if (b == false)
-                {
-                    break;
                 }
                 else
                 {
-                    i++;
+                    keithAnim.Play("Idle");
+                    stateBResult[0] = false;
+                    stateBResult[1] = false;
+                    stateBResult[2] = false;
+                    ResetColour();
                 }
-                if (i >= stateCResult.Length)
+                int i = 0;
+                foreach (bool b in stateBResult)
                 {
-
-                    recInput = false;
-                    Debug.Log("Success");
-                    i = 0;
-                    BarUpdate(75f);
-                    StartCoroutine(StateTransition());
-                }
-            }
-        }
-        else if (curState == GameStates.D && recInput)
-        {
-            if (Input.anyKey && !Input.GetKey(stateD[0]) && !Input.GetKey(stateD[1]) && !Input.GetKey(stateD[2]) && !Input.GetKey(stateD[3]))
-            {
-                keithAnim.Play("Idle");
-                stateDResult[0] = false;
-                stateDResult[1] = false;
-                stateDResult[2] = false;
-                stateDResult[3] = false;
-                ResetColour();
-            }
-            else if (Input.anyKey && (Input.GetKey(stateD[0]) | Input.GetKey(stateD[1]) | Input.GetKey(stateD[2]) | Input.GetKey(stateD[3])))
-            {
-                if (Input.GetKey(stateD[0]))
-                {
-                    stateDResult[0] = true;
-                    if (Input.GetKey(stateD[1]))
+                    if (b == false)
                     {
-                        stateDResult[1] = true;
-                        if (Input.GetKey(stateD[2]))
+                        break;
+                    }
+                    else
+                    {
+                        i++;
+                    }
+                    if (i >= stateBResult.Length)
+                    {
+
+                        recInput = false;
+                        Debug.Log("Success");
+                        i = 0;
+                        BarUpdate(50f);
+                        StartCoroutine(StateTransition());
+                    }
+                }
+            }
+            else if (curState == GameStates.C && recInput)
+            {
+                if (Input.anyKey && !Input.GetKey(stateC[0]) && !Input.GetKey(stateC[1]) && !Input.GetKey(stateC[2]) && !Input.GetKey(stateC[3]))
+                {
+                    keithAnim.Play("Idle");
+                    stateCResult[0] = false;
+                    stateCResult[1] = false;
+                    stateCResult[2] = false;
+                    stateCResult[3] = false;
+                    ResetColour();
+                }
+                else if (Input.anyKey && (Input.GetKey(stateC[0]) | Input.GetKey(stateC[1]) | Input.GetKey(stateC[2]) | Input.GetKey(stateC[3])))
+                {
+                    if (Input.GetKey(stateC[0]))
+                    {
+                        stateCResult[0] = true;
+                        if (Input.GetKey(stateC[1]))
                         {
-                            stateDResult[2] = true;
-                            if (Input.GetKey(stateD[3]))
+                            stateCResult[1] = true;
+                            if (Input.GetKey(stateC[2]))
                             {
-                                stateDResult[3] = true;
-                                hImage.color = Color.red;
-                                keithAnim.Play("Four");
+                                stateCResult[2] = true;
+                                if (Input.GetKey(stateC[3]))
+                                {
+                                    keithAnim.Play("Four");
+                                    tImage.color = Color.red;
+                                    stateCResult[3] = true;
+                                }
+                                else
+                                {
+                                    keithAnim.Play("Three");
+                                    zImage.color = Color.red;
+                                }
                             }
                             else
                             {
-                                keithAnim.Play("Three");
-                                mImage.color = Color.red;
+                                keithAnim.Play("Two");
+                                aImage.color = Color.red;
                             }
                         }
                         else
                         {
-                            keithAnim.Play("Two");
-                            aImage.color = Color.red;
+                            keithAnim.Play("One");
+                            qImage.color = Color.red;
                         }
                     }
-                    else
-                    {
-                        keithAnim.Play("One");
-                        pImage.color = Color.red;
-                    }
-                }
-            }
-            else
-            {
-                keithAnim.Play("Idle");
-                stateDResult[0] = false;
-                stateDResult[1] = false;
-                stateDResult[2] = false;
-                stateDResult[3] = false;
-                ResetColour();
-            }
-            int i = 0;
-            foreach (bool b in stateDResult)
-            {
-                if (b == false)
-                {
-                    break;
                 }
                 else
                 {
-                    i++;
+                    keithAnim.Play("Idle");
+                    stateCResult[0] = false;
+                    stateCResult[1] = false;
+                    stateCResult[2] = false;
+                    stateCResult[3] = false;
+                    ResetColour();
                 }
-                if (i >= stateDResult.Length)
+                int i = 0;
+                foreach (bool b in stateCResult)
                 {
-                    recInput = false;
-                    Debug.Log("Success");
-                    i = 0;
-                    BarUpdate(100f);
-                    StartCoroutine(StateTransition());
+                    if (b == false)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        i++;
+                    }
+                    if (i >= stateCResult.Length)
+                    {
+
+                        recInput = false;
+                        Debug.Log("Success");
+                        i = 0;
+                        BarUpdate(75f);
+                        StartCoroutine(StateTransition());
+                    }
                 }
             }
+            else if (curState == GameStates.D && recInput)
+            {
+                if (Input.anyKey && !Input.GetKey(stateD[0]) && !Input.GetKey(stateD[1]) && !Input.GetKey(stateD[2]) && !Input.GetKey(stateD[3]))
+                {
+                    keithAnim.Play("Idle");
+                    stateDResult[0] = false;
+                    stateDResult[1] = false;
+                    stateDResult[2] = false;
+                    stateDResult[3] = false;
+                    ResetColour();
+                }
+                else if (Input.anyKey && (Input.GetKey(stateD[0]) | Input.GetKey(stateD[1]) | Input.GetKey(stateD[2]) | Input.GetKey(stateD[3])))
+                {
+                    if (Input.GetKey(stateD[0]))
+                    {
+                        stateDResult[0] = true;
+                        if (Input.GetKey(stateD[1]))
+                        {
+                            stateDResult[1] = true;
+                            if (Input.GetKey(stateD[2]))
+                            {
+                                stateDResult[2] = true;
+                                if (Input.GetKey(stateD[3]))
+                                {
+                                    stateDResult[3] = true;
+                                    hImage.color = Color.red;
+                                    keithAnim.Play("Four");
+                                }
+                                else
+                                {
+                                    keithAnim.Play("Three");
+                                    mImage.color = Color.red;
+                                }
+                            }
+                            else
+                            {
+                                keithAnim.Play("Two");
+                                aImage.color = Color.red;
+                            }
+                        }
+                        else
+                        {
+                            keithAnim.Play("One");
+                            pImage.color = Color.red;
+                        }
+                    }
+                }
+                else
+                {
+                    keithAnim.Play("Idle");
+                    stateDResult[0] = false;
+                    stateDResult[1] = false;
+                    stateDResult[2] = false;
+                    stateDResult[3] = false;
+                    ResetColour();
+                }
+                int i = 0;
+                foreach (bool b in stateDResult)
+                {
+                    if (b == false)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        i++;
+                    }
+                    if (i >= stateDResult.Length)
+                    {
+                        recInput = false;
+                        Debug.Log("Success");
+                        i = 0;
+                        BarUpdate(100f);
+                        StartCoroutine(StateTransition());
+                    }
+                }
+            }
+            ColourReset();
         }
-        ColourReset();
     }
 
     void BarUpdate(float progress)
@@ -412,7 +421,13 @@ public class MorningYogaMinigame : Minigame
             zImage.color = Color.white;
         }
     }
-
+    IEnumerator StartScreen()
+    {
+        yield return new WaitForSeconds(2f);
+        Tutorial.SetActive(false);
+        UI.SetActive(true);
+        paused = false;
+    }
     IEnumerator StateTransition()
     {
         mSFX.PlaySound(1);
