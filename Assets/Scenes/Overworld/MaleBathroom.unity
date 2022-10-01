@@ -606,8 +606,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: OfficeReturned
   newSpawnPoint: 1
-  colliderTransition: 1
-  interactTransition: 0
+  colliderTransition: 0
+  interactTransition: 1
   transition: {fileID: 1173572114}
   transitionTime: 1
 --- !u!4 &492040585
@@ -2930,6 +2930,8 @@ PlayableDirector:
     value: {fileID: 1928489438}
   - key: {fileID: -3436492756032769115, guid: ba2054f1b40676e4ea6bd64246b0a78c, type: 2}
     value: {fileID: 1251718681}
+  - key: {fileID: 7884112033618082955, guid: ba2054f1b40676e4ea6bd64246b0a78c, type: 2}
+    value: {fileID: 1216547831}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1740400429
