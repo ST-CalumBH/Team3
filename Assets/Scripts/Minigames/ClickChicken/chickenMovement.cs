@@ -27,7 +27,9 @@ namespace ClickChicken {
         private float blinkLength = 3f;
         private float directionElaspedTime = 0f;
 
-        public float timerChecker = 0f;
+        private float noiseWaitTime = 5f;
+
+        public MinigameSFX mSFX;
 
         void Start()
         {
@@ -56,7 +58,6 @@ namespace ClickChicken {
             {
                 directionElaspedTime += Time.deltaTime;
 
-                timerChecker = directionElaspedTime;
 
                 if (directionElaspedTime >= directionFrequency)
                 {
@@ -84,6 +85,7 @@ namespace ClickChicken {
             if (lives == 0)
             {
                 anim.Play("hit");
+                mSFX.PlaySound(1);
                 win = true;
             }
         }
@@ -93,6 +95,7 @@ namespace ClickChicken {
             blinkTimer = 0;
             Color color = sprite.color;
             hitStun = true;
+            mSFX.PlaySound(0);
 
             while (blinkTimer != blinkLength)
             {

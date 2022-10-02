@@ -8,6 +8,7 @@ namespace ChargedSpatula {
         private bool defeated = false;
         private Vector3 direction;
         public Animator anim;
+        public MinigameSFX mSFX;
 
         void Start()
         {
@@ -19,6 +20,7 @@ namespace ChargedSpatula {
             if (defeated == true)
             {
                 anim.Play("chicken_flung");
+                mSFX.PlaySound(0);
             }
         }
 
