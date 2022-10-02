@@ -15,17 +15,14 @@ namespace ChargedSpatula {
             direction = new Vector3(Random.Range(0.06f, 0.1f), Random.Range(0.06f, 0.1f), 0);
         }
 
-        void FixedUpdate()
-        {
-            if (defeated == true)
-            {
-                anim.Play("chicken_flung");
-                mSFX.PlaySound(0);
-            }
-        }
-
         public void defeatedStateChange()
         {
+            if (!defeated)
+            {
+                mSFX.PlaySound(0, 0.3f);
+                anim.Play("chicken_flung");
+            }
+
             defeated = true;
         }
     }

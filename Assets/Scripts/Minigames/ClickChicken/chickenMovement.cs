@@ -27,8 +27,6 @@ namespace ClickChicken {
         private float blinkLength = 3f;
         private float directionElaspedTime = 0f;
 
-        private float noiseWaitTime = 5f;
-
         public MinigameSFX mSFX;
 
         void Start()

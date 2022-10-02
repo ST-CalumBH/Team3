@@ -919,11 +919,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 473791172731169826, guid: aa05cf306bb8d5448854e4e8edfa462c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 473791172731169826, guid: aa05cf306bb8d5448854e4e8edfa462c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.586
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1925869216314914996, guid: aa05cf306bb8d5448854e4e8edfa462c, type: 3}
       propertyPath: m_LocalScale.y
@@ -943,7 +943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9137753762869496136, guid: aa05cf306bb8d5448854e4e8edfa462c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9137753762869496139, guid: aa05cf306bb8d5448854e4e8edfa462c, type: 3}
       propertyPath: m_RootOrder
@@ -1596,6 +1596,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4044468095900025758, guid: 932cccf8034b05e44b28f7d5075d206b, type: 3}
+      propertyPath: m_Volume
+      value: 0.112
+      objectReference: {fileID: 0}
     - target: {fileID: 9137753762869496136, guid: 932cccf8034b05e44b28f7d5075d206b, type: 3}
       propertyPath: m_Name
       value: mg_ClickChicken
