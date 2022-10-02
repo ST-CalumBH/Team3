@@ -106,7 +106,7 @@ namespace SheepJump
 
                 //gaining distance
                 distance += velocity.x * Time.fixedDeltaTime;
-                if (distance >= 500f)
+                if (distance >= 470f)
                 {
                     StartCoroutine(EndGame());
                 }
