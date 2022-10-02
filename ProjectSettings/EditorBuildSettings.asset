@@ -66,8 +66,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Testing/PottyRacers.unity
     guid: 1dcc1ace844cbfc49982ef0bca649cd7
   - enabled: 1
+    path: Assets/Scenes/Testing/PottyRacers2.unity
+    guid: f1d55dc02d280704c827877223d5ab8d
+  - enabled: 1
     path: Assets/Scenes/Testing/VirusAttack.unity
     guid: 3b47cdc7ce89a8348b77b455e52f6d75
+  - enabled: 1
+    path: Assets/Scenes/Testing/VirusAttack2.unity
+    guid: def39a941064c7349909696853c7b1cd
   - enabled: 1
     path: Assets/Scenes/Overworld/Post Combat Home Scenes/OfficePostPrinter.unity
     guid: 940f820e916c9e941a13e98b43c43df4
