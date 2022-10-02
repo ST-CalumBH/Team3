@@ -3301,5 +3301,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: mg_MorningYoga
       objectReference: {fileID: 0}
+    - target: {fileID: 8855652220489931604, guid: 2998907b4236abc428fbe055f0f3bfb0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2998907b4236abc428fbe055f0f3bfb0, type: 3}

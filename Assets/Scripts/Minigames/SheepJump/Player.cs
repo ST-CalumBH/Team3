@@ -106,7 +106,7 @@ namespace SheepJump
 
                 //gaining distance
                 distance += velocity.x * Time.fixedDeltaTime;
-                if (distance >= 470f)
+                if (distance >= 500f)
                 {
                     StartCoroutine(EndGame());
                 }
@@ -166,6 +166,10 @@ namespace SheepJump
 
         IEnumerator EndGame()
         {
+            ended = true;
+            blackout.SetActive(true);
+            velocity.x = 0f;
+            velocity.y = 0f;
             yield return new WaitForSeconds(1f);
             SceneManager.LoadScene("homeBedroomScene");
         }
