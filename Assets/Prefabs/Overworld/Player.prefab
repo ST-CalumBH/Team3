@@ -312,6 +312,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   animator: {fileID: 7706034308894484296}
   dialogueUI: {fileID: 0}
+  walkSFXDelay: 0.5
   playerFreeze: 0
   indicatorE: {fileID: 5801943956100284353}
   spawnPoints: []
@@ -492,5 +493,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mgAudioSource: {fileID: 0}
   audioClips:
-  - {fileID: 8300000, guid: 28a7d66741039754598dca0bc487e579, type: 3}
+  - {fileID: 8300000, guid: a0997d74281a7fc459c0be4b80b33dab, type: 3}
   - {fileID: 8300000, guid: 993f5de0134b9c149b52cc5685f338cb, type: 3}
