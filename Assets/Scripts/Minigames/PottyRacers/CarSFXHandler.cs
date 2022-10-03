@@ -38,13 +38,13 @@ public class CarSFXHandler : MonoBehaviour
         engineAudio.volume = Mathf.Lerp(engineAudio.volume, desiredEngineVolume, Time.deltaTime * 10);
 
         desiredEnginePitch = velocityMagnitude * 0.2f;
-        desiredEnginePitch = Mathf.Clamp(desiredEnginePitch, 0.5f, 2f);
-        engineAudio.pitch = Mathf.Lerp(engineAudio.pitch, desiredEnginePitch, Time.deltaTime * 1.5f);
+        desiredEnginePitch = Mathf.Clamp(desiredEnginePitch, 0.5f, 1.2f);
+        engineAudio.pitch = Mathf.Lerp(engineAudio.pitch, desiredEnginePitch, Time.deltaTime * 1.12f);
     }
 
     void UpdateTireNoiseSFX()
     {
-        if(carController.IsTireScreeching(out float lateralVelocity, out bool isBraking))
+        if (carController.IsTireScreeching(out float lateralVelocity, out bool isBraking))
         {
             if (isBraking)
             {
@@ -58,5 +58,20 @@ public class CarSFXHandler : MonoBehaviour
 
             }
         }
+        else tireScreechAudio.volume = Mathf.Lerp(tireScreechAudio.volume, 0, Time.deltaTime * 10);
+       
+    }
+
+    void OnCollisionEnter2D(Collision2D collision2D)
+    {
+        float relativeVelocity = collision2D.relativeVelocity.magnitude;
+        float volume = relativeVelocity * 0.1f;
+
+        carHitAudio.pitch = Random.Range(0.95f, 1.05f);
+        carHitAudio.volume = volume;
+
+        if (!carHitAudio.isPlaying)
+            carHitAudio.Play();
     }
 }
+
