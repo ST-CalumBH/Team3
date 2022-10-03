@@ -139,11 +139,12 @@ namespace Overworld {
 
         public IEnumerator PlayAudioClip(float time)
         {
-            yield return new WaitForSeconds(time);
+            //yield return new WaitForSeconds(time);
             if (!sfxController.mgAudioSource.isPlaying)
             {
                 sfxController.PlaySound(0);
             }
+            yield return null;
             
         }
 
