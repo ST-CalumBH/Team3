@@ -18,6 +18,8 @@ namespace SwordDodge
         public List<Warning> warnings;
         public ParticleSystem hurt;
 
+        [SerializeField] GameObject Tutorial;
+
         SpriteRenderer lWarning;
         SpriteRenderer mWarning;
         SpriteRenderer rWarning;
@@ -27,6 +29,7 @@ namespace SwordDodge
         public int dodgeCount = 0;
         public bool isAttacking;
         bool cooldown = false;
+        bool paused = true;
 
         // Start is called before the first frame update
         void Start()
@@ -45,64 +48,67 @@ namespace SwordDodge
             mWarning.enabled = false;
             rWarning.enabled = false;
             player = FindObjectOfType<SwordDodgePlayer>();
-            laneNum = player.curPosition;
-            StartCoroutine(ShowWarning());
+            laneNum = player.curPosition;;
+            StartCoroutine(StartScreen());
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (!cooldown)
+            if (!paused)
             {
-                if (isAttacking == true)
+                if (!cooldown)
                 {
-                    switch (laneNum)
+                    if (isAttacking == true)
                     {
-                        case 0:
-                            if (player.isTouching == PositionEnum.LEFT)
-                            {
-                                //Debug.Log("Left Hit");
-                                Debug.Log("Reset");
-                                dodgeCount = 0;
-                                StartCoroutine(Hurt());
-                                StartCoroutine(CooldownTimer());
-                            }
-                            else
-                            {
-                                dodgeCount++;
-                                StartCoroutine(CooldownTimer());
-                            }
-                            break;
-                        case 1:
-                            if (player.isTouching == PositionEnum.MIDDLE)
-                            {
-                                //Debug.Log("Middle Hit");
-                                Debug.Log("Reset");
-                                dodgeCount = 0;
-                                StartCoroutine(Hurt());
-                                StartCoroutine(CooldownTimer());
-                            }
-                            else
-                            {
-                                dodgeCount++;
-                                StartCoroutine(CooldownTimer());
-                            }
-                            break;
-                        case 2:
-                            if (player.isTouching == PositionEnum.RIGHT)
-                            {
-                                //Debug.Log("Right Hit");
-                                Debug.Log("Reset");
-                                dodgeCount = 0;
-                                StartCoroutine(Hurt());
-                                StartCoroutine(CooldownTimer());
-                            }
-                            else
-                            {
-                                dodgeCount++;
-                                StartCoroutine(CooldownTimer());
-                            }
-                            break;
+                        switch (laneNum)
+                        {
+                            case 0:
+                                if (player.isTouching == PositionEnum.LEFT)
+                                {
+                                    //Debug.Log("Left Hit");
+                                    Debug.Log("Reset");
+                                    dodgeCount = 0;
+                                    StartCoroutine(Hurt());
+                                    StartCoroutine(CooldownTimer());
+                                }
+                                else
+                                {
+                                    dodgeCount++;
+                                    StartCoroutine(CooldownTimer());
+                                }
+                                break;
+                            case 1:
+                                if (player.isTouching == PositionEnum.MIDDLE)
+                                {
+                                    //Debug.Log("Middle Hit");
+                                    Debug.Log("Reset");
+                                    dodgeCount = 0;
+                                    StartCoroutine(Hurt());
+                                    StartCoroutine(CooldownTimer());
+                                }
+                                else
+                                {
+                                    dodgeCount++;
+                                    StartCoroutine(CooldownTimer());
+                                }
+                                break;
+                            case 2:
+                                if (player.isTouching == PositionEnum.RIGHT)
+                                {
+                                    //Debug.Log("Right Hit");
+                                    Debug.Log("Reset");
+                                    dodgeCount = 0;
+                                    StartCoroutine(Hurt());
+                                    StartCoroutine(CooldownTimer());
+                                }
+                                else
+                                {
+                                    dodgeCount++;
+                                    StartCoroutine(CooldownTimer());
+                                }
+                                break;
+                        }
                     }
                 }
             }
@@ -215,6 +221,14 @@ namespace SwordDodge
             cooldown = true;
             yield return new WaitForSeconds(1.5f);
             cooldown = false;
+        }
+        IEnumerator StartScreen()
+        {
+            yield return new WaitForSeconds(2f);
+            Tutorial.SetActive(false);
+            paused = false;
+
+            StartCoroutine(ShowWarning());
         }
     }
 }

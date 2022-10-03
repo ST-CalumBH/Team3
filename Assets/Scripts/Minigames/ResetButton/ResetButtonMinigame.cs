@@ -41,10 +41,10 @@ namespace ResetButton
         // Start is called before the first frame update
         void Start()
         {
+            cooldown = true;
             paused = true;
             mSFX = GetComponent<MinigameSFX>();
             cooldownLengthFrames = cooldownLength * 50f;
-            cooldown = false;
             handRotation = handTransform.rotation.eulerAngles.z;
             selector.maxValue = bounceAngle;
             selector.minValue = -bounceAngle;
@@ -127,10 +127,16 @@ namespace ResetButton
 
         IEnumerator StartScreen()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
+            cooldown = true;
+            cooldownTimer = 0;
+            yield return new WaitForSeconds(1f);
+            cooldown = true;
+            cooldownTimer = 0;
             Tutorial.SetActive(false);
             UI.SetActive(true);
             paused = false;
+            
             StartCoroutine(Timer());
         }
 

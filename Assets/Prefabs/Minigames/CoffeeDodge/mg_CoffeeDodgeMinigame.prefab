@@ -470,7 +470,7 @@ MonoBehaviour:
   CoffeePrefab: {fileID: 7228636824668033094, guid: 29c507df6a778954bbf750ccbab9d17d, type: 3}
   player: {fileID: 5916244346256242048}
   text: {fileID: 1165809472051366295}
-  hurt: {fileID: 2815424096754683367, guid: 1a8de19fd568c9649b70ee58d098f94a, type: 3}
+  hurt: {fileID: 2815424096754683367, guid: 9290e75c523350b4786b0a0e0701c4bb, type: 3}
   winThreshold: 9
   dodgeCount: 0
 --- !u!82 &3088253444396342255
