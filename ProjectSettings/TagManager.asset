@@ -54,6 +54,9 @@ TagManager:
   - name: Background
     uniqueID: 2895920117
     locked: 0
+  - name: Skidmarks
+    uniqueID: 563935917
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
