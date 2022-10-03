@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mgAudioSource: {fileID: 4082903494479682449}
   audioClips:
-  - {fileID: 8300000, guid: 0947fe35269be3b40bc63d728aa71bc3, type: 3}
+  - {fileID: 0}
 --- !u!95 &3531453037626881173
 Animator:
   serializedVersion: 4
