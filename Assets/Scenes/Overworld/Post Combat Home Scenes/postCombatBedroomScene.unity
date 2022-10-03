@@ -2623,12 +2623,20 @@ PrefabInstance:
       value: Overworld_1_8_bit_rough_mix
       objectReference: {fileID: 0}
     - target: {fileID: 4125305283162979353, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: sceneNames.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125305283162979353, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
       propertyPath: sceneNames.Array.data[0]
       value: homeBedroomScene
       objectReference: {fileID: 0}
     - target: {fileID: 4125305283162979353, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
       propertyPath: sceneNames.Array.data[1]
       value: homeMainCutscene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125305283162979353, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: sceneNames.Array.data[11]
+      value: DuckRoad
       objectReference: {fileID: 0}
     - target: {fileID: 7960704008933148865, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
       propertyPath: m_RootOrder
