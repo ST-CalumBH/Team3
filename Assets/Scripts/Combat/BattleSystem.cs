@@ -31,6 +31,7 @@ namespace Combat {
 		Camera cam;
 
 		public DialogueUI diagUI;
+		public float diagWaitTime = 3f;
 
 		public int spawnPointSetTo = 0;
 
@@ -40,6 +41,7 @@ namespace Combat {
 			cam = Camera.main;
 			state = BattleState.START;
 			diagUI = FindObjectOfType<DialogueUI>();
+			diagUI.DialogueLength(diagWaitTime);
 			StartCoroutine(SetupBattle());
 		}
 
