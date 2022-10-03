@@ -13,6 +13,10 @@ public class CarController : MonoBehaviour
     public float accelFactor = 30.0f;
     public float turnFacotor = 3.5f;
 
+    public float GetVelocityMagnitude()
+    {
+        return carRigidbody2D.velocity.magnitude;
+    }
     public float drag = 3f;
 
     //local variables
@@ -118,7 +122,7 @@ public class CarController : MonoBehaviour
                 return true;
             }
 
-            if (Mathf.Abs(GetLateralVeloctiy()) > 4.0f)
+            if (Mathf.Abs(GetLateralVeloctiy()) > 2.0f)
                 return true;
 
             return false;
