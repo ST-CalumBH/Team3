@@ -48,11 +48,12 @@ MonoBehaviour:
   unitName: Chicken Knight
   unitLevel: 1
   damage: 10
-  maxHP: 19
-  currentHP: 19
+  maxHP: 30
+  currentHP: 30
   minigames:
   - {fileID: 1165809471205156286, guid: fa24c558ed452bf45b86b0291ac71804, type: 3}
   - {fileID: 2586043128723799027, guid: 5848ee9e95d68a348b68e48d9d8c61d4, type: 3}
+  - {fileID: 3033127074467771894, guid: b1595504ccd057f46a12ede6e5b785db, type: 3}
   playedMinigame: {fileID: 0}
   minigameCount: 0
   dialogueList:
@@ -60,6 +61,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d5b0cc85b5a43614dbae6c97db28991a, type: 2}
   - {fileID: 11400000, guid: a5232c9cd22604d48a63a4277fadd1c2, type: 2}
   - {fileID: 11400000, guid: f585453bf78fbb94fa7fa1620969e3b5, type: 2}
+  - {fileID: 11400000, guid: 1b82336e297e88d4790bf5f85e406c3e, type: 2}
   - {fileID: 11400000, guid: 1b82336e297e88d4790bf5f85e406c3e, type: 2}
 --- !u!1 &8878252217783823685
 GameObject:

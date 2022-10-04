@@ -242,6 +242,7 @@ MonoBehaviour:
   enemyHUD: {fileID: 177893612}
   state: 0
   diagUI: {fileID: 0}
+  diagWaitTime: 3
   spawnPointSetTo: 0
 --- !u!4 &112044625
 Transform:
