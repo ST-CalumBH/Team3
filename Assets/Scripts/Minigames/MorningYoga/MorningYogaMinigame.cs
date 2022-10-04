@@ -111,7 +111,6 @@ public class MorningYogaMinigame : Minigame
         {
             if (Input.anyKeyDown)
             {
-                mSFX.PlaySound(0);
                 int num = UnityEngine.Random.Range(2, 7);
                 mSFX.PlaySound(num);
             }

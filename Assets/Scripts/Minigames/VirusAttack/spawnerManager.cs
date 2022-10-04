@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace VirusAttack {
+namespace VirusAttack
+{
     public class spawnerManager : MonoBehaviour
     {
         public GameObject item;
@@ -27,26 +28,31 @@ namespace VirusAttack {
         public float TopY;
         public float BottomY;
 
+        public bool paused = true;
+
         void Update()
         {
-            spawnElaspedTime += Time.deltaTime;
-
-            if (spawnElaspedTime >= spawnDelay && gameActive == true)
+            if(!paused)
             {
-                if (spawnCounter < amount2Spawn && limitedSpawn == true)
+                spawnElaspedTime += Time.deltaTime;
+
+                if (spawnElaspedTime >= spawnDelay && gameActive == true)
                 {
-                    spawnCounter++;
-                    spawnElaspedTime = 0f;
-                    spawnDelay = Random.Range(btmSpawnDelay, topSpawnDelay);
-                    randomMove();
-                    spawnItem();
-                }
-                else if (limitedSpawn == false)
-                {
-                    spawnElaspedTime = 0f;
-                    spawnDelay = Random.Range(btmSpawnDelay, topSpawnDelay);
-                    randomMove();
-                    spawnItem();
+                    if (spawnCounter < amount2Spawn && limitedSpawn == true)
+                    {
+                        spawnCounter++;
+                        spawnElaspedTime = 0f;
+                        spawnDelay = Random.Range(btmSpawnDelay, topSpawnDelay);
+                        randomMove();
+                        spawnItem();
+                    }
+                    else if (limitedSpawn == false)
+                    {
+                        spawnElaspedTime = 0f;
+                        spawnDelay = Random.Range(btmSpawnDelay, topSpawnDelay);
+                        randomMove();
+                        spawnItem();
+                    }
                 }
             }
         }

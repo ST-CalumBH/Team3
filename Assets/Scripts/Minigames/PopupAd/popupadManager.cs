@@ -12,21 +12,26 @@ namespace PopupAd {
         [SerializeField] private int CurrentAds = 0;
 
         [SerializeField] private spawnerManager spawnManager;
+        [SerializeField] GameObject Tutorial;
 
         private bool updateOn = false;
+        public bool paused = true;
 
         private void Start()
         {
             AnalyticsService.Instance.CustomData("PopupAd", new Dictionary<string, object>());
-            StartCoroutine(UpdatePause());
+            StartCoroutine(StartScreen());
         }
 
         void Update()
         {
-            if (CurrentAds == 0 && updateOn == true)
+            if (!paused)
             {
-                spawnManager.spawnerOff();
-                StartCoroutine(EndMinigame(2f, true));
+                if (CurrentAds == 0 && updateOn == true)
+                {
+                    spawnManager.spawnerOff();
+                    StartCoroutine(EndMinigame(2f, true));
+                }
             }
         }
 
@@ -38,6 +43,16 @@ namespace PopupAd {
         public void AdDeleted()
         {
             CurrentAds--;
+        }
+
+        IEnumerator StartScreen()
+        {
+            yield return new WaitForSeconds(2f);
+            Tutorial.SetActive(false);
+            paused = false;
+            spawnerManager SM = FindObjectOfType<spawnerManager>();
+            SM.paused = false;
+            StartCoroutine(UpdatePause());
         }
 
         IEnumerator UpdatePause()

@@ -11,14 +11,19 @@ namespace VirusAttack {
         public GameObject bullet;
         public MinigameSFX mSFX;
 
+        public bool paused = true;
+
         void Update()
         {
-            fireElaspedTime += Time.deltaTime;
-
-            if (Input.GetKey(KeyCode.Space) && fireElaspedTime >= fireDelay)
+            if (!paused)
             {
-                fireElaspedTime = 0f;
-                ShootProjectile();
+                fireElaspedTime += Time.deltaTime;
+
+                if (Input.GetKey(KeyCode.Space) && fireElaspedTime >= fireDelay)
+                {
+                    fireElaspedTime = 0f;
+                    ShootProjectile();
+                }
             }
         }
 

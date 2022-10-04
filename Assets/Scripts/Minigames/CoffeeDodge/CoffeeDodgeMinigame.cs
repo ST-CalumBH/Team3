@@ -17,8 +17,10 @@ namespace CoffeeDodge
 
         public GameObject Boss;
         public GameObject CoffeePrefab;
-
         public CoffeeDodgePlayer player;
+
+        public GameObject UI;
+        public GameObject Tutorial;
 
 
         public Text text;
@@ -33,6 +35,7 @@ namespace CoffeeDodge
         int attackNumber = 0;
         public int dodgeCount = 0;
         bool cooldown = false;
+        bool paused = true;
 
         // Start is called before the first frame update
         void Start()
@@ -42,58 +45,65 @@ namespace CoffeeDodge
             animator = Boss.GetComponent<Animator>();
             animator.StopPlayback();
             player = FindObjectOfType<CoffeeDodgePlayer>();
-            StartCoroutine(QueueAttacks(2));
+            paused = true;
+            StartCoroutine(StartScreen());
         }
 
         // Update is called once per frame
         void Update()
         {
-            text.text = dodgeCount.ToString();
-            if (!cooldown)
+            if (!paused)
             {
-                if (attacking[0]) {
-                    if (player.isTouching == CoffeeDodgePositionEnum.LEFT)
+                text.text = dodgeCount.ToString();
+                if (!cooldown)
+                {
+                    if (attacking[0])
                     {
-                        Debug.Log("Left Hit");
-                        dodgeCount--;
-                        StartCoroutine(Hurt());
-                        StartCoroutine(CooldownTimer());
+                        if (player.isTouching == CoffeeDodgePositionEnum.LEFT)
+                        {
+                            Debug.Log("Left Hit");
+                            dodgeCount--;
+                            StartCoroutine(Hurt());
+                            StartCoroutine(CooldownTimer());
+                        }
+                        else
+                        {
+                            dodgeCount++;
+                            StartCoroutine(CooldownTimer());
+                        }
                     }
-                    else
+                    if (attacking[1])
                     {
-                        dodgeCount++;
-                        StartCoroutine(CooldownTimer());
+                        if (player.isTouching == CoffeeDodgePositionEnum.MIDDLE)
+                        {
+                            Debug.Log("Middle Hit");
+                            dodgeCount--;
+                            StartCoroutine(Hurt());
+                            StartCoroutine(CooldownTimer());
+                        }
+                        else
+                        {
+                            dodgeCount++;
+                            StartCoroutine(CooldownTimer());
+                        }
                     }
+                    if (attacking[2])
+                    {
+                        if (player.isTouching == CoffeeDodgePositionEnum.RIGHT)
+                        {
+                            Debug.Log("Right Hit");
+                            dodgeCount--;
+                            StartCoroutine(Hurt());
+                            StartCoroutine(CooldownTimer());
+                        }
+                        else
+                        {
+                            dodgeCount++;
+                            StartCoroutine(CooldownTimer());
+                        }
+                    }
+                    if (dodgeCount < 0) dodgeCount = 0;
                 }
-                if (attacking[1]) {
-                    if (player.isTouching == CoffeeDodgePositionEnum.MIDDLE)
-                    {
-                        Debug.Log("Middle Hit");
-                        dodgeCount--;
-                        StartCoroutine(Hurt());
-                        StartCoroutine(CooldownTimer());
-                    }
-                    else
-                    {
-                        dodgeCount++;
-                        StartCoroutine(CooldownTimer());
-                    }
-                }
-                if (attacking[2]) {
-                    if (player.isTouching == CoffeeDodgePositionEnum.RIGHT)
-                    {
-                        Debug.Log("Right Hit");
-                        dodgeCount--;
-                        StartCoroutine(Hurt());
-                        StartCoroutine(CooldownTimer());
-                    }
-                    else
-                    {
-                        dodgeCount++;
-                        StartCoroutine(CooldownTimer());
-                    }
-                }
-                if (dodgeCount < 0) dodgeCount = 0; 
             }
         }
 
@@ -142,6 +152,15 @@ namespace CoffeeDodge
                 StartCoroutine(Attack(lane));
                 yield return new WaitForSeconds(0.75f);
             }
+        }
+
+        IEnumerator StartScreen()
+        {
+            yield return new WaitForSeconds(2f);
+            Tutorial.SetActive(false);
+            UI.SetActive(true);
+            paused = false;
+            StartCoroutine(QueueAttacks(2));
         }
 
         IEnumerator Attack(int laneNum)
