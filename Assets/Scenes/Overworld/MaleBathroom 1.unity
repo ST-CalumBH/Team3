@@ -674,8 +674,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: OfficePostPrinter
   newSpawnPoint: 1
-  colliderTransition: 1
-  interactTransition: 0
+  colliderTransition: 0
+  interactTransition: 1
   transition: {fileID: 1173572114}
   transitionTime: 1
 --- !u!4 &492040585
