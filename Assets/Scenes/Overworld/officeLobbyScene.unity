@@ -272,7 +272,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1399047179
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cac08922741ac7048bd50e7b8e924e88, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -910,6 +910,12 @@ MonoBehaviour:
   midDoor: {fileID: 402545048}
   rightDoor: {fileID: 1598162231}
   Parent: {fileID: 314648579}
+  bellDingVol: 0.25
+  correctVol: 1
+  incorrectVol: 1
+  musicVol: 0.15
+  wooshVol: 1
+  surpriseVol: 1
 --- !u!114 &314648585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3124,7 +3130,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1399047179
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cac08922741ac7048bd50e7b8e924e88, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3543,6 +3549,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicPersistentManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4083356481799431448, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7960704008933148865, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3796,7 +3806,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1399047179
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a348ecaa305e8a745b0e1a3240d6df05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3944,7 +3954,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1399047179
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f0fcb9fc0bbf6fc47ba5edcb763e36fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4807,7 +4817,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1399047179
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cac08922741ac7048bd50e7b8e924e88, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5113,7 +5123,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1399047179
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cac08922741ac7048bd50e7b8e924e88, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4125305283162979353, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
       propertyPath: sceneNames.Array.size
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4125305283162979353, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
       propertyPath: sceneNames.Array.data[0]
@@ -151,12 +151,28 @@ PrefabInstance:
       value: homeMainCutscene
       objectReference: {fileID: 0}
     - target: {fileID: 4125305283162979353, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
-      propertyPath: sceneNames.Array.data[8]
+      propertyPath: sceneNames.Array.data[4]
+      value: officeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125305283162979353, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: sceneNames.Array.data[5]
+      value: postCombatBedroomScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125305283162979353, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: sceneNames.Array.data[6]
+      value: postCombatHomeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125305283162979353, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: sceneNames.Array.data[7]
       value: postCombatHomeScene2
       objectReference: {fileID: 0}
     - target: {fileID: 4125305283162979353, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
-      propertyPath: sceneNames.Array.data[9]
+      propertyPath: sceneNames.Array.data[8]
       value: homeBedroomScene Re-entered
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125305283162979353, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: sceneNames.Array.data[9]
+      value: DuckRoad
       objectReference: {fileID: 0}
     - target: {fileID: 4125305283162979353, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
       propertyPath: sceneNames.Array.data[10]

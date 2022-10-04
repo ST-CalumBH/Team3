@@ -21,7 +21,13 @@ namespace Overworld {
         [SerializeField] private GameObject rightDoor;
 
         [SerializeField] private GameObject Parent;
-
+        [SerializeField] float bellDingVol = 1f;
+        [SerializeField] float correctVol = 1f;
+        [SerializeField] float incorrectVol = 1f;
+        [SerializeField] float musicVol = 0.15f;
+        [SerializeField] float wooshVol = 1f;
+        [SerializeField] float surpriseVol = 1f;
+        
 
         Animator leftDoorAnim;
         Animator midDoorAnim;
@@ -75,12 +81,12 @@ namespace Overworld {
                             break;
                         case 1:
                             dsAnimator.Play("Base Layer.MidToLeft");
-                            mSFX.PlaySound(4);
+                            mSFX.PlaySound(4,wooshVol);
                             curPosition = 0;
                             break;
                         case 2:
                             dsAnimator.Play("Base Layer.RightToMid");
-                            mSFX.PlaySound(4);
+                            mSFX.PlaySound(4,wooshVol);
                             curPosition = 1;
                             break;
                     }
@@ -91,12 +97,12 @@ namespace Overworld {
                     {
                         case 0:
                             dsAnimator.Play("Base Layer.LeftToMid");
-                            mSFX.PlaySound(4);
+                            mSFX.PlaySound(4,wooshVol);
                             curPosition = 1;
                             break;
                         case 1:
                             dsAnimator.Play("Base Layer.MidToRight");
-                            mSFX.PlaySound(4);
+                            mSFX.PlaySound(4,wooshVol);
                             curPosition = 2;
                             break;
                         case 2:
@@ -122,21 +128,20 @@ namespace Overworld {
 
         private IEnumerator StartMinigame()
         {
-            mSFX.PlaySound(6, 0.5f);
             blackout.SetActive(true);
             yield return new WaitForSeconds(4);
             player.transform.position = new Vector3(0, 6, 0);
             blackout.SetActive(false);
-            mSFX.PlaySound(0);
+            mSFX.PlaySound(0,bellDingVol);
             yield return new WaitForSeconds(2);
-            mSFX.PlaySound(3, 0.15f);
+            mSFX.PlaySound(3, musicVol);
             player.DialogueUI.ShowDialogue(dialogueObject);
             freezeStart = true;
             yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
             yield return new WaitForSeconds(0.5f);
             gameStart = true;
             doorSelector.SetActive(true);
-            mSFX.PlaySound(5);
+            mSFX.PlaySound(5,surpriseVol);
             dsAnimator.Play("Base Layer.MidDoorIdle");
         }
 
@@ -146,35 +151,35 @@ namespace Overworld {
             gameStart = false;
             freezeStart = false;
             gameOver = true;
-            mSFX.PlaySound(0, 0.25f);
+            mSFX.PlaySound(0, bellDingVol);
             switch (curPosition)
             {
                 case 0:
-                    mSFX.PlaySound(1);
+                    mSFX.PlaySound(1,correctVol);
                     player.DialogueUI.ShowDialogue(correctDialogue);
                     leftDoorSR.enabled = true;
                     leftDoorAnim.Play("Base Layer.CorrectDoor");
                     yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
                     break;
                 case 1:
-                    mSFX.PlaySound(2);
+                    mSFX.PlaySound(2,incorrectVol);
                     player.DialogueUI.ShowDialogue(duckDialogue);
                     midDoorSR.enabled = true;
                     midDoorAnim.Play("Base Layer.DuckDoor");
                     yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
                     leftDoorSR.enabled = true;
-                    mSFX.PlaySound(0);
+                    mSFX.PlaySound(0,bellDingVol);
                     correctDoorMask.SetActive(true);
                     leftDoorAnim.Play("Base Layer.CorrectDoor");
                     break;
                 case 2:
-                    mSFX.PlaySound(2);
+                    mSFX.PlaySound(2,incorrectVol);
                     player.DialogueUI.ShowDialogue(blankDialogue);
                     rightDoorSR.enabled = true;
                     rightDoorAnim.Play("Base Layer.MissingDoor");
                     yield return new WaitUntil(() => player.DialogueUI.IsOpen == false);
                     leftDoorSR.enabled = true;
-                    mSFX.PlaySound(0);
+                    mSFX.PlaySound(0, bellDingVol);
                     correctDoorMask.SetActive(true);
                     leftDoorAnim.Play("Base Layer.CorrectDoor");
                     break;
