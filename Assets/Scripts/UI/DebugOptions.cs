@@ -25,7 +25,7 @@ namespace UI {
 
         public void FlushAnalytics()
         {
-            Debug.Log("Consider yourself flushed");
+            AnalyticsService.Instance.Flush();
         }
     }
 }

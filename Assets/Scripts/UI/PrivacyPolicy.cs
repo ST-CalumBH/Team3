@@ -69,4 +69,9 @@ public class PrivacyPolicy : MonoBehaviour
         // Open the Privacy Policy in the system's default browser
         Application.OpenURL(AnalyticsService.Instance.PrivacyUrl);
     }
+
+    public void FlushAnalytics()
+    {
+        AnalyticsService.Instance.Flush();
+    }
 }
