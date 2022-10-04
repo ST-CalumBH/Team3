@@ -242,6 +242,7 @@ MonoBehaviour:
   enemyHUD: {fileID: 177893612}
   state: 0
   diagUI: {fileID: 0}
+  diagWaitTime: 3
   spawnPointSetTo: 0
 --- !u!4 &112044625
 Transform:
@@ -1878,7 +1879,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.05
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

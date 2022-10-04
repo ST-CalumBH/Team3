@@ -13,6 +13,10 @@ public class CarController : MonoBehaviour
     public float accelFactor = 30.0f;
     public float turnFacotor = 3.5f;
 
+    public float GetVelocityMagnitude()
+    {
+        return carRigidbody2D.velocity.magnitude;
+    }
     public float drag = 3f;
 
     //local variables
@@ -102,4 +106,26 @@ public class CarController : MonoBehaviour
         carRigidbody2D.velocity = forwardVelocity + rightVelocity * driftFactor;
     }
 
+    float GetLateralVeloctiy()
+    {
+        return Vector2.Dot(transform.right, carRigidbody2D.velocity);
+    }
+
+    public bool IsTireScreeching(out float lateralVelocity, out bool isBraking)
+    {
+        lateralVelocity = GetLateralVeloctiy();
+        {
+            isBraking = false;
+            if( accelInput <0 && velocityVsUp > 0)
+            {
+                isBraking = true;
+                return true;
+            }
+
+            if (Mathf.Abs(GetLateralVeloctiy()) > 2.0f)
+                return true;
+
+            return false;
+        }
+    }
 }

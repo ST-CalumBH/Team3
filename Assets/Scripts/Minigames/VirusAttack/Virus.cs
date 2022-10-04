@@ -11,6 +11,8 @@ namespace VirusAttack {
 
         [SerializeField] private minigameManager manager;
 
+        public MinigameSFX mSFX;
+
         void Start()
         {
             manager = GameObject.Find("minigameManager").GetComponent<minigameManager>();
@@ -26,12 +28,14 @@ namespace VirusAttack {
         {
             if (collision.gameObject.CompareTag("Player") || (collision.gameObject.CompareTag("CleanUp")))
             {
+                AudioSource.PlayClipAtPoint(mSFX.audioClips[0], Vector3.zero, 1f);
                 manager.loseLife();
                 Destroy(transform.parent.gameObject);
             }
 
             if (collision.gameObject.CompareTag("Bullet"))
             {
+                AudioSource.PlayClipAtPoint(mSFX.audioClips[1], Vector3.zero, 1f);
                 manager.gainPoint();
                 Destroy(collision.gameObject);
                 Destroy(transform.parent.gameObject);

@@ -2131,6 +2131,7 @@ MonoBehaviour:
   enemyHUD: {fileID: 810834378}
   state: 0
   diagUI: {fileID: 0}
+  spawnPointSetTo: 0
 --- !u!4 &1714929644
 Transform:
   m_ObjectHideFlags: 0
@@ -2976,7 +2977,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.05
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

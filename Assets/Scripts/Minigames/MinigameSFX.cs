@@ -59,6 +59,4 @@ public class MinigameSFX : MonoBehaviour
             Debug.Log("Audio clips is empty");
         }
     }
-
-
 }

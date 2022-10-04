@@ -9,6 +9,7 @@ namespace VirusAttack {
         private float fireElaspedTime = 0f;
 
         public GameObject bullet;
+        public MinigameSFX mSFX;
 
         void Update()
         {
@@ -25,6 +26,7 @@ namespace VirusAttack {
         {
             GameObject temp = Instantiate(bullet, transform.position, transform.rotation);
             temp.transform.SetParent(transform.parent.transform, true);
+            mSFX.PlaySound(0);
         }
     }
 }
