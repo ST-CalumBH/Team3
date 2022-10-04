@@ -1637,6 +1637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1984043890454723581}
+  - component: {fileID: 590433798}
   m_Layer: 0
   m_Name: Hand
   m_TagString: Untagged
@@ -1660,6 +1661,26 @@ Transform:
   m_Father: {fileID: 8278988327754698654}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
+--- !u!95 &590433798
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4213016679300325718}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2da63e6b43fc08544a3435bd680d9252, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5065207905132422881
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,6 +2232,7 @@ MonoBehaviour:
   selectorPanel: {fileID: 5065207905132422881}
   Tutorial: {fileID: 1172106705}
   UI: {fileID: 3836983521458779443}
+  animController: {fileID: 590433798}
   bounceAngle: 45
   zRotate: 1
   hitZone: 0.2

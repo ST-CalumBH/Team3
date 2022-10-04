@@ -18,6 +18,7 @@ namespace ResetButton
         public GameObject selectorPanel;
         public GameObject Tutorial;
         public GameObject UI;
+        public Animator animController;
 
         public float bounceAngle = 45f;//degrees the hand varies from x axis either side
         public float zRotate = 1f;//Speed of movement
@@ -56,7 +57,6 @@ namespace ResetButton
             timebar.maxValue = maxTime;
             timebar.value = 0f;
             AnalyticsService.Instance.CustomData("ResetButton", new Dictionary<string, object>());
-            
             StartCoroutine(StartScreen());
         }
 
@@ -104,6 +104,7 @@ namespace ResetButton
             {
                 if (handTransform.eulerAngles.z > (handRotation - zoneDegrees) && handTransform.eulerAngles.z < (handRotation + zoneDegrees) && cooldown==false)
                 {
+                    animController.Play("Shrink");
                     mSFX.PlaySound(0);
                     mSFX.PlaySound(1);
                     zRotate = 0;
@@ -111,6 +112,7 @@ namespace ResetButton
                 }
                 else
                 {
+                    animController.Play("Shrink");
                     mSFX.PlaySound(2);
                     mSFX.PlaySound(3);
                     cooldown = true;
