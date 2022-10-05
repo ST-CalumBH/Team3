@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48fb5b53c13b304ab7f7ba65518b629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delaySeconds: 5
+  delaySeconds: 6
   spawnObject: {fileID: 8039168444923257794, guid: b96873a6010f479458e6ec45594f9e82, type: 3}
   parented: 1
 --- !u!1 &2586043128842857971
@@ -1103,7 +1103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 2803187344514857413, guid: 774265b3dc52ce44c8159eef51f29e3c, type: 3}
   gameActive: 1
-  spawnDelay: 2
+  spawnDelay: 3
   btmSpawnDelay: 0.5
   topSpawnDelay: 1.5
   limitedSpawn: 1

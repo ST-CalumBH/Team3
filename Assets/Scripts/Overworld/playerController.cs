@@ -156,8 +156,11 @@ namespace Overworld {
         private void MoveToSpawnPoint()
         {
             if (spawnPoints.Length == 0) { return; }
-            if (spawnPoints.Length <= PlayerPrefs.GetInt("SpawnPoints", 0)) { return; }
+
+            if (PlayerPrefs.GetInt("SpawnPoint", 0) > spawnPoints.Length) { PlayerPrefs.SetInt("SpawnPoint", 0); }  // if out of index, set spawnpoint to 0 to avoid errors
+
             transform.position = spawnPoints[PlayerPrefs.GetInt("SpawnPoint", 0)]; // defaults to spawn at the first item on the list if a spawnpoint playerpref hasn't been made yet
+
         }
     }
 }

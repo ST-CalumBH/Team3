@@ -271,7 +271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2586043128723799027, guid: 5848ee9e95d68a348b68e48d9d8c61d4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5848ee9e95d68a348b68e48d9d8c61d4, type: 3}
@@ -1094,6 +1094,10 @@ PrefabInstance:
     - target: {fileID: 3033127074467771894, guid: b1595504ccd057f46a12ede6e5b785db, type: 3}
       propertyPath: m_Name
       value: mg_EmptyMinigame
+      objectReference: {fileID: 0}
+    - target: {fileID: 3033127074467771894, guid: b1595504ccd057f46a12ede6e5b785db, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7590833225529259651, guid: b1595504ccd057f46a12ede6e5b785db, type: 3}
       propertyPath: m_RootOrder

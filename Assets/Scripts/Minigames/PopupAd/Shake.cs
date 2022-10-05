@@ -7,11 +7,14 @@ namespace PopupAd
     public class Shake : MonoBehaviour
     {
         public float shakeFrequency;
+        public MinigameSFX mSFX;
 
         public IEnumerator CameraBake()
         {
             if (shakeFrequency > 0)
             {
+                mSFX.PlaySound(0);
+
                 Vector3 originalPos = transform.position;
                 Vector3 newPos = transform.position;
 
