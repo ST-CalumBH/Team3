@@ -13,7 +13,7 @@ namespace PopupAd
         {
             if (shakeFrequency > 0)
             {
-                mSFX.PlaySound(0);
+                mSFX.PlaySound(0, 0.2f);
 
                 Vector3 originalPos = transform.position;
                 Vector3 newPos = transform.position;

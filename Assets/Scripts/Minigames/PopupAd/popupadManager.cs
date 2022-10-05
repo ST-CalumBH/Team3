@@ -9,7 +9,7 @@ using Unity.Services.Analytics;
 namespace PopupAd {
     public class popupadManager : Minigame
     {
-        [SerializeField] private int CurrentAds = 0;
+        [SerializeField] private int totalAdsClosed;
 
         [SerializeField] private spawnerManager spawnManager;
         [SerializeField] GameObject Tutorial;
@@ -19,6 +19,8 @@ namespace PopupAd {
 
         private void Start()
         {
+            totalAdsClosed = 0;
+
             AnalyticsService.Instance.CustomData("PopupAd", new Dictionary<string, object>());
             StartCoroutine(StartScreen());
         }
@@ -27,7 +29,7 @@ namespace PopupAd {
         {
             if (!paused)
             {
-                if (CurrentAds == 0 && updateOn == true)
+                if (totalAdsClosed == spawnManager.getTarget() && updateOn == true)
                 {
                     spawnManager.spawnerOff();
                     StartCoroutine(EndMinigame(2f, true));
@@ -35,14 +37,10 @@ namespace PopupAd {
             }
         }
 
-        public void AdAdded()
+        public void AdClosed()
         {
-            CurrentAds++;
-        }
-
-        public void AdDeleted()
-        {
-            CurrentAds--;
+            totalAdsClosed++;
+            Debug.Log(spawnManager.getTarget() + ", " + totalAdsClosed);
         }
 
         IEnumerator StartScreen()

@@ -7,7 +7,6 @@ namespace PopupAd {
     public class ClickDetect : MonoBehaviour
     {
         [SerializeField] private bool isDistracted;
-        public MinigameSFX mSFX;
 
         private void Start()
         {
@@ -18,8 +17,6 @@ namespace PopupAd {
         {
             if (Input.GetMouseButtonDown(0) && (isDistracted == false))
             {
-                mSFX.PlaySound(0);
-
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
                 RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);

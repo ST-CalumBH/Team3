@@ -12,12 +12,16 @@ namespace PopupAd {
         public Animator anim;
 
         [SerializeField] private Shake shaker;
-        public float shakeFrequency;
+
+        public MinigameSFX mSFX;
 
         void Start()
         {
             clickDetect = GameObject.Find("gameManager").GetComponent<ClickDetect>();
             clickDetect.distractionChange(true);
+
+            Debug.Log("I'm here!");
+            mSFX.PlaySound(0, 0.2f);
         }
 
         void Update()

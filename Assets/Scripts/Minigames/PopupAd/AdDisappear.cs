@@ -11,24 +11,24 @@ namespace PopupAd {
 
         private int randomiser;
 
+        public MinigameSFX mSFX;
+
         void Awake()
         {
             manager = GameObject.Find("gameManager").GetComponent<popupadManager>();
-            manager.AdAdded();
-
+            mSFX.PlaySound(0, 0.5f);
             SpriteChange();
         }
 
         public void SpriteChange()
         {
             randomiser = Random.Range(0, advertismentSprites.Length);
-            Debug.Log("Sprite: " + randomiser + "/" + advertismentSprites.Length);
             GetComponent<SpriteRenderer>().sprite = advertismentSprites[randomiser];
         }
 
         public void DestroySelf()
         {
-            manager.AdDeleted();
+            manager.AdClosed();
             Destroy(gameObject);
         }
     }

@@ -77,5 +77,10 @@ namespace VirusAttack
         {
             return gameActive;
         }
+
+        public int getTarget()
+        {
+            return amount2Spawn;
+        }
     }
 }
