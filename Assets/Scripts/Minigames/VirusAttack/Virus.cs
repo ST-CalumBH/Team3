@@ -35,7 +35,7 @@ namespace VirusAttack {
 
             if (collision.gameObject.CompareTag("Bullet"))
             {
-                AudioSource.PlayClipAtPoint(mSFX.audioClips[1], Vector3.zero, 0.5f);
+                AudioSource.PlayClipAtPoint(mSFX.audioClips[1], Vector3.zero, 0.4f);
                 manager.gainPoint();
                 Destroy(collision.gameObject);
                 Destroy(transform.parent.gameObject);
