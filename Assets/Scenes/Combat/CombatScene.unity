@@ -1352,6 +1352,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 6811042640672295957, guid: bd4fee93261d54541b86a7c07fa87005, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd4fee93261d54541b86a7c07fa87005, type: 3}
 --- !u!224 &991652870 stripped
@@ -2131,6 +2135,7 @@ MonoBehaviour:
   enemyHUD: {fileID: 810834378}
   state: 0
   diagUI: {fileID: 0}
+  diagWaitTime: 3
   spawnPointSetTo: 0
 --- !u!4 &1714929644
 Transform:
