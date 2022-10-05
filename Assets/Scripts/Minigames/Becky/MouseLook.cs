@@ -21,6 +21,13 @@ namespace Becky {
         // Update is called once per frame
         void Update()
         {
+            if (Time.timeScale < 1) {
+                
+                Cursor.lockState = CursorLockMode.None;
+            }
+            else {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
