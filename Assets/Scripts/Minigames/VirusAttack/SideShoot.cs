@@ -31,7 +31,7 @@ namespace VirusAttack {
         {
             GameObject temp = Instantiate(bullet, transform.position, transform.rotation);
             temp.transform.SetParent(transform.parent.transform, true);
-            mSFX.PlaySound(0);
+            mSFX.PlaySound(0, 0.4f);
         }
     }
 }

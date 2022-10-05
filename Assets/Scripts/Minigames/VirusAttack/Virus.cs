@@ -28,14 +28,14 @@ namespace VirusAttack {
         {
             if (collision.gameObject.CompareTag("Player") || (collision.gameObject.CompareTag("CleanUp")))
             {
-                AudioSource.PlayClipAtPoint(mSFX.audioClips[0], Vector3.zero, 1f);
+                AudioSource.PlayClipAtPoint(mSFX.audioClips[0], Vector3.zero, 0.5f);
                 manager.loseLife();
                 Destroy(transform.parent.gameObject);
             }
 
             if (collision.gameObject.CompareTag("Bullet"))
             {
-                AudioSource.PlayClipAtPoint(mSFX.audioClips[1], Vector3.zero, 1f);
+                AudioSource.PlayClipAtPoint(mSFX.audioClips[1], Vector3.zero, 0.5f);
                 manager.gainPoint();
                 Destroy(collision.gameObject);
                 Destroy(transform.parent.gameObject);

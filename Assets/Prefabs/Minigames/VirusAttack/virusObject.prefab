@@ -188,7 +188,7 @@ MonoBehaviour:
   mgAudioSource: {fileID: 4307393496817152702}
   audioClips:
   - {fileID: 8300000, guid: 58766af36866fd54e8f83a2305a7d249, type: 3}
-  - {fileID: 8300000, guid: 037eb39aee3616940813df858a76fd4f, type: 3}
+  - {fileID: 8300000, guid: d3793ca2fd8330d47bf18b860afb109a, type: 3}
 --- !u!82 &4307393496817152702
 AudioSource:
   m_ObjectHideFlags: 0

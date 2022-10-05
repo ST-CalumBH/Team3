@@ -760,6 +760,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4512701240068880081, guid: c00b37628e164664c933b4b344e2452f, type: 3}
+      propertyPath: audioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5437d1345c8c1a24e8e8bacd564783e6, type: 3}
+    - target: {fileID: 6898855382318000270, guid: c00b37628e164664c933b4b344e2452f, type: 3}
+      propertyPath: nextScene
+      value: OfficeReturned
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c00b37628e164664c933b4b344e2452f, type: 3}
 --- !u!1 &1958574802
