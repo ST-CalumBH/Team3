@@ -64,7 +64,7 @@ public class PLayerLaneMovement : MonoBehaviour
     IEnumerator WalkSFX()
     {
         walkCooldown = true;
-        mSFX.PlaySound(0);
+        mSFX.PlaySound(0, 2f);
         yield return new WaitForSeconds(walkSFXInterval);
         walkCooldown = false;
     }

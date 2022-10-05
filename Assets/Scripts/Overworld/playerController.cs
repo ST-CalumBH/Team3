@@ -150,7 +150,7 @@ namespace Overworld {
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            sfxController.PlaySound(2,0.25f);
+            if (playerFreeze == false) { sfxController.PlaySound(2,0.25f); }
         }
 
         private void MoveToSpawnPoint()
