@@ -129,7 +129,8 @@ namespace Overworld {
         private IEnumerator StartMinigame()
         {
             blackout.SetActive(true);
-            yield return new WaitForSeconds(1);
+            mSFX.PlaySound(6, 1);
+            yield return new WaitForSeconds(3);
             player.transform.position = new Vector3(0, 6, 0);
             blackout.SetActive(false);
             mSFX.PlaySound(0,bellDingVol);
