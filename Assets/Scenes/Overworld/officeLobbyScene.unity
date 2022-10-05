@@ -622,7 +622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &262680818
 Animator:
   serializedVersion: 4
@@ -1046,7 +1046,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 471404dbf062c224180e39d95f60f3ad, type: 3}
   - {fileID: 8300000, guid: 317855a9e22759446a77427562698ed8, type: 3}
   - {fileID: 8300000, guid: 3cf3e1c86b0f13845a1936b3a19da009, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 047cc127e5af84445823a7fd2b740db9, type: 3}
 --- !u!1 &324147125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,7 +1986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!331 &862712106
 SpriteMask:
   m_ObjectHideFlags: 0
@@ -3817,7 +3817,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!95 &1512675567
 Animator:
