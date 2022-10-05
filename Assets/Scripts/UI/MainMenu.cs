@@ -9,6 +9,10 @@ namespace UI {
     public class MainMenu : MonoBehaviour
     {
 
+        void Start()
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
         public void PlayGame()
         {
             StartCoroutine(sceneTransition());
