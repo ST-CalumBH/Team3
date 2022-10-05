@@ -29,6 +29,8 @@ namespace PopupAd {
         {
             if (!paused)
             {
+                Cursor.lockState = CursorLockMode.None;
+
                 if (totalAdsClosed == spawnManager.getTarget() && updateOn == true)
                 {
                     spawnManager.spawnerOff();

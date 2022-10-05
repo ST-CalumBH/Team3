@@ -38,15 +38,6 @@ namespace UI {
 
         public void Resume ()
         {
-            if (SceneManager.GetActiveScene().name == "Becky horror maze")
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-            }
-            else
-            {
-                Cursor.lockState = CursorLockMode.None;
-            }
-
             pauseMenuUI.SetActive(false);
             Time.timeScale = 1f;
             isGamePaused = false;
