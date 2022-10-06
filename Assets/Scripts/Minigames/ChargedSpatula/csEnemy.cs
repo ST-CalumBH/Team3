@@ -19,7 +19,7 @@ namespace ChargedSpatula {
         {
             if (!defeated)
             {
-                mSFX.PlaySound(0, 0.3f);
+                //mSFX.PlaySound(0, 0.3f);
                 anim.Play("chicken_flung");
             }
 

@@ -13,7 +13,7 @@ public class emptyMinigame : Minigame
 
     IEnumerator endGame()
     {
-        StartCoroutine(EndMinigame(0f, true));
+        StartCoroutine(EndMinigame(0.01f, true));
         yield return null;
     }
     // Update is called once per frame
