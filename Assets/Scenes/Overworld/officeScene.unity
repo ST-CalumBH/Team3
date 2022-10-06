@@ -2253,6 +2253,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicPersistentManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4083356481799431448, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4125305283162979353, guid: d7e8eb0b66267364580fb66f3e08bdbd, type: 3}
       propertyPath: sceneNames.Array.size
       value: 11
