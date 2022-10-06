@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Unity.Services.Analytics;
+using System;
 
 public class Minigame : MonoBehaviour
 {
@@ -47,7 +48,15 @@ public class Minigame : MonoBehaviour
         result = res;
         Debug.Log(res.ToString());
         CheckResult(res);
-        Destroy(transform.parent.gameObject);
+        try
+        {
+            Destroy(transform.parent.gameObject);
+        }
+        catch (Exception e)
+        {
+            Debug.Log("Handled Exception");
+            Debug.LogException(e);
+        }
     }
 
     private void CheckResult(bool result)
