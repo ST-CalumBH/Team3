@@ -16,7 +16,7 @@ namespace PopupAd {
         void Awake()
         {
             manager = GameObject.Find("gameManager").GetComponent<popupadManager>();
-            AudioSource.PlayClipAtPoint(mSFX.audioClips[0], Vector3.zero, 1f);
+            AudioSource.PlayClipAtPoint(mSFX.audioClips[0], Vector3.zero, 2f);
             SpriteChange();
         }
 
