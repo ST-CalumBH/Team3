@@ -1537,7 +1537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b1432c389cadc4c8fa3e530f9de4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 11400000, guid: b959c5a5f7925ad48bcf3e9ba7c676fc, type: 2}
+  dialogueObject: {fileID: 11400000, guid: 53d09f9e9c701434f81d021b5e494ad9, type: 2}
 --- !u!1 &604858753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1689,7 +1689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b1432c389cadc4c8fa3e530f9de4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 11400000, guid: 425f497a0a412bd419c47f360ae56bac, type: 2}
+  dialogueObject: {fileID: 11400000, guid: 7f379f1f3d90fe04f9442b14d4c801e3, type: 2}
 --- !u!1 &608730004
 GameObject:
   m_ObjectHideFlags: 0
@@ -3152,7 +3152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b1432c389cadc4c8fa3e530f9de4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 11400000, guid: 7f379f1f3d90fe04f9442b14d4c801e3, type: 2}
+  dialogueObject: {fileID: 11400000, guid: 7d5469946d089d747932a88a88828a3a, type: 2}
 --- !u!1 &1220268027
 GameObject:
   m_ObjectHideFlags: 0
@@ -4662,7 +4662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b1432c389cadc4c8fa3e530f9de4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 11400000, guid: 53d09f9e9c701434f81d021b5e494ad9, type: 2}
+  dialogueObject: {fileID: 11400000, guid: c4d8997a4dc82ae43869283477bd844e, type: 2}
 --- !u!1 &1865115821
 GameObject:
   m_ObjectHideFlags: 0
@@ -5210,7 +5210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b1432c389cadc4c8fa3e530f9de4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 11400000, guid: c4d8997a4dc82ae43869283477bd844e, type: 2}
+  dialogueObject: {fileID: 11400000, guid: 4c189bca840bdaf4fab638eebd4324d3, type: 2}
 --- !u!1 &2022360698
 GameObject:
   m_ObjectHideFlags: 0
