@@ -4215,6 +4215,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7706034308894484298, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.8866665
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706034308894484298, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 3.8894033
+      objectReference: {fileID: 0}
     - target: {fileID: 7706034308894484299, guid: 62312a75c80fbdb4f9de9a831750b48c, type: 3}
       propertyPath: moveSpeed
       value: 8
@@ -5720,8 +5728,10 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -10.966115, y: -2.809681}
-      - {x: -11.007403, y: -0.22217983}
-      - {x: -12.99722, y: -0.22144198}
+      - {x: -11.007403, y: -0.2997784}
+      - {x: -12.752233, y: -0.30065453}
+      - {x: -12.753535, y: 0.01220715}
+      - {x: -13.01274, y: 0.011353612}
       - {x: -13.01368, y: -3.9421983}
       - {x: -9.595054, y: -3.942198}
       - {x: -9.587826, y: -2.8597684}

@@ -760,6 +760,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 238319503343624053, guid: c00b37628e164664c933b4b344e2452f, type: 3}
+      propertyPath: moveSpeed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2738040543778134887, guid: c00b37628e164664c933b4b344e2452f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.09
@@ -775,14 +779,6 @@ PrefabInstance:
     - target: {fileID: 5101417337997437407, guid: c00b37628e164664c933b4b344e2452f, type: 3}
       propertyPath: lives
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6898855382318000270, guid: c00b37628e164664c933b4b344e2452f, type: 3}
-      propertyPath: lives
-      value: 
-      objectReference: {fileID: 1989843631}
-    - target: {fileID: 6898855382318000270, guid: c00b37628e164664c933b4b344e2452f, type: 3}
-      propertyPath: nextScene
-      value: OfficeReturned
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c00b37628e164664c933b4b344e2452f, type: 3}
@@ -870,17 +866,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1989843631 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5101417337997437407, guid: c00b37628e164664c933b4b344e2452f, type: 3}
-  m_PrefabInstance: {fileID: 1840986534}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37d86006e21fe9547b3a8725bf8eb2db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2016596102
 GameObject:
   m_ObjectHideFlags: 0
