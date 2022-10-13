@@ -78,11 +78,11 @@ namespace Overworld {
                 }
             }
 
-            //if (Input.GetKeyDown(KeyCode.O))                    // for testing purposes: sets player to spawn at the first item in the spawn list, resets events such as the kitchen
-            //{
-            //    PlayerPrefs.DeleteAll();
-            //    PlayerPrefs.SetInt("SpawnPoint", 0);
-            //}
+            if (Input.GetKeyDown(KeyCode.O))                    // for testing purposes: sets player to spawn at the first item in the spawn list, resets events such as the kitchen
+            {
+                PlayerPrefs.DeleteAll();
+                PlayerPrefs.SetInt("SpawnPoint", 0);
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D other)
