@@ -5,7 +5,6 @@ using UnityEngine;
 namespace ClickChicken {
     public class chickenMovement : MonoBehaviour
     {
-        [SerializeField] private int lives;
         [SerializeField] private float btmRange;
         [SerializeField] private float topRange;
         [SerializeField] private float directionFrequency;
@@ -13,7 +12,7 @@ namespace ClickChicken {
         [SerializeField] private float frequencyMultiplier; // 0.9 etc
         [SerializeField] private float movementMultiplier; // 1.1 etc
 
-        [SerializeField] private chickenLifeDisplay controller;
+        [SerializeField] private minigameLifeDisplay controller;
 
         private Animator anim;
         private SpriteRenderer sprite;
@@ -73,14 +72,13 @@ namespace ClickChicken {
         {
             if (hitStun == false)
             {
-                lives--;
                 controller.LoseLife();
 
-                if (lives > 0) { StartCoroutine(DamageRecieved()); }    // prevent damage flash when turned into egg
-                DifficultyMultiplier();                                 // makeas da game harder 
+                if (controller.GetLives() > 0) { StartCoroutine(DamageRecieved()); }    // prevent damage flash when turned into egg
+                DifficultyMultiplier();                                                 // makeas da game harder 
             }
             
-            if (lives == 0)
+            if (controller.GetLives() == 0)
             {
                 anim.Play("hit");
                 mSFX.PlaySound(1);
@@ -111,11 +109,6 @@ namespace ClickChicken {
             }
 
             hitStun = false;
-        }
-
-        public int GetLives()
-        {
-            return lives;
         }
 
         private void DifficultyMultiplier()

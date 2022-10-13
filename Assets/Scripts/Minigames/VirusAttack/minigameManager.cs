@@ -5,6 +5,7 @@ using Combat;
 using UnityEngine.Analytics;
 using Unity.Services.Analytics;
 using UnityEngine.SceneManagement;
+using ClickChicken;
 
 namespace VirusAttack {
     public class minigameManager : Minigame
@@ -12,8 +13,8 @@ namespace VirusAttack {
         [SerializeField] private string nextScene;
         [SerializeField] private int newSpawnPoint = 0;
         [SerializeField] GameObject Tutorial;
-        
-        public int lives = 3;
+        [SerializeField] private minigameLifeDisplay lives;
+
         public int enemyKilled = 0;
         public int enemyGoal = 20;
         public int counter = 0;
@@ -45,7 +46,7 @@ namespace VirusAttack {
         {
             if (!paused)
             {
-                if (lives == 0)
+                if (lives.GetLives() == 0)
                 {
                     PlayerPrefs.SetInt("SpawnPoint", newSpawnPoint);
                     SceneManager.LoadScene(nextScene);
@@ -67,7 +68,7 @@ namespace VirusAttack {
 
         public void loseLife()
         {
-            if (spawnManager.checkState()) { lives--; }         // if minigame is active, lose a life
+            if (spawnManager.checkState()) { lives.LoseLife(); }         // if minigame is active, lose a life
         }
 
         public void gainPoint()

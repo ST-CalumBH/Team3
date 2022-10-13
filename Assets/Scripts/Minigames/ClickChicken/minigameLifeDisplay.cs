@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace ClickChicken
 {
-    public class chickenLifeDisplay : MonoBehaviour
+    public class minigameLifeDisplay : MonoBehaviour
     {
-        [SerializeField] private chickenMovement controller;
+        public int lives;
         [SerializeField] private GameObject heart;
         [SerializeField] private float rowSpacing = 1f;
 
@@ -14,8 +14,8 @@ namespace ClickChicken
 
         private void Start()
         {
-            int lifeCount = controller.GetLives();
-            lifeList = new GameObject[controller.GetLives()];
+            int lifeCount = lives;
+            lifeList = new GameObject[lives];
             float x = transform.position.x;
 
             for (int i = 0; i < lifeCount; i++)
@@ -28,7 +28,13 @@ namespace ClickChicken
 
         public void LoseLife()
         {
-            lifeList[controller.GetLives()].GetComponent<lifeHeart>().Disappear();
+            lives--;
+            lifeList[lives].GetComponent<lifeHeart>().Disappear();
+        }
+
+        public int GetLives()
+        {
+            return lives;
         }
     }
 }

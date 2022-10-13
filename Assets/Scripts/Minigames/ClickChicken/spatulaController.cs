@@ -14,8 +14,8 @@ namespace ClickChicken {
 
         private Vector2 movement;
 
-        private GameObject enemy;
-        private chickenMovement controller;
+        [SerializeField] private chickenMovement controller;
+        [SerializeField] private minigameLifeDisplay lifeController;
         private Animator anim;
 
         private bool inArea = false;
@@ -28,8 +28,6 @@ namespace ClickChicken {
             fireElaspedTime = fireDelay;
 
             rb = GetComponent<Rigidbody2D>();
-            enemy = GameObject.Find("chickenKnight");
-            controller = enemy.GetComponent<chickenMovement>();
             anim = GetComponent<Animator>();
         }
 
@@ -65,7 +63,7 @@ namespace ClickChicken {
             {
                 controller.Hit();
 
-                if (controller.GetLives() == 0) { StartCoroutine(EndMinigame(2f, true)); }
+                if (lifeController.GetLives() == 0) { StartCoroutine(EndMinigame(2f, true)); }
             }
         }
 

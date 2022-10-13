@@ -926,7 +926,7 @@ RectTransform:
   - {fileID: 8997220940811759604}
   - {fileID: 7346124306103110648}
   m_Father: {fileID: 238319502783674115}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1368,7 +1368,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 238319502783674115}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &238319502399938816
 MonoBehaviour:
@@ -1649,6 +1649,7 @@ Transform:
   - {fileID: 753855766739308469}
   - {fileID: 238319502764930772}
   - {fileID: 238319503343624052}
+  - {fileID: 2738040543778134887}
   - {fileID: 238319503838781516}
   - {fileID: 238319502399938819}
   - {fileID: 238319502952076066}
@@ -1687,7 +1688,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 238319502783674115}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6898855382318000270
 MonoBehaviour:
@@ -1703,10 +1704,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   result: 0
   isInProgress: 1
-  nextScene: ReturnedOffice
+  nextScene: OfficeReturned
   newSpawnPoint: 3
   Tutorial: {fileID: 1874253160}
-  lives: 3
+  lives: {fileID: 5101417337997437407}
   enemyKilled: 0
   enemyGoal: 20
   counter: 0
@@ -2294,7 +2295,7 @@ Transform:
   - {fileID: 5911776682648428427}
   - {fileID: 1687705924375287222}
   m_Father: {fileID: 238319502783674115}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &441527519867965668
 GameObject:
@@ -2461,7 +2462,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 238319502783674115}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2439107861853482020
 SpriteRenderer:
@@ -2626,6 +2627,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8466296, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &5126556963574011345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2738040543778134887}
+  - component: {fileID: 5101417337997437407}
+  m_Layer: 0
+  m_Name: LifeDisplay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2738040543778134887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5126556963574011345}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -12.640045, y: 8.48999, z: -0.13814507}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 238319502783674115}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5101417337997437407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5126556963574011345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d86006e21fe9547b3a8725bf8eb2db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 5
+  heart: {fileID: 3277484040997623723, guid: a99f5c727d94cb34fa12dd23ac310eb8, type: 3}
+  rowSpacing: 2.5
 --- !u!1 &7072858600760592210
 GameObject:
   m_ObjectHideFlags: 0

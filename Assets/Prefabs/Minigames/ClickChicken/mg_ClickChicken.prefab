@@ -995,7 +995,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f442d120c9062cf4ab01df223df80356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 4
   btmRange: -10
   topRange: 10
   directionFrequency: 1.5
@@ -1747,7 +1746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37d86006e21fe9547b3a8725bf8eb2db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 97980813683071234}
+  lives: 5
   heart: {fileID: 3277484040997623723, guid: a99f5c727d94cb34fa12dd23ac310eb8, type: 3}
   rowSpacing: 2.5
 --- !u!1 &8252102288371238623
@@ -2194,6 +2193,8 @@ MonoBehaviour:
   whack: {fileID: 527016317}
   moveSpeed: 10
   rb: {fileID: 3320595310844766278}
+  controller: {fileID: 97980813683071234}
+  lifeController: {fileID: 4151162277553399793}
   fireDelay: 1
 --- !u!82 &527016317
 AudioSource:
