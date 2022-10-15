@@ -1102,7 +1102,7 @@ MonoBehaviour:
   btmSpawnDelay: 0.7
   topSpawnDelay: 1.5
   limitedSpawn: 1
-  amount2Spawn: 12
+  amount2Spawn: 10
   TopX: 5.79
   BottomX: -6.02
   TopY: 4.23

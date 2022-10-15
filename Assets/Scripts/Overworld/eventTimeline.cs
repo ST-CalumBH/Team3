@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 namespace Overworld {
     public class eventTimeline : MonoBehaviour
     {
-        private enum eventType { onAwake, onTriggerEnter, onInteraction };  // onAwake has bugs atm
+        private enum eventType { onAwake, onTriggerEnter, onInteraction };
 
         [SerializeField] private eventIcon icon;                            // might use subscriber and publisher events to prevent dependancies
         [SerializeField] private PlayableDirector cutscene;

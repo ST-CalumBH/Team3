@@ -55,7 +55,6 @@ namespace ClickChicken {
             {
                 directionElaspedTime += Time.deltaTime;
 
-
                 if (directionElaspedTime >= directionFrequency)
                 {
                     directionElaspedTime = 0f;
