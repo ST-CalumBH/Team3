@@ -1709,7 +1709,7 @@ MonoBehaviour:
   Tutorial: {fileID: 1874253160}
   lives: {fileID: 5101417337997437407}
   enemyKilled: 0
-  enemyGoal: 20
+  enemyGoal: 15
   counter: 0
   spawnManager: {fileID: 238319502399938816}
 --- !u!1 &238319502960625508
@@ -2652,7 +2652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5126556963574011345}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.640045, y: 8.48999, z: -0.13814507}
+  m_LocalPosition: {x: -15.25, y: 7.44, z: -0.13814507}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
