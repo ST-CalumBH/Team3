@@ -1199,7 +1199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Amazing Teachers who  guided\n us through this process making this \nwhole
+  m_text: "Amazing Teachers who guided\nus through this process making this \nwhole
     thing possible and enjoyable"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 13de3f18cfe0a1e4893006985e24d56b, type: 2}
