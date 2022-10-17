@@ -68,7 +68,7 @@ namespace InkDrop
                 {
                     lifeIndicator.SetActive(false);
                 }
-                time += 0.01f * Time.deltaTime;
+                time += 0.01f;
                 timebar.value = time;
             }
         }
