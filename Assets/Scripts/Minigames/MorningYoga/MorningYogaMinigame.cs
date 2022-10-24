@@ -112,7 +112,7 @@ public class MorningYogaMinigame : Minigame
             if (Input.anyKeyDown)
             {
                 int num = UnityEngine.Random.Range(2, 7);
-                mSFX.PlaySound(num);
+                mSFX.PlaySound(num, 0.6f);
             }
             if (curState == GameStates.A && recInput)
             {
@@ -429,7 +429,7 @@ public class MorningYogaMinigame : Minigame
     }
     IEnumerator StateTransition()
     {
-        mSFX.PlaySound(1);
+        mSFX.PlaySound(1, 0.7f);
         ResetLetters();
         if (curState == GameStates.A)
         {
