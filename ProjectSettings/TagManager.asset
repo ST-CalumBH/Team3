@@ -57,15 +57,18 @@ TagManager:
   - name: Skidmarks
     uniqueID: 563935917
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Player
     uniqueID: 2923762721
+    locked: 0
+  - name: Minigame
+    uniqueID: 3324335439
     locked: 0
   - name: Overlay
     uniqueID: 636165387
     locked: 0
   - name: Interactable
     uniqueID: 2338364323
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
