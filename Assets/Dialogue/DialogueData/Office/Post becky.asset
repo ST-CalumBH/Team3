@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: Post becky
   m_EditorClassIdentifier: 
   dialogue:
-  - "God I hate her, the last thing I wanted to see this early in the \nmorning.
-    Anyway lets see what we have here, spam, a Nigerian \nprincess, something about
-    ducks for hire... Oh and there it is"
-  - "My lovely to-do list for the day, reports blah blah blah, the printer \nhas
-    become faulty again, great, I'll have to get on that, Malcolm's \nPC is playing
-    up and that it for now I guess, lets get to it"
-  - Woo....Hoo.
+  - "The last thing I wanted to see this early in the morning. I mean I'm \nsure
+    she is a lovely person, just a bit too chatty for my liking. Anyway lets  see
+    what we have here, spam, a Nigerian princess, something about ducks for hire...
+    Oh and there it is"
+  - "something about ducks for hire... Oh and there it is\r\nMy lovely to-do list
+    for the day, reports blah blah blah, the printer \r\nhas become faulty again,
+    great, I'll have to get on that, Malcolm's"
+  - 'PC is playing up and that''s it for now I guess, lets get to it
+
+
+    Woo....Hoo.'
