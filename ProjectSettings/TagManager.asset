@@ -57,6 +57,9 @@ TagManager:
   - name: Skidmarks
     uniqueID: 563935917
     locked: 0
+  - name: Minigame
+    uniqueID: 3324335439
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

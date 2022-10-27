@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 42930075}
   - component: {fileID: 42930074}
   - component: {fileID: 42930073}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Bg1Left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 301599044}
   - component: {fileID: 301599046}
   - component: {fileID: 301599045}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: STARS (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 410150175}
   - component: {fileID: 410150176}
   - component: {fileID: 410150177}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: STARS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 415847750}
   - component: {fileID: 415847749}
   - component: {fileID: 415847751}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Bg1Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -651,7 +651,7 @@ GameObject:
   - component: {fileID: 456849706}
   - component: {fileID: 456849705}
   - component: {fileID: 456849707}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Bg1Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -914,7 +914,7 @@ GameObject:
   m_Component:
   - component: {fileID: 684357994}
   - component: {fileID: 684357995}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: bgFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -999,7 +999,7 @@ GameObject:
   - component: {fileID: 760755772}
   - component: {fileID: 760755773}
   - component: {fileID: 760755774}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: MOON
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1186,7 +1186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1046549391}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Backgrounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1916,7 +1916,7 @@ GameObject:
   - component: {fileID: 1349498911}
   - component: {fileID: 1349498910}
   - component: {fileID: 1349498912}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Bg2Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2035,7 +2035,7 @@ GameObject:
   - component: {fileID: 1382014690}
   - component: {fileID: 1382014689}
   - component: {fileID: 1382014688}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: FENCE (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2159,7 +2159,7 @@ GameObject:
   - component: {fileID: 1621237700}
   - component: {fileID: 1621237698}
   - component: {fileID: 1621237702}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: FENCE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2365,7 +2365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1734720378}
   - component: {fileID: 1734720377}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2568,7 +2568,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1870208559}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: KeithPrison
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2749,7 +2749,7 @@ GameObject:
   - component: {fileID: 2118276355}
   - component: {fileID: 2118276354}
   - component: {fileID: 2118276356}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Bg2 Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}

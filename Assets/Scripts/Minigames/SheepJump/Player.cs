@@ -57,7 +57,7 @@ namespace SheepJump
                         isGrounded = false;
                         velocity.y = jumpVelocity;
                         isHoldingJump = true;
-                        mSFX.PlaySound(1);
+                        mSFX.PlaySound(1, 0.5f);
                     }
                 }
 

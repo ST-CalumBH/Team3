@@ -40,7 +40,7 @@ namespace CableChaos {
         bool paused = false;
         bool cooldown = false;
 
-        Color redColour = Color.red;
+        Color redColour = Color.green;
         Color whiteColour = Color.white;
         float[] threeInputLoc = {375f,750f,1125f};
         float[] fourInputLoc = {300f,600f,900f,1200f};
