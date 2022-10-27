@@ -25,6 +25,20 @@ public class MorningYogaMinigame : Minigame
     public RectTransform W;
     public RectTransform Z;
 
+    public Sprite aPressed;
+    public Sprite dPressed;
+    public Sprite ePressed;
+    public Sprite gPressed;
+    public Sprite hPressed;
+    public Sprite lPressed;
+    public Sprite mPressed;
+    public Sprite pPressed;
+    public Sprite qPressed;
+    public Sprite rPressed;
+    public Sprite tPressed;
+    public Sprite wPressed;
+    public Sprite zPressed;
+
     public Animator backgroundAnim;
     public Animator keithAnim;
     public Slider progressBar;
@@ -122,7 +136,7 @@ public class MorningYogaMinigame : Minigame
                     keithAnim.Play("Idle");
                     stateAResult[0] = false;
                     stateAResult[1] = false;
-                    ResetColour();
+                    ResetImage();
                 }
                 else if (Input.anyKey && (Input.GetKey(stateA[0]) | Input.GetKey(stateA[1])))
                 {
@@ -132,13 +146,13 @@ public class MorningYogaMinigame : Minigame
                         if (Input.GetKey(stateA[1]))
                         {
                             keithAnim.Play("Two");
-                            wImage.color = Color.red;
+                            wImage.overrideSprite = wPressed;
                             stateAResult[1] = true;
                         }
                         else
                         {
                             keithAnim.Play("One");
-                            eImage.color = Color.red;
+                            eImage.overrideSprite = ePressed;
                         }
                     }
                 }
@@ -147,7 +161,7 @@ public class MorningYogaMinigame : Minigame
                     keithAnim.Play("Idle");
                     stateAResult[0] = false;
                     stateAResult[1] = false;
-                    ResetColour();
+                    ResetImage();
                 }
                 int i = 0;
                 foreach (bool b in stateAResult)
@@ -178,7 +192,7 @@ public class MorningYogaMinigame : Minigame
                     stateBResult[0] = false;
                     stateBResult[1] = false;
                     stateBResult[2] = false;
-                    ResetColour();
+                    ResetImage();
                 }
                 else if (Input.anyKey && (Input.GetKey(stateB[0]) | Input.GetKey(stateB[1]) | Input.GetKey(stateB[2])))
                 {
@@ -192,19 +206,19 @@ public class MorningYogaMinigame : Minigame
                             if (Input.GetKey(stateB[2]))
                             {
                                 keithAnim.Play("Three");
-                                gImage.color = Color.red;
+                                gImage.overrideSprite = gPressed;
                                 stateBResult[2] = true;
                             }
                             else
                             {
                                 keithAnim.Play("Two");
-                                dImage.color = Color.red;
+                                dImage.overrideSprite = dPressed;
                             }
                         }
                         else
                         {
                             keithAnim.Play("One");
-                            aImage.color = Color.red;
+                            aImage.overrideSprite = aPressed;
                         }
                     }
                 }
@@ -214,7 +228,7 @@ public class MorningYogaMinigame : Minigame
                     stateBResult[0] = false;
                     stateBResult[1] = false;
                     stateBResult[2] = false;
-                    ResetColour();
+                    ResetImage();
                 }
                 int i = 0;
                 foreach (bool b in stateBResult)
@@ -247,7 +261,7 @@ public class MorningYogaMinigame : Minigame
                     stateCResult[1] = false;
                     stateCResult[2] = false;
                     stateCResult[3] = false;
-                    ResetColour();
+                    ResetImage();
                 }
                 else if (Input.anyKey && (Input.GetKey(stateC[0]) | Input.GetKey(stateC[1]) | Input.GetKey(stateC[2]) | Input.GetKey(stateC[3])))
                 {
@@ -263,25 +277,25 @@ public class MorningYogaMinigame : Minigame
                                 if (Input.GetKey(stateC[3]))
                                 {
                                     keithAnim.Play("Four");
-                                    tImage.color = Color.red;
+                                    tImage.overrideSprite = tPressed;
                                     stateCResult[3] = true;
                                 }
                                 else
                                 {
                                     keithAnim.Play("Three");
-                                    zImage.color = Color.red;
+                                    zImage.overrideSprite = zPressed;
                                 }
                             }
                             else
                             {
                                 keithAnim.Play("Two");
-                                aImage.color = Color.red;
+                                aImage.overrideSprite = aPressed;
                             }
                         }
                         else
                         {
                             keithAnim.Play("One");
-                            qImage.color = Color.red;
+                            qImage.overrideSprite = qPressed;
                         }
                     }
                 }
@@ -292,7 +306,7 @@ public class MorningYogaMinigame : Minigame
                     stateCResult[1] = false;
                     stateCResult[2] = false;
                     stateCResult[3] = false;
-                    ResetColour();
+                    ResetImage();
                 }
                 int i = 0;
                 foreach (bool b in stateCResult)
@@ -325,7 +339,7 @@ public class MorningYogaMinigame : Minigame
                     stateDResult[1] = false;
                     stateDResult[2] = false;
                     stateDResult[3] = false;
-                    ResetColour();
+                    ResetImage();
                 }
                 else if (Input.anyKey && (Input.GetKey(stateD[0]) | Input.GetKey(stateD[1]) | Input.GetKey(stateD[2]) | Input.GetKey(stateD[3])))
                 {
@@ -341,25 +355,25 @@ public class MorningYogaMinigame : Minigame
                                 if (Input.GetKey(stateD[3]))
                                 {
                                     stateDResult[3] = true;
-                                    hImage.color = Color.red;
+                                    hImage.overrideSprite = hPressed;
                                     keithAnim.Play("Four");
                                 }
                                 else
                                 {
                                     keithAnim.Play("Three");
-                                    mImage.color = Color.red;
+                                    mImage.overrideSprite = mPressed;
                                 }
                             }
                             else
                             {
                                 keithAnim.Play("Two");
-                                aImage.color = Color.red;
+                                aImage.overrideSprite = aPressed;
                             }
                         }
                         else
                         {
                             keithAnim.Play("One");
-                            pImage.color = Color.red;
+                            pImage.overrideSprite = pPressed;
                         }
                     }
                 }
@@ -370,7 +384,7 @@ public class MorningYogaMinigame : Minigame
                     stateDResult[1] = false;
                     stateDResult[2] = false;
                     stateDResult[3] = false;
-                    ResetColour();
+                    ResetImage();
                 }
                 int i = 0;
                 foreach (bool b in stateDResult)
@@ -388,12 +402,12 @@ public class MorningYogaMinigame : Minigame
                         recInput = false;
                         Debug.Log("Success");
                         i = 0;
-                        BarUpdate(100f);
+                        BarUpdate(125f);
                         StartCoroutine(StateTransition());
                     }
                 }
             }
-            ColourReset();
+            ImageReset();
         }
     }
 
@@ -401,23 +415,23 @@ public class MorningYogaMinigame : Minigame
     {
         progressBar.value = progress;
     }
-    void ColourReset()
+    void ImageReset()
     {
         if (!Input.anyKey)
         {
-            aImage.color = Color.white;
-            dImage.color = Color.white;
-            eImage.color = Color.white;
-            gImage.color = Color.white;
-            hImage.color = Color.white;
-            lImage.color = Color.white;
-            mImage.color = Color.white;
-            pImage.color = Color.white;
-            qImage.color = Color.white;
-            rImage.color = Color.white;
-            tImage.color = Color.white;
-            wImage.color = Color.white;
-            zImage.color = Color.white;
+            aImage.overrideSprite = null;
+            dImage.overrideSprite = null;
+            eImage.overrideSprite = null;
+            gImage.overrideSprite = null;
+            hImage.overrideSprite = null;
+            lImage.overrideSprite = null;
+            mImage.overrideSprite = null;
+            pImage.overrideSprite = null;
+            qImage.overrideSprite = null;
+            rImage.overrideSprite = null;
+            tImage.overrideSprite = null;
+            wImage.overrideSprite = null;
+            zImage.overrideSprite = null;
         }
     }
     IEnumerator StartScreen()
@@ -472,21 +486,21 @@ public class MorningYogaMinigame : Minigame
         }
     }
 
-    void ResetColour()
+    void ResetImage()
     {
-        aImage.color = Color.white;
-        dImage.color = Color.white;
-        eImage.color = Color.white;
-        gImage.color = Color.white;
-        hImage.color = Color.white;
-        lImage.color = Color.white;
-        mImage.color = Color.white;
-        pImage.color = Color.white;
-        qImage.color = Color.white;
-        rImage.color = Color.white;
-        tImage.color = Color.white;
-        wImage.color = Color.white;
-        zImage.color = Color.white;
+        aImage.overrideSprite = null;
+        dImage.overrideSprite = null;
+        eImage.overrideSprite = null;
+        gImage.overrideSprite = null;
+        hImage.overrideSprite = null;
+        lImage.overrideSprite = null;
+        mImage.overrideSprite = null;
+        pImage.overrideSprite = null;
+        qImage.overrideSprite = null;
+        rImage.overrideSprite = null;
+        tImage.overrideSprite = null;
+        wImage.overrideSprite = null;
+        zImage.overrideSprite = null;
     }
 
     private void FixedUpdate()
